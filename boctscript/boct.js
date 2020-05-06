@@ -1,6 +1,6 @@
 
-//The death_botty Function
-function BOTTy() {
+//The BOcT Function
+function BOcT() {
   var name = prompt("Hoi, What's your name? \nDon't type nothing");
    if(name != null) {var letters = name.length; }
    var notnum = isNaN(name);
@@ -13,5 +13,5 @@ function BOTTy() {
 
 
 
- console.log("I'm DEATH_BOTTy, v1 created by @The-UCS-Variable")
+ console.log("I'm 'The BOcT', v1 created by @The-UCS-Variable")
 }
