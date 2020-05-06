@@ -2,9 +2,23 @@ body, html{
   background-color: black;
 }
 
+.heading{
+  border-bottom: 2px solid white;
+  margin: 5px auto 10px;
+  width: 45%;
+  min-width: 270px;
+}
+.heading h1{
+  color: white;
+  font-family: monospace;
+  font-size: 36px;
+  text-align: center;
+}
+
+
 .something-special{
-  width: 75px;
-  height: 75px;
+  width: 90px;
+  height: 90px;
   margin: 50px auto 0;
   padding: 5px;
   text-align: center;
@@ -28,7 +42,7 @@ body, html{
 
 
 .bot-btn{
-  font-size: 60px;
+  font-size: 69px;
   color: white;
   transition: all 0.3s ease-in-out;
 }

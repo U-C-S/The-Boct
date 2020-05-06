@@ -1,3 +1,5 @@
+console.log("Font Awesome v5.13.0");
+
 
 //The BOcT Function
 function BOcT() {
@@ -13,5 +15,5 @@ function BOcT() {
 
 
 
- console.log("I'm 'The BOcT', v1 created by @The-UCS-Variable")
+ console.log("I'm 'The BOcT' v1.1, created by @The-UCS-Variable")
 }
