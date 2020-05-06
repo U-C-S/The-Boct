@@ -1,2 +1,2 @@
-# DEATH_BOTTy
+# The BOcT
 A Javascript Chat Bot;
