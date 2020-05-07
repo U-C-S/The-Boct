@@ -6,7 +6,7 @@ body, html{
   border-bottom: 2px solid white;
   margin: 5px auto 10px;
   width: 45%;
-  min-width: 270px;
+  min-width: 290px;
 }
 .heading h1{
   color: white;
@@ -16,15 +16,15 @@ body, html{
 }
 
 
-.something-special{
+.bot-head{
   width: 90px;
   height: 90px;
-  margin: 50px auto 0;
+  margin: 50px auto 480px;
   padding: 5px;
   text-align: center;
 }
-.something-special:hover{
-  animation: shake 0.7s linear infinite
+.bot-head:hover{
+  animation: shake 0.8s linear infinite
 }
 @keyframes shake {
   0% { transform: translate(1px, 1px); }
@@ -47,5 +47,28 @@ body, html{
   transition: all 0.3s ease-in-out;
 }
 .bot-btn:hover{
+  color: #ff1439;
+}
+
+footer{
+  border-top: 2px solid white;
+  padding: 10px 10px 0;
+  height: 40px;
+  min-width: 290px;
+  margin: 0 auto 10px;
+  text-align: center;
+}
+footer > div{
+   width: 46%;
+   float: left;
+   margin: auto 2%;
+}
+footer > div > a{
+   color: white;
+   text-decoration: none;
+   font-family: monospace;
+   font-size: 12px;
+}
+footer > div > a:hover{
   color: #ff1439;
 }
