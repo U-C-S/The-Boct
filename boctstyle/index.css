@@ -1,21 +1,35 @@
 body, html{
   background-color: black;
 }
-
+/*header*/
 .heading{
   border-bottom: 2px solid white;
   margin: 5px auto 10px;
   width: 45%;
   min-width: 290px;
 }
+/*title*/
 .heading h1{
   color: white;
   font-family: monospace;
   font-size: 36px;
   text-align: center;
+  transition: all 0.4s ease-in-out;
+}
+
+@keyframes headh1 {
+  from {font-size: 36px;}
+  to {font-size: 20px;}
+}
+@keyframes headdiv {
+  0% {border-bottom: 2px solid white; margin: 5px auto 10px; width: 45%; min-width: 290px;}
+  25% {border-bottom: 0px solid white; margin: 5px 40% 5px 5px; width: 30%; min-width: 200px; }
+  60% {border-bottom: none; margin: 5px 10% 5px 5px; width: 20%; min-width: 150px;}
+  100% {border-bottom: none; margin: 5px; width: 100px; min-width: 100px;}
 }
 
 
+/*content-div-bot*/
 .bot-head{
   width: 90px;
   height: 90px;
@@ -40,7 +54,7 @@ body, html{
   100% { transform: translate(1px, -2px); }
 }
 
-
+/*BOcT*/
 .bot-btn{
   font-size: 69px;
   color: white;
