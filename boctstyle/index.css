@@ -1,5 +1,6 @@
 body, html{
   background-color: black;
+  margin: 0;
 }
 /*header*/
 .heading{
@@ -17,23 +18,14 @@ body, html{
   transition: all 0.4s ease-in-out;
 }
 
-@keyframes headh1 {
-  from {font-size: 36px;}
-  to {font-size: 20px;}
-}
-@keyframes headdiv {
-  0% {border-bottom: 2px solid white; margin: 5px auto 10px; width: 45%; min-width: 290px;}
-  25% {border-bottom: 0px solid white; margin: 5px 40% 5px 5px; width: 30%; min-width: 200px; }
-  60% {border-bottom: none; margin: 5px 10% 5px 5px; width: 20%; min-width: 150px;}
-  100% {border-bottom: none; margin: 5px; width: 100px; min-width: 100px;}
-}
+
 
 
 /*content-div-bot*/
 .bot-head{
   width: 90px;
   height: 90px;
-  margin: 50px auto 480px;
+  margin: 40px auto 25px;
   padding: 5px;
   text-align: center;
 }
@@ -86,3 +78,64 @@ footer > div > a{
 footer > div > a:hover{
   color: #ff1439;
 }
+
+
+
+.arrow_box {
+	position: relative;
+	background: #000000;
+	border: 3px solid #ffffff;
+  margin: 0 auto 40px;
+  height: 420px;
+  width: 60%;
+  transition: all 1s ease-in-out;
+}
+@media screen and (max-width: 880px) {
+  .arrow_box{
+    width: 94%;
+  }
+
+}
+.arrow_box:after, .arrow_box:before {
+	bottom: 100%;
+	left: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.arrow_box:after {
+	border-color: rgba(0, 0, 0, 0);
+  border-bottom-color: #000000;
+	border-width: 24px;
+	margin-left: -24px;
+}
+.arrow_box:before {
+  border-color: rgba(255, 255, 255, 0);
+  border-bottom-color: #ffffff;
+	border-width: 29px;
+	margin-left: -29px;
+}
+
+
+
+
+
+
+/* Temp Trash
+
+@keyframes headh1 {
+  from {font-size: 36px;}
+  to {font-size: 20px;}
+}
+@keyframes headdiv {
+  0% {border-bottom: 2px solid white; margin: 5px auto 10px; width: 45%; min-width: 290px;}
+  25% {border-bottom: 0px solid white; margin: 5px 40% 5px 5px; width: 30%; min-width: 200px; }
+  60% {border-bottom: none; margin: 5px 10% 5px 5px; width: 20%; min-width: 150px;}
+  100% {border-bottom: none; margin: 5px; width: 100px; min-width: 100px;}
+}
+
+*/

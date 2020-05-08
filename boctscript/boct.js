@@ -14,11 +14,13 @@ function BOcT() {
     else if (notnum === true) { alert('So ' + name + ', You will have a Bright Future'); }
 
 
-
+ console.clear()
  console.log("I'm 'The BOcT' v1.1, created by @The-UCS-Variable")
 }
-//document.getElementById ("content-div-bot").addEventListener ("click", BO, false);
+
 /*
+document.getElementById ("content-div-bot").addEventListener ("click", BO, false);
+
 function BO() {
   document.getElementById('title').style.fontSize='20px';
   document.getElementById('header').style.border='none';
@@ -31,7 +33,7 @@ function BO() {
   document.getElementById('title').style.fontSize='20px';
 
 }
-*/
+
 function BO() {
   document.getElementById("title").style.animation = "headh1 1s linear 1";
   document.getElementById("title").style.animationFillMode = "forwards";
@@ -39,3 +41,4 @@ function BO() {
   document.getElementById("header").style.animation = "headdiv 5s linear 1";
   document.getElementById("header").style.animationFillMode = "forwards";
 }
+*/
