@@ -25,7 +25,7 @@ body, html{
 .bot-head{
   width: 90px;
   height: 90px;
-  margin: 40px auto 25px;
+  margin: 40px auto 495px;
   padding: 5px;
   text-align: center;
 }
@@ -89,6 +89,7 @@ footer > div > a:hover{
   height: 420px;
   width: 60%;
   transition: all 1s ease-in-out;
+  display: none;
 }
 @media screen and (max-width: 880px) {
   .arrow_box{

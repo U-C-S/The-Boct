@@ -1,6 +1,12 @@
 console.log("Font Awesome v5.13.0");
 
 
+function BOc() {
+    document.getElementById("content-div-bot").style.margin="40px auto 25px";
+    document.getElementById("chatter").style.display="block";
+
+}
+
 //The BOcT Function
 function BOcT() {
   var name = prompt("Hoi, What's your name? \nDon't type nothing");
@@ -41,4 +47,15 @@ function BO() {
   document.getElementById("header").style.animation = "headdiv 5s linear 1";
   document.getElementById("header").style.animationFillMode = "forwards";
 }
+*/
+
+
+/*
+//The Annoy me! function
+function annoyer() {  setInterval(function(){ alert("You are a IDIOT");}, 2000);  }
+
+click counter
+type Writer Effect
+
+unit convertors
 */
