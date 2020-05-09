@@ -134,16 +134,21 @@ footer > div > a:hover{
   height: 20px;
   float: left;
   padding: 2px 4px;
-  width: 74%;
+  width: 82%;
   resize: none;
 }
 .subm{
-  margin: 5px;
-  width: 18%;
-  font-size: 18px;
-  outline: none;
+  margin: 6px;
+  width: 8%;
+  height: 24px;
+  padding: 2px;
+  font-size: 16px;
   border: none;
   background-color: white;
+  color: black;
+}
+.subm:active{
+  color: crimson;
 }
 
 
