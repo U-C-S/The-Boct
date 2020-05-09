@@ -1,2 +1,2 @@
 # The BOcT
-A Javascript Chat Bot;
+A Javascript Web Bot;
