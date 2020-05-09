@@ -2,7 +2,7 @@ console.log("Font Awesome v5.13.0");
 
 
 function BOc() {
-    document.getElementById("content-div-bot").style.margin="40px auto 25px";
+    document.getElementById("content-div-bot").style.margin="10px auto 20px";
     document.getElementById("chatter").style.display="block";
 
     var name = prompt("Hoi, What's your name? \nDon't type nothing");

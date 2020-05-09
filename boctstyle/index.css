@@ -5,12 +5,14 @@ body, html{
 /*header*/
 .heading{
   border-bottom: 2px solid white;
-  margin: 5px auto 10px;
+  margin: 10px auto;
   width: 45%;
   min-width: 290px;
+  padding: 5px 5px 10px;
 }
 /*title*/
 .heading h1{
+  margin: 0;
   color: white;
   font-family: monospace;
   font-size: 36px;
@@ -25,7 +27,7 @@ body, html{
 .bot-head{
   width: 90px;
   height: 90px;
-  margin: 40px auto 495px;
+  margin: 10px auto 575px;
   padding: 5px;
   text-align: center;
 }
@@ -85,9 +87,9 @@ footer > div > a:hover{
 	position: relative;
 	background-color: white;
 	border: 3px solid #ffffff;
-  margin: 0 auto 40px;
+  margin: 0 auto 52px;
   padding: 6px;
-  height: 420px;
+  height: 485px;
   width: 60%;
   transition: all 1s ease-in-out;
   display: none;
@@ -130,12 +132,13 @@ footer > div > a:hover{
   overflow-y: auto;
 }
 .texts{
-  margin: 5px 2%;
-  height: 20px;
+  margin: 1% 2%;
+  height: 6%;
   float: left;
   padding: 2px 4px;
   width: 82%;
-  resize: none;
+  background-color: black;
+  color: white;
 }
 .subm{
   margin: 6px;
