@@ -58,28 +58,6 @@ body, html{
   color: #ff1439;
 }
 
-footer{
-  border-top: 2px solid white;
-  padding: 10px 10px 0;
-  height: 40px;
-  min-width: 290px;
-  margin: 0 auto 10px;
-  text-align: center;
-}
-footer > div{
-   width: 46%;
-   float: left;
-   margin: auto 2%;
-}
-footer > div > a{
-   color: white;
-   text-decoration: none;
-   font-family: monospace;
-   font-size: 12px;
-}
-footer > div > a:hover{
-  color: #ff1439;
-}
 
 
 
@@ -156,6 +134,29 @@ footer > div > a:hover{
 
 
 
+
+footer{
+  border-top: 2px solid white;
+  padding: 20px 10px 0;
+  height: 40px;
+  min-width: 290px;
+  margin: 0 auto 10px;
+  text-align: center;
+}
+footer > div{
+   width: 45%;
+   float: left;
+   margin: auto 2%;
+}
+footer > div > a{
+   color: white;
+   text-decoration: none;
+   font-family: monospace;
+   font-size: 12px;
+}
+footer > div > a:hover{
+  color: #ff1439;
+}
 
 /* Temp Trash
 
