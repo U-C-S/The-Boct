@@ -18,9 +18,12 @@ function BOc() {
 
    console.clear()
    console.log("I'm 'The BOcT' v1.1, created by @The-UCS-Variable")
-
 }
 
+
+
+
+/*
 //The BOcT Function
 function BOcT() {
   var name = prompt("Hoi, What's your name? \nDon't type nothing");
@@ -38,7 +41,9 @@ function BOcT() {
  console.log("I'm 'The BOcT' v1.1, created by @The-UCS-Variable")
 }
 
-/*
+
+
+
 document.getElementById ("content-div-bot").addEventListener ("click", BO, false);
 
 function BO() {
