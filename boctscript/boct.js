@@ -44,33 +44,6 @@ function BOcT() {
 
 
 
-
-document.getElementById ("content-div-bot").addEventListener ("click", BO, false);
-
-function BO() {
-  document.getElementById('title').style.fontSize='20px';
-  document.getElementById('header').style.border='none';
-  document.getElementById('header').style.margin='5px';
-  document.getElementById('header').style.width='100px';
-  document.getElementById('header').style.minWidth='100px';
-
-  document.getElementById('BOcT').style.fontSize='40px';
-  document.getElementById('title').style.fontSize='20px';
-  document.getElementById('title').style.fontSize='20px';
-
-}
-
-function BO() {
-  document.getElementById("title").style.animation = "headh1 1s linear 1";
-  document.getElementById("title").style.animationFillMode = "forwards";
-
-  document.getElementById("header").style.animation = "headdiv 5s linear 1";
-  document.getElementById("header").style.animationFillMode = "forwards";
-}
-*/
-
-
-/*
 //The Annoy me! function
 function annoyer() {  setInterval(function(){ alert("You are a IDIOT");}, 2000);  }
 

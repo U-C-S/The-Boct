@@ -39,9 +39,11 @@ body, html{
   margin: 10px auto 575px;
   padding: 5px;
   text-align: center;
+  transition: all 0.4s linear;
 }
+
 .bot-head:hover{
-  animation: shake 0.8s linear infinite
+  animation: shake 0.8s linear infinite;
 }
 @keyframes shake {
   0% { transform: translate(1px, 1px); }
@@ -57,15 +59,33 @@ body, html{
   100% { transform: translate(1px, -2px); }
 }
 
+
 /*BOcT*/
 .bot-btn{
   font-size: 69px;
   color: white;
   transition: all 0.3s ease-in-out;
+
+}
+@media screen and (max-width: 500px) {
+  .bot-head{
+    height: 66px;
+  }
+  .bot-btn{
+    font-size: 50px;
+  }
 }
 .bot-btn:hover{
   color: #ff1439;
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -79,7 +99,7 @@ body, html{
   padding: 6px;
   height: 485px;
   width: 60%;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.5s linear;
   display: none;
 }
 @media screen and (max-width: 880px) {
@@ -168,46 +188,7 @@ body, html{
   color: #ff1439;
 }
 
-
-
-
-
-
-/*
-.texts{
-  margin: 1% 2%;
-  height: 6%;
-  float: left;
-  padding: 2px 4px;
-  width: 82%;
-  outline: none;
-  border: none;
-  background-color: black;
-  color: white;
-}
-.subm{
-  margin: 6px;
-  width: 8%;
-  height: 24px;
-  padding: 2px;
-  font-size: 16px;
-  border: none;
-  background-color: white;
-  color: black;
-}
-.subm:active{
-  color: crimson;
-}
-*/
-
-
-
-
-
-
-
-
-
+/* FOOTER */
 footer{
   border-top: 2px solid white;
   padding: 20px 10px 0;
@@ -230,18 +211,3 @@ footer > div > a{
 footer > div > a:hover{
   color: #ff1439;
 }
-
-/* Temp Trash
-
-@keyframes headh1 {
-  from {font-size: 36px;}
-  to {font-size: 20px;}
-}
-@keyframes headdiv {
-  0% {border-bottom: 2px solid white; margin: 5px auto 10px; width: 45%; min-width: 290px;}
-  25% {border-bottom: 0px solid white; margin: 5px 40% 5px 5px; width: 30%; min-width: 200px; }
-  60% {border-bottom: none; margin: 5px 10% 5px 5px; width: 20%; min-width: 150px;}
-  100% {border-bottom: none; margin: 5px; width: 100px; min-width: 100px;}
-}
-
-*/
