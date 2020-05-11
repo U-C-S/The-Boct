@@ -1,4 +1,5 @@
 console.log("Font Awesome v5.13.0");
+console.log("Animations by animista.net")
 
 
 function BOc() {
