@@ -13,12 +13,12 @@ function BOc() {
       else if (name === 'nothing') { alert('You are basically NOTHING!!!'); }
       else if (notnum === false) { alert('Type a name, YOU FOOL'); }
       else if (letters < 4) { alert('I dont believe your name is "' + name + '"'); }
-      else if (name.indexOf(' name') !== -1 ) {alert('My name is BOcT'); }
+      else if (name.indexOf('name') !== -1 ) {alert('My name is BOcT'); }
       else if (notnum === true) { alert('So ' + name + ', You will have a Bright Future'); }
 
 
    console.clear()
-   console.log("I'm 'The BOcT' v1.1, created by @The-UCS-Variable")
+   console.log("I'm 'The BOcT' v1.1.2, created by @The-UCS-Variable")
 }
 
 
