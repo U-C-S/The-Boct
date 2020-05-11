@@ -160,7 +160,7 @@ body, html{
 	position: relative;
 	background-color: white;
 	border: 3px solid #ffffff;
-  border-radius: 36px;
+  border-radius: 36px 0 36px 36px;
   margin: 0 auto 52px;
   padding: 6px;
   height: 485px;
@@ -202,9 +202,27 @@ body, html{
 .inner-arrow_box{
   width: 100%;
   height: 423px;
-  border-radius: 32px;
+  border-radius: 32px 0 0 32px;
   background-color: black;
-  overflow-y: auto;
+  overflow-y: scroll;
+}
+
+#chatspace::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.8);
+	background-color: #F5F5F5;
+}
+
+#chatspace::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #F5F5F5;
+  cursor: pointer;
+}
+
+#chatspace::-webkit-scrollbar-thumb
+{
+	background-color: #000000;
 }
 
 
