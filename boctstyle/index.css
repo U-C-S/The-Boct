@@ -82,8 +82,8 @@ body, html{
   padding: 5px;
   text-align: center;
   transition: all 0.4s linear;
-  -webkit-animation: flicker-in-1 2s linear forwards;
-	 animation: flicker-in-1 2s linear forwards;
+  -webkit-animation: flicker-in-1 2.3s linear forwards;
+	 animation: flicker-in-1 2.3s linear forwards;
 }
 
 /* ----------------------------------------------
@@ -97,7 +97,6 @@ body, html{
  */
 @-webkit-keyframes flicker-in-1 {
   0% {opacity: 0;}
-  8% {opacity: 1;} 8.1% {opacity: 0;}
   10% {opacity: 0;} 10.1% {opacity: 1;} 10.2% {opacity: 0;}
   20% {opacity: 0;} 20.1% {opacity: 1;} 20.6% {opacity: 0;}
   30% {opacity: 0;} 30.1% {opacity: 1;} 30.5% {opacity: 1;} 30.6% {opacity: 0;}
@@ -110,7 +109,8 @@ body, html{
   75% {opacity: 1;} 75.1% {opacity: 0;}
   77% {opacity: 0;} 77.1% {opacity: 1;}
   85% {opacity: 1;} 85.1% {opacity: 0;}
-  86% {opacity: 0;} 86.1% {opacity: 1;}
+  86% {opacity: 0;} 86.1% {opacity: 1;} 86.2% {opacity: 0;} 86.3% {opacity: 1;}
+  99% {opacity: 1;} 99.1% {opacity: 0;} 99.2% {opacity: 1;}
   100% {opacity: 1;}
 }
 @keyframes flicker-in-1 {
@@ -127,7 +127,8 @@ body, html{
   75% {opacity: 1;} 75.1% {opacity: 0;}
   77% {opacity: 0;} 77.1% {opacity: 1;}
   85% {opacity: 1;} 85.1% {opacity: 0;}
-  86% {opacity: 0;} 86.1% {opacity: 1;}
+  86% {opacity: 0;} 86.1% {opacity: 1;} 86.2% {opacity: 0;} 86.3% {opacity: 1;}
+  99% {opacity: 1;} 99.1% {opacity: 0;} 99.2% {opacity: 1;}
   100% {opacity: 1;}
 }
 
@@ -223,6 +224,11 @@ body, html{
 #chatspace::-webkit-scrollbar-thumb
 {
 	background-color: #000000;
+}
+
+
+.inner-arrow_box > p{
+  color: white;
 }
 
 
