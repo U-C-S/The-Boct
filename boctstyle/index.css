@@ -66,7 +66,6 @@ body, html{
 @media screen and (max-width: 500px) {
   .heading h1{
     font-size: 26px;
-    animation: none;
   }
 }
 
@@ -139,7 +138,6 @@ body, html{
   width: 70px;
   fill: white;
   transition: all 0.3s ease-in-out;
-
 }
 @media screen and (max-width: 500px) {
   .bot-head{
@@ -281,13 +279,12 @@ body, html{
   font-size: 18px;
   transition: all 0.1s linear;
 }
-.searchButton:hover{
-  text-shadow: 0 0 10px white;
+.searchButton:hover, .searchButton:focus{
+  color: hsl(351, 100%, 70%);
 }
 .searchButton:active{
   font-size: 16px;
   color: #ff1439;
-  text-shadow: 0 0 15px #ff1439;
 }
 
 
@@ -308,10 +305,11 @@ footer > div{
 }
 footer > div > a{
    color: white;
+   outline: none;
    text-decoration: none;
    font-family: monospace;
    font-size: 12px;
 }
-footer > div > a:hover{
+footer > div > a:hover, footer > div > a:focus{
   color: #ff1439;
 }
