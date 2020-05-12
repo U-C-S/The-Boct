@@ -174,8 +174,8 @@ body, html{
     width: 94%;
     min-width: 300px;
   }
-
 }
+
 .arrow_box:after, .arrow_box:before {
 	bottom: 100%;
 	left: 50%;
@@ -231,11 +231,17 @@ body, html{
   color: white;
 }
 
-
+/*Type--------------------------------------------------------------------------*/
 .wrap{
   margin: 12px auto;
-  width: 96%;
-  height: 38px;
+  width: 88%;
+  height: 36px;
+  transition: all 0.3s linear;
+}
+@media screen and (max-width: 880px) {
+  .wrap{
+    width: 96%;
+  }
 }
 
 .search {
@@ -247,12 +253,13 @@ body, html{
   width: 100%;
   border: 3px solid black; /*#00B4CC;*/
   border-right: none;
+  box-shadow: 0 0 15px black;
   padding: 5px;
   height: 20px;
   border-radius: 5px 0 0 5px;
   outline: none;
-  color: grey;
-  font-family: monospace;
+  color: hsl(0,0%,35%);
+  font-family: sans-serif;
 }
 
 .searchTerm:focus{
@@ -263,7 +270,9 @@ body, html{
   width: 40px;
   height: 36px;
   border: 1px solid black;
+  padding: 5px;
   background: black;
+  box-shadow: 0 0 15px black;
   text-align: center;
   color: white;
   border-radius: 0 5px 5px 0;
@@ -272,9 +281,13 @@ body, html{
   font-size: 18px;
   transition: all 0.1s linear;
 }
+.searchButton:hover{
+  text-shadow: 0 0 10px white;
+}
 .searchButton:active{
   font-size: 16px;
   color: #ff1439;
+  text-shadow: 0 0 15px #ff1439;
 }
 
 
