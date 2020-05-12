@@ -198,12 +198,14 @@ body, html{
 	margin-left: -29px;
 }
 
+/*chatspace------------------------------------*/
 .inner-arrow_box{
   width: 100%;
   height: 423px;
-  border-radius: 32px 0 0 32px;
+  border-radius: 32px 0 0 0;
   background-color: black;
   overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 #chatspace::-webkit-scrollbar-track
@@ -221,12 +223,79 @@ body, html{
 
 #chatspace::-webkit-scrollbar-thumb
 {
-	background-color: #000000;
+	background-color: #5c5c5c;
 }
 
 
-.inner-arrow_box > p{
-  color: white;
+/*message CSS-------------------------------------------------------------------*/
+/* BOcT talk CSS */
+.boct_talk{
+  float: left;
+  width: 70%;
+  margin: 6px 4px 3px 10px;
+  background: #e2324c;
+  border: 2px solid #ffffff;
+  padding: 2px 4px 2px 8px;
+  position: relative;
+}
+
+.boct_talk:after, .boct_talk:before {
+	right: 100%;
+	top: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.boct_talk:after {
+	border-color: rgba(226, 50, 76, 0);
+	border-right-color: #e2324c;
+	border-width: 8px;
+	margin-top: -8px;
+}
+.boct_talk:before {
+	border-color: rgba(255, 255, 255, 0);
+	border-right-color: #ffffff;
+	border-width: 11px;
+	margin-top: -11px;
+}
+.boct_talk > p{
+  font-size: 14px;
+  color: black;
+  font-family: monospace;
+}
+
+/*human talk CSS */
+.human_talk{
+  float: right;
+  width: 70%;
+  margin: 6px 10px 3px 4px;
+  background: white;
+  padding: 2px 4px 2px 8px;
+  position: relative;
+}
+.human_talk:after {
+    left: 100%;
+  	top: 50%;
+  	border: solid transparent;
+  	content: " ";
+  	height: 0;
+  	width: 0;
+  	position: absolute;
+  	pointer-events: none;
+  	border-color: rgba(255, 255, 255, 0);
+  	border-left-color: #ffffff;
+  	border-width: 8px;
+  	margin-top: -8px;
+}
+
+.human_talk > p{
+  color: black;
+  font-size: 14px;
+  font-family: monospace;
 }
 
 /*Type--------------------------------------------------------------------------*/

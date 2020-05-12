@@ -15,7 +15,10 @@ function BOc() {
       else if (notnum === false) { alert('Type a name, YOU FOOL'); }
       else if (letters < 4) { alert('I dont believe your name is "' + name + '"'); }
       else if (name.indexOf('name') !== -1 ) {alert('My name is BOcT'); }
-      else if (notnum === true) { alert('So ' + name + ', You will have a Bright Future'); }
+      else if (notnum === true) {
+         alert('So ' + name + ', You will have a Bright Future');
+         
+       }
 
 
    console.clear()
