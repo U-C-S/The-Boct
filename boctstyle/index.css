@@ -6,8 +6,8 @@ body, html{
 
 /*header*/
 .heading{
-  border-bottom: 2px solid white;
   margin: 10px auto;
+  border-bottom: 2px solid white;
   width: 45%;
   min-width: 310px;
   padding: 5px 5px 10px;
@@ -74,11 +74,11 @@ body, html{
 
 /*content-div-bot (or) head of the bot -----------------------------------------*/
 .bot-head{
+  margin: 10px auto 575px;
   width: 20%;
   min-width: 310px;
-  height: 80px;
-  margin: 10px auto 575px;
   padding: 5px;
+  height: 80px;
   text-align: center;
   transition: all 0.4s linear;
   -webkit-animation: flicker-in-1 2.3s linear forwards;
@@ -157,12 +157,12 @@ body, html{
 /*chatter ----------------------------------------------------------------------*/
 .arrow_box {
 	position: relative;
-  background-color: hsl(0,0%,90%);
-  border-radius: 36px 0 36px 36px;
   margin: 0 auto 52px;
-  padding: 6px;
-  height: 485px;
+  border-radius: 36px 0 36px 36px;
   width: 65%;
+  height: 485px;
+  padding: 6px;
+  background-color: hsl(0,0%,90%);
   transition: all 0.5s linear;
   display: none;
 }
@@ -224,10 +224,10 @@ body, html{
   float: left;
   width: 75%;
   margin: 6px 4px 6px 10px;
-  background: #e64c63;
   border: 2px solid #ffffff;
   padding: 2px 4px 2px 8px;
   position: relative;
+  background: #e64c63;
 
   font-size: 14px;
   color: black;
