@@ -72,7 +72,7 @@ body, html{
 
 
 
-/*content-div-bot --------------------------------------------------------------*/
+/*content-div-bot (or) head of the bot -----------------------------------------*/
 .bot-head{
   width: 20%;
   min-width: 310px;
@@ -157,24 +157,23 @@ body, html{
 /*chatter ----------------------------------------------------------------------*/
 .arrow_box {
 	position: relative;
-	background-color: white;
-	border: 3px solid #ffffff;
+  background-color: hsl(0,0%,90%);
   border-radius: 36px 0 36px 36px;
   margin: 0 auto 52px;
   padding: 6px;
   height: 485px;
-  width: 60%;
+  width: 65%;
   transition: all 0.5s linear;
   display: none;
 }
 @media screen and (max-width: 880px) {
   .arrow_box{
-    width: 94%;
+    width: 96%;
     min-width: 300px;
   }
 }
 
-.arrow_box:after, .arrow_box:before {
+.arrow_box:after {
 	bottom: 100%;
 	left: 50%;
 	border: solid transparent;
@@ -183,23 +182,15 @@ body, html{
 	width: 0;
 	position: absolute;
 	pointer-events: none;
+  border-color: rgba(0, 0, 0, 0);
+  border-bottom-color: hsl(0,0%,90%);
+	border-width: 27px;
+	margin-left: -27px;
 }
 
-.arrow_box:after {
-	border-color: rgba(0, 0, 0, 0);
-  border-bottom-color: white;
-	border-width: 24px;
-	margin-left: -24px;
-}
-.arrow_box:before {
-  border-color: rgba(255, 255, 255, 0);
-  border-bottom-color: #ffffff;
-	border-width: 29px;
-	margin-left: -29px;
-}
 
 /*chatspace------------------------------------*/
-.inner-arrow_box{
+.talk_box{
   width: 100%;
   height: 423px;
   border-radius: 32px 0 0 0;
@@ -231,17 +222,21 @@ body, html{
 /* BOcT talk CSS */
 .boct_talk{
   float: left;
-  width: 70%;
-  margin: 6px 4px 3px 10px;
-  background: #e2324c;
+  width: 75%;
+  margin: 6px 4px 6px 10px;
+  background: #e64c63;
   border: 2px solid #ffffff;
   padding: 2px 4px 2px 8px;
   position: relative;
+
+  font-size: 14px;
+  color: black;
+  font-family: monospace;
 }
 
 .boct_talk:after, .boct_talk:before {
 	right: 100%;
-	top: 50%;
+	top: 25%;
 	border: solid transparent;
 	content: " ";
 	height: 0;
@@ -252,7 +247,7 @@ body, html{
 
 .boct_talk:after {
 	border-color: rgba(226, 50, 76, 0);
-	border-right-color: #e2324c;
+	border-right-color: #e64c63;
 	border-width: 8px;
 	margin-top: -8px;
 }
@@ -262,24 +257,20 @@ body, html{
 	border-width: 11px;
 	margin-top: -11px;
 }
-.boct_talk > p{
-  font-size: 14px;
-  color: black;
-  font-family: monospace;
-}
+
 
 /*human talk CSS */
 .human_talk{
   float: right;
-  width: 70%;
-  margin: 6px 10px 3px 4px;
+  width: 75%;
+  margin: 6px 10px 6px 4px;
   background: white;
-  padding: 2px 4px 2px 8px;
+  padding: 2px 8px 2px 4px;
   position: relative;
 }
 .human_talk:after {
     left: 100%;
-  	top: 50%;
+  	top: 75%;
   	border: solid transparent;
   	content: " ";
   	height: 0;
@@ -298,25 +289,27 @@ body, html{
   font-family: monospace;
 }
 
+
+
 /*Type--------------------------------------------------------------------------*/
-.wrap{
+.type_box{
   margin: 12px auto;
   width: 88%;
   height: 36px;
   transition: all 0.3s linear;
 }
 @media screen and (max-width: 880px) {
-  .wrap{
+  .type_box{
     width: 96%;
   }
 }
 
-.search {
+.type_box-inner {
   width: 100%;
   display: flex;
 }
 
-.searchTerm {
+.typespace {
   width: 100%;
   border: 3px solid black; /*#00B4CC;*/
   border-right: none;
@@ -329,11 +322,11 @@ body, html{
   font-family: sans-serif;
 }
 
-.searchTerm:focus{
+.typespace:focus{
   color: black;
 }
 
-.searchButton {
+.typespace-enter {
   width: 40px;
   height: 36px;
   border: 1px solid black;
@@ -348,10 +341,10 @@ body, html{
   font-size: 18px;
   transition: all 0.1s linear;
 }
-.searchButton:hover, .searchButton:focus{
+.typespace-enter:hover, .typespace-enter:focus{
   color: hsl(351, 100%, 70%);
 }
-.searchButton:active{
+.typespace-enter:active{
   font-size: 16px;
   color: #ff1439;
 }
@@ -360,7 +353,7 @@ body, html{
 
 /* FOOTER ----------------------------------------------------------------------*/
 footer{
-  border-top: 2px solid white;
+  border-top: 4px solid white;
   padding: 20px 10px 0;
   height: 40px;
   min-width: 300px;
