@@ -2,7 +2,7 @@ console.log("Font Awesome v5.13.0");
 console.log("Animations by animista.net")
 
 
-function BOc() {
+function BOcT() {
     document.getElementById("content-div-bot").style.margin="10px auto 20px";
     document.getElementById("chatter").style.display="block";
 
@@ -18,12 +18,12 @@ function BOc() {
       else if (notnum === true) {
          alert('So ' + name + ', You will have a Bright Future');
     }
-
-   console.clear()
+   document.getElementById('typespace-id').focus();
    console.log("I'm 'The BOcT' v1.1.2, created by @The-UCS-Variable")
 }
 
-
+const CLICK_BOT = document.getElementById('BOcT');
+CLICK_BOT.addEventListener("click", BOcT);
 
 /*
 
