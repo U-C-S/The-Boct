@@ -25,7 +25,6 @@ body, html{
   -webkit-animation: focus-in-expand 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
   animation: focus-in-expand 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
-
 @-webkit-keyframes focus-in-expand {
   0% {
     letter-spacing: -0.5em;
@@ -53,14 +52,11 @@ body, html{
   }
 }
 
-
 @media screen and (max-width: 500px) {
   .heading h1{
     font-size: 26px;
   }
 }
-
-
 
 
 /*content-div-bot (or) head of the bot -----------------------------------------*/
@@ -110,7 +106,6 @@ body, html{
   99% {opacity: 1;} 99.1% {opacity: 0;} 99.2% {opacity: 1;}
   100% {opacity: 1;}
 }
-
 
 /*BOcT*/
 .bot-btn > svg{
@@ -178,7 +173,6 @@ body, html{
   }
 }
 
-
 @media screen and (max-width: 880px) {
   .arrow_box{
     width: 96%;
@@ -243,7 +237,6 @@ body, html{
   padding: 2px 4px 2px 8px;
   position: relative;
   background: #e64c63;
-
   font-size: 14px;
   color: black;
   font-family: monospace;
@@ -259,7 +252,6 @@ body, html{
 	position: absolute;
 	pointer-events: none;
 }
-
 .boct_talk:after {
 	border-color: rgba(226, 50, 76, 0);
 	border-right-color: #e64c63;
@@ -273,7 +265,6 @@ body, html{
 	margin-top: -11px;
 }
 
-
 /*human talk CSS */
 .human_talk{
   float: right;
@@ -284,18 +275,18 @@ body, html{
   position: relative;
 }
 .human_talk:after {
-    left: 100%;
-  	top: 75%;
-  	border: solid transparent;
-  	content: " ";
-  	height: 0;
-  	width: 0;
-  	position: absolute;
-  	pointer-events: none;
-  	border-color: rgba(255, 255, 255, 0);
-  	border-left-color: #ffffff;
-  	border-width: 8px;
-  	margin-top: -8px;
+  left: 100%;
+  top: 75%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+	border-color: rgba(255, 255, 255, 0);
+  border-left-color: #ffffff;
+  border-width: 8px;
+  margin-top: -8px;
 }
 
 .human_talk > p{
@@ -303,7 +294,6 @@ body, html{
   font-size: 14px;
   font-family: monospace;
 }
-
 
 
 /*Type--------------------------------------------------------------------------*/
@@ -363,7 +353,6 @@ body, html{
   font-size: 16px;
   color: #ff1439;
 }
-
 
 
 /* FOOTER ----------------------------------------------------------------------*/
