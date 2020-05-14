@@ -2,9 +2,23 @@ console.log("Font Awesome v5.13.0");
 console.log("Animations by animista.net")
 
 
-function BOcT() {
-    document.getElementById("content-div-bot").style.margin="10px auto 20px";
-    document.getElementById("chatter").style.display="block";
+const CLICK_BOT = document.getElementById('BOcT');
+CLICK_BOT.addEventListener("click", BOcT_open);
+
+function BOcT_open() {
+  document.getElementById("content-div-bot").style.margin="10px auto 20px";
+  document.getElementById("chatter").style.display="block";
+  console.log("I'm 'The BOcT' v1.1.3, created by @The-UCS-Variable")
+}
+
+
+
+
+
+
+/*
+//old boct function
+
 
     const name = prompt("Hoi, What's your name? \nDon't type nothing");
      if(name != null) {var letters = name.length; }
@@ -18,14 +32,8 @@ function BOcT() {
       else if (notnum === true) {
          alert('So ' + name + ', You will have a Bright Future');
     }
-   document.getElementById('typespace-id').focus();
-   console.log("I'm 'The BOcT' v1.1.2, created by @The-UCS-Variable")
-}
 
-const CLICK_BOT = document.getElementById('BOcT');
-CLICK_BOT.addEventListener("click", BOcT);
-
-/*
+    document.getElementById('typespace-id').focus();
 
 
 //The Annoy me! function
