@@ -1,6 +1,6 @@
 console.log("Font Awesome v5.13.0");
 console.log("Animations by animista.net")
-console.log("I'm 'The BOcT' v1.1.4fix, created by @The-UCS-Variable");
+console.log("I'm 'The BOcT' v1.2, created by @The-UCS-Variable");
 /*------------------------------------------------------------------------------*/
 
 
@@ -18,23 +18,43 @@ function BOcT_open() {
 
 
 function talk_div_boct(talkContent) {
-  var newDIV_b = document.createElement('div');
-  var attr_b = document.createAttribute('class');
-  var talk_create = document.createElement('p');
+  var newDIV = document.createElement("div");
+  var attr = document.createAttribute("class");
+  var talk_create = document.createElement("p");
   var talk_matter = document.createTextNode(talkContent);
 
-  attr_b.value = "boct_talk recent_talk";
-  newDIV_b.setAttributeNode(attr_b);
-  document.getElementById('chatspace').appendChild(newDIV_b);
+  attr.value = "boct_talk recent_talk";
+  newDIV.setAttributeNode(attr);
+  document.getElementById("chatspace").appendChild(newDIV);
   talk_create.appendChild(talk_matter);
-  newDIV_b.appendChild(talk_create);
+  newDIV.appendChild(talk_create);
+}
+
+const SEND_MSG_TO_BOCT = document.getElementById("typespace-enter-id");
+SEND_MSG_TO_BOCT.addEventListener("click", talk_div_hooman);
+
+function talk_div_hooman() {
+  var chat_boxx = document.querySelector(".typespace");
+  var chat_content = chat_boxx.value;
+
+  var newDIV = document.createElement("div");
+  var attr = document.createAttribute("class");
+  var talk_create = document.createElement("p");
+  var talk_matter = document.createTextNode(chat_content);
+  attr.value = "human_talk";
+  newDIV.setAttributeNode(attr);
+  document.getElementById("chatspace").appendChild(newDIV);
+  talk_create.appendChild(talk_matter);
+  newDIV.appendChild(talk_create);
+
+  chat_boxx.value = "";
 }
 
 
 function BOcT_annoy_clicks() {
    click_count += 1;
-   if (click_count > 10) {
-     click_count = 1;
+   if (click_count === 10) {
+     click_count = 0;
      talk_div_boct("Stop annoying me!");
    }
 }
@@ -48,12 +68,17 @@ _____________________
 - BOcT_open
 - BOcT_annoy_clicks
 - talk_div_boct
-- talk_div_hooman(not yet)
+- talk_div_hooman
 
-*/
+_____________________
+
+--list of Variables here--
+_____________________
+-
 
 
 /*
+console.log('working success');
 ---------------DUMP-------------------
 
 function talk_div_boct(talkContent) {
