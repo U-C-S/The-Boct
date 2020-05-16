@@ -21,7 +21,6 @@ body, html{
   font-size: 40px;
   user-select: none;
   -ms-user-select: none;
-  transition: all 0.4s ease-in-out;
   -webkit-animation: focus-in-expand 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
   animation: focus-in-expand 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
@@ -139,7 +138,7 @@ body, html{
   height: 485px;
   padding: 6px;
   background-color: hsl(0,0%,90%);
-  transition: all 0.5s linear;
+  transition: all 0.2s linear;
   display: none;
   -webkit-animation: scale-in-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
   animation: scale-in-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
@@ -173,8 +172,18 @@ body, html{
   }
 }
 
-@media screen and (max-width: 880px) {
+@media screen and (max-width: 880px) and (min-width: 485px) {
   .arrow_box{
+    width: 96%;
+    min-width: 300px;
+    animation: none;
+    -webkit-animation: none;
+  }
+}
+
+@media screen and (max-width: 485px) {
+  .arrow_box{
+    height: 550px;
     width: 96%;
     min-width: 300px;
     animation: none;
@@ -207,6 +216,11 @@ body, html{
   overflow-y: scroll;
   overflow-x: hidden;
   scroll-behavior: smooth;
+}
+@media screen and (max-width: 485px) {
+  .talk_box{
+    height: 488px;
+  }
 }
 
 #chatspace::-webkit-scrollbar-track
@@ -303,7 +317,6 @@ body, html{
   margin: 12px auto;
   width: 88%;
   height: 36px;
-  transition: all 0.3s linear;
 }
 @media screen and (max-width: 880px) {
   .type_box{
