@@ -20,6 +20,8 @@ function BOcT_open() {
   document.getElementById("chatter").style.display="block";
   CLICK_BOT.removeEventListener("click", BOcT_open);
   CLICK_BOT.addEventListener("click", BOcT_annoy_clicks);
+
+  document.getElementById("typespace-id").focus();
 }
 
 
