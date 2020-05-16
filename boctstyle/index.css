@@ -206,6 +206,7 @@ body, html{
   background-color: black;
   overflow-y: scroll;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 #chatspace::-webkit-scrollbar-track

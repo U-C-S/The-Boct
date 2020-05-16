@@ -1,8 +1,14 @@
 console.log("Font Awesome v5.13.0");
 console.log("Animations by animista.net")
-console.log("I'm 'The BOcT' v1.2, created by @The-UCS-Variable");
+console.log("I'm 'The BOcT' v1.2.1, created by @The-UCS-Variable");
 /*------------------------------------------------------------------------------*/
 
+
+//scroll to bottom after a new message
+function scroll_update() {
+  var chat_scroll = document.getElementById("chatspace");
+  chat_scroll.scrollTop = chat_scroll.scrollHeight;
+}
 
 
 var click_count = 0;
@@ -28,6 +34,7 @@ function talk_div_boct(talkContent) {
   document.getElementById("chatspace").appendChild(newDIV);
   talk_create.appendChild(talk_matter);
   newDIV.appendChild(talk_create);
+  scroll_update();
 }
 
 const SEND_MSG_TO_BOCT = document.getElementById("typespace-enter-id");
@@ -48,7 +55,10 @@ function talk_div_hooman() {
   newDIV.appendChild(talk_create);
 
   chat_boxx.value = "";
+  scroll_update();
+  return chat_content;
 }
+
 
 
 function BOcT_annoy_clicks() {
@@ -58,6 +68,12 @@ function BOcT_annoy_clicks() {
      talk_div_boct("Stop annoying me!");
    }
 }
+
+//The Annoy me! function
+if (talk_div_hooman.value === "annoy me") {
+   function annoyer() {  setInterval(function(){ alert("You are a IDIOT");}, 2000);  }
+}
+
 
 
 
