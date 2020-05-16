@@ -51,12 +51,6 @@ body, html{
   }
 }
 
-@media screen and (max-width: 500px) {
-  .heading h1{
-    font-size: 26px;
-  }
-}
-
 
 /*content-div-bot (or) head of the bot -----------------------------------------*/
 .bot-head{
@@ -113,17 +107,7 @@ body, html{
   fill: white;
   transition: all 0.3s ease-in-out;
 }
-@media screen and (max-width: 500px) {
-  .bot-head{
-    height: 60px;
-    animation: none;
-    -webkit-animation: none;
-  }
-  .bot-btn > svg{
-    width: 55px;
-    height: 55px;
-  }
-}
+
 .bot-btn > svg:hover{
   fill: #ff1439;
 }
@@ -144,50 +128,27 @@ body, html{
   animation: scale-in-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 @-webkit-keyframes scale-in-top {
-  0% { opacity: 0.6;
-    -webkit-transform: scale(0);
+  0% {-webkit-transform: scale(0);
             transform: scale(0);
-    -webkit-transform-origin: 50% -8%;
+      -webkit-transform-origin: 50% -8%;
             transform-origin: 50% -8%;
   }
-  100% { opacity: 1;
-    -webkit-transform: scale(1);
+  100% {-webkit-transform: scale(1);
             transform: scale(1);
-    -webkit-transform-origin: 50% -8%;
+        -webkit-transform-origin: 50% -8%;
             transform-origin: 50% -8%;
   }
 }
 @keyframes scale-in-top {
-  0% { opacity: 0.6;
-    -webkit-transform: scale(0);
+  0% {-webkit-transform: scale(0);
             transform: scale(0);
-    -webkit-transform-origin: 50% -8%;
+      -webkit-transform-origin: 50% -8%;
             transform-origin: 50% -8%;
   }
-  100% { opacity: 1;
-    -webkit-transform: scale(1);
+  100% {-webkit-transform: scale(1);
             transform: scale(1);
-    -webkit-transform-origin: 50% -8%;
+       -webkit-transform-origin: 50% -8%;
             transform-origin: 50% -8%;
-  }
-}
-
-@media screen and (max-width: 880px) and (min-width: 485px) {
-  .arrow_box{
-    width: 96%;
-    min-width: 300px;
-    animation: none;
-    -webkit-animation: none;
-  }
-}
-
-@media screen and (max-width: 485px) {
-  .arrow_box{
-    height: 550px;
-    width: 96%;
-    min-width: 300px;
-    animation: none;
-    -webkit-animation: none;
   }
 }
 
@@ -216,11 +177,6 @@ body, html{
   overflow-y: scroll;
   overflow-x: hidden;
   scroll-behavior: smooth;
-}
-@media screen and (max-width: 485px) {
-  .talk_box{
-    height: 488px;
-  }
 }
 
 #chatspace::-webkit-scrollbar-track
@@ -318,11 +274,6 @@ body, html{
   width: 88%;
   height: 36px;
 }
-@media screen and (max-width: 880px) {
-  .type_box{
-    width: 96%;
-  }
-}
 
 .type_box-inner {
   width: 100%;
@@ -395,6 +346,47 @@ footer > div > a:hover, footer > div > a:focus{
   color: #ff1439;
 }
 
+
+/*media queries---------------------------------------------------------------*/
+@media screen and (max-width: 880px) and (min-width: 485px) {
+  .arrow_box{
+    width: 96%;
+    min-width: 300px;
+    animation: none;
+    -webkit-animation: none;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .heading h1{
+    font-size: 26px;
+  }
+  .bot-head{
+    height: 60px;
+    animation: none;
+    -webkit-animation: none;
+  }
+  .bot-btn > svg{
+    width: 55px;
+    height: 55px;
+  }
+  .arrow_box{
+    height: 550px;
+    width: 96%;
+    min-width: 300px;
+    animation: none;
+    -webkit-animation: none;
+  }
+  .talk_box{
+    height: 488px;
+  }
+}
+
+@media screen and (max-width: 880px) {
+  .type_box{
+    width: 96%;
+  }
+}
 
 /*
 *-----------------------------------------------------------
