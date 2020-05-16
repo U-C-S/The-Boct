@@ -30,7 +30,6 @@ function talk_div_boct(talkContent) {
   var attr = document.createAttribute("class");
   var talk_create = document.createElement("p");
   var talk_matter = document.createTextNode(talkContent);
-
   attr.value = "boct_talk recent_talk";
   newDIV.setAttributeNode(attr);
   document.getElementById("chatspace").appendChild(newDIV);
@@ -39,13 +38,15 @@ function talk_div_boct(talkContent) {
   scroll_update();
 }
 
+talk_div_boct("Hoi, What's your name? \nDon't type nothing");
+
+
 const SEND_MSG_TO_BOCT = document.getElementById("typespace-enter-id");
 SEND_MSG_TO_BOCT.addEventListener("click", talk_div_hooman);
 
 function talk_div_hooman() {
   var chat_boxx = document.querySelector(".typespace");
   var chat_content = chat_boxx.value;
-
   var newDIV = document.createElement("div");
   var attr = document.createAttribute("class");
   var talk_create = document.createElement("p");
@@ -55,12 +56,28 @@ function talk_div_hooman() {
   document.getElementById("chatspace").appendChild(newDIV);
   talk_create.appendChild(talk_matter);
   newDIV.appendChild(talk_create);
-
   chat_boxx.value = "";
   scroll_update();
-  return chat_content;
+  boct_study_chat(chat_content);
 }
 
+function boct_study_chat(studycontent) {
+  if (studycontent === "annoy me") {
+    for (var i = 0; i < 20; i++) {
+      talk_div_boct("You're a IDIOT");
+    }
+  }
+  if(studycontent != null) {var letters = studycontent.length; }
+  let notnum = isNaN(studycontent);
+
+   if (notnum === false) { talk_div_boct('Type a name, YOU FOOL'); }
+   else if (studycontent === 'no') { talk_div_boct('You are basically NOTHING!!!'); }
+   else if (letters < 4) { talk_div_boct('I dont believe your name is "' + studycontent + '"'); }
+   else if (studycontent.indexOf('name') !== -1 ) { talk_div_boct('My name is BOcT'); }
+   else if (notnum === true) { talk_div_boct('So ' + studycontent + ', You will have a Bright Future'); }
+
+
+}
 
 
 function BOcT_annoy_clicks() {
@@ -70,12 +87,6 @@ function BOcT_annoy_clicks() {
      talk_div_boct("Stop annoying me!");
    }
 }
-
-//The Annoy me! function
-if (talk_div_hooman.value === "annoy me") {
-   function annoyer() {  setInterval(function(){ alert("You are a IDIOT");}, 2000);  }
-}
-
 
 
 
