@@ -1,6 +1,6 @@
 console.log("Font Awesome v5.13.0");
 console.log("Animations by animista.net")
-console.log("I'm 'The BOcT' v1.1.4, created by @The-UCS-Variable");
+console.log("I'm 'The BOcT' v1.1.4fix, created by @The-UCS-Variable");
 /*------------------------------------------------------------------------------*/
 
 
@@ -16,7 +16,7 @@ function BOcT_open() {
   CLICK_BOT.addEventListener("click", BOcT_annoy_clicks);
 }
 
-var talkContent = 0;
+
 function talk_div_boct(talkContent) {
   var newDIV_b = document.createElement('div');
   var attr_b = document.createAttribute('class');
@@ -27,15 +27,15 @@ function talk_div_boct(talkContent) {
   newDIV_b.setAttributeNode(attr_b);
   document.getElementById('chatspace').appendChild(newDIV_b);
   talk_create.appendChild(talk_matter);
-  var abcde = document.getElementsByClassName('boct_talk recent_talk');
-  abcde.appendChild(talk_matter);
+  newDIV_b.appendChild(talk_create);
 }
+
 
 function BOcT_annoy_clicks() {
    click_count += 1;
    if (click_count > 10) {
      click_count = 1;
-     talk_div_boct('Stop annoying me');
+     talk_div_boct("Stop annoying me!");
    }
 }
 
@@ -48,12 +48,32 @@ _____________________
 - BOcT_open
 - BOcT_annoy_clicks
 - talk_div_boct
-- talk_div_hooman
+- talk_div_hooman(not yet)
 
 */
 
 
 /*
+---------------DUMP-------------------
+
+function talk_div_boct(talkContent) {
+    var a = document.createElement("div");
+  var b = document.createElement("p");
+  var c = document.createAttribute("class");
+  var d = document.createTextNode(talkContent);
+
+  c.value = "boct_talk recent_talk";
+  a.setAttributeNode(c);
+  document.getElementById("chatspace").appendChild(a);
+  b.appendChild(d);
+  a.appendChild(b);
+}
+
+
+
+
+
+
 //old boct function
 
 
