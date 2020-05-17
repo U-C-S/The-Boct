@@ -236,11 +236,18 @@ body, html{
 	border-width: 11px;
 	margin-top: -11px;
 }
+.boct_talk > p{
+  color: black;
+  font-size: 14px;
+  font-family: monospace;
+  overflow-wrap: break-word;
+}
 
 /*human talk CSS */
 .human_talk{
   float: right;
   width: 75%;
+  min-height: 36px;
   margin: 6px 10px 6px 4px;
   background: white;
   padding: 2px 8px 2px 8px;
@@ -265,6 +272,7 @@ body, html{
   color: black;
   font-size: 14px;
   font-family: monospace;
+  overflow-wrap: break-word;
 }
 
 

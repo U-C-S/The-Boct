@@ -1,6 +1,6 @@
 console.log("Font Awesome v5.13.0");
 console.log("Animations by animista.net")
-console.log("I'm 'The BOcT' v1.2.1, created by @The-UCS-Variable");
+console.log("I'm 'The BOcT' v1.2.2 re, created by @The-UCS-Variable");
 /*------------------------------------------------------------------------------*/
 
 
@@ -21,7 +21,6 @@ function BOcT_open() {
   CLICK_BOT.removeEventListener("click", BOcT_open);
   CLICK_BOT.addEventListener("click", BOcT_annoy_clicks);
 }
-
 
 function talk_div_boct(talkContent) {
   var newDIV = document.createElement("div");
@@ -58,7 +57,7 @@ function talk_div_hooman() {
   newDIV.appendChild(talk_create);
   chat_boxx.value = "";
   scroll_update();
-  setTimeout(boct_study_chat, 800, chat_content);
+  setTimeout(boct_study_chat, 600, chat_content);
 }
 
 
@@ -76,8 +75,6 @@ function boct_study_chat(studycontent) {
    else if (letters < 4) { talk_div_boct('I dont believe your name is "' + studycontent + '"'); }
    else if (studycontent.indexOf('name') !== -1 ) { talk_div_boct('My name is BOcT'); }
    else if (notnum === true) { talk_div_boct('So ' + studycontent + ', You will have a Bright Future'); }
-
-
 }
 
 
@@ -114,7 +111,6 @@ _____________________
 /*
 console.log('working success');
 ---------------DUMP-------------------
-
 
 //old boct function
 
@@ -157,7 +153,5 @@ function typeWriter() {
   }
 }
 _____________________
-
-
 unit convertors
 */
