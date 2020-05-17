@@ -20,8 +20,6 @@ function BOcT_open() {
   document.getElementById("chatter").style.display="block";
   CLICK_BOT.removeEventListener("click", BOcT_open);
   CLICK_BOT.addEventListener("click", BOcT_annoy_clicks);
-
-  document.getElementById("typespace-id").focus();
 }
 
 
@@ -37,6 +35,8 @@ function talk_div_boct(talkContent) {
   newDIV.appendChild(talk_create);
   scroll_update();
 }
+
+
 
 talk_div_boct("Hoi, What's your name? \nDon't type nothing");
 
@@ -58,8 +58,9 @@ function talk_div_hooman() {
   newDIV.appendChild(talk_create);
   chat_boxx.value = "";
   scroll_update();
-  boct_study_chat(chat_content);
+  setTimeout(boct_study_chat, 800, chat_content);
 }
+
 
 function boct_study_chat(studycontent) {
   if (studycontent === "annoy me") {
@@ -91,13 +92,17 @@ function BOcT_annoy_clicks() {
 
 
 
+
 /*
 --list of functions here--
 _____________________
+- scroll_update
 - BOcT_open
-- BOcT_annoy_clicks
 - talk_div_boct
 - talk_div_hooman
+- boct_study_chat
+- BOcT_annoy_clicks
+
 
 _____________________
 
@@ -109,23 +114,6 @@ _____________________
 /*
 console.log('working success');
 ---------------DUMP-------------------
-
-function talk_div_boct(talkContent) {
-    var a = document.createElement("div");
-  var b = document.createElement("p");
-  var c = document.createAttribute("class");
-  var d = document.createTextNode(talkContent);
-
-  c.value = "boct_talk recent_talk";
-  a.setAttributeNode(c);
-  document.getElementById("chatspace").appendChild(a);
-  b.appendChild(d);
-  a.appendChild(b);
-}
-
-
-
-
 
 
 //old boct function
@@ -157,6 +145,19 @@ function annoyer() {  setInterval(function(){ alert("You are a IDIOT");}, 2000);
 
 click counter
 type Writer Effect
+_____________________
+var i = 0;
+var speed = 40;
+
+function typeWriter() {
+  if (i < talkContent.length) {
+    document.getElementById("demo").innerHTML += talkContent.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+}
+_____________________
+
 
 unit convertors
 */
