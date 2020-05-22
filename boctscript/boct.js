@@ -1,6 +1,6 @@
 console.log("Font Awesome v5.13.0");
 console.log("Animations by animista.net")
-console.log("I'm 'The BOcT' v1.2.2 re, created by @The-UCS-Variable");
+console.log("I'm 'The BOcT' v1.2.3, created by @The-UCS-Variable");
 /*------------------------------------------------------------------------------*/
 
 
@@ -71,6 +71,12 @@ function boct_study_chat(studycontent) {
   let notnum = isNaN(studycontent);
 
    if (notnum === false) { talk_div_boct('Type a name, YOU FOOL'); }
+   else if (studycontent === "age") {
+     var birthdate = new Date("05/06/2020");
+     var Difference_In_Time = Date.now() - birthdate.getTime();
+     var Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
+     talk_div_boct("Approx, " + Difference_In_Days + " days");
+   }
    else if (studycontent === 'no') { talk_div_boct('You are basically NOTHING!!!'); }
    else if (letters < 4) { talk_div_boct('I dont believe your name is "' + studycontent + '"'); }
    else if (studycontent.indexOf('name') !== -1 ) { talk_div_boct('My name is BOcT'); }
@@ -85,7 +91,6 @@ function BOcT_annoy_clicks() {
      talk_div_boct("Stop annoying me!");
    }
 }
-
 
 
 
