@@ -7,7 +7,7 @@ function stopLoading() {
 
 //scroll to bottom after a new message
 function scroll_update() {
-  var chat_scroll = document.getElementById("chatspace");
+  const chat_scroll = document.getElementById("chatspace");
   chat_scroll.scrollTop = chat_scroll.scrollHeight;
 }
 
@@ -24,10 +24,10 @@ function BOcT_open() {
 }
 
 function talk_div_boct(talkContent) {
-  var newDIV = document.createElement("div");
-  var attr = document.createAttribute("class");
-  var talk_create = document.createElement("p");
-  var talk_matter = document.createTextNode(talkContent);
+  const newDIV = document.createElement("div");
+  const attr = document.createAttribute("class");
+  const talk_create = document.createElement("p");
+  const talk_matter = document.createTextNode(talkContent);
   attr.value = "boct_talk recent_talk";
   newDIV.setAttributeNode(attr);
   document.getElementById("chatspace").appendChild(newDIV);
@@ -45,12 +45,12 @@ const SEND_MSG_TO_BOCT = document.getElementById("typespace-enter-id");
 SEND_MSG_TO_BOCT.addEventListener("click", talk_div_hooman);
 
 function talk_div_hooman() {
-  var chat_boxx = document.querySelector(".typespace");
-  var chat_content = chat_boxx.value;
-  var newDIV = document.createElement("div");
-  var attr = document.createAttribute("class");
-  var talk_create = document.createElement("p");
-  var talk_matter = document.createTextNode(chat_content);
+  const chat_boxx = document.querySelector(".typespace");
+  const chat_content = chat_boxx.value;
+  const newDIV = document.createElement("div");
+  const attr = document.createAttribute("class");
+  const talk_create = document.createElement("p");
+  const talk_matter = document.createTextNode(chat_content);
   attr.value = "human_talk";
   newDIV.setAttributeNode(attr);
   document.getElementById("chatspace").appendChild(newDIV);
@@ -79,9 +79,9 @@ function boct_study_chat(studycontent) {
      talk_div_boct("Approx, " + Difference_In_Days + " days");
    }
    else if (studycontent === 'no') { talk_div_boct('You are basically NOTHING!!!'); }
-   else if (letters < 4) { talk_div_boct('I dont believe your name is "' + studycontent + '"'); }
+   else if (letters < 4) { talk_div_boct(`I dont believe your name is ${studycontent}`); }
    else if (studycontent.indexOf('name') !== -1 ) { talk_div_boct('My name is BOcT'); }
-   else if (notnum === true) { talk_div_boct('So ' + studycontent + ', You will have a Bright Future'); }
+   else if (notnum === true) { talk_div_boct(`So ${studycontent}, You will have a Bright Future`); }
 }
 
 
@@ -143,4 +143,5 @@ function typeWriter() {
 }
 _____________________
 unit convertors
+punchuation ignore
 */
