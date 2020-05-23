@@ -1,8 +1,8 @@
-console.log("Font Awesome v5.13.0");
-console.log("Animations by animista.net")
 console.log("I'm 'The BOcT' v1.2.3, created by @The-UCS-Variable");
+window.onload = function () {
+  document.getElementById("loader").style.display="none";
+}
 /*------------------------------------------------------------------------------*/
-
 
 //scroll to bottom after a new message
 function scroll_update() {
