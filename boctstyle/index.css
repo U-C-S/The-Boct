@@ -321,7 +321,7 @@ body, html{
   transition: all 0.1s linear;
 }
 .typespace-enter:hover, .typespace-enter:focus{
-  color: hsl(351, 100%, 70%);
+  color: hsl(351, 100%, 90%);
 }
 .typespace-enter:active{
   font-size: 16px;
@@ -368,6 +368,8 @@ footer > div > a:hover, footer > div > a:focus{
 @media screen and (max-width: 500px) {
   .heading h1{
     font-size: 26px;
+    animation: none;
+    -webkit-animation: none;
   }
   .bot-head{
     height: 60px;
@@ -404,11 +406,16 @@ footer > div > a:hover, footer > div > a:focus{
 * See http://animista.net/license for more info.
 * w: http://animista.net, t: @cssanimista
 *-----------------------------------------------------------
+And also:
+------ Thanks to ------------
+->  https://projects.lukehaas.me/css-loaders/
+->  https://redstapler.co/add-loading-animation-to-website/
+*----- For the Following loading Code ----------
 */
-
 
 .loader-wrapper {
   width: 100%;
+  min-width: 300px;
   height: 100%;
   position: absolute;
   top: 0;

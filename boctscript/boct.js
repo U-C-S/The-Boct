@@ -1,8 +1,9 @@
 console.log("I'm 'The BOcT' v1.2.3, created by @The-UCS-Variable");
-window.onload = function () {
+window.onload = setTimeout(stopLoading, 2137);
+/*------------------------------------------------------------------------------*/
+function stopLoading() {
   document.getElementById("loader").style.display="none";
 }
-/*------------------------------------------------------------------------------*/
 
 //scroll to bottom after a new message
 function scroll_update() {
@@ -98,6 +99,7 @@ function BOcT_annoy_clicks() {
 /*
 --list of functions here--
 _____________________
+- stopLoading
 - scroll_update
 - BOcT_open
 - talk_div_boct
