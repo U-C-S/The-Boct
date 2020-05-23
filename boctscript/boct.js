@@ -94,7 +94,7 @@ function BOcT_annoy_clicks() {
 }
 
 
-
+console.log("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse congue facilisis orci, ut porta quam euismod at. In hac habitasse platea dictumst. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam elit urna, tincidunt eget purus eu, porta accumsan mi. In diam elit, porta et rhoncus eget, tristique non velit. Phasellus euismod elementum lectus ultrices semper. Aliquam molestie nisi auctor lorem varius bibendum. Phasellus a vulputate purus, sed condimentum nunc. Fusce lobortis blandit turpis. Donec scelerisque turpis sapien, nec volutpat erat venenatis id. Aenean semper vitae augue in facilisis. Nulla facilisi. Proin ut dignissim sapien. Nulla mollis sem nec magna lacinia porta. Ut ac orci facilisis, iaculis nunc sit amet, semper massa. Aliquam in enim at mi viverra accumsan in at nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse congue facilisis orci, ut porta quam euismod at. In hac habitasse platea dictumst. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam elit urna, tincidunt eget purus eu, porta accumsan mi. In diam elit, porta et rhoncus eget, tristique non velit. Phasellus euismod elementum lectus ultrices semper. Aliquam molestie nisi auctor lorem varius bibendum. Phasellus a vulputate purus, sed condimentum nunc. Fusce lobortis blandit turpis. Donec scelerisque turpis sapien, nec volutpat erat venenatis id. Aenean semper vitae augue in facilisis. Nulla facilisi. Proin ut dignissim sapien. Nulla mollis sem nec magna lacinia porta. Ut ac orci facilisis, iaculis nunc sit amet, semper massa. Aliquam in enim at mi viverra accumsan in at nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse congue facilisis orci, ut porta quam euismod at. In hac habitasse platea dictumst. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam elit urna, tincidunt eget purus eu, porta accumsan mi. In diam elit, porta et rhoncus eget, tristique non velit. Phasellus euismod elementum lectus ultrices semper. Aliquam molestie nisi auctor lorem varius bibendum. Phasellus a vulputate purus, sed condimentum nunc. Fusce lobortis blandit turpis. Donec scelerisque turpis sapien, nec volutpat erat venenatis id. Aenean semper vitae augue in facilisis. Nulla facilisi. Proin ut dignissim sapien. Nulla mollis sem nec magna lacinia porta. Ut ac orci facilisis, iaculis nunc sit amet, semper massa. Aliquam in enim at mi viverra accumsan in at nulla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse congue facilisis orci, ut porta quam euismod at. In hac habitasse platea dictumst. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam elit urna, tincidunt eget purus eu, porta accumsan mi. In diam elit, porta et rhoncus eget, tristique non velit. Phasellus euismod elementum lectus ultrices semper. Aliquam molestie nisi auctor lorem varius bibendum. Phasellus a vulputate purus, sed condimentum nunc. Fusce lobortis blandit turpis. Donec scelerisque turpis sapien, nec volutpat erat venenatis id. Aenean semper vitae augue in facilisis. Nulla facilisi. Proin ut dignissim sapien. Nulla mollis sem nec magna lacinia porta. Ut ac orci facilisis, iaculis nunc sit amet, semper massa. Aliquam in enim at mi viverra accumsan in at nulla.");
 
 /*
 --list of functions here--
@@ -118,35 +118,17 @@ _____________________
 /*
 console.log('working success');
 ---------------DUMP-------------------
-
-//old boct function
-
-
-    const name = prompt("Hoi, What's your name? \nDon't type nothing");
-     if(name != null) {var letters = name.length; }
-     let notnum = isNaN(name);
-
-      if(name === null) { alert('YOU LEGENDARY IDIOT!'); }
-      else if (name === 'nothing' || 'no') { alert('You are basically NOTHING!!!'); }
-      else if (notnum === false) { alert('Type a name, YOU FOOL'); }
-      else if (letters < 4) { alert('I dont believe your name is "' + name + '"'); }
-      else if (name.indexOf('name') !== -1 ) {alert('My name is BOcT'); }
-      else if (notnum === true) {
-         alert('So ' + name + ', You will have a Bright Future');
-    }
-
     document.getElementById('typespace-id').focus();
-
 
 
   function random(number) {
     return Math.floor(Math.random() * (number+1));
   }
 
-//The Annoy me! function
-function annoyer() {  setInterval(function(){ alert("You are a IDIOT");}, 2000);  }
-
+The Annoy me! function
 click counter
+
+
 type Writer Effect
 _____________________
 var i = 0;

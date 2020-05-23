@@ -417,7 +417,7 @@ And also:
   width: 100%;
   min-width: 300px;
   height: 100%;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   background-color: black;
