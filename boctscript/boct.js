@@ -58,8 +58,9 @@ function talk_div_hooman() {
   newDIV.appendChild(talk_create);
   chat_boxx.value = "";
   scroll_update();
-  setTimeout(boct_study_chat, 600, chat_content);
+  setTimeout(proto_boct_study_chat, 600, chat_content);
 }
+//61 is proto
 
 
 function boct_study_chat(studycontent) {
@@ -91,6 +92,29 @@ function BOcT_annoy_clicks() {
      click_count = 0;
      talk_div_boct("Stop annoying me!");
    }
+}
+
+
+
+/* PROTOTYPING or TESTING ARENA -------------------------*/
+var proto_blah = {
+  num_words: 2,
+  words: ['age','how long'],
+  ageFunction: function() {
+    var birthdate = new Date("05/06/2020");
+    var Difference_In_Time = Date.now() - birthdate.getTime();
+    var Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
+    talk_div_boct("Approx, " + Difference_In_Days + " days");
+  }
+}
+
+function proto_boct_study_chat(studycontent) {
+  for(let i = 0; i < proto_blah.num_words; i++) {
+    if(studycontent === proto_blah.words[i]){
+      proto_blah.ageFunction();
+    }
+  }
+
 }
 
 
