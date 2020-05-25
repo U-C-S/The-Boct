@@ -44,7 +44,11 @@
    <div class="type_box">
      <form class="type_box-inner" action="javascript:void(0);">
         <input class="typespace" id="typespace-id" type="text" placeholder="Wanna talk with BOcT? Then type here..!" autocomplete="off" maxlength="180" spellcheck="true">
-        <button class="typespace-enter" id="typespace-enter-id" type="submit"><i class="fas fa-play"></i></button>
+        <button class="typespace-enter" id="typespace-enter-id" type="submit">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+            <path d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"/>
+          </svg>
+        </button>
      </form>
    </div>
  </div>
@@ -61,7 +65,9 @@
 
 <!-- Loading screen ---------------------------------------------->
  <div class="loader-wrapper" id="loader">
-   <div class="loader">Loading...</div>
+   <div class="loader">
+     <div class="load_bar"></div>
+   </div>
  </div>
 
 

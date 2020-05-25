@@ -21,8 +21,8 @@ body, html{
   font-size: 40px;
   user-select: none;
   -ms-user-select: none;
-  -webkit-animation: focus-in-expand 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-  animation: focus-in-expand 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  -webkit-animation: focus-in-expand 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) 3s both;
+  animation: focus-in-expand 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) 3s both;
 }
 @-webkit-keyframes focus-in-expand {
   0% {
@@ -60,8 +60,8 @@ body, html{
   padding: 5px;
   height: 80px;
   text-align: center;
-  -webkit-animation: flicker-in-1 2.3s linear forwards;
-	 animation: flicker-in-1 2.3s linear forwards;
+  -webkit-animation: flicker-in-1 2.3s linear 2.7s forwards;
+	 animation: flicker-in-1 2.3s linear 2.7s forwards;
 }
 @-webkit-keyframes flicker-in-1 {
   0% {opacity: 0;}
@@ -308,24 +308,26 @@ body, html{
 .typespace-enter {
   width: 40px;
   height: 36px;
-  border: 1px solid black;
-  padding: 5px;
+  padding: 8px;
   background: black;
   box-shadow: 0 0 15px black;
   text-align: center;
-  color: white;
   border-radius: 0 5px 5px 0;
   cursor: pointer;
   outline: none;
-  font-size: 18px;
+  border: none;
+  align-items: center;
+}
+.typespace-enter > svg{
+  fill: white;
+  width: 17px;
+  height: 17px;
+  margin: auto;
+  text-align: center;
   transition: all 0.1s linear;
 }
-.typespace-enter:hover, .typespace-enter:focus{
-  color: hsl(351, 100%, 90%);
-}
-.typespace-enter:active{
-  font-size: 16px;
-  color: #ff1439;
+.typespace-enter > svg:active{
+  fill: #ff1439;
 }
 
 
@@ -408,9 +410,8 @@ footer > div > a:hover, footer > div > a:focus{
 *-----------------------------------------------------------
 And also:
 ------ Thanks to ------------
-->  https://projects.lukehaas.me/css-loaders/
 ->  https://redstapler.co/add-loading-animation-to-website/
-*----- For the Following loading Code ----------
+---------------
 */
 
 .loader-wrapper {
@@ -421,70 +422,29 @@ And also:
   top: 0;
   left: 0;
   background-color: black;
+  padding: 10px;
   display:flex;
-  justify-content: center;
-  align-items: center;
 }
-.loader {
-  font-size: 10px;
-  margin: 5px auto;
-  text-indent: -9999em;
-  width: 10em;
-  height: 10em;
-  border-radius: 50%;
-  background: #ff1439;
-  background: -moz-linear-gradient(left, #ff1439 10%, rgba(255,20,57, 0) 42%);
-  background: -webkit-linear-gradient(left, #ff1439 10%, rgba(255,20,57, 0) 42%);
-  background: -o-linear-gradient(left, #ff1439 10%, rgba(255,20,57, 0) 42%);
-  background: -ms-linear-gradient(left, #ff1439 10%, rgba(255,20,57, 0) 42%);
-  background: linear-gradient(to right, #ff1439 10%, rgba(255,20,57, 0) 42%);
-  position: relative;
-  -webkit-animation: load3 1s infinite linear;
-  animation: load3 1s infinite linear;
-  -webkit-transform: translateZ(0);
-  -ms-transform: translateZ(0);
-  transform: translateZ(0);
-}
-.loader:before {
-  width: 50%;
-  height: 50%;
-  background: #ff1439;
-  border-radius: 100% 0 0 0;
-  position: absolute;
-  top: 0;
-  left: 0;
-  content: '';
-}
-.loader:after {
-  background: #000000;
-  width: 75%;
-  height: 75%;
-  border-radius: 50%;
-  content: '';
+
+
+.loader{
+  width: 150px;
+  height: 18px;
+  background-color: black;
+  border: 2px solid white;
+  padding: 2px;
   margin: auto;
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
 }
-@-webkit-keyframes load3 {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
+
+.load_bar{
+  width: 100%;
+  height: 18px;
+  background-color: white;
+  animation: load 2.5s;
 }
-@keyframes load3 {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
+@keyframes load{
+  0% {width: 0%;}
+  40% {width: 25%;}
+  65% {width: 70%;}
+  100% {width: 100%;}
 }
