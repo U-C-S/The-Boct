@@ -46,7 +46,7 @@ SEND_MSG_TO_BOCT.addEventListener("click", talk_div_hooman);
 
 function talk_div_hooman() {
   const chat_boxx = document.querySelector(".typespace");
-  const chat_content = chat_boxx.value;
+  var chat_content = chat_boxx.value;
   const newDIV = document.createElement("div");
   const attr = document.createAttribute("class");
   const talk_create = document.createElement("p");
@@ -58,10 +58,14 @@ function talk_div_hooman() {
   newDIV.appendChild(talk_create);
   chat_boxx.value = "";
   scroll_update();
-  setTimeout(proto_boct_study_chat, 600, chat_content);
+  setTimeout(proto_boct_study_chat, 800, chat_content);
+  return chat_content;
 }
 //61 is proto
 
+var boct_study_chat = () =>{
+
+}
 
 function BOcT_annoy_clicks() {
    click_count += 1;
@@ -74,24 +78,36 @@ function BOcT_annoy_clicks() {
 
 
 /* PROTOTYPING or TESTING ARENA -------------------------*/
-var proto_blah = {
+const read_age = {
   num_words: 2,
   words: ['age','how long'],
-  ageFunction: function() {
+  reply: function() {
     var birthdate = new Date("05/06/2020");
     var Difference_In_Time = Date.now() - birthdate.getTime();
     var Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
-    talk_div_boct("Approx, " + Difference_In_Days + " days");
+    talk_div_boct(`Approx, ${Difference_In_Days} days`);
   }
 }
+const read_empty = {
+  words: [''],
+  reply: function() {
+    talk_div_boct('Oh! Come on. Reply Something Sensible');
+  }
+}
+
+
 
 function proto_boct_study_chat(studycontent) {
-  for(let i = 0; i < proto_blah.num_words; i++) {
-    if(studycontent === proto_blah.words[i]){
-      proto_blah.ageFunction();
+  for(let i = 0; i < read_age.num_words; i++) {
+    if(studycontent === read_age.words[i]){
+      read_age.reply();
     }
   }
-
+  for(let i = 0; i < read_empty.words.length; i++) {
+    if(studycontent === read_empty.words[i]){
+      read_empty.reply();
+    }
+  }
 }
 
 
@@ -100,7 +116,7 @@ function proto_boct_study_chat(studycontent) {
 
 
 
-
+/*
 
 
 function boct_study_chat(studycontent) {
@@ -112,15 +128,31 @@ function boct_study_chat(studycontent) {
   if(studycontent != null) {var letters = studycontent.length; }
   let notnum = isNaN(studycontent);
 
-   if (notnum === false) { talk_div_boct('Type a name, YOU FOOL'); }
-   else if (studycontent === "age") {
-     var birthdate = new Date("05/06/2020");
-     var Difference_In_Time = Date.now() - birthdate.getTime();
-     var Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
-     talk_div_boct("Approx, " + Difference_In_Days + " days");
-   }
+
    else if (studycontent === 'no') { talk_div_boct('You are basically NOTHING!!!'); }
    else if (letters < 4) { talk_div_boct(`I dont believe your name is ${studycontent}`); }
    else if (studycontent.indexOf('name') !== -1 ) { talk_div_boct('My name is BOcT'); }
    else if (notnum === true) { talk_div_boct(`So ${studycontent}, You will have a Bright Future`); }
 }
+
+
+if (notnum === false) { talk_div_boct('Type a name, YOU FOOL'); }
+
+else if (studycontent === "age") {
+  var birthdate = new Date("05/06/2020");
+  var Difference_In_Time = Date.now() - birthdate.getTime();
+  var Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
+  talk_div_boct("Approx, " + Difference_In_Days + " days");
+}
+
+
+
+const read_google = {
+  words: ['google '],
+  reply: function() {
+
+  }
+}
+
+
+*/

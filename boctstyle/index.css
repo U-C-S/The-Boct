@@ -21,8 +21,8 @@ body, html{
   font-size: 40px;
   user-select: none;
   -ms-user-select: none;
-  -webkit-animation: focus-in-expand 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) 3s both;
-  animation: focus-in-expand 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) 3s both;
+  -webkit-animation: focus-in-expand 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) 2.7s both;
+  animation: focus-in-expand 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) 2.7s both;
 }
 @-webkit-keyframes focus-in-expand {
   0% {
@@ -432,7 +432,8 @@ And also:
   height: 18px;
   background-color: black;
   border: 2px solid white;
-  padding: 2px;
+  box-shadow: 0 0 100px white;
+  padding: 3px;
   margin: auto;
 }
 
