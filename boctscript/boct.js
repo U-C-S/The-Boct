@@ -82,10 +82,10 @@ const read_age = {
   num_words: 2,
   words: ['age','how long'],
   reply: function() {
-    var birthdate = new Date("05/06/2020");
+    var birthdate = new Date(2020, 4, 5, 17, 43, 0, 0);
     var Difference_In_Time = Date.now() - birthdate.getTime();
     var Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
-    talk_div_boct(`Approx, ${Difference_In_Days} days`);
+    talk_div_boct(`I was created approx ${Difference_In_Days} days ago`);
   }
 }
 const read_empty = {
