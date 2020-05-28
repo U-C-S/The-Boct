@@ -22,7 +22,7 @@ talk_div_boct("Hoi, What's your name? \nDon't type nothing");
 
 
 
-export { talk_div_boct,scroll_update };
+//export { talk_div_boct,scroll_update };
 
 
 

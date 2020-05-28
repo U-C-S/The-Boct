@@ -1,4 +1,4 @@
-import { talk_div_boct,scroll_update } from "/boctscript/boct.js";
+//import { talk_div_boct,scroll_update } from "/boctscript/boct.js";
 
 const SEND_MSG_TO_BOCT = document.getElementById("typespace-enter-id");
 SEND_MSG_TO_BOCT.addEventListener("click", talk_div_hooman);

@@ -16,7 +16,7 @@ function BOcT_open() {
   CLICK_BOT.addEventListener("click", BOcT_annoy_clicks);
 }
 
-import { talk_div_boct } from "/boctscript/boct.js";
+//import { talk_div_boct } from "/boctscript/boct.js";
 function BOcT_annoy_clicks() {
     click_count += 1;
     if (click_count === 10) {
