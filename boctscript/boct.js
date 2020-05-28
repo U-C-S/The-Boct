@@ -28,7 +28,7 @@ function talk_div_boct(talkContent) {
   const attr = document.createAttribute("class");
   const talk_create = document.createElement("p");
   const talk_matter = document.createTextNode(talkContent);
-  attr.value = "boct_talk recent_talk";
+  attr.value = "boct_talk";
   newDIV.setAttributeNode(attr);
   document.getElementById("chatspace").appendChild(newDIV);
   talk_create.appendChild(talk_matter);
@@ -46,7 +46,7 @@ SEND_MSG_TO_BOCT.addEventListener("click", talk_div_hooman);
 
 function talk_div_hooman() {
   const chat_boxx = document.querySelector(".typespace");
-  var chat_content = chat_boxx.value;
+  const chat_content = chat_boxx.value;
   const newDIV = document.createElement("div");
   const attr = document.createAttribute("class");
   const talk_create = document.createElement("p");
@@ -56,16 +56,14 @@ function talk_div_hooman() {
   document.getElementById("chatspace").appendChild(newDIV);
   talk_create.appendChild(talk_matter);
   newDIV.appendChild(talk_create);
-  chat_boxx.value = "";
+
   scroll_update();
-  setTimeout(proto_boct_study_chat, 800, chat_content);
-  return chat_content;
+  chat_boxx.value = "";
+  var chat_contenta = chat_content.trim().toLowerCase();
+  setTimeout(proto_boct_study_chat, 800, chat_contenta);
 }
-//61 is proto
+//proto above
 
-var boct_study_chat = () =>{
-
-}
 
 function BOcT_annoy_clicks() {
    click_count += 1;
@@ -75,10 +73,8 @@ function BOcT_annoy_clicks() {
    }
 }
 
-
-
 /* PROTOTYPING or TESTING ARENA -------------------------*/
-const read_age = {
+const readage = {
   words: ['age','how long','what is your age'],
   reply: function() {
     var birthdate = new Date(2020, 4, 5, 17, 43, 0, 0);
@@ -87,13 +83,13 @@ const read_age = {
     talk_div_boct(`I was created approx ${Difference_In_Days} days ago`);
   }
 }
-const read_empty = {
+const readempty = {
   words: [''],
   reply: function() {
     talk_div_boct('Oh! Come on. Reply Something Sensible');
   }
 }
-const read_annoy = {
+const readannoy = {
   words: ['annoy me','idiot'],
   reply: function() {
     for (let i = 0; i < 10; i++) {
@@ -101,21 +97,14 @@ const read_annoy = {
   }
 }
 
+const readables = [readage , readempty , readannoy];
 
 function proto_boct_study_chat(studycontent) {
-  for(let i = 0; i < read_age.words.length; i++) {
-    if(studycontent === read_age.words[i]){
-      read_age.reply();
-    }
-  }
-  for(let i = 0; i < read_empty.words.length; i++) {
-    if(studycontent === read_empty.words[i]){
-      read_empty.reply();
-    }
-  }
-  for(let i = 0; i < read_annoy.words.length; i++) {
-    if(studycontent === read_annoy.words[i]){
-      read_annoy.reply();
+  for(let i = 0; i < readables.length; i++) {
+    for (let j = 0; j < readables[i].words.length; j++) {
+      if(studycontent === readables[i].words[j]){
+        readables[i].reply();
+      }
     }
   }
 }
