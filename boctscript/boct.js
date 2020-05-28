@@ -79,8 +79,7 @@ function BOcT_annoy_clicks() {
 
 /* PROTOTYPING or TESTING ARENA -------------------------*/
 const read_age = {
-  num_words: 2,
-  words: ['age','how long'],
+  words: ['age','how long','what is your age'],
   reply: function() {
     var birthdate = new Date(2020, 4, 5, 17, 43, 0, 0);
     var Difference_In_Time = Date.now() - birthdate.getTime();
@@ -94,11 +93,17 @@ const read_empty = {
     talk_div_boct('Oh! Come on. Reply Something Sensible');
   }
 }
-
+const read_annoy = {
+  words: ['annoy me','idiot'],
+  reply: function() {
+    for (let i = 0; i < 10; i++) {
+      talk_div_boct("You're a IDIOT"); }
+  }
+}
 
 
 function proto_boct_study_chat(studycontent) {
-  for(let i = 0; i < read_age.num_words; i++) {
+  for(let i = 0; i < read_age.words.length; i++) {
     if(studycontent === read_age.words[i]){
       read_age.reply();
     }
@@ -108,9 +113,12 @@ function proto_boct_study_chat(studycontent) {
       read_empty.reply();
     }
   }
+  for(let i = 0; i < read_annoy.words.length; i++) {
+    if(studycontent === read_annoy.words[i]){
+      read_annoy.reply();
+    }
+  }
 }
-
-
 
 
 

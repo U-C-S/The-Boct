@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Megrim&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Overpass&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
 
 body, html{
   background-color: black;
@@ -209,9 +211,6 @@ body, html{
   padding: 2px 8px 2px 8px;
   position: relative;
   background: #e64c63;
-  font-size: 14px;
-  color: black;
-  font-family: monospace;
 }
 
 .boct_talk:after, .boct_talk:before {
@@ -235,12 +234,6 @@ body, html{
 	border-right-color: #ffffff;
 	border-width: 11px;
 	margin-top: -11px;
-}
-.boct_talk > p{
-  color: black;
-  font-size: 14px;
-  font-family: monospace;
-  overflow-wrap: break-word;
 }
 
 /*human talk CSS */
@@ -268,10 +261,10 @@ body, html{
   margin-top: -8px;
 }
 
-.human_talk > p{
+.human_talk > p , .boct_talk > p{
   color: black;
   font-size: 14px;
-  font-family: monospace;
+  font-family: "Quicksand", "Arial", sans-serif;
   overflow-wrap: break-word;
 }
 
@@ -345,11 +338,11 @@ footer > div{
    float: left;
    margin: auto 2%;
 }
-footer > div > a{
+footer > div > a {
    color: white;
    outline: none;
    text-decoration: none;
-   font-family: monospace;
+   font-family: 'Overpass', sans-serif;
    font-size: 12px;
 }
 footer > div > a:hover, footer > div > a:focus{
