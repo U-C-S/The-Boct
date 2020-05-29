@@ -18,19 +18,31 @@ function talk_div_boct(talkContent) {
   scroll_update();
 }
 
-talk_div_boct("Hoi, What's your name? \nDon't type nothing");
+talk_div_boct("I can partially understand you. Maybe, say hi to me or ask my age. But, Don't call me an idiot");
 
+const SEND_MSG_TO_BOCT = document.getElementById("typespace-enter-id");
+SEND_MSG_TO_BOCT.addEventListener("click", talk_div_hooman);
 
+function talk_div_hooman() {
+  const chat_boxx = document.querySelector(".typespace");
+  const chat_content = chat_boxx.value;
+  const newDIV = document.createElement("div");
+  const attr = document.createAttribute("class");
+  const talk_create = document.createElement("p");
+  const talk_matter = document.createTextNode(chat_content);
+  attr.value = "human_talk";
+  newDIV.setAttributeNode(attr);
+  document.getElementById("chatspace").appendChild(newDIV);
+  talk_create.appendChild(talk_matter);
+  newDIV.appendChild(talk_create);
+
+  scroll_update();
+  chat_boxx.value = "";
+  var chat_contenta = chat_content.trim().toLowerCase();
+  setTimeout(proto_boct_study_chat, 800, chat_contenta);
+}
 
 //export { talk_div_boct,scroll_update };
-
-
-
-/* PROTOTYPING or TESTING ARENA -------------------------*/
-
-
-
-
 
 
 /*
