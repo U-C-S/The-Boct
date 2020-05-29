@@ -4,7 +4,6 @@ function scroll_update() {
   chat_scroll.scrollTop = chat_scroll.scrollHeight;
 }
 
-
 function talk_div_boct(talkContent) {
   const newDIV = document.createElement("div");
   const attr = document.createAttribute("class");

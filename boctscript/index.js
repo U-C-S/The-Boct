@@ -3,6 +3,8 @@ window.onload = setTimeout(stopLoading, 2713);
 /*------------------------------------------------------------------------------*/
 function stopLoading() {
   document.getElementById("loader").style.display="none";
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
 }
 
 var click_count = 0;
