@@ -43,7 +43,14 @@ const readok = {
   }
 }
 
-const readables = [intro, readage , readempty , readannoy, readNo, readok];
+const readso = {
+  words: ['so','what else'],
+  reply: ()=> {
+    talk_div_boct("I am not so brilliant to say something!");
+  }
+}
+
+const readables = [intro, readage , readempty , readannoy, readNo, readok, readso];
 
 function proto_boct_study_chat(studycontent) {
   for(let i = 0; i < readables.length; i++) {
