@@ -6,4 +6,6 @@
 <p>Check out the Progress <a href="https://the-ucs-variable.github.io/The-BOcT/">here</a></p>
 
 <p>98% Self-Made</p>
-Also, This is my Self-Learning JavaScript Project (learning from MDN)
+<p>Also, This is my Self-Learning JavaScript Project (learning from MDN)</p>
+
+<p>Purpose of the BOcT is suggesting movies, talk some nonsense etc</p>
