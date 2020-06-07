@@ -7,7 +7,7 @@ const intro = {
 }
 
 const readage = {
-  words: ['age','how long','what is your age','whats your age'],
+  words: ['age','what is your age','whats your age','your age'],
   reply: function() {
     var birthdate = new Date(2020, 4, 5, 17, 43, 0, 0);
     var Difference_In_Time = Date.now() - birthdate.getTime();
@@ -15,12 +15,14 @@ const readage = {
     talk_div_boct(`I was created approx ${Difference_In_Days} days ago`);
   }
 }
+
 const readempty = {
   words: [''],
   reply: function() {
     talk_div_boct('Oh! Come on. Talk Something Sensible');
   }
 }
+
 const readannoy = {
   words: ['annoy me','idiot'],
   reply: function() {
@@ -29,6 +31,7 @@ const readannoy = {
       talk_div_boct("You're a IDIOT"); }
   }
 }
+
 const readNo = {
   words: ['no','nothing','i dont know'],
   reply: function() {

@@ -14,8 +14,7 @@ body, html{
   min-width: 310px;
   padding: 5px 5px 10px;
 }
-/*title*/
-.heading h1{
+#title{
   margin: 0;
   color: white;
   font-family: 'Megrim', monospace;
@@ -23,7 +22,6 @@ body, html{
   font-size: 40px;
   user-select: none;
   -ms-user-select: none;
-  animation: focus-in-expand 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) 2.7s both;
 }
 @keyframes focus-in-expand {
   0% {
@@ -40,15 +38,14 @@ body, html{
 }
 
 
-/*content-div-bot (or) head of the bot -----------------------------------------*/
-.bot-head{
+/*.bot-head (or) head of the bot -----------------------------------------*/
+#content-div-bot{
   margin: 10px auto 575px;
   width: 20%;
   min-width: 310px;
   padding: 5px;
   height: 80px;
   text-align: center;
-	 animation: flicker-in-1 2.3s linear 2.7s forwards;
 }
 @keyframes flicker-in-1 {
   0% {opacity: 0;}
@@ -340,7 +337,6 @@ footer > div > a:hover, footer > div > a:focus{
     height: 488px;
   }
 }
-
 @media screen and (max-width: 880px) {
   .type_box{
     width: 96%;
@@ -355,12 +351,10 @@ footer > div > a:hover, footer > div > a:focus{
 * See http://animista.net/license for more info.
 * w: http://animista.net, t: @cssanimista
 *-----------------------------------------------------------
-And also:
------- Thanks to ------------
+And also: Thanks to
 ->  https://redstapler.co/add-loading-animation-to-website/
 ---------------
 */
-
 .loader-wrapper {
   width: 100%;
   min-width: 300px;
@@ -372,7 +366,6 @@ And also:
   padding: 10px;
   display: flex;
 }
-
 .loader{
   width: 150px;
   height: 18px;
@@ -382,12 +375,11 @@ And also:
   padding: 3px;
   margin: auto;
 }
-
 .load_bar{
   width: 100%;
   height: 18px;
   background-color: white;
-  animation: load 2.5s linear;
+  animation: load 2s linear;
 }
 @keyframes load{
   0% {width: 0%;}

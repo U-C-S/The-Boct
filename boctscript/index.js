@@ -1,10 +1,12 @@
 console.log("I'm 'The BOcT' v1.2.3, created by @The-UCS-Variable");
-window.onload = setTimeout(stopLoading, 2713);
 /*------------------------------------------------------------------------------*/
+window.onload = setTimeout(stopLoading, 2173);
 function stopLoading() {
   document.getElementById("loader").style.display="none";
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
+  document.getElementById('content-div-bot').style.animation = "flicker-in-1 2.3s linear forwards";
+  document.getElementById('title').style.animation = "focus-in-expand 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both";
 }
 
 var click_count = 0;
