@@ -1,9 +1,13 @@
-const intro = {
-  words: ['hi','hello','hey','heya'],
-  reply: function() {
-    talk_div_boct("Hi to you too!");
+class directReplies {
+  constructor(inWrds,outsen) {
+    this.words = inWrds;
+    this.reply = ()=>{talk_div_boct(outsen);}
   }
 }
+
+const intro = new directReplies(['hi','hello','hey','heya'], "Hi to you too");
+const readempty = new directReplies([''],"Oh! Come on. Talk Something Sensible");
+const readNo = new directReplies(['no','nothing','i dont know'], "You are basically NOTHING!!!")
 
 const readage = {
   words: ['age','what is your age','whats your age','your age'],
@@ -12,13 +16,6 @@ const readage = {
     var Difference_In_Time = Date.now() - birthdate.getTime();
     var Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
     talk_div_boct(`I was created approx ${Difference_In_Days} days ago`);
-  }
-}
-
-const readempty = {
-  words: [''],
-  reply: function() {
-    talk_div_boct('Oh! Come on. Talk Something Sensible');
   }
 }
 
@@ -31,12 +28,6 @@ const readannoy = {
   }
 }
 
-const readNo = {
-  words: ['no','nothing','i dont know'],
-  reply: function() {
-    talk_div_boct("You are basically NOTHING!!!");
-  }
-}
 
 const readok = {
   words: ['ok','ohk','ogk','wow','great','excellent','nice','awesome'],
@@ -52,6 +43,12 @@ const readso = {
   }
 }
 
+const googlestuff = {
+  words: "google ",
+  reply: ()=> {
+  }
+}
+
 const readables = [intro, readage , readempty , readannoy, readNo, readok, readso];
 
 function proto_boct_study_chat(studycontent) {
@@ -64,3 +61,22 @@ function proto_boct_study_chat(studycontent) {
     }
   }
 }
+
+
+/*
+const readempty = {
+  words: [''],
+  reply: function() {
+    talk_div_boct('Oh! Come on. Talk Something Sensible');
+  }
+}
+
+const readNo = {
+  words: ['no','nothing','i dont know'],
+  reply: function() {
+    talk_div_boct("You are basically NOTHING!!!");
+  }
+}
+
+
+*/
