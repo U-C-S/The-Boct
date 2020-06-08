@@ -1,4 +1,3 @@
-//import { talk_div_boct,scroll_update } from "/boctscript/boct.js";
 const intro = {
   words: ['hi','hello','hey','heya'],
   reply: function() {
