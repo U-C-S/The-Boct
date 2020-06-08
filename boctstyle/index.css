@@ -312,15 +312,11 @@ footer > div > a:hover, footer > div > a:focus{
 }
 
 @media screen and (max-width: 500px) {
-  .heading h1{
+  #title{
     font-size: 26px;
-    animation: none;
-    -webkit-animation: none;
   }
   .bot-head{
     height: 60px;
-    animation: none;
-    -webkit-animation: none;
   }
   .bot-btn > svg{
     width: 55px;
@@ -331,7 +327,6 @@ footer > div > a:hover, footer > div > a:focus{
     width: 96%;
     min-width: 300px;
     animation: none;
-    -webkit-animation: none;
   }
   .talk_box{
     height: 488px;
@@ -371,7 +366,7 @@ And also: Thanks to
   height: 18px;
   background-color: black;
   border: 2px solid white;
-  box-shadow: 0 0 100px white;
+  box-shadow: 0 0 80px white;
   padding: 3px;
   margin: auto;
 }
