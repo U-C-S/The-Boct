@@ -22,7 +22,7 @@ function BOcT_open() {
 
 function BOcT_annoy_clicks() {
     click_count += 1;
-    if (click_count === 10) {
+    if (click_count === 5) {
       click_count = 0;
       talk_div_boct("Stop annoying me!");
     }
