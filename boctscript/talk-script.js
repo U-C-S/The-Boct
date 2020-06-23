@@ -44,13 +44,16 @@ const readso = {
 }
 
 const googlestuff = {
-  words: "google ",
-  reply: ()=> {
+  words: ['google'],
+  reply: (sc)=> {
+      const ss = sc.slice(7);
+      window.open("https://www.google.com/search?q="+ ss);
   }
 }
 
-const readables = [intro, readage , readempty , readannoy, readNo, readok, readso];
 
+const readables = [intro, readage , readempty , readannoy, readNo, readok, readso];
+const readables2 = [googlestuff]
 function proto_boct_study_chat(studycontent) {
   for(let i = 0; i < readables.length; i++) {
     for (let j = 0; j < readables[i].words.length; j++) {
@@ -60,8 +63,14 @@ function proto_boct_study_chat(studycontent) {
       }
     }
   }
+  for(let i = 0; i < readables2.length; i++) {
+    for(let j = 0; j < readables2[i].words.length; j++) {
+      if(studycontent.includes(readables2[i].words[j])){
+        readables2[i].reply(studycontent); 
+        break;
+      }
+    }}
 }
-
 
 /*
 const readempty = {
@@ -78,5 +87,14 @@ const readNo = {
   }
 }
 
+
+
+function googler() {
+  const si = studycontent.includes("google ");
+  if (si) {
+    const ss = studycontent.slice(7);
+    window.open("https://www.google.com/search?q="+ ss);
+  }
+}
 
 */
