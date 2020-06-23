@@ -248,16 +248,17 @@ body, html{background-color: black;}
 /* FOOTER -----------------------------------------------------------*/
 footer{
   border-top: 3px solid white;
-  padding: 20px 10px 0;
+  padding: 10px 10px 0;
   height: 40px;
   min-width: 300px;
-  margin: 0 auto 10px;
-  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 footer > div{
-   width: 46%;
-   float: left;
-   margin: auto 2%;
+   width: 160px;
+   margin: auto;
+   text-align: center;
 }
 footer > div > a {
    color: white;
@@ -265,9 +266,11 @@ footer > div > a {
    text-decoration: none;
    font-family: 'Overpass', sans-serif;
    font-size: 12px;
+   transition: all 0.2s linear;
 }
 footer > div > a:hover, footer > div > a:focus{
   color: #ff1439;
+  font-size: 13px;
 }
 
 /*media queries------------------------------------------------------*/
