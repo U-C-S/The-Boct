@@ -46,9 +46,11 @@ const readso = {
 const googlestuff = {
   words: ['google'],
   reply: (sc)=> {
+    if(sc.slice(0,6)=='google') {
       const ss = sc.slice(7);
       talk_div_boct('Ok, Searching Google for ' + ss);
       window.open("https://www.google.com/search?q="+ ss);
+    }
   }
 }
 
