@@ -60,18 +60,20 @@ const readables2 = [googlestuff];
 
 function proto_boct_study_chat(studycontent) {
   for(let i = 0; i < readables.length; i++) {
+  loop1:
     for (let j = 0; j < readables[i].words.length; j++) {
       if(studycontent === readables[i].words[j]){
         readables[i].reply(); 
-        break;
+        break loop1;
       }
     }
   }
   for(let i = 0; i < readables2.length; i++) {
+  loop2:
     for(let j = 0; j < readables2[i].words.length; j++) {
       if(studycontent.includes(readables2[i].words[j])){
         readables2[i].reply(studycontent); 
-        break;
+        break loop2;
       }
     }
   }
