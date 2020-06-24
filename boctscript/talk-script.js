@@ -47,13 +47,15 @@ const googlestuff = {
   words: ['google'],
   reply: (sc)=> {
       const ss = sc.slice(7);
+      talk_div_boct('Ok, Searching Google for ' + ss);
       window.open("https://www.google.com/search?q="+ ss);
   }
 }
 
 
 const readables = [intro, readage , readempty , readannoy, readNo, readok, readso];
-const readables2 = [googlestuff]
+const readables2 = [googlestuff];
+
 function proto_boct_study_chat(studycontent) {
   for(let i = 0; i < readables.length; i++) {
     for (let j = 0; j < readables[i].words.length; j++) {
@@ -69,24 +71,17 @@ function proto_boct_study_chat(studycontent) {
         readables2[i].reply(studycontent); 
         break;
       }
-    }}
-}
-
-/*
-const readempty = {
-  words: [''],
-  reply: function() {
-    talk_div_boct('Oh! Come on. Talk Something Sensible');
+    }
   }
 }
 
+/*
 const readNo = {
   words: ['no','nothing','i dont know'],
   reply: function() {
     talk_div_boct("You are basically NOTHING!!!");
   }
 }
-
 
 
 function googler() {

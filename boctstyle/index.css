@@ -2,7 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Overpass&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
 
-body, html{background-color: black;}
+body, html{
+  background-color: black;
+  line-height: 1.15;
+}
 
 /*header*/
 .heading{
@@ -35,7 +38,7 @@ body, html{background-color: black;}
 }
 
 /*.bot-head (or) head of the bot ------------------------------------*/
-#content-div-bot{
+.bot-head{
   margin: 10px auto 575px;
   width: 20%;
   min-width: 310px;
@@ -53,7 +56,7 @@ body, html{background-color: black;}
   height: 70px;
   width: 70px;
   fill: white;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .bot-btn > svg:hover{
@@ -256,13 +259,13 @@ footer{
   justify-content: space-evenly;
 }
 footer > div{
-   width: 160px;
+   width: 150px;
+   height: 20px;
    margin: auto;
    text-align: center;
 }
 footer > div > a {
    color: white;
-   outline: none;
    text-decoration: none;
    font-family: 'Overpass', sans-serif;
    font-size: 12px;
@@ -270,7 +273,6 @@ footer > div > a {
 }
 footer > div > a:hover, footer > div > a:focus{
   color: #ff1439;
-  font-size: 13px;
 }
 
 /*media queries------------------------------------------------------*/
@@ -313,6 +315,7 @@ footer > div > a:hover, footer > div > a:focus{
 And also: Thanks to
 ->  https://redstapler.co/add-loading-animation-to-website/
 */
+
 .loader-wrapper {
   width: 100%;
   min-width: 300px;
@@ -325,23 +328,28 @@ And also: Thanks to
   display: flex;
 }
 .loader{
-  width: 150px;
-  height: 18px;
+  width: 140px;
+  height: 16px;
   background-color: black;
   border: 2px solid white;
-  box-shadow: 0 0 80px white;
-  padding: 3px;
   margin: auto;
+  padding: 0;
 }
 .load_bar{
-  width: 100%;
-  height: 18px;
+  height: 100%;
   background-color: white;
   animation: load 2s linear;
 }
+.load_text{
+  margin-top: 5px;
+  color: white;
+  font-size: 13px;
+  font-family: 'Megrim';
+  text-align: center;
+}
 @keyframes load{
   0% {width: 0%;}
-  35% {width: 21%;}
+  35% {width: 30%;}
   65% {width: 70%;}
   100% {width: 100%;}
 }

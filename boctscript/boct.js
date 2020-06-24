@@ -45,7 +45,6 @@ function talk_div_hooman() {
 
 /*
 
-
 function boct_study_chat(studycontent) {
   if (studycontent === "annoy me") {
     for (var i = 0; i < 20; i++) {
@@ -64,35 +63,6 @@ function boct_study_chat(studycontent) {
 
 
 if (notnum === false) { talk_div_boct('Type a name, YOU FOOL'); }
-
-
-
-const read_google = {
-  words: ['google '],
-  reply: function() {
-
-  }
-}
-
-
-
---list of functions here--
-_____________________
-- stopLoading
-- scroll_update
-- BOcT_open
-- talk_div_boct
-- talk_div_hooman
-- boct_study_chat
-- BOcT_annoy_clicks
-
-
-_____________________
-
---list of Variables here--
-_____________________
--
-
 
 
 console.log('working success');

@@ -1,6 +1,9 @@
-console.log("I'm 'The BOcT' v1.2.3, created by @The-UCS-Variable");
 /*------------------------------------------------------------------------------*/
-window.onload = setTimeout(stopLoading, 2173);
+window.onload = setTimeout(stopLoading, 2713);
+
+document.getElementById('barr').addEventListener('animationend', ()=>{
+  document.getElementById('textt').innerHTML = 'Load Complete'});
+
 function stopLoading() {
   document.getElementById("loader").style.display="none";
   document.body.scrollTop = 0;
@@ -21,9 +24,9 @@ function BOcT_open() {
 }
 
 function BOcT_annoy_clicks() {
-    click_count += 1;
-    if (click_count === 5) {
-      click_count = 0;
-      talk_div_boct("Stop annoying me!");
-    }
+  click_count += 1;
+  if (click_count === 4) {
+    click_count = 0;
+    talk_div_boct("Stop annoying me!");
   }
+}
