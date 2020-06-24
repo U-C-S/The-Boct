@@ -42,7 +42,6 @@ function talk_div_hooman() {
 }
 
 
-
 /*
 
 function boct_study_chat(studycontent) {
