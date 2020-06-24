@@ -2,7 +2,7 @@
 window.onload = setTimeout(stopLoading, 2713);
 
 document.getElementById('barr').addEventListener('animationend', ()=>{
-  document.getElementById('textt').innerHTML = 'Load Complete'});
+  document.getElementById('textt').innerHTML = 'Load Complete';});
 
 function stopLoading() {
   document.getElementById("loader").style.display="none";
