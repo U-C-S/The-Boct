@@ -1,0 +1,45 @@
+@media screen and (max-width: 880px) and (min-width: 500px) {
+  .arrow_box{
+    width: 96%;
+    min-width: 300px;
+  }
+}
+@media screen and (max-width: 500px) {
+  #title{font-size: 26px;}
+
+  .bot-head{
+    width: 100%;
+    min-width: 310px;
+    height: 65px;
+  }
+  .bot-btn > svg{
+    width: 55px;
+    height: 55px;
+  }
+  .arrow_box{
+    height: 550px;
+    width: 96%;
+    min-width: 300px;
+    animation: none !important;
+  }
+  .talk_box{
+    height: 488px;
+  }
+}
+@media screen and (max-width: 880px) {
+  .type_box{width: 96%;}
+}
+
+
+
+@media screen and (max-width: 500px) {
+  .pagehead{
+    width: 100%;
+    min-width: 310px;
+  }
+}
+
+
+.pagehead{
+  width: 30%;
+}

@@ -1,0 +1,251 @@
+/*chatter -----------------------------------------------------------*/
+.arrow_box {
+  display: none;
+	position: relative;
+  margin: 4vh 40px 6vh 0;
+  border-radius: 36px 0 36px 36px;
+  width: 65%;
+  height: 90vh;
+  min-height: 450px;
+  padding: 5px;
+  background-color: hsl(0,0%,90%);
+  transition: all 0.2s linear;
+  animation: scale-in-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  will-change: transform;
+}
+@keyframes scale-in-top {
+  0% {transform: scale(0);
+      transform-origin: 50% -8%;
+  }
+  100% {transform: scale(1);
+        transform-origin: 50% -8%;
+  }
+}
+
+.arrow_box:after {
+	top: 90px;
+	right: 100%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+  border-color: rgba(0, 0, 0, 0);
+  border-right-color: hsl(0,0%,90%);
+	border-width: 27px;
+	margin-top: -27px;
+}
+
+/*chatspace-----------------------------------*/
+.talk_box{
+  width: 100%;
+  height: calc(90vh - 60px);
+  min-height: 390px;
+  border-radius: 32px 0 0 0;
+  background-color: black;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+#chatspace::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.8);
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.8);
+	background-color: #F5F5F5;
+}
+#chatspace::-webkit-scrollbar {
+	width: 10px;
+	background-color: #F5F5F5;
+  cursor: pointer;
+}
+#chatspace::-webkit-scrollbar-thumb {background-color: #5c5c5c;}
+
+/*message CSS---------------------------------*/
+/* BOcT talk CSS */
+.boct_talk{
+  float: left;
+  width: 75%;
+  margin: 6px 4px 6px 10px;
+  border: 2px solid #ffffff;
+  padding: 2px 8px 2px 8px;
+  position: relative;
+  background: #e64c63;
+}
+
+.boct_talk:after, .boct_talk:before {
+	right: 100%;
+	top: 25%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+.boct_talk:after {
+	border-color: rgba(226, 50, 76, 0);
+	border-right-color: #e64c63;
+	border-width: 8px;
+	margin-top: -8px;
+}
+.boct_talk:before {
+	border-color: rgba(255, 255, 255, 0);
+	border-right-color: #ffffff;
+	border-width: 11px;
+	margin-top: -11px;
+}
+
+/*human talk CSS */
+.human_talk{
+  float: right;
+  width: 75%;
+  min-height: 36px;
+  margin: 6px 10px 6px 4px;
+  background: white;
+  padding: 2px 8px 2px 8px;
+  position: relative;
+}
+.human_talk:after {
+  left: 100%;
+  top: 75%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+	border-color: rgba(255, 255, 255, 0);
+  border-left-color: #ffffff;
+  border-width: 8px;
+  margin-top: -8px;
+}
+
+.human_talk > p , .boct_talk > p{
+  color: black;
+  font-size: 14px;
+  font-family: "Quicksand", sans-serif;
+  overflow-wrap: break-word;
+}
+
+/*Type----------------------------------------*/
+.type_box{
+  margin: 12px auto;
+  width: 88%;
+  height: 36px;
+}
+
+.type_box-inner {
+  width: 100%;
+  display: flex;
+}
+
+.typespace {
+  width: 100%;
+  padding: 5px;
+  height: 20px;
+  border: 3px solid black;
+  border-right: none;
+  border-radius: 5px 0 0 5px;
+  box-shadow: 0 0 15px black;
+  outline: none;
+  color: hsl(0,0%,35%);
+  font-family: "Quicksand", sans-serif;
+}
+
+.typespace:focus{
+  color: black;
+}
+
+.typespace-enter {
+  width: 40px;
+  height: 36px;
+  padding: 8px;
+  background: black;
+  box-shadow: 0 0 15px black;
+  text-align: center;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  align-items: center;
+}
+.typespace-enter > svg{
+  fill: white;
+  width: 17px;
+  height: 17px;
+  margin: auto;
+  text-align: center;
+  transition: all 0.1s linear;
+}
+.typespace-enter > svg:active{
+  fill: #ff1439;
+}
+
+/* FOOTER -----------------------------------------------------------*/
+footer{
+  border-top: 3px solid white;
+  padding: 10px 10px 0;
+  height: 40px;
+  min-width: 300px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+footer > div{
+   width: 150px;
+   height: 20px;
+   margin: auto;
+   text-align: center;
+}
+footer > div > a {
+   color: white;
+   text-decoration: none;
+   font-family: 'Overpass', sans-serif;
+   font-size: 12px;
+   transition: all 0.2s linear;
+}
+footer > div > a:hover, footer > div > a:focus{
+  color: #ff1439;
+}
+
+/*media queries------------------------------------------------------*/
+@media screen and (max-width: 750px) {
+  .arrow_box{
+    width: 75%;
+    min-width: 300px;
+    margin: 10px 0;
+  }
+  .arrow_box:after{
+    top: auto;
+    right: auto;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -27px;
+    border-bottom-color: hsl(0,0%,90%);
+    border-right-color: black !important;
+  }
+}
+@media screen and (max-width: 500px) {
+  #title{font-size: 26px;}
+
+  .bot-head{
+    height: 65px;
+  }
+  .bot-btn > svg{
+    width: 55px;
+    height: 55px;
+  }
+  .arrow_box{
+    height: 550px;
+    width: 96%;
+    min-width: 300px;
+    animation: none !important;
+  }
+  .talk_box{
+    height: 488px;
+  }
+}
+@media screen and (max-width: 880px) {
+  .type_box{width: 96%;}
+}

@@ -44,12 +44,27 @@ const readso = {
 }
 
 const googlestuff = {
-  words: ['google'],
+  words: ['google','bing','youtube','duckduckgo'],
   reply: (sc)=> {
     if(sc.slice(0,6)=='google') {
-      const ss = sc.slice(7);
+      let ss = sc.slice(7);
       talk_div_boct('Ok, Searching Google for ' + ss);
       window.open("https://www.google.com/search?q="+ ss);
+    }
+    if(sc.slice(0,4)=='bing') {
+      let ss = sc.slice(5);
+      talk_div_boct('Ok, Searching Bing for ' + ss);
+      window.open("https://www.bing.com/search?q="+ ss);
+    }
+    if(sc.slice(0,7)=='youtube') {
+      let ss = sc.slice(8);
+      talk_div_boct('Ok, Searching YouTube for ' + ss);
+      window.open("https://www.youtube.com/results?search_query="+ ss);
+    }
+    if(sc.slice(0,10)=='duckduckgo'){
+      let ss = sc.slice(11);
+      talk_div_boct('Ok, Searching DuckDuckGo for ' + ss);
+      window.open("https://duckduckgo.com/?q=" + ss)
     }
   }
 }
