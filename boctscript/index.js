@@ -16,7 +16,7 @@ const CLICK_BOT = document.getElementById('BOcT');
 CLICK_BOT.addEventListener("click", BOcT_open);
 
 function BOcT_open() {
-  document.getElementById("content-div-bot").style.margin="10px auto 20px";
+
   document.getElementById("chatter").style.display="block";
   CLICK_BOT.removeEventListener("click", BOcT_open);
   CLICK_BOT.addEventListener("click", BOcT_annoy_clicks);

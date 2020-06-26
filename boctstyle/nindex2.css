@@ -1,15 +1,15 @@
 /*chatter -----------------------------------------------------------*/
 .arrow_box {
+  grid-area: a;
   display: none;
 	position: relative;
-  margin: 4vh 40px 6vh 0;
+
   border-radius: 36px 0 36px 36px;
-  width: 65%;
-  height: 90vh;
+
+
   min-height: 450px;
   padding: 5px;
   background-color: hsl(0,0%,90%);
-  transition: all 0.2s linear;
   animation: scale-in-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
   will-change: transform;
 }
@@ -23,7 +23,7 @@
 }
 
 .arrow_box:after {
-	top: 90px;
+	top: 125px;
 	right: 100%;
 	border: solid transparent;
 	content: " ";
@@ -40,7 +40,7 @@
 /*chatspace-----------------------------------*/
 .talk_box{
   width: 100%;
-  height: calc(90vh - 60px);
+  height: calc(100% - 60px);
   min-height: 390px;
   border-radius: 32px 0 0 0;
   background-color: black;
@@ -176,7 +176,6 @@
   height: 17px;
   margin: auto;
   text-align: center;
-  transition: all 0.1s linear;
 }
 .typespace-enter > svg:active{
   fill: #ff1439;
@@ -185,7 +184,7 @@
 /* FOOTER -----------------------------------------------------------*/
 footer{
   border-top: 3px solid white;
-  padding: 10px 10px 0;
+  padding: 10px 0;
   height: 40px;
   min-width: 300px;
   display: flex;
@@ -203,32 +202,16 @@ footer > div > a {
    text-decoration: none;
    font-family: 'Overpass', sans-serif;
    font-size: 12px;
-   transition: all 0.2s linear;
 }
 footer > div > a:hover, footer > div > a:focus{
   color: #ff1439;
 }
 
 /*media queries------------------------------------------------------*/
-@media screen and (max-width: 750px) {
-  .arrow_box{
-    width: 75%;
-    min-width: 300px;
-    margin: 10px 0;
+@media screen and (max-width: 910px) {
+  #title{
+    font-size: 26px;
   }
-  .arrow_box:after{
-    top: auto;
-    right: auto;
-    bottom: 100%;
-    left: 50%;
-    margin-left: -27px;
-    border-bottom-color: hsl(0,0%,90%);
-    border-right-color: black !important;
-  }
-}
-@media screen and (max-width: 500px) {
-  #title{font-size: 26px;}
-
   .bot-head{
     height: 65px;
   }
@@ -237,15 +220,38 @@ footer > div > a:hover, footer > div > a:focus{
     height: 55px;
   }
   .arrow_box{
-    height: 550px;
-    width: 96%;
-    min-width: 300px;
-    animation: none !important;
-  }
-  .talk_box{
-    height: 488px;
+    margin: 0;
   }
 }
-@media screen and (max-width: 880px) {
-  .type_box{width: 96%;}
+
+@media screen and (max-width: 910px) and (min-width: 590px) {
+  .alll{
+    grid-template-columns: 15px 180px 40px auto 15px;
+  }
+  .arrow_box:after {
+    top: 100px;
+  }
+}
+
+@media screen and (max-width: 590px) {
+  .alll{
+    grid-template-columns: 20% 60% 20%;
+    grid-template-rows: 5px 150px 10px 90vh 40px;
+    grid-template-areas:
+      ". . . "
+      ". p . "
+      ". . . "
+      "a a a "
+      ". . . "
+    ;
+  }
+  .arrow_box:after{
+    top: auto;
+    right: auto;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -27px;
+    border-bottom-color: hsl(0,0%,90%);
+    border-right-color: transparent;
+  }
 }

@@ -5,6 +5,9 @@ body, html{
   background-color: black;
   line-height: 1.15;
 }
+body{
+  margin: 0;
+}
 
 /*Loading Screen------------------------------*/
 .loader-wrapper {
@@ -46,24 +49,36 @@ body, html{
   100% {width: 100%;}
 }
 /*header-------------------------------------------------------------*/
+.alll, .pagehead, .heading, #title, .arrow_box, .arrow_box::after,.typespace-enter > svg, .info, footer > div > a{
+  transition: all 0.2s linear;
+}
 
 .alll{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
+  display: grid;
+  grid-template-columns: 50px 270px 60px auto 50px;
+  grid-template-rows: 5vh 30vh 5vh 53vh 7vh;
+  grid-template-areas: 
+    ". . . . ." 
+    ". p . a ." 
+    ". . . a ." 
+    ". i . a ." 
+    ". . . . .";
+  min-width: 300px;
+  box-sizing: border-box;
+  margin: 0 8px;
 }
 
-.pagehead{
-  width: 200px;
-}
+.pagehead { grid-area: p; }
+
+.info { grid-area: i; }
+
+
 
 
 /*--------------------------------------------*/
 .heading{
   margin: 10px 0;
   border-bottom: 2px solid white;
-  width: 45%;
-  min-width: 200px;
   padding: 5px 0px 10px;
 }
 #title{
