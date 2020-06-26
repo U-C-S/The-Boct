@@ -56,7 +56,7 @@ body{
 
 .alll{
   display: grid;
-  grid-template-columns: 50px 270px 60px auto 50px;
+  grid-template-columns: 50px 300px 60px auto 50px;
   grid-template-rows: 5vh 30vh 5vh 53vh 7vh;
   grid-template-areas: 
     ". . . . ." 
@@ -348,7 +348,7 @@ footer > div > a:hover, footer > div > a:focus{
 
 @media screen and (max-width: 910px) and (min-width: 590px) {
   .alll{
-    grid-template-columns: 15px 180px 40px auto 15px;
+    grid-template-columns: 10px 220px 30px auto 10px;
   }
   .arrow_box:after {
     top: 100px;
@@ -356,6 +356,9 @@ footer > div > a:hover, footer > div > a:focus{
 }
 
 @media screen and (max-width: 590px) {
+  .info{
+    display: none;
+  }
   .alll{
     grid-template-columns: 20% 60% 20%;
     grid-template-rows: 5px 150px 10px 90vh 40px;
@@ -390,3 +393,27 @@ footer > div > a:hover, footer > div > a:focus{
 And also: Thanks to
 ->  https://redstapler.co/add-loading-animation-to-website/
 */
+.info legend{
+  color: white;
+  font-family: 'Megrim';
+}
+.info ul{
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-evenly;
+}
+.info li{
+  width: 25px;
+  height: 25px;
+}
+.info svg{
+  fill: white;
+}
+.info p{
+  text-align: center;
+  color: white;
+  font-family: 'Quicksand';
+  font-size: 14px;
+}
