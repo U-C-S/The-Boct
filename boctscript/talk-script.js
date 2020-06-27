@@ -43,7 +43,7 @@ const readso = {
   }
 }
 
-const googlestuff = {
+const searchStuff = {
   words: ['google','bing','youtube','duckduckgo'],
   reply: (sc)=> {
     if(sc.slice(0,6)=='google') {
@@ -71,7 +71,7 @@ const googlestuff = {
 
 
 const readables = [intro, readage , readempty , readannoy, readNo, readok, readso];
-const readables2 = [googlestuff];
+const readables2 = [searchStuff];
 
 function proto_boct_study_chat(studycontent) {
   for(let i = 0; i < readables.length; i++) {

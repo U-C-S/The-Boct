@@ -29,6 +29,66 @@ function BOcT_annoy_clicks() {
   }
 }
 
+//Dark Mode
+const toggler = document.querySelector('.togglemode');
+const currentTheme = localStorage.getItem('theme');
+
+if (currentTheme) {
+  document.documentElement.setAttribute('data-theme', currentTheme);
+  if (currentTheme === 'dark') {
+    toggler.dataset.themeNow = "dark";
+  }
+  else if(currentTheme === 'light'){
+    toggler.dataset.themeNow = "light";
+  }
+}
+
+toggler.addEventListener('click', themeAlternate);
+function themeAlternate() {
+  if(toggler.dataset.themeNow == "dark"){
+    document.documentElement.setAttribute('data-theme', 'light');
+    toggler.dataset.themeNow = "light";
+    localStorage.setItem('theme', 'light');
+  }
+  else{
+    document.documentElement.setAttribute('data-theme', 'dark');
+    toggler.dataset.themeNow = "dark";
+    localStorage.setItem('theme', 'dark');
+  }
+
+}
+
+
+
+/*
+
+const toggleo = document.querySelector('.togglemode');
+const currentTheme = localStorage.getItem('theme');
+
+if (currentTheme) {
+    document.documentElement.setAttribute('data-theme', currentTheme);
+  
+    if (currentTheme === 'dark') {
+        toggleo.checked = true;
+    }
+}
+
+function switchTheme() {
+    if (toggleo.dataset.themeNow != 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+        toggleo.dataset.themeNow = 'dark';
+    }
+    else {
+        document.documentElement.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light');
+        toggleo.dataset.themeNow = 'light';
+    }    
+}
+
+toggleo.addEventListener('click', switchTheme);
+*/
+
 
 /* CSS DUMP
 
@@ -38,9 +98,19 @@ function BOcT_annoy_clicks() {
 }
 
 
+var(--wit-in-dark);
+var(--blk-in-dark);
+
+
 */
 /* JS DUMP
 
 document.getElementById('content-div-bot').style.animation = "flicker-in-1 2.3s linear forwards";
+
+let root = document.documentElement;
+root.addEventListener("mousemove", e => {
+  root.style.setProperty('--mouse-x', e.clientX + "px");
+  root.style.setProperty('--mouse-y', e.clientY + "px");
+});
 
 */

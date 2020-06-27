@@ -1,8 +1,18 @@
+:root {
+  --blk-in-dark: black;
+  --wit-in-dark: white;
+}
+
+[data-theme="light"] {
+  --blk-in-dark: white;
+  --wit-in-dark: black;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Overpass&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
 
 body, html{
-  background-color: black;
+  background-color: var(--blk-in-dark);
   line-height: 1.15;
   margin: 0;
 }
@@ -15,26 +25,26 @@ body, html{
   position: fixed;
   top: 0;
   left: 0;
-  background-color: black;
+  background-color: var(--blk-in-dark);
   display: flex;
 }
 .loader{
   width: 140px;
   height: 16px;
-  background-color: black;
-  border: 2px solid white;
+  background-color: var(--blk-in-dark);
+  border: 2px solid var(--wit-in-dark);
   margin: auto;
   padding: 0;
-  box-shadow: 0 0 100px white;
+  box-shadow: 0 0 100px var(--wit-in-dark);
 }
 .load_bar{
   height: 100%;
-  background-color: white;
+  background-color: var(--wit-in-dark);
   animation: load 2s linear;
 }
 .load_text{
   margin-top: 5px;
-  color: white;
+  color: var(--wit-in-dark);
   font-size: 13px;
   font-family: 'Megrim';
   text-align: center;
@@ -43,6 +53,7 @@ body, html{
 }
 
 /*-------------------------------------------------------------*/
+body,
 .alll,
 .pagehead, .heading, #title, .bot-btn svg,
 .arrow_box, .arrow_box::after,.typespace-enter svg,
@@ -70,12 +81,12 @@ footer > div > a{
 .pagehead { grid-area: p; }
 
 .heading{
-  border-bottom: 2px solid white;
+  border-bottom: 2px solid var(--wit-in-dark);
   padding: 5px 0px 10px;
 }
 #title{
   margin: 0;
-  color: white;
+  color: var(--wit-in-dark);
   font-family: 'Megrim', monospace;
   text-align: center;
   font-size: 40px;
@@ -109,7 +120,7 @@ footer > div > a{
 .bot-btn svg{
   height: 70px;
   width: 70px;
-  fill: white;
+  fill: var(--wit-in-dark);
 }
 
 .bot-btn svg:hover{
@@ -123,7 +134,7 @@ footer > div > a{
 	position: relative;
   border-radius: 36px 0 36px 36px;
   padding: 5px;
-  background-color: hsl(0,0%,90%);
+  background-color: var(--wit-in-dark);
   animation: scale-in-top 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
   will-change: transform;
 }
@@ -145,8 +156,8 @@ footer > div > a{
 	width: 0;
 	position: absolute;
 	pointer-events: none;
-  border-color: rgba(0, 0, 0, 0);
-  border-right-color: hsl(0,0%,90%);
+
+  border-right-color: var(--wit-in-dark);
 	border-width: 27px;
 	margin-top: -27px;
 }
@@ -156,7 +167,7 @@ footer > div > a{
   width: 100%;
   height: calc(100% - 60px);
   border-radius: 32px 0 0 0;
-  background-color: black;
+  background-color: var(--blk-in-dark);;
   overflow-y: scroll;
   overflow-x: hidden;
   scroll-behavior: smooth;
@@ -180,33 +191,10 @@ footer > div > a{
   float: left;
   width: 75%;
   margin: 6px 4px 6px 10px;
-  border: 2px solid #ffffff;
+  border: 2px solid var(--wit-in-dark);
   padding: 2px 8px 2px 8px;
   position: relative;
   background: #e64c63;
-}
-
-.boct_talk:after, .boct_talk:before {
-	right: 100%;
-	top: 25%;
-	border: solid transparent;
-	content: " ";
-	height: 0;
-	width: 0;
-	position: absolute;
-	pointer-events: none;
-}
-.boct_talk:after {
-	border-color: rgba(226, 50, 76, 0);
-	border-right-color: #e64c63;
-	border-width: 8px;
-	margin-top: -8px;
-}
-.boct_talk:before {
-	border-color: rgba(255, 255, 255, 0);
-	border-right-color: #ffffff;
-	border-width: 11px;
-	margin-top: -11px;
 }
 
 /*human talk CSS */
@@ -215,27 +203,14 @@ footer > div > a{
   width: 75%;
   min-height: 36px;
   margin: 6px 10px 6px 4px;
-  background: white;
+  background: var(--wit-in-dark);
   padding: 2px 8px 2px 8px;
   position: relative;
-}
-.human_talk:after {
-  left: 100%;
-  top: 75%;
-  border: solid transparent;
-  content: " ";
-  height: 0;
-  width: 0;
-  position: absolute;
-  pointer-events: none;
-	border-color: rgba(255, 255, 255, 0);
-  border-left-color: #ffffff;
-  border-width: 8px;
-  margin-top: -8px;
+  box-shadow: 0 0 20px var(--wit-in-dark);
 }
 
 .human_talk > p , .boct_talk > p{
-  color: black;
+  color: var(--blk-in-dark);
   font-size: 14px;
   font-family: "Quicksand", sans-serif;
   overflow-wrap: break-word;
@@ -256,11 +231,12 @@ footer > div > a{
   width: 100%;
   padding: 5px;
   height: 20px;
-  border: 3px solid black;
+  border: 3px solid var(--blk-in-dark);
   border-right: none;
   border-radius: 5px 0 0 5px;
-  box-shadow: 0 0 15px black;
+  box-shadow: 0 0 15px var(--blk-in-dark);
   outline: none;
+  background-color: white;
   color: hsl(0,0%,35%);
   font-family: "Quicksand", sans-serif;
 }
@@ -272,8 +248,8 @@ footer > div > a{
   width: 40px;
   height: 36px;
   padding: 8px;
-  background: black;
-  box-shadow: 0 0 15px black;
+  background: var(--blk-in-dark);
+  box-shadow: 0 0 15px var(--blk-in-dark);
   text-align: center;
   border-radius: 0 5px 5px 0;
   cursor: pointer;
@@ -282,7 +258,7 @@ footer > div > a{
   align-items: center;
 }
 .typespace-enter svg{
-  fill: white;
+  fill: var(--wit-in-dark);
   width: 17px;
   height: 17px;
   margin: auto;
@@ -297,11 +273,11 @@ footer > div > a{
   grid-area: i;
 }
 .info fieldset{
-  border: 2px solid white;
+  border: 2px solid var(--wit-in-dark);
   padding: 5px;
 }
 .info legend{
-  color: white;
+  color: var(--wit-in-dark);
   text-align: center;
   font-family: sans-serif;
   font-size: 14px;
@@ -319,24 +295,27 @@ footer > div > a{
   height: 25px;
 }
 .info svg{
-  fill: hsla(0,0%,100%,0.5);
+  fill: var(--wit-in-dark);
+  opacity: 0.7;
 }
 .info svg:hover{
-  fill: white;
+  opacity: 1;
 }
 .info p{
   text-align: center;
-  color: white;
+  color: var(--wit-in-dark);
   font-family: 'Quicksand';
   font-size: 14px;
 }
 .release{
-  font-family: monospace !important;
+  font-family: 'Arial', monospace !important;
+  letter-spacing: 2px;
+  font-size: 10px !important;
 }
 
 /* FOOTER -----------------------------------------------------------*/
 footer{
-  border-top: 3px solid white;
+  border-top: 3px solid var(--wit-in-dark);
   padding: 10px 0;
   height: 40px;
   min-width: 300px;
@@ -351,7 +330,7 @@ footer > div{
    text-align: center;
 }
 footer > div > a {
-   color: white;
+   color: var(--wit-in-dark);
    text-decoration: none;
    font-family: 'Overpass', sans-serif;
    font-size: 12px;
@@ -411,7 +390,7 @@ footer > div > a:hover, footer > div > a:focus{
     bottom: 100%;
     left: 50%;
     margin-left: -27px;
-    border-bottom-color: hsl(0,0%,90%);
+    border-bottom-color: var(--wit-in-dark);
     border-right-color: transparent;
   }
 }
