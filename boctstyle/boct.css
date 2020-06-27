@@ -4,8 +4,6 @@
 body, html{
   background-color: black;
   line-height: 1.15;
-}
-body{
   margin: 0;
 }
 
@@ -41,22 +39,22 @@ body{
   font-family: 'Megrim';
   text-align: center;
 }
-@keyframes load{
-  0% {width: 0%;}
-  35% {width: 30%;}
-  65% {width: 70%;}
-  100% {width: 100%;}
+@keyframes load{0% {width: 0%;} 35%  {width: 30%;} 65%  {width: 70%;} 100% {width: 100%;}
 }
 
-/*header-------------------------------------------------------------*/
-.alll, .pagehead, .heading, #title, .arrow_box, .arrow_box::after,.typespace-enter > svg, .info, footer > div > a{
+/*-------------------------------------------------------------*/
+.alll,
+.pagehead, .heading, #title, .bot-btn svg,
+.arrow_box, .arrow_box::after,.typespace-enter svg,
+.info, .info fieldset,
+footer > div > a{
   transition: all 0.2s linear;
 }
 
 .alll{
   display: grid;
   grid-template-columns: 50px 300px 60px auto 50px;
-  grid-template-rows: 5vh 30vh 5vh 50vh 10vh;
+  grid-template-rows: 5vh 25vh 5vh 55vh 10vh;
   grid-template-areas: 
     ". . . . ." 
     ". p . a ." 
@@ -64,13 +62,13 @@ body{
     ". i . a ." 
     ". . . . .";
   min-width: 300px;
+  min-height: 450px;
   box-sizing: border-box;
   margin: 0 8px;
 }
-
+/*header-------------------------------------------------------------*/
 .pagehead { grid-area: p; }
 
-/*--------------------------------------------*/
 .heading{
   border-bottom: 2px solid white;
   padding: 5px 0px 10px;
@@ -108,14 +106,13 @@ body{
 }
 
 /*BOcT*/
-.bot-btn > svg{
+.bot-btn svg{
   height: 70px;
   width: 70px;
   fill: white;
-  transition: all 0.2s ease-in-out;
 }
 
-.bot-btn > svg:hover{
+.bot-btn svg:hover{
   fill: #ff1439;
 }
 
@@ -125,7 +122,6 @@ body{
   display: none;
 	position: relative;
   border-radius: 36px 0 36px 36px;
-  min-height: 400px;
   padding: 5px;
   background-color: hsl(0,0%,90%);
   animation: scale-in-top 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
@@ -159,7 +155,6 @@ body{
 .talk_box{
   width: 100%;
   height: calc(100% - 60px);
-  min-height: 390px;
   border-radius: 32px 0 0 0;
   background-color: black;
   overflow-y: scroll;
@@ -252,7 +247,6 @@ body{
   width: 88%;
   height: 36px;
 }
-
 .type_box-inner {
   width: 100%;
   display: flex;
@@ -270,7 +264,6 @@ body{
   color: hsl(0,0%,35%);
   font-family: "Quicksand", sans-serif;
 }
-
 .typespace:focus{
   color: black;
 }
@@ -288,15 +281,57 @@ body{
   border: none;
   align-items: center;
 }
-.typespace-enter > svg{
+.typespace-enter svg{
   fill: white;
   width: 17px;
   height: 17px;
   margin: auto;
   text-align: center;
 }
-.typespace-enter > svg:active{
+.typespace-enter svg:active{
   fill: #ff1439;
+}
+
+/*Info---------------------------------------------------------------*/
+.info {
+  grid-area: i;
+}
+.info fieldset{
+  border: 2px solid white;
+  padding: 5px;
+}
+.info legend{
+  color: white;
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 14px;
+  padding: 3px;
+}
+.info ul{
+  list-style-type: none;
+  padding: 0;
+  margin: 5px 0 10px;
+  display: flex;
+  justify-content: space-around;
+}
+.info li{
+  width: 25px;
+  height: 25px;
+}
+.info svg{
+  fill: hsla(0,0%,100%,0.5);
+}
+.info svg:hover{
+  fill: white;
+}
+.info p{
+  text-align: center;
+  color: white;
+  font-family: 'Quicksand';
+  font-size: 14px;
+}
+.release{
+  font-family: monospace !important;
 }
 
 /* FOOTER -----------------------------------------------------------*/
@@ -333,7 +368,7 @@ footer > div > a:hover, footer > div > a:focus{
   .bot-head{
     height: 65px;
   }
-  .bot-btn > svg{
+  .bot-btn svg{
     width: 55px;
     height: 55px;
   }
@@ -345,6 +380,7 @@ footer > div > a:hover, footer > div > a:focus{
 @media screen and (max-width: 910px) and (min-width: 590px) {
   .alll{
     grid-template-columns: 10px 220px 30px auto 10px;
+    grid-template-rows: 3vh 20vh 5vh 62vh 10vh;
   }
   .arrow_box:after {
     top: 100px;
@@ -388,42 +424,3 @@ footer > div > a:hover, footer > div > a:focus{
 And also: Thanks to
 ->  https://redstapler.co/add-loading-animation-to-website/
 */
-.info { grid-area: i; }
-
-.info fieldset{
-  border: 2px solid white;
-}
-.info legend{
-  color: white;
-  text-align: center;
-  font-family: sans-serif;
-  font-size: 14px;
-  padding: 3px;
-}
-.info ul{
-  list-style-type: none;
-  padding: 0;
-  margin: 5px 0 10px;
-  display: flex;
-  justify-content: space-around;
-}
-.info li{
-  width: 27px;
-  height: 27px;
-}
-.info svg{
-  fill: hsla(0,0%,100%,0.5);
-}
-.info svg:hover{
-  fill: white;
-}
-.info p{
-  text-align: center;
-  color: white;
-  font-family: 'Quicksand';
-  font-size: 14px;
-}
-
-.release{
-  font-family: monospace !important;
-}
