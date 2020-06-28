@@ -25,12 +25,14 @@ body, html{
   margin: 0px;
   padding: 0px;
   height: 100%;
+  min-height: 600px;
 }
 
 /*Loading Screen------------------------------*/
 .loader-wrapper {
   margin: 0px;
   padding: 0px;
+  border: 6px solid var(--wit-in-dark);
   width: 100%;
   min-width: 300px;
   height: 100%;
@@ -136,6 +138,7 @@ button{
   transform: scale(1.15);
 }
 .bot-btn svg:active{
+  transition: all 0.1s linear;
   transform: scale(1);
 }
 
@@ -321,74 +324,6 @@ button{
   letter-spacing: 2px;
   font-size: 10px !important;
 }
-
-/*media queries------------------------------------------------------*/
-@media screen and (max-width: 950px) {
-  #title{
-    font-size: 28px;
-  }
-  .bot-head{
-    height: 65px;
-  }
-  .bot-btn svg{
-    width: 55px;
-    height: 55px;
-  }
-  .arrow_box{
-    margin: 0;
-  }
-}
-
-@media screen and (max-width: 950px) and (min-width: 650px) {
-  .alll{
-    grid-template-columns: 10px 220px 30px auto 10px;
-    grid-template-rows: 5% 20% 5% 65% 5%;
-  }
-  .arrow_box:after {
-    top: 95px;
-  }
-}
-
-@media screen and (max-width: 650px) {
-  body, html{
-    width: auto;
-    height: auto;
-    border: none;
-  }
-  html{
-    overflow: auto;
-  }
-  .alll{
-    padding: 0px 5px;
-    grid-template-columns: 10% 80% 10%;
-    grid-template-rows: 5px 150px 10px minmax(450px,80vh) 40px 180px;
-    grid-template-areas:
-      ". . ."
-      ". p ."
-      ". . ."
-      "a a a"
-      ". . ."
-      ". i .";
-    height: auto;
-  }
-  .arrow_box{
-    animation: none;
-    box-shadow: none;
-  }
-  .arrow_box:after{
-    top: auto;
-    right: auto;
-    bottom: 100%;
-    left: 50%;
-    margin-left: -27px;
-    border-bottom-color: var(--wit-in-dark);
-    border-right-color: transparent;
-  }
-  .type_box{
-    width: 91%;
-  }
-}
-
 
 /*
 *-----------------------------------------------------------
