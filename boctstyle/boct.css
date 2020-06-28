@@ -20,15 +20,17 @@
 
 body, html{
   background-color: var(--blk-in-dark);
+  border: 3px solid var(--wit-in-dark);
   line-height: 1.15;
   margin: 0px;
-  border: 3px solid var(--wit-in-dark);
+  padding: 0px;
   height: 100%;
-  overflow: hidden;
 }
 
 /*Loading Screen------------------------------*/
 .loader-wrapper {
+  margin: 0px;
+  padding: 0px;
   width: 100%;
   min-width: 300px;
   height: 100%;
@@ -37,16 +39,14 @@ body, html{
   left: 0;
   background-color: var(--blk-in-dark);
   display: flex;
-  margin: 0px;
-  padding: 0px;
 }
 .loader{
+  margin: auto;
+  padding: 0;
   width: 140px;
   height: 16px;
   background-color: var(--blk-in-dark);
   border: 2px solid var(--wit-in-dark);
-  margin: auto;
-  padding: 0;
   box-shadow: 0 0 100px var(--wit-in-dark);
 }
 .load_bar{
@@ -84,9 +84,6 @@ button{
     ". . . . .";
   min-width: 300px;
   height: 100%;
-  min-height: 560px;
-  margin: 0;
-  padding: 0px 10px;
 }
 /*header-------------------------------------------------------------*/
 .pagehead { grid-area: p; }
@@ -120,7 +117,7 @@ button{
 
 /*.bot-head (or) head of the bot -------------*/
 .bot-head{
-  margin: 10px auto 575px;
+  margin: 10px auto;
   width: 90px;
   height: 80px;
   text-align: center;
@@ -163,7 +160,7 @@ button{
 }
 
 .arrow_box:after {
-	top: 125px;
+	top: 120px;
 	right: 100%;
 	border: solid transparent;
 	content: " ";
@@ -348,7 +345,7 @@ button{
     grid-template-rows: 5% 20% 5% 65% 5%;
   }
   .arrow_box:after {
-    top: 100px;
+    top: 95px;
   }
 }
 
@@ -361,19 +358,18 @@ button{
   html{
     overflow: auto;
   }
-  .info{
-    display: none;
-  }
   .alll{
-    grid-template-columns: 20% 60% 20%;
-    grid-template-rows: 5px 150px 10px 90vh 40px;
+    padding: 0px 5px;
+    grid-template-columns: 10% 80% 10%;
+    grid-template-rows: 5px 150px 10px minmax(450px,80vh) 40px 180px;
     grid-template-areas:
-      ". . . "
-      ". p . "
-      ". . . "
-      "a a a "
-      ". . . "
-    ;
+      ". . ."
+      ". p ."
+      ". . ."
+      "a a a"
+      ". . ."
+      ". i .";
+    height: auto;
   }
   .arrow_box{
     animation: none;
@@ -393,11 +389,6 @@ button{
   }
 }
 
-@media screen and (max-height: 560px) {
- body{
-  overflow: auto;
- }
-}
 
 /*
 *-----------------------------------------------------------
