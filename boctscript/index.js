@@ -34,12 +34,12 @@ const toggler = document.querySelector('.togglemode');
 const currentTheme = localStorage.getItem('theme');
 if (currentTheme) {
   document.documentElement.setAttribute('data-theme', currentTheme);
-  if (currentTheme === 'dark') {
-    toggler.dataset.themeNow = "dark";
-  }
-  else if(currentTheme === 'light'){
+  if (currentTheme === 'light') {
     toggler.dataset.themeNow = "light";
   }
+}
+else {
+  toggler.dataset.themeNow = "dark";
 }
 
 toggler.addEventListener('click', themeAlternate);
@@ -54,11 +54,10 @@ function themeAlternate() {
     toggler.dataset.themeNow = "dark";
     localStorage.setItem('theme', 'dark');
   }
-
 }
 
-console.log(window.innerWidth);
-console.log(window.innerHeight);
+console.log('width: ' + window.innerWidth);
+console.log('height: ' + window.innerHeight);
 
 /*
 
