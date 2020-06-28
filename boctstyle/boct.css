@@ -11,10 +11,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Overpass&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
 
+*,
+*::after,
+*::before{
+  box-sizing: border-box;
+  transition: all 0.2s linear;
+}
+
 body, html{
   background-color: var(--blk-in-dark);
   line-height: 1.15;
-  margin: 0;
+  margin: 0px;
+  border: 3px solid var(--wit-in-dark);
+  height: 100%;
+  overflow: hidden;
 }
 
 /*Loading Screen------------------------------*/
@@ -27,6 +37,8 @@ body, html{
   left: 0;
   background-color: var(--blk-in-dark);
   display: flex;
+  margin: 0px;
+  padding: 0px;
 }
 .loader{
   width: 140px;
@@ -53,19 +65,17 @@ body, html{
 }
 
 /*-------------------------------------------------------------*/
-body,
-.alll,
-.pagehead, .heading, #title, .bot-btn svg,
-.arrow_box, .arrow_box::after,.typespace-enter svg,
-.info, .info fieldset,
-footer > div > a{
-  transition: all 0.2s linear;
+button{
+  outline: none;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
 }
 
 .alll{
   display: grid;
   grid-template-columns: 50px 300px 60px auto 50px;
-  grid-template-rows: 5vh 25vh 5vh 55vh 10vh;
+  grid-template-rows: 5% 25% 5% 60% 5%;
   grid-template-areas: 
     ". . . . ." 
     ". p . a ." 
@@ -73,9 +83,10 @@ footer > div > a{
     ". i . a ." 
     ". . . . .";
   min-width: 300px;
-  min-height: 450px;
-  box-sizing: border-box;
-  margin: 0 8px;
+  height: 100%;
+  min-height: 560px;
+  margin: 0;
+  padding: 0px 10px;
 }
 /*header-------------------------------------------------------------*/
 .pagehead { grid-area: p; }
@@ -125,16 +136,20 @@ footer > div > a{
 
 .bot-btn svg:hover{
   fill: #ff1439;
+  transform: scale(1.15);
+}
+.bot-btn svg:active{
+  transform: scale(1);
 }
 
 /*chatter -----------------------------------------------------------*/
 .arrow_box {
   grid-area: a;
   display: none;
-	position: relative;
   border-radius: 36px 0 36px 36px;
   padding: 5px;
   background-color: var(--wit-in-dark);
+  box-shadow: 2px 2px 20px black;
   animation: scale-in-top 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
   will-change: transform;
 }
@@ -190,7 +205,7 @@ footer > div > a{
 .boct_talk{
   float: left;
   width: 75%;
-  margin: 6px 4px 6px 10px;
+  margin: 6px 4px 6px;
   border: 2px solid var(--wit-in-dark);
   padding: 2px 8px 2px 8px;
   position: relative;
@@ -201,10 +216,10 @@ footer > div > a{
 .human_talk{
   float: right;
   width: 75%;
-  min-height: 36px;
-  margin: 6px 10px 6px 4px;
+  min-height: 44px;
+  margin: 6px 4px 6px;
   background: var(--wit-in-dark);
-  padding: 2px 8px 2px 8px;
+  padding: 2px 8px;
   position: relative;
   box-shadow: 0 0 20px var(--wit-in-dark);
 }
@@ -219,7 +234,7 @@ footer > div > a{
 /*Type----------------------------------------*/
 .type_box{
   margin: 12px auto;
-  width: 88%;
+  width: 85%;
   height: 36px;
 }
 .type_box-inner {
@@ -230,7 +245,7 @@ footer > div > a{
 .typespace {
   width: 100%;
   padding: 5px;
-  height: 20px;
+  height: 36px;
   border: 3px solid var(--blk-in-dark);
   border-right: none;
   border-radius: 5px 0 0 5px;
@@ -247,21 +262,18 @@ footer > div > a{
 .typespace-enter {
   width: 40px;
   height: 36px;
-  padding: 8px;
+  padding: 7px 8px 8px;
   background: var(--blk-in-dark);
   box-shadow: 0 0 15px var(--blk-in-dark);
   text-align: center;
   border-radius: 0 5px 5px 0;
-  cursor: pointer;
-  outline: none;
   border: none;
   align-items: center;
 }
 .typespace-enter svg{
   fill: var(--wit-in-dark);
-  width: 17px;
-  height: 17px;
-  margin: auto;
+  width: 100%;
+  height: 100%;
   text-align: center;
 }
 .typespace-enter svg:active{
@@ -283,18 +295,18 @@ footer > div > a{
   font-size: 14px;
   padding: 3px;
 }
-.info ul{
-  list-style-type: none;
-  padding: 0;
-  margin: 5px 0 10px;
+.infobtns{
   display: flex;
   justify-content: space-around;
 }
-.info li{
+.info button{
   width: 25px;
   height: 25px;
+  padding: 0px;
 }
 .info svg{
+  width: 100%;
+  height: 100%;
   fill: var(--wit-in-dark);
   opacity: 0.7;
 }
@@ -313,34 +325,8 @@ footer > div > a{
   font-size: 10px !important;
 }
 
-/* FOOTER -----------------------------------------------------------*/
-footer{
-  border-top: 3px solid var(--wit-in-dark);
-  padding: 10px 0;
-  height: 40px;
-  min-width: 300px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-}
-footer > div{
-   width: 150px;
-   height: 20px;
-   margin: auto;
-   text-align: center;
-}
-footer > div > a {
-   color: var(--wit-in-dark);
-   text-decoration: none;
-   font-family: 'Overpass', sans-serif;
-   font-size: 12px;
-}
-footer > div > a:hover, footer > div > a:focus{
-  color: #ff1439;
-}
-
 /*media queries------------------------------------------------------*/
-@media screen and (max-width: 910px) {
+@media screen and (max-width: 950px) {
   #title{
     font-size: 28px;
   }
@@ -356,17 +342,25 @@ footer > div > a:hover, footer > div > a:focus{
   }
 }
 
-@media screen and (max-width: 910px) and (min-width: 590px) {
+@media screen and (max-width: 950px) and (min-width: 650px) {
   .alll{
     grid-template-columns: 10px 220px 30px auto 10px;
-    grid-template-rows: 3vh 20vh 5vh 62vh 10vh;
+    grid-template-rows: 5% 20% 5% 65% 5%;
   }
   .arrow_box:after {
     top: 100px;
   }
 }
 
-@media screen and (max-width: 590px) {
+@media screen and (max-width: 650px) {
+  body, html{
+    width: auto;
+    height: auto;
+    border: none;
+  }
+  html{
+    overflow: auto;
+  }
   .info{
     display: none;
   }
@@ -383,6 +377,7 @@ footer > div > a:hover, footer > div > a:focus{
   }
   .arrow_box{
     animation: none;
+    box-shadow: none;
   }
   .arrow_box:after{
     top: auto;
@@ -393,6 +388,15 @@ footer > div > a:hover, footer > div > a:focus{
     border-bottom-color: var(--wit-in-dark);
     border-right-color: transparent;
   }
+  .type_box{
+    width: 91%;
+  }
+}
+
+@media screen and (max-height: 560px) {
+ body{
+  overflow: auto;
+ }
 }
 
 /*

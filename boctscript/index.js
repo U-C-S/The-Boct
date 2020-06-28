@@ -32,7 +32,6 @@ function BOcT_annoy_clicks() {
 //Dark Mode
 const toggler = document.querySelector('.togglemode');
 const currentTheme = localStorage.getItem('theme');
-
 if (currentTheme) {
   document.documentElement.setAttribute('data-theme', currentTheme);
   if (currentTheme === 'dark') {
@@ -58,7 +57,8 @@ function themeAlternate() {
 
 }
 
-
+console.log(window.innerWidth);
+console.log(window.innerHeight);
 
 /*
 
@@ -102,6 +102,34 @@ var(--wit-in-dark);
 var(--blk-in-dark);
 
 
+
+//FOOTER -----------------------------------------------------------
+footer{
+  border-top: 3px solid var(--wit-in-dark);
+  padding: 10px 0;
+  height: 40px;
+  min-width: 300px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+footer > div{
+   width: 150px;
+   height: 20px;
+   margin: auto;
+   text-align: center;
+}
+footer > div > a {
+   color: var(--wit-in-dark);
+   text-decoration: none;
+   font-family: 'Overpass', sans-serif;
+   font-size: 12px;
+}
+footer > div > a:hover, footer > div > a:focus{
+  color: #ff1439;
+}
+
+
 */
 /* JS DUMP
 
@@ -112,5 +140,22 @@ root.addEventListener("mousemove", e => {
   root.style.setProperty('--mouse-x', e.clientX + "px");
   root.style.setProperty('--mouse-y', e.clientY + "px");
 });
+
+
+
+HTML DUMP
+
+  <footer>
+    <div>
+      <a href="https://github.com/The-UCS-Variable/The-BOcT/blob/master/LICENSE.md" title="Under MIT LICENSE">© 2020 The-UCS-Variable</a>
+    </div>
+    <div>
+      <a href="https://github.com/The-UCS-Variable/The-BOcT">View Source</a>
+    </div>
+  </footer>
+
+
+
+
 
 */
