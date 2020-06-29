@@ -62,4 +62,12 @@
   .type_box{
     width: 92%;
   }
+
+  .info fieldset{
+    box-shadow: none;
+  }
+  .info legend{
+    border: none;
+    background-color: transparent;
+  }
 }
