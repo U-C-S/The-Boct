@@ -1,11 +1,9 @@
-# The BOcT
-<p>A Javascript static Browser ChatBot;</p>
+# The <img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/master/svgs/solid/robot.svg" width="30px"> BOcT
+BOcT is a Static Browser Chatbot, made with JavaScript. It's currently in Early development stages
 
-<img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/master/svgs/solid/robot.svg" width="100px">
+Future Updates to BOcT can make it perform basic Maths, Unit Conversions, Maybe suggest you some Movies...
+
 
 <p>Check out the Progress <a href="https://the-ucs-variable.github.io/The-BOcT/">here</a></p>
 
-<p>98% Self-Made</p>
-<p>Also, This is my Self-Learning JavaScript Project (learning from MDN)</p>
-
-<p>Purpose of the BOcT is suggesting movies, talk some nonsense etc</p>
+98% Self-Made. Also, This is my Self-Learning JavaScript Project (learning from MDN)
