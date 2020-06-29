@@ -4,30 +4,24 @@
     font-size: 28px;
   }
   .bot-head{
-    height: 65px;
-  }
-  .bot-btn svg{
-    width: 55px;
-    height: 55px;
-  }
-  .arrow_box{
-    margin: 0;
+    width: 70px;
+    height: 70px;
   }
 }
 
 
-@media screen and (max-width: 950px) and (min-width: 650px) {
+@media screen and (max-width: 950px) and (min-width: 620px) {
   .alll{
-    grid-template-columns: 10px 220px 30px auto 10px;
+    grid-template-columns: 10px 240px 20px auto 10px;
     grid-template-rows: 5% 20% 5% 65% 5%;
   }
   .arrow_box:after {
-    top: 95px;
+    top: 90px;
   }
 }
 
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 620px) {
   body, html{
     width: auto;
     height: auto;
@@ -36,14 +30,16 @@
   html{
     overflow: auto;
   }
+  .loader-wrapper{
+    border: none;
+  }
   .alll{
     padding: 0px 5px;
     grid-template-columns: 10% 80% 10%;
-    grid-template-rows: 5px 150px 10px minmax(450px,80vh) 40px 180px;
+    grid-template-rows: 5px 140px minmax(450px,80vh) 30px minmax(240px, auto);
     grid-template-areas:
       ". . ."
       ". p ."
-      ". . ."
       "a a a"
       ". . ."
       ". i .";

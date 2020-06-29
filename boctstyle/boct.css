@@ -26,6 +26,7 @@ body, html{
   padding: 0px;
   height: 100%;
   min-height: 600px;
+  min-width: 300px;
 }
 
 /*Loading Screen------------------------------*/
@@ -54,7 +55,7 @@ body, html{
 .load_bar{
   height: 100%;
   background-color: var(--wit-in-dark);
-  animation: load 2s linear;
+  animation: load 1.6s linear;
 }
 .load_text{
   margin-top: 5px;
@@ -76,7 +77,7 @@ button{
 
 .alll{
   display: grid;
-  grid-template-columns: 50px 300px 60px auto 50px;
+  grid-template-columns: 50px 300px 50px auto 50px;
   grid-template-rows: 5% 25% 5% 60% 5%;
   grid-template-areas: 
     ". . . . ." 
@@ -84,11 +85,12 @@ button{
     ". . . a ." 
     ". i . a ." 
     ". . . . .";
-  min-width: 300px;
   height: 100%;
 }
 /*header-------------------------------------------------------------*/
-.pagehead { grid-area: p; }
+.pagehead {
+  grid-area: p;
+}
 
 .heading{
   border-bottom: 2px solid var(--wit-in-dark);
@@ -119,20 +121,22 @@ button{
 
 /*.bot-head (or) head of the bot -------------*/
 .bot-head{
-  margin: 10px auto;
-  width: 90px;
-  height: 80px;
+  margin: auto;
+  padding: 12px 10px;
+  width: 100px;
+  height: 100px;
   text-align: center;
   outline: none;
 }
-
-/*BOcT*/
-.bot-btn svg{
-  height: 70px;
-  width: 70px;
-  fill: var(--wit-in-dark);
+.bot-btn{
+  padding: 0px;
 }
 
+.bot-btn svg{
+  height: 100%;
+  width: 100%;
+  fill: var(--wit-in-dark);
+}
 .bot-btn svg:hover{
   fill: #ff1439;
   transform: scale(1.15);
@@ -171,7 +175,6 @@ button{
 	width: 0;
 	position: absolute;
 	pointer-events: none;
-
   border-right-color: var(--wit-in-dark);
 	border-width: 27px;
 	margin-top: -27px;

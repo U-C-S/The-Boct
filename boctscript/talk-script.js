@@ -5,9 +5,17 @@ class directReplies {
   }
 }
 
-const intro = new directReplies(['hi','hello','hey','heya'], "Hi to you too");
-const readempty = new directReplies([''],"Oh! Come on. Talk Something Sensible");
-const readNo = new directReplies(['no','nothing','i dont know'], "You are basically NOTHING!!!")
+const intro = new directReplies(
+  ['hi','hello','hey','heya'],
+  "Hi to you too");
+
+const readempty = new directReplies(
+  [''],
+  "Oh! Come on. Talk Something Sensible");
+
+const readNo = new directReplies(
+  ['no','nothing','i dont know'],
+  "You are basically NOTHING!!!")
 
 const readage = {
   words: ['age','what is your age','whats your age','your age'],
