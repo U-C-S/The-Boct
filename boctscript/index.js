@@ -33,24 +33,24 @@ const toggler = document.querySelector('.togglemode');
 const currentTheme = localStorage.getItem('theme');
 if (currentTheme) {
   document.documentElement.setAttribute('data-theme', currentTheme);
-  if (currentTheme === 'light') {
-    toggler.dataset.themeNow = "light";
+  if (currentTheme == 'light') {
+    toggler.dataset.themenow = "light";
   }
 }
 else {
-  toggler.dataset.themeNow = "dark";
+  toggler.dataset.themenow = "dark";
 }
 
 toggler.addEventListener('click', themeAlternate);
 function themeAlternate() {
-  if(toggler.dataset.themeNow == "dark"){
+  if(toggler.dataset.themenow == "dark"){
     document.documentElement.setAttribute('data-theme', 'light');
-    toggler.dataset.themeNow = "light";
+    toggler.dataset.themenow = "light";
     localStorage.setItem('theme', 'light');
   }
   else{
     document.documentElement.setAttribute('data-theme', 'dark');
-    toggler.dataset.themeNow = "dark";
+    toggler.dataset.themenow = "dark";
     localStorage.setItem('theme', 'dark');
   }
 }

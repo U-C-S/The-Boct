@@ -10,7 +10,7 @@ const intro = new directReplies(
   "Hi to you too");
 
 const readempty = new directReplies(
-  [''],
+  ['*empty*',''],
   "Oh! Come on. Talk Something Sensible");
 
 const readNo = new directReplies(

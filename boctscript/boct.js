@@ -21,7 +21,10 @@ const SEND_MSG_TO_BOCT = document.getElementById("typespace-enter-id");
 SEND_MSG_TO_BOCT.addEventListener("click", talk_div_hooman);
 function talk_div_hooman() {
   const chat_boxx = document.querySelector(".typespace");
-  const chat_content = chat_boxx.value;
+  var chat_content = chat_boxx.value;
+  if(chat_content == '') {
+    chat_content = '*empty*';
+  }
   const newDIV = document.createElement("div");
   const attr = document.createAttribute("class");
   const talk_create = document.createElement("p");
