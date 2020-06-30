@@ -56,19 +56,19 @@ function themeAlternate() {
 }
 
 
-var modal = document.getElementById("info_popup");
-var btn = document.getElementById("inf");
-var span = document.getElementsByClassName("close")[0];
-btn.onclick = function() {
-  modal.style.display = "block";
+const ipopup = document.getElementById("info_popup");
+const ibtn = document.getElementById("i-btn");
+const iclose = document.getElementsByClassName("info_close")[0];
+ibtn.onclick = function() {
+  ipopup.style.display = "block";
 }
 
-span.onclick = function() {
-  modal.style.display = "none";
+iclose.onclick = function() {
+  ipopup.style.display = "none";
 }
 
 window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
+  if (event.target == ipopup) {
+    ipopup.style.display = "none";
   }
 }
