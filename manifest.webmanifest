@@ -4,8 +4,8 @@
   "start_url": "/The-BOcT/index.html",
   "display": "standalone",
   "orientation": "portrait",
-  "background_color": "#3E4EB8",
-  "theme_color": "#2F3BA2",
+  "background_color": "#20B2AA",
+  "theme_color": "#E64C63",
   "icons": [
     {
       "src": "/The-BOcT/boctstyle/icons/robot128.png",
