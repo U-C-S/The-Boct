@@ -323,6 +323,7 @@ button{
 .add-button{
   color: var(--blk-in-dark);
   background-color: var(--wit-in-dark);
+  margin: 5px auto;
 }
 .info p{
   text-align: center;
