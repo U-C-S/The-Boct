@@ -2,8 +2,6 @@
   "name": "The BOcT",
   "short_name": "BOcT",
   "start_url": "/The-BOcT/index.html",
-  "display": "standalone",
-  "orientation": "portrait",
   "background_color": "#20B2AA",
   "theme_color": "#E64C63",
   "icons": [
@@ -17,5 +15,6 @@
       "sizes": "512x512",
       "type": "image/png"
     }
-  ]
+  ],
+  "display": "standalone"
 }

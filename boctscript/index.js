@@ -80,17 +80,15 @@ window.onclick = function(event) {
 
 
 
-
+//-------------------PWA js---------------------
 // Register service worker to control making site work offline
-
 if('serviceWorker' in navigator) {
   navigator.serviceWorker
-           .register('/The-BOcT/sw.js')
+           .register('/The-BOcT/service-worker.js')
            .then(function() { console.log('Service Worker Registered'); });
 }
 
 // Code to handle install prompt on desktop
-
 let deferredPrompt;
 const addBtn = document.querySelector('.add-button');
 addBtn.style.display = 'none';
