@@ -306,7 +306,7 @@ button{
   display: flex;
   justify-content: space-around;
 }
-.info button{
+.infobtns button{
   width: 25px;
   height: 25px;
   padding: 0px;
@@ -319,6 +319,10 @@ button{
 }
 .info svg:hover{
   opacity: 1;
+}
+.add-button{
+  color: var(--blk-in-dark);
+  background-color: var(--wit-in-dark);
 }
 .info p{
   text-align: center;
