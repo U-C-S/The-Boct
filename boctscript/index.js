@@ -55,11 +55,11 @@ function themeAlternate() {
   }
 }
 
-
+//info-btn
 const ipopup = document.getElementById("info_popup");
 const ibtn = document.getElementById("i-btn");
 const iclose = document.getElementsByClassName("info_close")[0];
-ibtn.onclick = function() {
+ibtn.onclick = ()=> {
   ipopup.style.display = "block";
 }
 
@@ -73,6 +73,24 @@ window.onclick = function(event) {
   }
 }
 
+
+//setting-btn
+const setBtn = document.getElementById("settingg");
+const setCanva = document.getElementsByClassName("setting_canvas")[0];
+const setClose = document.getElementsByClassName("closebtn")[0];
+setBtn.addEventListener('click', ()=>{
+  setCanva.style.display = "block";
+  document.getElementById("mySidenav").style.width = "300px";
+});
+setClose.addEventListener('click', ()=>{
+  setCanva.style.display = "none";
+  document.getElementById("mySidenav").style.width = "0";
+});
+window.onclick = (e)=> {
+  if (e.target == setCanva) {
+    setCanva.style.display = "none";
+  }
+}
 
 
 
@@ -114,3 +132,56 @@ window.addEventListener('beforeinstallprompt', (e) => {
       });
   });
 });
+
+
+
+
+/*
+
+  <div class="setting_canvas">
+    <div class="setting_main">
+      <button id="setting_close_btn">close</button>
+    </div>
+  </div>
+
+
+  const setBtn = document.getElementById("settingg");
+const setCanva = document.getElementsByClassName("setting_canvas")[0];
+const setClose = document.getElementById("setting_close_btn");
+setBtn.addEventListener('click', ()=>{
+  setCanva.style.display = "block";
+});
+setClose.addEventListener('click', ()=>{
+  setCanva.style.display = "none";
+});
+window.onclick = function(event) {
+  if (event.target == setCanva) {
+    setCanva.style.display = "none";
+  }
+}
+
+
+.setting_canvas{
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.4);
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.setting_main{
+  height: 100%;
+  width: 30%;
+  min-width: 300px;
+  background-color: var(--wit-in-dark);
+}
+
+@keyframes offcanva{
+  from{
+    
+  }
+}
+
+*/

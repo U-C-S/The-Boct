@@ -386,3 +386,45 @@ And also: Thanks to
   font-size: 24px;
   background-color: var(--blk-in-dark);
 }
+
+/*Setting*/
+.setting_canvas{
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.4);
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: var(--blk-in-dark);
+  overflow-x: hidden;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: var(--wit-in-dark);
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
