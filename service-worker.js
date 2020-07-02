@@ -15,10 +15,13 @@ self.addEventListener('install', function(e) {
  });
 //Network falling back to the cache
 //https://developers.google.com/web/ilt/pwa/caching-files-with-service-worker#network_falling_back_to_the_cache
- self.addEventListener('fetch', function(event) {
+self.addEventListener('fetch', function(event) {
   event.respondWith(
-    fetch(event.request).catch(function() {
-      return caches.match(event.request);
+    caches.open('The-BOcT').then(function(cache) {
+      return fetch(event.request).then(function(response) {
+        cache.put(event.request, response.clone());
+        return response;
+      });
     })
   );
 });

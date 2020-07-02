@@ -1,5 +1,5 @@
 function logg(a) {console.log('ok');if(a == undefined){console.log('Variable Undefined');}else{console.log(`print "${a}"`);}}
-console.log(`Intial width: ${window.innerWidth} and height: ${window.innerHeight}`);
+//console.log(`Intial width: ${window.innerWidth} and height: ${window.innerHeight}`);
 /*------------------------------------------------------------------------------*/
 window.onload = setTimeout(stopLoading, 2173);
 document.getElementById('barr').addEventListener('animationend', ()=>{
@@ -77,9 +77,6 @@ window.onclick = function(event) {
 
 
 
-
-
-
 //-------------------PWA js---------------------
 // Register service worker to control making site work offline
 if('serviceWorker' in navigator) {
@@ -117,3 +114,30 @@ window.addEventListener('beforeinstallprompt', (e) => {
       });
   });
 });
+
+
+var networkDataReceived = false;
+
+startSpinner();
+
+// fetch fresh data
+var networkUpdate = fetch('/data.json').then(function(response) {
+  return response.json();
+}).then(function(data) {
+  networkDataReceived = true;
+  updatePage(data);
+});
+
+// fetch cached data
+caches.match('/data.json').then(function(response) {
+  if (!response) throw Error("No data");
+  return response.json();
+}).then(function(data) {
+  // don't overwrite newer network data
+  if (!networkDataReceived) {
+    updatePage(data);
+  }
+}).catch(function() {
+  // we didn't get cached data, the network is our last hope:
+  return networkUpdate;
+}).catch(showErrorMessage).then(stopSpinner());
