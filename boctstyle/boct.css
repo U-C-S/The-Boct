@@ -61,6 +61,7 @@ body, html{
   color: var(--wit-in-dark);
   font-size: 13px;
   font-family: 'Megrim';
+  font-weight: 600;
   text-align: center;
 }
 @keyframes load{0% {width: 0%;} 35%  {width: 30%;} 65%  {width: 70%;} 100% {width: 101%;}
@@ -141,7 +142,7 @@ button{
   transform: scale(1.15);
 }
 .bot-btn svg:active{
-  transition: all 0.1s linear;
+  transition: all 0.05s linear;
   transform: scale(1);
 }
 
@@ -184,6 +185,7 @@ button{
   width: 100%;
   height: calc(100% - 60px);
   border-radius: 32px 0 0 0;
+  box-shadow: 0 0 20px inset var(--wit-in-dark);
   background-color: var(--blk-in-dark);;
   overflow-y: scroll;
   overflow-x: hidden;
@@ -210,7 +212,6 @@ button{
   margin: 6px 4px 6px;
   border: 2px solid var(--wit-in-dark);
   padding: 2px 8px 2px 8px;
-  position: relative;
   background: #e64c63;
 }
 
@@ -222,8 +223,6 @@ button{
   margin: 6px 4px 6px;
   background: var(--wit-in-dark);
   padding: 2px 8px;
-  position: relative;
-  box-shadow: 0 0 10px var(--wit-in-dark);
 }
 
 .human_talk > p , .boct_talk > p{

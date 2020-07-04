@@ -41,7 +41,7 @@ function talk_div_hooman() {
   setTimeout(proto_boct_study_chat, 800, chat_contenta);
 }
 
-talk_div_boct("I can partially understand you. Maybe, say hi to me or ask my age. But, Don't call me an idiot");
+talk_div_boct("Hi, I can partially understand you. Maybe, say hi to me or ask my age. But, Don't call me an idiot");
 
 
 /*

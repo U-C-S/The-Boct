@@ -110,13 +110,13 @@ const readNo = {
   }
 }
 
-
-function googler() {
-  const si = studycontent.includes("google ");
-  if (si) {
-    const ss = studycontent.slice(7);
-    window.open("https://www.google.com/search?q="+ ss);
-  }
-}
-
 */
+
+/*
+greeting words:
+  hi, welcome, how are you, how is your day, 
+*/
+
+const greetingUser = {
+  words: ['Hi','Welcome','How are you','How is your day']
+}
