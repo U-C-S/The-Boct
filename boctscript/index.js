@@ -1,6 +1,3 @@
-function logg(a) {console.log('ok');if(a == undefined){console.log('Variable Undefined');}else{console.log(`print "${a}"`);}}
-//console.log(`Intial width: ${window.innerWidth} and height: ${window.innerHeight}`);
-/*------------------------------------------------------------------------------*/
 window.onload = setTimeout(stopLoading, 2173);
 document.getElementById('barr').addEventListener('animationend', ()=>{
   document.getElementById('textt').innerHTML = 'Load Complete';});
@@ -132,56 +129,3 @@ window.addEventListener('beforeinstallprompt', (e) => {
       });
   });
 });
-
-
-
-
-/*
-
-  <div class="setting_canvas">
-    <div class="setting_main">
-      <button id="setting_close_btn">close</button>
-    </div>
-  </div>
-
-
-  const setBtn = document.getElementById("settingg");
-const setCanva = document.getElementsByClassName("setting_canvas")[0];
-const setClose = document.getElementById("setting_close_btn");
-setBtn.addEventListener('click', ()=>{
-  setCanva.style.display = "block";
-});
-setClose.addEventListener('click', ()=>{
-  setCanva.style.display = "none";
-});
-window.onclick = function(event) {
-  if (event.target == setCanva) {
-    setCanva.style.display = "none";
-  }
-}
-
-
-.setting_canvas{
-  display: none;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.4);
-  position: fixed;
-  top: 0;
-  left: 0;
-}
-
-.setting_main{
-  height: 100%;
-  width: 30%;
-  min-width: 300px;
-  background-color: var(--wit-in-dark);
-}
-
-@keyframes offcanva{
-  from{
-    
-  }
-}
-
-*/

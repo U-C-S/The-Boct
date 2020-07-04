@@ -101,22 +101,3 @@ function proto_boct_study_chat(studycontent) {
     }
   }
 }
-
-/*
-const readNo = {
-  words: ['no','nothing','i dont know'],
-  reply: function() {
-    talk_div_boct("You are basically NOTHING!!!");
-  }
-}
-
-*/
-
-/*
-greeting words:
-  hi, welcome, how are you, how is your day, 
-*/
-
-const greetingUser = {
-  words: ['Hi','Welcome','How are you','How is your day']
-}
