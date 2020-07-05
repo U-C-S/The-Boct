@@ -36,15 +36,16 @@
   .alll{
     padding: 0px 5px;
     grid-template-columns: 10% 80% 10%;
-    grid-template-rows: 5px 140px minmax(450px,80vh) 30px minmax(240px, auto);
+    grid-template-rows: 5px 140px minmax(450px,80vh) minmax(40px, auto) 10px;
     grid-template-areas:
       ". . ."
       ". p ."
       "a a a"
-      ". . ."
-      ". i .";
+      ". i ."
+      ". . .";
     height: auto;
   }
+
   .arrow_box{
     animation: none;
     box-shadow: none;
@@ -59,15 +60,24 @@
     border-bottom-color: var(--wit-in-dark);
     border-right-color: transparent;
   }
+  .talk_box{
+    box-shadow: none;
+  }
   .type_box{
     width: 92%;
   }
 
   .info fieldset{
     box-shadow: none;
+    padding: 15px 5px 20px;
+    border-top: none;
+    border-radius: 0 0 15px 15px;
   }
   .info legend{
     border: none;
     background-color: transparent;
+  }
+  .info p, .info hr, .info legend{
+    display: none;
   }
 }
