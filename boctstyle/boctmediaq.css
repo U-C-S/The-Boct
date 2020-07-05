@@ -77,8 +77,8 @@
     border: none;
     background-color: transparent;
   }
-  .infobtns{
-    padding-bottom: 10px;
+  .add-button{
+    margin-top: 10px;
   }
   .info p, .info hr, .info legend{
     display: none;
