@@ -34,15 +34,13 @@
     border: none;
   }
   .alll{
-    padding: 0px 5px;
+    padding: 5px 5px 10px;
     grid-template-columns: 10% 80% 10%;
-    grid-template-rows: 5px 140px minmax(450px,80vh) minmax(40px, auto) 10px;
+    grid-template-rows: 140px minmax(450px,80vh) minmax(40px, auto);
     grid-template-areas:
-      ". . ."
       ". p ."
       "a a a"
-      ". i ."
-      ". . .";
+      ". i .";
     height: auto;
   }
 
@@ -69,7 +67,7 @@
 
   .info fieldset{
     box-shadow: none;
-    padding: 15px 5px 20px;
+    padding: 15px 5px;
     border-top: none;
     border-radius: 0 0 15px 15px;
   }
@@ -78,9 +76,13 @@
     background-color: transparent;
   }
   .add-button{
-    margin-top: 10px;
+    margin-top: 20px;
+    padding: 5px 10px;
   }
   .info p, .info hr, .info legend{
     display: none;
+  }
+  .info_contain{
+    width: 95%;
   }
 }

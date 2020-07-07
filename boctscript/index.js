@@ -71,23 +71,6 @@ window.onclick = function(event) {
 }
 
 
-//setting-btn
-const setBtn = document.getElementById("settingg");
-const setCanva = document.getElementsByClassName("setting_canvas")[0];
-const setClose = document.getElementsByClassName("closebtn")[0];
-setBtn.addEventListener('click', ()=>{
-  setCanva.style.display = "block";
-  document.getElementById("mySidenav").style.width = "300px";
-});
-setClose.addEventListener('click', ()=>{
-  setCanva.style.display = "none";
-  document.getElementById("mySidenav").style.width = "0";
-});
-window.onclick = (e)=> {
-  if (e.target == setCanva) {
-    setCanva.style.display = "none";
-  }
-}
 
 
 

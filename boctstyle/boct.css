@@ -122,19 +122,21 @@ button{
 /*.bot-head (or) head of the bot -------------*/
 .bot-head{
   margin: auto;
-  padding: 12px 10px;
+  padding: 10px;
   width: 100px;
   height: 100px;
   text-align: center;
   outline: none;
 }
+
+.bot-btn, .bot-btn svg{
+  width: 100%;
+  height: 100%;
+}
 .bot-btn{
   padding: 0px;
 }
-
 .bot-btn svg{
-  height: 100%;
-  width: 100%;
   fill: var(--wit-in-dark);
 }
 .bot-btn svg:hover{
@@ -185,7 +187,7 @@ button{
   width: 100%;
   height: calc(100% - 60px);
   border-radius: 32px 0 0 0;
-  box-shadow: 0 0 20px inset var(--wit-in-dark);
+  box-shadow: 0 0 20px inset black;
   background-color: var(--blk-in-dark);;
   overflow-y: scroll;
   overflow-x: hidden;
@@ -225,7 +227,8 @@ button{
   padding: 2px 8px;
 }
 
-.human_talk > p , .boct_talk > p{
+.human_talk > p ,
+.boct_talk > p {
   color: var(--blk-in-dark);
   font-size: 14px;
   font-family: "Quicksand", sans-serif;
@@ -323,6 +326,8 @@ button{
   color: var(--blk-in-dark);
   background-color: var(--wit-in-dark);
   margin: 5px auto;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
 }
 .info p{
   text-align: center;
@@ -355,7 +360,6 @@ And also: Thanks to
   width: 100%;
   height: 100%;
   padding: 20px;
-  border: 2px solid var(--wit-in-dark);
   background-color: rgba(0,0,0,0.4);
 }
 .info_contain{
@@ -376,6 +380,8 @@ And also: Thanks to
   justify-content: space-evenly;
 }
 .info_content a{
+  display: block;
+  margin: 10px 0;
   text-decoration: none;
   font-size: 18px;
   color: var(--blk-in-dark);
@@ -386,44 +392,4 @@ And also: Thanks to
   background-color: var(--blk-in-dark);
 }
 
-/*Setting*/
-.setting_canvas{
-  display: none;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.4);
-  position: fixed;
-  top: 0;
-  left: 0;
-}
-.sidenav {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: var(--blk-in-dark);
-  overflow-x: hidden;
-  padding-top: 60px;
-}
-
-.sidenav a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: var(--wit-in-dark);
-  display: block;
-}
-
-.sidenav a:hover {
-  color: #f1f1f1;
-}
-
-.sidenav .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
-}
+/*Setting here*/
