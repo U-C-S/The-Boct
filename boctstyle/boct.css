@@ -321,6 +321,7 @@ button{
   opacity: 1;
 }
 .add-button{
+  display: block;
   color: var(--blk-in-dark);
   background-color: var(--wit-in-dark);
   margin: 5px auto;
@@ -362,7 +363,7 @@ And also: Thanks to
 }
 .info_contain{
   width: 70%;
-  height: 240px;
+  height: 280px;
   margin: auto;
   padding: 10px;
   background-color: var(--wit-in-dark);
@@ -383,6 +384,16 @@ And also: Thanks to
   text-decoration: none;
   font-size: 18px;
   color: var(--blk-in-dark);
+}
+#experimental{
+  display: block;
+  color: var(--blk-in-dark);
+  background-color: var(--wit-in-dark);
+  border: 2px solid var(--blk-in-dark);
+  margin: 5px auto;
+  padding: 5px;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
 }
 .info_close{
   color: var(--wit-in-dark);

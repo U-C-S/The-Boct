@@ -1,3 +1,7 @@
+document.getElementById('experimental').addEventListener('click',()=>{
+  document.location = "/Experimental/"
+})
+
 window.onload = setTimeout(stopLoading, 2173);
 document.getElementById('barr').addEventListener('animationend', ()=>{
   document.getElementById('textt').innerHTML = 'Load Complete';});
