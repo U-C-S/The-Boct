@@ -1,4 +1,4 @@
-# The <a href="https://the-ucs-variable.github.io/The-BOcT/"><img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/master/svgs/solid/robot.svg" width="30px"></a> BOcT
+# The <a href="https://the-boct.github.io/"><img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/master/svgs/solid/robot.svg" width="30px"></a> BOcT
 BOcT is a Static Browser Chatbot, made with JavaScript. It's currently in Early development stages
 
 Now, Available as Progressive Web App (PWA)
