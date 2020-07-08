@@ -2,17 +2,17 @@
   "lang": "en",
   "name": "The BOcT",
   "short_name": "BOcT",
-  "start_url": "/The-BOcT/index.html",
+  "start_url": "/index.html",
   "background_color": "#20B2AA",
   "theme_color": "#E64C63",
   "icons": [
     {
-      "src": "/The-BOcT/boctstyle/icons/robot128.png",
+      "src": "/boctstyle/icons/robot128.png",
       "sizes": "128x128",
       "type": "image/png"
     },
     {
-      "src": "/The-BOcT/boctstyle/icons/robot512.png",
+      "src": "/boctstyle/icons/robot512.png",
       "sizes": "512x512",
       "type": "image/png"
     }

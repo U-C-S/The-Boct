@@ -2,13 +2,13 @@ self.addEventListener('install', function(e) {
   e.waitUntil(
     caches.open('The-BOcT').then(function(cache) {
       return cache.addAll([
-        '/The-BOcT/',
-        '/The-BOcT/index.html',
-        '/The-BOcT/boctstyle/boct.css',
-        '/The-BOcT/boctstyle/boctmediaq.css',
-        '/The-BOcT/boctscript/index.js',
-        '/The-BOcT/boctscript/talk-script.js',
-        '/The-BOcT/boctscript/boct.js'
+        '/',
+        '/index.html',
+        '/boctstyle/boct.css',
+        '/boctstyle/boctmediaq.css',
+        '/boctscript/index.js',
+        '/boctscript/talk-script.js',
+        '/boctscript/boct.js'
       ]);
     })
   );
