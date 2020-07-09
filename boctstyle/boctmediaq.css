@@ -36,7 +36,7 @@
   .alll{
     padding: 5px 5px 10px;
     grid-template-columns: 10% 80% 10%;
-    grid-template-rows: 140px minmax(450px,85vh) minmax(40px, auto);
+    grid-template-rows: 145px minmax(450px,85vh) minmax(40px, auto);
     grid-template-areas:
       ". p ."
       "a a a"

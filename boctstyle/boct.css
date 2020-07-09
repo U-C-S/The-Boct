@@ -75,7 +75,7 @@ button{
 
 .alll{
   display: grid;
-  grid-template-columns: 40px 300px 40px auto 40px;
+  grid-template-columns: 50px 300px 60px auto 50px;
   grid-template-rows: 5% 25% 5% 60% 5%;
   grid-template-areas: 
     ". . . . ." 
