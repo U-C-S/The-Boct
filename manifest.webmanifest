@@ -2,7 +2,7 @@
   "lang": "en",
   "name": "The BOcT",
   "short_name": "BOcT",
-  "start_url": "/index.html",
+  "start_url": "/",
   "background_color": "#20B2AA",
   "theme_color": "#E64C63",
   "icons": [
