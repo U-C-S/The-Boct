@@ -15,6 +15,7 @@ function stopLoading() {
 const CLICK_BOT = document.getElementById('BOcT');
 CLICK_BOT.addEventListener("click", BOcT_open);
 function BOcT_open() {
+  CLICK_BOT.style.animation = "none";
   document.getElementById("chatter").style.display="block";
   CLICK_BOT.removeEventListener("click", BOcT_open);
   CLICK_BOT.addEventListener("click", BOcT_annoy_clicks);
@@ -74,7 +75,33 @@ window.onclick = function(event) {
   }
 }
 
+//setting
+var body = document.querySelector('body');
+var alll = document.querySelector('.alll');
+document.querySelector('#settingg').addEventListener('click', toggleSidebar, false);
 
+function toggleSidebar(){
+  isShowingSidebar() ? hideSidebar() : showSidebar();
+}
+
+function showSidebar(){
+  body.classList.add('show-sidebar');
+}
+
+function hideSidebar(){
+  body.classList.remove('show-sidebar');
+}
+
+function isShowingSidebar(){
+  return body.classList.contains('show-sidebar');
+}
+
+body.addEventListener('click', (e)=>{
+  if(isShowingSidebar() && alll.contains(e.target)){
+      e.preventDefault();
+      hideSidebar();
+  }
+}, true);
 
 
 

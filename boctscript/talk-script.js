@@ -17,15 +17,18 @@ const readNo = new directReplies(
   ['no','nothing','i dont know'],
   "You are basically NOTHING!!!")
 
-const readage = {
-  words: ['age','what is your age','whats your age','your age'],
-  reply: function() {
-    var birthdate = new Date(2020, 4, 5, 17, 43, 0, 0);
-    var Difference_In_Time = Date.now() - birthdate.getTime();
-    var Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
-    talk_div_boct(`I was created approx ${Difference_In_Days} days ago`);
+  const readage = {
+    words: ['what is your age','whats your age','your age'],
+    reply: function() {
+      let birthdate = new Date(2020, 4, 5, 17, 43, 0, 0);
+      let Diff_In_Time = Date.now() - birthdate.getTime();
+      let Diff_In_Days = Diff_In_Time / (1000 * 3600 * 24);
+      let Days = Math.floor(Diff_In_Time / (1000 * 3600 * 24));
+      let Diff_In_Hour = Math.floor((Diff_In_Days - Days) * 24);
+      let Diff_In_Mins = Math.floor((((Diff_In_Days - Days) * 24) - Diff_In_Hour) * 60);
+      talk_div_boct(`My Creation began approx ${Days} days, ${Diff_In_Hour} hours and ${Diff_In_Mins} minutes ago`);
+    }
   }
-}
 
 const readannoy = {
   words: ['annoy me','idiot'],
@@ -98,6 +101,45 @@ function proto_boct_study_chat(studycontent) {
         readables2[i].reply(studycontent); 
         break loop2;
       }
+    }
+  }
+  //v1.2.1.83
+  if(studycontent[0] == '.' || studycontent[0] == '$'){
+    let comm = studycontent.slice(1,5);
+    switch (comm) {
+      case "":
+        talk_div_boct('Type a Dot-Command');
+        break;
+      case 'name':
+        talk_div_boct('BOcT');
+        break;
+      case 'age':
+        let birthdate = new Date(2020, 4, 5, 17, 43, 0, 0);
+        let Diff_In_Time = Date.now() - birthdate.getTime();
+        let Diff_In_Days = Diff_In_Time / (1000 * 3600 * 24);
+        let Days = Math.floor(Diff_In_Time / (1000 * 3600 * 24));
+        let Diff_In_Hour = Math.floor((Diff_In_Days - Days) * 24);
+        let Diff_In_Mins = Math.floor((((Diff_In_Days - Days) * 24) - Diff_In_Hour) * 60);
+        talk_div_boct(`${Days} days, ${Diff_In_Hour} hours and ${Diff_In_Mins} minutes`);
+        break;
+      case 'god':
+        talk_div_boct('The-UCS-Variable');
+        break;
+      case 'v':
+        const ver = document.getElementsByClassName('release')[0];
+        talk_div_boct(`${ver.innerHTML}`);
+        break;
+      case 'url':
+        talk_div_boct('https://the-boct.github.io/Experimental/');
+        break;
+      case 'code':
+        talk_div_boct('https://github.com/The-BOcT/Experimental');
+        break;
+      case 'meow':
+        talk_div_boct('MeooW!.....MeeeeeeWww!');
+      default:
+        talk_div_boct('INVALID COMMAND');
+        break;
     }
   }
 }

@@ -65,13 +65,13 @@
     width: 92%;
   }
 
-  .info fieldset{
+  .about fieldset{
     box-shadow: none;
     padding: 15px 5px;
     border-top: none;
     border-radius: 0 0 15px 15px;
   }
-  .info legend{
+  .about legend{
     border: none;
     background-color: transparent;
   }
@@ -79,10 +79,16 @@
     margin-top: 20px;
     padding: 5px 10px;
   }
-  .info p, .info hr, .info legend{
+  .about p, .about hr, .about legend{
     display: none;
   }
-  .info_contain{
+  .info_window{
     width: 95%;
+    padding: 7px;
+  }
+
+  .settingbar{
+    width: 245px;
+    transform: translate3d(-250px, 0, 0);
   }
 }
