@@ -22,13 +22,12 @@ SEND_MSG_TO_BOCT.addEventListener("click", talk_div_hooman);
 function talk_div_hooman() {
   const chat_boxx = document.querySelector(".typespace");
   var chat_content = chat_boxx.value;
-  if(chat_content == '') {
-    chat_content = '*empty*';
-  }
+  if(chat_content == '') { chat_content = '*empty*'; }
   const newDIV = document.createElement("div");
   const attr = document.createAttribute("class");
   const talk_create = document.createElement("p");
   const talk_matter = document.createTextNode(chat_content);
+
   attr.value = "human_talk";
   newDIV.setAttributeNode(attr);
   document.getElementById("chatspace").appendChild(newDIV);
@@ -37,7 +36,7 @@ function talk_div_hooman() {
   scroll_update();
   chat_boxx.value = "";
   const chat_contenta = chat_content.trim().toLowerCase();
-  setTimeout(proto_boct_study_chat, 800, chat_contenta);
+  setTimeout(proto_boct_study_chat, 600, chat_contenta);
 }
 
 talk_div_boct("Hi, I can partially understand you. Maybe, say hi to me or ask my age. But, Don't call me an idiot");

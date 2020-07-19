@@ -33,7 +33,6 @@ const readNo = new directReplies(
 const readannoy = {
   words: ['annoy me','idiot'],
   reply: function() {
-    talk_div_boct("No, You are...")
     for (let i = 0; i < 10; i++) {
       talk_div_boct("You're a IDIOT"); }
   }

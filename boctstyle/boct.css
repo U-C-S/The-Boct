@@ -8,6 +8,22 @@
   --wit-in-dark: black;
 }
 
+@font-face {
+  font-family: 'Quicksand';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Quicksand'), url(https://fonts.gstatic.com/s/quicksand/v21/6xK-dSZaM9iE8KbpRA_LJ3z8mH9BOJvgkP8o58a-wg.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'Megrim';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Megrim'), url(https://fonts.gstatic.com/s/megrim/v10/46kulbz5WjvLqJZVam_h.woff2) format('woff2');
+}
+
 *,
 *::after,
 *::before{
@@ -221,8 +237,9 @@ button{
 /* BOcT talk CSS */
 .boct_talk{
   float: left;
-  width: 75%;
-  margin: 6px 4px 6px;
+  max-width: 75%;
+  min-width: 45%;
+  margin: 6px 20% 6px 4px;
   border: 2px solid var(--wit-in-dark);
   padding: 2px 8px 2px 8px;
   background: #e64c63;
@@ -231,9 +248,10 @@ button{
 /*human talk CSS */
 .human_talk{
   float: right;
-  width: 75%;
+  max-width: 75%;
+  min-width: 30%;
   min-height: 44px;
-  margin: 6px 4px 6px;
+  margin: 6px 4px 6px 21%;
   background: var(--wit-in-dark);
   padding: 2px 8px;
 }
@@ -377,7 +395,7 @@ And also: Thanks to
 }
 .info_window{
   width: 70%;
-  height: 445px;
+  height: 475px;
   margin: auto;
   padding: 10px 10px 0;
   background-color: var(--wit-in-dark);

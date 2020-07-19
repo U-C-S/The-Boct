@@ -105,6 +105,8 @@ body.addEventListener('click', (e)=>{
 
 
 
+
+
 //-----------------js for PWA-------------------
 if('serviceWorker' in navigator) {
   navigator.serviceWorker.register('/service-worker.js');
@@ -123,9 +125,9 @@ window.addEventListener('beforeinstallprompt', (e) => {
     deferredPrompt.prompt();
     deferredPrompt.userChoice.then((choiceResult) => {
         if (choiceResult.outcome === 'accepted') {
-          console.log('User accepted the BOcT prompt');
+          console.log('User accepted the BOcT Installation prompt');
         } else {
-          console.log('User dismissed the BOcT prompt');
+          console.log('User dismissed the BOcT Installation prompt');
         }
         deferredPrompt = null;
       });
