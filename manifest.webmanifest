@@ -17,5 +17,11 @@
       "type": "image/png"
     }
   ],
-  "display": "standalone"
+  "display": "standalone",
+  "shortcuts": [
+    {
+      "name": "BOcT: Experimental",
+      "url": "/Experimental/"
+    }
+  ]
 }

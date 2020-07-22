@@ -39,8 +39,8 @@
     grid-template-rows: 145px minmax(450px,85vh) minmax(40px, auto);
     grid-template-areas:
       ". p ."
-      "a a a"
-      ". i .";
+      "c c c"
+      ". a .";
     height: auto;
   }
 

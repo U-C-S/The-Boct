@@ -12,9 +12,9 @@
   <link rel="icon" href="boctstyle/icons/robot.ico">
   <link rel="license" href="/LICENSE.md">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com/" crossorigin="anonymous">
-  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="anonymous">
-  <link rel="preconnect" href="https://www.google-analytics.com/" crossorigin="use-credentials">
+  <link rel="preconnect" href="https://fonts.googleapis.com/" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+  <link rel="preconnect" href="https://www.google-analytics.com/" crossorigin>
 
   <!--CSS-->
   <link rel="stylesheet" href="boctstyle/boct.css">
@@ -24,7 +24,8 @@
   <meta name="application-name" content="The BOcT">
   <meta name="theme-color" content="#E64C63"/>
   <link rel="manifest" type="application/manifest+json; charset=utf-8" href="/manifest.webmanifest">
-  <link rel="apple-touch-icon" href="/boctstyle/icons/robot128.png">
+  <link rel="apple-touch-icon" sizes="128x128" href="/boctstyle/icons/robot128.png">
+  <link rel="apple-touch-icon" sizes="48x48" href="/boctstyle/icons/robot.png">
 
   <!--Scripts-->
   <script defer src="boctscript/index.js"></script>
@@ -42,6 +43,7 @@
 
 </head>
 <body>
+  <!-- main -->
   <div class="alll" id="allo">
     <div class="pagehead">
       <div class="heading" id="header"><h1 id="title">The BOcT</h1></div>
@@ -56,10 +58,10 @@
 
     <div class="arrow_box" id="chatter">
       <div class="talk_box" id="chatspace">
-        <!-- CHAT HTML goes here -------------------------------->
+        <!-- CHAT HTML goes here --->
 
       </div>
-      <!-- Type bar ------------------------------------------->
+      <!-- Type bar --->
       <div class="type_box">
         <form class="type_box-inner" action="javascript:void(0);">
           <input class="typespace" id="typespace-id" type="text" placeholder="Wanna talk with BOcT? Then type here..!" autocomplete="off" maxlength="120" spellcheck="true">
@@ -86,7 +88,7 @@
             <path d="M8 256c0 136.966 111.033 248 248 248s248-111.034 248-248S392.966 8 256 8 8 119.033 8 256zm248 184V72c101.705 0 184 82.311 184 184 0 101.705-82.311 184-184 184z"/>
             </svg></button>
         </div>
-        <p class="release">Version 2.2-r2</p>
+        <p class="release">Version 2.2-r3</p>
         <button class="add-button">Install</button><hr>
         <p>BOcT is a Static Browser Chatbot</p>
         <p>It's currently in Early development stages</p>
@@ -98,15 +100,15 @@
     </div>
   </div>
 
-  <!-- Loading screen --------------------------------------->
+  <!-- Fake Loading screen --------------------------------------->
   <div class="loader-wrapper" id="loader">
     <div class="loader">
       <div class="load_bar" id="barr"></div>
-      <div class="load_text" id="textt">Loading</div>
+      <div class="load_text" id="textt">BOcT Loading...</div>
     </div>
   </div>
 
-  <!-- iPopUp here -->
+  <!-- iPopUp -->
   <div id="info_popup">
     <div class="info_window">
       <div class="info_content">
@@ -140,7 +142,7 @@
     </div>
   </div>
 
-  <!--Off Canvas menu for Settings-->
+  <!--Off-Canvas menu for Settings-->
   <aside class="settingbar">
     <p>This space will be alotted for Settings</li>
     <p>EXPERIMENTAL ALERT!!</li>
