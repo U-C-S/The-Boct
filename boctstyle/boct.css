@@ -153,7 +153,7 @@ button{
 }
 .bot-btn{
   padding: 0px;
-  animation: beepbeep 2.5s ease-in-out 10s infinite;
+  animation: beepbeep 2.5s ease-in-out 5s infinite;
 }
 @keyframes beepbeep{
   0%, 20%, 30%, 35%, 45%, 55%, 100% {transform: scale(1);}
