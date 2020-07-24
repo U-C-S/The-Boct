@@ -1,11 +1,13 @@
 :root {
   --blk-in-dark: black;
   --wit-in-dark: white;
+  --lit-in-dark: #ccc;
 }
 
 [data-theme="light"] {
   --blk-in-dark: white;
   --wit-in-dark: black;
+  --lit-in-dark: black;
 }
 
 @font-face {
@@ -46,7 +48,7 @@ body{
 .typespace,
 .about legend, .about p, .add-button,
 .info_content, .info_links a, #experimental, .info_close,
-.settingbar p{
+.settingbar{
   font-family: "Quicksand", sans-serif;
 }
 
@@ -100,7 +102,7 @@ button{
 .alll{
   display: grid;
   grid-template-columns: 50px 300px 60px auto 50px;
-  grid-template-rows: 5% 25% 5% 60% 5%;
+  grid-template-rows: 5% 25% auto 250px 5%;
   grid-template-areas: 
     ". . . . ." 
     ". p . c ." 
@@ -429,7 +431,7 @@ button{
   background-color: var(--blk-in-dark);
 }
 
-/*Setting off-canvas-------------------------------------*/
+/*Setting off-canvas----------------------------------------------*/
 .settingbar {
   position: fixed;
   z-index: 5;
@@ -437,24 +439,50 @@ button{
   left: 0;
   height: 100%;
   width: 360px;
-  background-color: var(--wit-in-dark);
-  color: var(--blk-in-dark);
   overflow: hidden;
   transform: translate3d(-365px, 0, 0);
   transition: transform 0.4s ease-in-out;
   will-change: transform;
   box-shadow: 0 0 30px black;
-}
-
-.settingbar p{
-  padding: 10px;
+  background-color: var(--lit-in-dark);
+  color: var(--blk-in-dark);
   text-align: center;
 }
-
 .show-sidebar .settingbar {
   transform: translate3d(0, 0, 0);
 }
 
+.settingbar h2{
+  padding: 10px 0;
+  margin: 0;
+  border-bottom: 1px solid var(--blk-in-dark);
+}
+
+/* settings-----------------------------------*/
+.settingbar label{
+  display: block;
+  user-select: none;
+  width: 100%;
+  margin: 0;
+  padding: 10px 5px;
+  border-bottom: 1px solid var(--blk-in-dark);
+}
+
+.stg_contain input {
+  display: inline-block;
+  margin: 0;  
+  height: 16px;
+  width: 16px;
+  position: relative;
+  top: 2px;
+  left: 4px;
+}
+
+
+.settingbar label:hover{
+  color: white;
+  background-color: #ff1439;
+}
 
 /*
 *-----------------------------------------------------------

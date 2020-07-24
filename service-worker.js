@@ -2,7 +2,6 @@ self.addEventListener('install', function(e) {
   e.waitUntil(
     caches.open('The-BOcT').then(function(cache) {
       return cache.addAll([
-        '/',
         '/index.html',
         '/boctstyle/boct.css',
         '/boctstyle/boctmediaq.css',

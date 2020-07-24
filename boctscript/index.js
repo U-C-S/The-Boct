@@ -1,6 +1,47 @@
-document.getElementById('experimental').addEventListener('click',()=>{
-  document.location = "/Experimental/"
-})
+//-----------------js for PWA-------------------
+if('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/service-worker.js');
+}
+
+let deferredPrompt;
+const addBtn = document.querySelector('.add-button');
+addBtn.style.display = 'none';
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+  addBtn.style.display = 'block';
+
+  addBtn.addEventListener('click', (e) => {
+    addBtn.style.display = 'none';
+    deferredPrompt.prompt();
+    deferredPrompt.userChoice.then((choiceResult) => {
+        if (choiceResult.outcome === 'accepted') {
+          console.log('User accepted the BOcT Installation prompt');
+        } else {
+          console.log('User dismissed the BOcT Installation prompt');
+        }
+        deferredPrompt = null;
+      });
+  });
+});
+
+
+
+//Js for index.html
+const CLICK_BOT = document.getElementById('BOcT');
+var click_count = 0;
+const toggler = document.querySelector('.togglemode');
+const ipopup = document.getElementById("info_popup");
+const ibtn = document.getElementById("i-btn");
+const iclose = document.getElementsByClassName("info_close")[0];
+var body = document.querySelector('body');
+const alll = document.querySelector('.alll');
+const stg_chatbox = document.getElementById("stg_chat_open_default");
+
+const currentTheme = localStorage.getItem('theme');
+const stg_chatbox_cokie = localStorage.getItem('chatbox');
+
+
 
 window.onload = setTimeout(stopLoading, 2173);
 document.getElementById('barr').addEventListener('animationend', ()=>{
@@ -12,7 +53,8 @@ function stopLoading() {
   document.getElementById('title').style.animation = "focus-in-expand 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both";
 }
 
-const CLICK_BOT = document.getElementById('BOcT');
+
+
 CLICK_BOT.addEventListener("click", BOcT_open);
 function BOcT_open() {
   CLICK_BOT.style.animation = "none";
@@ -21,7 +63,6 @@ function BOcT_open() {
   CLICK_BOT.addEventListener("click", BOcT_annoy_clicks);
 }
 
-var click_count = 0;
 function BOcT_annoy_clicks() {
   click_count += 1;
   if (click_count === 4) {
@@ -30,9 +71,12 @@ function BOcT_annoy_clicks() {
   }
 }
 
+
+document.getElementById('experimental').addEventListener('click',()=>{
+  document.location = "/Experimental/"
+})
+
 //Dark Mode
-const toggler = document.querySelector('.togglemode');
-const currentTheme = localStorage.getItem('theme');
 if (currentTheme) {
   document.documentElement.setAttribute('data-theme', currentTheme);
   if (currentTheme == 'light') {
@@ -58,9 +102,6 @@ function themeAlternate() {
 }
 
 //info-btn
-const ipopup = document.getElementById("info_popup");
-const ibtn = document.getElementById("i-btn");
-const iclose = document.getElementsByClassName("info_close")[0];
 ibtn.onclick = ()=> {
   ipopup.style.display = "block";
 }
@@ -76,8 +117,6 @@ window.onclick = function(event) {
 }
 
 //setting
-var body = document.querySelector('body');
-var alll = document.querySelector('.alll');
 document.querySelector('#settingg').addEventListener('click', toggleSidebar, false);
 
 function toggleSidebar(){
@@ -105,31 +144,25 @@ body.addEventListener('click', (e)=>{
 
 
 
-
-
-//-----------------js for PWA-------------------
-if('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/service-worker.js');
+//Settings
+//1.open chatbox by default
+if (stg_chatbox_cokie == 'open'){
+  stg_chatbox.checked = true;
+  CLICK_BOT.style.animation = "none";
+  document.getElementById("chatter").style.display="block";
+}
+else{
+  stg_chatbox.checked = false;
+  document.getElementById("chatter").style.display="none";
 }
 
-let deferredPrompt;
-const addBtn = document.querySelector('.add-button');
-addBtn.style.display = 'none';
-window.addEventListener('beforeinstallprompt', (e) => {
-  e.preventDefault();
-  deferredPrompt = e;
-  addBtn.style.display = 'block';
-
-  addBtn.addEventListener('click', (e) => {
-    addBtn.style.display = 'none';
-    deferredPrompt.prompt();
-    deferredPrompt.userChoice.then((choiceResult) => {
-        if (choiceResult.outcome === 'accepted') {
-          console.log('User accepted the BOcT Installation prompt');
-        } else {
-          console.log('User dismissed the BOcT Installation prompt');
-        }
-        deferredPrompt = null;
-      });
-  });
+stg_chatbox.addEventListener('click',()=>{
+  if(stg_chatbox.checked == true){
+    CLICK_BOT.style.animation = "none";
+    document.getElementById("chatter").style.display="block";
+    localStorage.setItem('chatbox', 'open');
+  }
+  else{
+    localStorage.setItem('chatbox','close');
+  }
 });
