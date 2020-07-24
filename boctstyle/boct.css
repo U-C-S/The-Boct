@@ -467,6 +467,10 @@ button{
   padding: 10px 5px;
   border-bottom: 1px solid var(--blk-in-dark);
 }
+.settingbar label:hover{
+  color: white;
+  background-color: #ff1439;
+}
 
 .stg_contain input {
   display: inline-block;
@@ -476,12 +480,6 @@ button{
   position: relative;
   top: 2px;
   left: 4px;
-}
-
-
-.settingbar label:hover{
-  color: white;
-  background-color: #ff1439;
 }
 
 /*

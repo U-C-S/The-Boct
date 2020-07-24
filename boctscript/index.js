@@ -144,7 +144,7 @@ body.addEventListener('click', (e)=>{
 
 
 
-//Settings
+//Settings----------------------------------------------------------
 //1.open chatbox by default
 if (stg_chatbox_cokie == 'open'){
   stg_chatbox.checked = true;

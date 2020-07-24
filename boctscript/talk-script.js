@@ -15,7 +15,7 @@ const readempty = new directReplies(
 
 const readNo = new directReplies(
   ['no','nothing','i dont know'],
-  "You are basically NOTHING!!!")
+  "You are basically NOTHING!!!");
 
   const readage = {
     words: ['what is your age','whats your age','your age'],
@@ -31,7 +31,7 @@ const readNo = new directReplies(
   }
 
 const readannoy = {
-  words: ['annoy me','idiot'],
+  words: ['annoy me','idiot','dumb'],
   reply: function() {
     for (let i = 0; i < 10; i++) {
       talk_div_boct("You're a IDIOT"); }
@@ -122,7 +122,7 @@ function proto_boct_study_chat(studycontent) {
         talk_div_boct(`${Days} days, ${Diff_In_Hour} hours and ${Diff_In_Mins} minutes`);
         break;
       case 'god':
-        talk_div_boct('The-UCS-Variable');
+        talk_div_boct('U-C-S / Chanakya');
         break;
       case 'v':
         const ver = document.getElementsByClassName('release')[0];
@@ -136,6 +136,10 @@ function proto_boct_study_chat(studycontent) {
         break;
       case 'meow':
         talk_div_boct('MeooW!.....MeeeeeeWww!');
+        break;
+      case '2+2':
+        talk_div_boct('2 + 2 = 5');
+        break;
       default:
         talk_div_boct('INVALID COMMAND');
         break;
