@@ -145,3 +145,10 @@ stg_chatbox.addEventListener('click',()=>{
     localStorage.setItem('chatbox','close');
   }
 });
+
+//0. Clear LocalStorage
+document.getElementById('cokieClear').addEventListener('click',()=>{
+  localStorage.removeItem("theme");
+  localStorage.removeItem("chatbox");
+  localStorage.clear();
+},false);
