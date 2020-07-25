@@ -102,7 +102,7 @@ button{
 .alll{
   display: grid;
   grid-template-columns: 50px 300px 60px auto 50px;
-  grid-template-rows: 5% 25% auto 250px 5%;
+  grid-template-rows: 5% 25% minmax(auto,calc(65% - 250px)) 250px 5%;
   grid-template-areas: 
     ". . . . ." 
     ". p . c ." 
