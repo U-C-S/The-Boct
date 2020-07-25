@@ -28,18 +28,8 @@ window.addEventListener('beforeinstallprompt', (e) => {
 
 
 //Js for index.html
-const CLICK_BOT = document.getElementById('BOcT');
-var click_count = 0;
-const toggler = document.querySelector('.togglemode');
-const ipopup = document.getElementById("info_popup");
-const ibtn = document.getElementById("i-btn");
-const iclose = document.getElementsByClassName("info_close")[0];
-var body = document.querySelector('body');
+const body = document.querySelector('body');
 const alll = document.querySelector('.alll');
-const stg_chatbox = document.getElementById("stg_chat_open_default");
-
-const currentTheme = localStorage.getItem('theme');
-const stg_chatbox_cokie = localStorage.getItem('chatbox');
 
 
 
@@ -54,7 +44,7 @@ function stopLoading() {
 }
 
 
-
+const CLICK_BOT = document.getElementById('BOcT');
 CLICK_BOT.addEventListener("click", BOcT_open);
 function BOcT_open() {
   CLICK_BOT.style.animation = "none";
@@ -63,6 +53,7 @@ function BOcT_open() {
   CLICK_BOT.addEventListener("click", BOcT_annoy_clicks);
 }
 
+var click_count = 0;
 function BOcT_annoy_clicks() {
   click_count += 1;
   if (click_count === 4) {
@@ -71,15 +62,15 @@ function BOcT_annoy_clicks() {
   }
 }
 
+document.getElementById('experimental').addEventListener('click',()=>{ document.location = "/Experimental/" });
 
-document.getElementById('experimental').addEventListener('click',()=>{
-  document.location = "/Experimental/"
-})
+//Toggle Dark Mode------------------------------
+const toggler = document.querySelector('.toggleTheme');
+const currentThemeCokie = localStorage.getItem('theme');
 
-//Dark Mode
-if (currentTheme) {
-  document.documentElement.setAttribute('data-theme', currentTheme);
-  if (currentTheme == 'light') {
+if (currentThemeCokie) {
+  document.documentElement.setAttribute('data-theme', currentThemeCokie);
+  if (currentThemeCokie == 'light') {
     toggler.dataset.themenow = "light";
   }
 }
@@ -101,51 +92,39 @@ function themeAlternate() {
   }
 }
 
-//info-btn
-ibtn.onclick = ()=> {
-  ipopup.style.display = "block";
-}
+//info popup--------------------------------------
+const ipopup = document.getElementById("info_popup");
 
-iclose.onclick = function() {
-  ipopup.style.display = "none";
-}
-
-window.onclick = function(event) {
-  if (event.target == ipopup) {
+document.getElementById("i-btn").onclick = ()=> { ipopup.style.display = "block"; }
+document.getElementsByClassName("info_close")[0].onclick = ()=> { ipopup.style.display = "none"; }
+window.onclick = (e)=>{
+  if (e.target == ipopup) {
     ipopup.style.display = "none";
   }
 }
 
-//setting
-document.querySelector('#settingg').addEventListener('click', toggleSidebar, false);
-
-function toggleSidebar(){
-  isShowingSidebar() ? hideSidebar() : showSidebar();
+//Toggle Off-Canvas for Settings------------------------------------
+const offcanvas = {
+  show: ()=>{ body.classList.add('show-sidebar'); },
+  hide: ()=>{ body.classList.remove('show-sidebar'); },
+  check: ()=>{ return body.classList.contains('show-sidebar'); },
+  toggle: ()=>{ offcanvas.check() ? offcanvas.hide() : offcanvas.show(); }
 }
 
-function showSidebar(){
-  body.classList.add('show-sidebar');
-}
-
-function hideSidebar(){
-  body.classList.remove('show-sidebar');
-}
-
-function isShowingSidebar(){
-  return body.classList.contains('show-sidebar');
-}
-
+document.querySelector('#settingg').addEventListener('click', offcanvas.toggle, false);
 body.addEventListener('click', (e)=>{
-  if(isShowingSidebar() && alll.contains(e.target)){
+  if(offcanvas.check() && alll.contains(e.target)){
       e.preventDefault();
-      hideSidebar();
+      offcanvas.hide();
   }
 }, true);
 
 
-
 //Settings----------------------------------------------------------
 //1.open chatbox by default
+const stg_chatbox = document.getElementById("stg_chat_open_default");
+const stg_chatbox_cokie = localStorage.getItem('chatbox');
+
 if (stg_chatbox_cokie == 'open'){
   stg_chatbox.checked = true;
   CLICK_BOT.style.animation = "none";

@@ -1,7 +1,7 @@
 :root {
   --blk-in-dark: black;
   --wit-in-dark: white;
-  --lit-in-dark: #ccc;
+  --lit-in-dark: #eee;
 }
 
 [data-theme="light"] {
@@ -386,7 +386,7 @@ button{
   background-color: var(--wit-in-dark);
   border-radius: 25px;
   text-align: center;
-  animation: slide-in-fwd-center 0.6s ease-in both;
+  animation: slide-in-fwd-center 0.5s ease-in both;
 }
 @keyframes slide-in-fwd-center {from {opacity: 0;} to {opacity: 1;}}
 
@@ -439,7 +439,6 @@ button{
   left: 0;
   height: 100%;
   width: 360px;
-  overflow: hidden;
   transform: translate3d(-365px, 0, 0);
   transition: transform 0.4s ease-in-out;
   will-change: transform;
@@ -456,6 +455,7 @@ button{
   padding: 10px 0;
   margin: 0;
   border-bottom: 1px solid var(--blk-in-dark);
+  font-family: 'Megrim';
 }
 
 /* settings-----------------------------------*/
@@ -479,9 +479,8 @@ button{
   width: 16px;
   position: relative;
   top: 2px;
-  left: 4px;
+  left: 5px;
 }
-
 /*
 *-----------------------------------------------------------
 * Animations: scale-in-top and focus-in-expand.

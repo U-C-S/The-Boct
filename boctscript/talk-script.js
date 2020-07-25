@@ -137,9 +137,6 @@ function proto_boct_study_chat(studycontent) {
       case 'meow':
         talk_div_boct('MeooW!.....MeeeeeeWww!');
         break;
-      case '2+2':
-        talk_div_boct('2 + 2 = 5');
-        break;
       default:
         talk_div_boct('INVALID COMMAND');
         break;
