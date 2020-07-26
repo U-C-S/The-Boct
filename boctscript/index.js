@@ -151,4 +151,5 @@ document.getElementById('cokieClear').addEventListener('click',()=>{
   localStorage.removeItem("theme");
   localStorage.removeItem("chatbox");
   localStorage.clear();
+  location.reload()
 },false);
