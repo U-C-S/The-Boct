@@ -53,6 +53,51 @@ function BOcT_open() {
   CLICK_BOT.addEventListener("click", BOcT_annoy_clicks);
 }
 
+
+//scroll to bottom after a new message
+function scroll_update() {
+  const chat_scroll = document.getElementById("chatspace");
+  chat_scroll.scrollTop = chat_scroll.scrollHeight;
+}
+
+function talk_div_boct(talkContent) {
+  const newDIV = document.createElement("div");
+  const attr = document.createAttribute("class");
+  const talk_create = document.createElement("p");
+  const talk_matter = document.createTextNode(talkContent);
+  attr.value = "boct_talk";
+  newDIV.setAttributeNode(attr);
+  document.getElementById("chatspace").appendChild(newDIV);
+  talk_create.appendChild(talk_matter);
+  newDIV.appendChild(talk_create);
+  scroll_update();
+}
+
+const SEND_MSG_TO_BOCT = document.getElementById("typespace-enter-id");
+SEND_MSG_TO_BOCT.addEventListener("click", talk_div_hooman);
+function talk_div_hooman() {
+  const chat_boxx = document.querySelector(".typespace");
+  var chat_content = chat_boxx.value;
+  if(chat_content == '') { chat_content = '*empty*'; }
+  const newDIV = document.createElement("div");
+  const attr = document.createAttribute("class");
+  const talk_create = document.createElement("p");
+  const talk_matter = document.createTextNode(chat_content);
+
+  attr.value = "human_talk";
+  newDIV.setAttributeNode(attr);
+  document.getElementById("chatspace").appendChild(newDIV);
+  talk_create.appendChild(talk_matter);
+  newDIV.appendChild(talk_create);
+  scroll_update();
+  chat_boxx.value = "";
+  const chat_contenta = chat_content.trim().toLowerCase();
+  setTimeout(proto_boct_study_chat, 600, chat_contenta);
+}
+
+talk_div_boct("Hi, I can partially understand you. Maybe, say hi to me or ask my age. But, Don't call me an idiot");
+
+
 var click_count = 0;
 function BOcT_annoy_clicks() {
   click_count += 1;
@@ -118,38 +163,3 @@ body.addEventListener('click', (e)=>{
       offcanvas.hide();
   }
 }, true);
-
-
-//Settings----------------------------------------------------------
-//1.open chatbox by default
-const stg_chatbox = document.getElementById("stg_chat_open_default");
-const stg_chatbox_cokie = localStorage.getItem('chatbox');
-
-if (stg_chatbox_cokie == 'open'){
-  stg_chatbox.checked = true;
-  CLICK_BOT.style.animation = "none";
-  document.getElementById("chatter").style.display="block";
-}
-else{
-  stg_chatbox.checked = false;
-  document.getElementById("chatter").style.display="none";
-}
-
-stg_chatbox.addEventListener('click',()=>{
-  if(stg_chatbox.checked == true){
-    CLICK_BOT.style.animation = "none";
-    document.getElementById("chatter").style.display="block";
-    localStorage.setItem('chatbox', 'open');
-  }
-  else{
-    localStorage.setItem('chatbox','close');
-  }
-});
-
-//0. Clear LocalStorage
-document.getElementById('cokieClear').addEventListener('click',()=>{
-  localStorage.removeItem("theme");
-  localStorage.removeItem("chatbox");
-  localStorage.clear();
-  location.reload()
-},false);

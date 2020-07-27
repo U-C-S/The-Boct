@@ -7,7 +7,7 @@ self.addEventListener('install', function(e) {
         '/boctstyle/boctmediaq.css',
         '/boctscript/index.js',
         '/boctscript/talk-script.js',
-        '/boctscript/boct.js'
+        '/boctscript/settings.js'
       ]);
     })
   );
