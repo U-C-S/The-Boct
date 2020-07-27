@@ -35,7 +35,7 @@ var cookieClearer = new Vue({
       localStorage.removeItem("theme");
       localStorage.removeItem("chatbox");
       localStorage.clear();
-      this.cookieInfo = "- Data Cleared. Reload the Page -";
+      this.cookieInfo = "- Cleared. Reload the Page -";
     }
   }
 })
