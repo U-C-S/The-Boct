@@ -35,7 +35,9 @@ const alll = document.querySelector('.alll');
 
 window.onload = setTimeout(stopLoading, 2173);
 document.getElementById('barr').addEventListener('animationend', ()=>{
-  document.getElementById('textt').innerHTML = 'Load Complete';});
+  document.getElementById('textt').innerHTML = 'Load Complete';
+  document.getElementById('barr').style.backgroundColor = '#FF1439';
+});
 
 function stopLoading() {
   document.getElementById("loader").style.display="none";
