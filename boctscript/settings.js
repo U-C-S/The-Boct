@@ -24,10 +24,18 @@ stg_chatbox.addEventListener('click',()=>{
   }
 });
 
-//0. Clear LocalStorage
-document.getElementById('cokieClear').addEventListener('click',()=>{
-  localStorage.removeItem("theme");
-  localStorage.removeItem("chatbox");
-  localStorage.clear();
-  location.reload()
-},false);
+//0. Clear LocalStorage (Vue Powered)
+var cookieClearer = new Vue({
+  el: '#cokieClear',
+  data: {
+    cookieInfo: ''
+  },
+  methods: {
+    cokiereset: function() {
+      localStorage.removeItem("theme");
+      localStorage.removeItem("chatbox");
+      localStorage.clear();
+      this.cookieInfo = "- Data Cleared. Reload the Page -";
+    }
+  }
+})
