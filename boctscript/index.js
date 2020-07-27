@@ -60,6 +60,8 @@ function scroll_update() {
   chat_scroll.scrollTop = chat_scroll.scrollHeight;
 }
 
+//------------------------------------------------------------------
+//Boct reply js
 function talk_div_boct(talkContent) {
   const newDIV = document.createElement("div");
   const attr = document.createAttribute("class");
@@ -73,6 +75,7 @@ function talk_div_boct(talkContent) {
   scroll_update();
 }
 
+//User reply js
 const SEND_MSG_TO_BOCT = document.getElementById("typespace-enter-id");
 SEND_MSG_TO_BOCT.addEventListener("click", talk_div_hooman);
 function talk_div_hooman() {
@@ -92,11 +95,10 @@ function talk_div_hooman() {
   scroll_update();
   chat_boxx.value = "";
   const chat_contenta = chat_content.trim().toLowerCase();
-  setTimeout(proto_boct_study_chat, 600, chat_contenta);
+  setTimeout(boct_study_chat, 600, chat_contenta);
 }
 
-talk_div_boct("Hi, I can partially understand you. Maybe, say hi to me or ask my age. But, Don't call me an idiot");
-
+//------------------------------------------------------------------
 
 var click_count = 0;
 function BOcT_annoy_clicks() {
@@ -107,7 +109,27 @@ function BOcT_annoy_clicks() {
   }
 }
 
+talk_div_boct("Hi, I can partially understand you. Maybe, say hi to me or ask my age. But, Don't call me an idiot");
+
 document.getElementById('experimental').addEventListener('click',()=>{ document.location = "/Experimental/" });
+
+
+//Toggle Off-Canvas for Settings------------------------------------
+const offcanvas = {
+  show: ()=>{ body.classList.add('show-sidebar'); },
+  hide: ()=>{ body.classList.remove('show-sidebar'); },
+  check: ()=>{ return body.classList.contains('show-sidebar'); },
+  toggle: ()=>{ offcanvas.check() ? offcanvas.hide() : offcanvas.show(); }
+}
+
+document.querySelector('#settingg').addEventListener('click', offcanvas.toggle, false);
+body.addEventListener('click', (e)=>{
+  if(offcanvas.check() && alll.contains(e.target)){
+      e.preventDefault();
+      offcanvas.hide();
+  }
+}, true);
+
 
 //Toggle Dark Mode------------------------------
 const toggler = document.querySelector('.toggleTheme');
@@ -137,6 +159,7 @@ function themeAlternate() {
   }
 }
 
+
 //info popup--------------------------------------
 const ipopup = document.getElementById("info_popup");
 
@@ -147,19 +170,3 @@ window.onclick = (e)=>{
     ipopup.style.display = "none";
   }
 }
-
-//Toggle Off-Canvas for Settings------------------------------------
-const offcanvas = {
-  show: ()=>{ body.classList.add('show-sidebar'); },
-  hide: ()=>{ body.classList.remove('show-sidebar'); },
-  check: ()=>{ return body.classList.contains('show-sidebar'); },
-  toggle: ()=>{ offcanvas.check() ? offcanvas.hide() : offcanvas.show(); }
-}
-
-document.querySelector('#settingg').addEventListener('click', offcanvas.toggle, false);
-body.addEventListener('click', (e)=>{
-  if(offcanvas.check() && alll.contains(e.target)){
-      e.preventDefault();
-      offcanvas.hide();
-  }
-}, true);

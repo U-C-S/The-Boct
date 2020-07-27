@@ -83,7 +83,7 @@ const searchStuff = {
 const readables = [intro, readage , readempty , readannoy, readNo, readok, readso];
 const readables2 = [searchStuff];
 
-function proto_boct_study_chat(studycontent) {
+function boct_study_chat(studycontent) {
   for(let i = 0; i < readables.length; i++) {
   loop1:
     for (let j = 0; j < readables[i].words.length; j++) {
