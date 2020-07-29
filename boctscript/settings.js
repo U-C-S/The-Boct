@@ -28,14 +28,15 @@ stg_chatbox.addEventListener('click',()=>{
 var cookieClearer = new Vue({
   el: '#cokieClear',
   data: {
-    cookieInfo: ''
+    cookieInfo: 'This will clear your localStorage Data for this App',
+    cokieClearBtn: 'Clear your Settings'
   },
   methods: {
-    cokiereset: function() {
+    cokieReset: function() {
       localStorage.removeItem("theme");
       localStorage.removeItem("chatbox");
       localStorage.clear();
       this.cookieInfo = "- Cleared. Reload the Page -";
-    }
+    },
   }
 })
