@@ -97,7 +97,11 @@ function talk_div_hooman() {
   scroll_update();
   chat_boxx.value = "";
   const chat_contenta = chat_content.trim().toLowerCase();
+  const chat_for_unitconvert = chat_content.trim();
   setTimeout(boct_study_chat, 600, chat_contenta);
+  if(chat_for_unitconvert.slice(0,7) == 'convert' || chat_for_unitconvert.slice(0,7) == 'Convert'){
+    setTimeout(unit_convert, 100, chat_for_unitconvert);
+  }
 }
 
 //------------------------------------------------------------------
