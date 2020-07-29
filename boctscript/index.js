@@ -26,7 +26,7 @@ window.addEventListener('beforeinstallprompt', (e) => {
 });
 
 
-
+//------------------------------------------------------------------
 //Js for index.html
 const body = document.querySelector('body');
 const alll = document.querySelector('.alll');
@@ -124,7 +124,7 @@ const offcanvas = {
   toggle: ()=>{ offcanvas.check() ? offcanvas.hide() : offcanvas.show(); }
 }
 
-document.querySelector('#settingg').addEventListener('click', offcanvas.toggle, false);
+document.querySelector('#settingg').addEventListener('click', offcanvas.toggle);
 body.addEventListener('click', (e)=>{
   if(offcanvas.check() && alll.contains(e.target)){
       e.preventDefault();
