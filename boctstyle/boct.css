@@ -397,6 +397,7 @@ button{
   border-radius: 20px;
   width: 100%;
   height: 425px;
+  padding: 0 5px;
   overflow-y: auto;
   color: var(--wit-in-dark);
   text-align: left;
