@@ -144,10 +144,13 @@ function boct_study_chat(studycontent) {
         talk_div_boct(`${ver.innerHTML}`);
         break;
       case 'url':
+        talk_div_boct('https://the-boct.github.io/');
+        break;
+      case 'beta':
         talk_div_boct('https://the-boct.github.io/Experimental/');
         break;
       case 'code':
-        talk_div_boct('https://github.com/The-BOcT/Experimental');
+        talk_div_boct('https://github.com/The-BOcT/');
         break;
       case 'meow':
         talk_div_boct('MeooW!.....MeeeeeeWww!');
