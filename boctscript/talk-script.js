@@ -79,8 +79,23 @@ const searchStuff = {
   }
 }
 
+function rdmZ(m,n) { return Math.floor(Math.random() * (n - m + 1) ) + m; }
+const dice = {
+  words: ['roll a dice', 'roll dice'],
+  reply: ()=>{
+    talk_div_boct(rdmZ(1,6));
+  }
+}
 
-const readables = [intro, readage , readempty , readannoy, readNo, readok, readso];
+const coin = {
+  words: ['flip a coin','toss a coin'],
+  reply: ()=>{
+    let outcome = rdmZ(0,1);
+    outcome == 1 ? talk_div_boct('Heads') : talk_div_boct('Tails')
+  }
+}
+
+const readables = [intro, readage , readempty , readannoy, readNo, readok, readso, dice, coin];
 const readables2 = [searchStuff];
 
 function boct_study_chat(studycontent) {
@@ -137,8 +152,14 @@ function boct_study_chat(studycontent) {
       case 'meow':
         talk_div_boct('MeooW!.....MeeeeeeWww!');
         break;
+      case 'dice':
+        talk_div_boct(rdmZ(1,6));
+        break;
+      case 'coin':
+        coin.reply();
+        break;
       default:
-        talk_div_boct('INVALID COMMAND');
+        talk_div_boct('INVALID DOt COMMAND');
         break;
     }
   }
