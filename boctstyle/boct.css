@@ -103,7 +103,7 @@ button{
 
 .alll{
   display: grid;
-  grid-template-columns: 50px 300px 60px auto 50px;
+  grid-template-columns: 50px 300px 60px auto 60px;
   grid-template-rows: 5% 25% minmax(auto,calc(65% - 320px)) 320px 5%;
   grid-template-areas: 
     ". . . . ." 
@@ -209,7 +209,7 @@ button{
 /*chatspace-----------------------------------*/
 .talk_box{
   width: 100%;
-  height: calc(100% - 60px);
+  height: calc(100% - 59px);
   border-radius: 32px 0 0 0;
   box-shadow: 0 0 20px inset black;
   background-color: var(--blk-in-dark);;
@@ -262,7 +262,7 @@ button{
 
 /*Type----------------------------------------*/
 .type_box{
-  margin: 12px auto;
+  margin: 15px auto 8px;
   width: 85%;
   height: 36px;
 }
@@ -278,7 +278,7 @@ button{
   border: 3px solid var(--blk-in-dark);
   border-right: none;
   border-radius: 5px 0 0 5px;
-  box-shadow: 0 0 15px var(--blk-in-dark);
+  box-shadow: 0 0 15px black;
   outline: none;
   background-color: white;
   color: hsl(0,0%,35%);
@@ -292,11 +292,10 @@ button{
   height: 36px;
   padding: 7px 8px 8px;
   background: var(--blk-in-dark);
-  box-shadow: 0 0 15px var(--blk-in-dark);
+  box-shadow: 0 0 15px black;
   text-align: center;
   border-radius: 0 5px 5px 0;
   border: none;
-  align-items: center;
 }
 .typespace-enter svg{
   fill: var(--wit-in-dark);

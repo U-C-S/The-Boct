@@ -109,7 +109,7 @@ function talk_div_hooman() {
 var click_count = 0;
 function BOcT_annoy_clicks() {
   click_count += 1;
-  if (click_count === 4) {
+  if (click_count === 3) {
     click_count = 0;
     talk_div_boct("Stop annoying me!");
   }
@@ -137,6 +137,18 @@ body.addEventListener('click', (e)=>{
 }, true);
 
 
+//info popup--------------------------------------
+const ipopup = document.getElementById("info_popup");
+
+document.getElementById("i-btn").onclick = ()=> { ipopup.style.display = "block"; }
+document.getElementsByClassName("info_close")[0].onclick = ()=> { ipopup.style.display = "none"; }
+window.onclick = (e)=>{
+  if (e.target == ipopup) {
+    ipopup.style.display = "none";
+  }
+}
+
+
 //Toggle Dark Mode------------------------------
 const toggler = document.querySelector('.toggleTheme');
 const currentThemeCokie = localStorage.getItem('theme');
@@ -162,17 +174,5 @@ function themeAlternate() {
     document.documentElement.setAttribute('data-theme', 'dark');
     toggler.dataset.themenow = "dark";
     localStorage.setItem('theme', 'dark');
-  }
-}
-
-
-//info popup--------------------------------------
-const ipopup = document.getElementById("info_popup");
-
-document.getElementById("i-btn").onclick = ()=> { ipopup.style.display = "block"; }
-document.getElementsByClassName("info_close")[0].onclick = ()=> { ipopup.style.display = "none"; }
-window.onclick = (e)=>{
-  if (e.target == ipopup) {
-    ipopup.style.display = "none";
   }
 }
