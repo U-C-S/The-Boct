@@ -5,8 +5,8 @@ function unit_convert(usertyped){
 
 function TheConverter(x , a , b) {
   const Types = [Lengths,Areas,Temperatures];
-  var iput;
-  var oput;
+  var iput, oput;
+  var result;
 
   for(i = 0; i < Types.length; i++) {
     let type = Types[i];
@@ -15,12 +15,12 @@ function TheConverter(x , a , b) {
     obj.forEach((j)=>{
       if( type[j].unit.includes(a) ) { iput = type[j].con_factor; }
       if( type[j].unit.includes(b) ) { oput = type[j].con_factor; }
+      result = (x * (iput / oput));
     });
 
   }
 
-  var final = (x * (iput / oput));
-  return talk_div_boct(`${final} ${b}`);
+  return talk_div_boct(`${result} ${b}`);
 }
 
 
