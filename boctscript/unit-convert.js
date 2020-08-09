@@ -68,23 +68,38 @@ const Areas = {
     unit: ['sqm','m2'],
     con_factor: 1
   },
+  sqkm: {
+    unit: ['sqkm','km2'],
+    con_factor: 10**6
+  },
+  sqft: {
+    unit: ['sqft','ft2'],
+    con_factor: 0.09290304
+  },
   acre: {
-    unit: ['acres','ac'],
-    con_factor: 1 / 0.00024710538
+    unit: ['ac','acre','acres'],
+    con_factor: 4046.8564224
+  },
+  hectare: {
+    unit: ['ha','hectare','hectares'],
+    con_factor: 10**4
   }
 }
 
 const Temperatures = {
   celsius: {
     unit: ['C','celsius'],
-    con_factor: 1
+    con_factor: 1,
+    con_transf: (x)=>{ return x }
   },
   fahrenheit: {
     unit: ['F','fahrenheit'],
-    con_factor: 1
+    con_factor: 1,
+    con_transf: (x)=>{ return (x - 32) / 1.8;}
   },
   Kelvin: {
     unit: ['K','kelvin'],
-    con_factor: 1
+    con_factor: 1,
+    con_transf: (x)=>{ return x + 273.15;}
   }
 }
