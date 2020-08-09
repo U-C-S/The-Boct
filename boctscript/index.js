@@ -28,6 +28,9 @@ window.addEventListener('beforeinstallprompt', (e) => {
 
 //------------------------------------------------------------------
 //Js for index.html
+function log(x){ console.log(x); }
+
+
 const body = document.querySelector('body');
 const alll = document.querySelector('.alll');
 
