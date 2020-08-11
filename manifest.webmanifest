@@ -7,6 +7,12 @@
   "theme_color": "#E64C63",
   "icons": [
     {
+      "src": "/boctstyle/icons/Maskrobot.png",
+      "sizes": "853x853",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
       "src": "/boctstyle/icons/robot128.png",
       "sizes": "128x128",
       "type": "image/png"
