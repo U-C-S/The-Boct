@@ -11,7 +11,7 @@ function unit_convert(usertyped){
 }
 
 function TheConverter(x , a , b) {
-  const Types = [Lengths,Areas,Temperatures];
+  const Types = [Lengths,Areas,Mass,Temperatures];
   var iput, oput;
   var result;
   for(i = 0; i < Types.length; i++) {
@@ -57,7 +57,7 @@ const Lengths = {
     con_factor: 1/100
   },
   km: {
-    unit: ['km','kilometer','kilometers','kilometre'],
+    unit: ['km','kilometer','kilometers','kilometre','Km'],
     con_factor: 1000
   },
   inch: {
@@ -84,7 +84,7 @@ const Lengths = {
 
 const Areas = {
   sqm: {
-    unit: ['sqm','m2'],
+    unit: ['sqm','m2','sq.meter'],
     con_factor: 1
   },
   sqkm: {
@@ -123,9 +123,48 @@ const Temperatures = {
   },
 }
 
-const Mass = {}
+const Mass = {
+  kg: {
+    unit: ['kg','kilogram','Kg','kilograms'],
+    con_factor: 1
+  },
+  g: {
+    unit: ['g','gram','grams'],
+    con_factor: 1/1000
+  },
+  lb: {
+    unit: ['lb','lbs','pounds','pound'],
+    con_factor: 0.45359237
+  },
+  quintal: {
+    unit: ['quintal'],
+    con_factor: 100
+  },
+  amu: {
+    unit: ['amu','u','Da'],
+    con_factor: 1.6605390666e-27
+  }
+}
 const Volume = {}
 const Digital = {}
+const Prefixs = {
+  uni: {
+    unit: [''],
+    con_factor: 1
+  },
+  deca: {
+    unit: ['da'],
+    con_factor: 10
+  },
+  hecto: {
+    unit: ['h'],
+    con_factor: 100
+  },
+  kilo: {
+    unit: ['k'],
+    con_factor: 1000
+  }
+}
 
 
 
