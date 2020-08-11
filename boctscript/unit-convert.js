@@ -1,26 +1,45 @@
 function unit_convert(usertyped){
   const ucs_data = usertyped.split(' ');
-  TheConverter(ucs_data[1] , ucs_data[2] , ucs_data[4]);
+  if(ucs_data.length != 4){ TheConverter(ucs_data[1] , ucs_data[2] , ucs_data[4]); }
+
+  else if(ucs_data.length == 4){
+    let uVal = parseFloat(ucs_data[1]);
+    let uValLeng = String(uVal).replace('.', ' ').length
+    let uUnit = ucs_data[1].slice(uValLeng);
+    TheConverter(uVal , uUnit , ucs_data[3]);
+  }
 }
 
 function TheConverter(x , a , b) {
   const Types = [Lengths,Areas,Temperatures];
   var iput, oput;
   var result;
-
   for(i = 0; i < Types.length; i++) {
     let type = Types[i];
     let obj = Object.keys(type);
-
+    let curType, curType2;
     obj.forEach((j)=>{
-      if( type[j].unit.includes(a) ) { iput = type[j].con_factor; }
-      if( type[j].unit.includes(b) ) { oput = type[j].con_factor; }
-      result = (x * (iput / oput));
+      loop11:
+      if(type[j].con_factor){
+        if( type[j].unit.includes(a) ) { curType = i; iput = type[j].con_factor; }
+        if( type[j].unit.includes(b) ) { curType2 = i; oput = type[j].con_factor; }
+        if(iput && oput){
+          if(curType == curType2){
+            result = (x * (iput / oput)) + ' ' + b;
+            break loop11;
+          }
+          else{ result = "Conversions do not work that way"; }
+        }
+      }
+      else{
+        if( type[j].unit.includes(a) ) { iput = type[j].con_trnsTo(x); }
+        if( type[j].unit.includes(b) ) { result = type[j].con_trnsFro(iput); }
+      }
     });
-
   }
+  
 
-  return talk_div_boct(`${result} ${b}`);
+  return talk_div_boct(result);
 }
 
 
@@ -89,17 +108,60 @@ const Areas = {
 const Temperatures = {
   celsius: {
     unit: ['C','celsius'],
-    con_factor: 1,
-    con_transf: (x)=>{ return x }
+    con_trnsTo: (x)=>{ return Number(x); },
+    con_trnsFro: (x)=>{ return Number(x); }
   },
   fahrenheit: {
     unit: ['F','fahrenheit'],
-    con_factor: 1,
-    con_transf: (x)=>{ return (x - 32) / 1.8;}
+    con_trnsTo: (x)=>{ return ((x - 32) / 1.8);},
+    con_trnsFro: (x)=>{ return ((x * 1.8) + 32);}
   },
   Kelvin: {
     unit: ['K','kelvin'],
-    con_factor: 1,
-    con_transf: (x)=>{ return x + 273.15;}
-  }
+    con_trnsTo: (x)=>{ return x - 273.15;},
+    con_trnsFro: (x)=>{ return x + 273.15;}
+  },
 }
+
+const Mass = {}
+const Volume = {}
+const Digital = {}
+
+
+
+
+
+/*
+  for(i = 0; i < Types.length; i++) {
+    let type = Types[i];
+    let obj = Object.keys(type);
+    iput = obj.find((j)=>{
+      if(type[j].con_factor){
+        if(type[j].unit.includes(a)){ return type[j].con_factor; }
+      }
+      else{
+
+      }
+    })
+  }
+
+  var i = 0;
+  while((!(iput && oput)) && i < Types.length) {
+    let type = Types[i];
+    let obj = Object.keys(type);
+    iput = obj.find((j)=>{
+      if(type[j].con_factor){
+        if(type[j].unit.includes(a)){ return type[j].con_factor; }
+        if(type[j].unit.includes(b)){ oput = type[j].con_factor; }
+        if(iput && oput){ result = (x * (iput / oput)) + ' ' + b; }
+      }
+      else{
+        if(type[j].unit.includes(a)){ return type[j].con_trnsTo(x) }
+        if(type[j].unit.includes(b)){ oput = type[j].con_factor; }
+
+      }
+    })
+    i++
+  }
+
+  */
