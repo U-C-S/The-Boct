@@ -35,22 +35,25 @@ function TheConverter(x , a , b) {
 
 function getUnit(u) {
   const Categories = [Lengths,Areas,Mass,Temperatures];
-  var unit_detail;
+  var unit_details;
+
   for (let i = 0; i < Categories.length; i++) {
     const CategoryType = Categories[i];
     let obj = Object.keys(CategoryType);
     obj.forEach(j => {
-      if( CategoryType[j].unit.includes(u) ){
+      if( CategoryType[j].unit.includes(u) ) {
         CategoriesNames = ['Lengths','Areas','Mass','Temperatures'];
         let pre_unit_detail = {
           UserUnit: u,
           Category: CategoriesNames[i],
         }
-        unit_detail = Object.assign(pre_unit_detail,CategoryType[j]);
+        unit_details = Object.assign(pre_unit_detail,CategoryType[j]);
       }
     })
+    if(unit_details){break;}
   }
-  return unit_detail;
+
+  return unit_details;
 }
 
 
