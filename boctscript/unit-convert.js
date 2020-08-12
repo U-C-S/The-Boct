@@ -1,5 +1,6 @@
 function unit_convert(usertyped){
   const ucs_data = usertyped.split(' ');
+
   if(ucs_data.length != 4){ TheConverter(ucs_data[1] , ucs_data[2] , ucs_data[4]); }
 
   else if(ucs_data.length == 4){
@@ -10,36 +11,46 @@ function unit_convert(usertyped){
   }
 }
 
-function TheConverter(x , a , b) {
-  const Types = [Lengths,Areas,Mass,Temperatures];
-  var iput, oput;
-  var result;
-  for(i = 0; i < Types.length; i++) {
-    let type = Types[i];
-    let obj = Object.keys(type);
-    let curType, curType2;
-    obj.forEach((j)=>{
-      loop11:
-      if(type[j].con_factor){
-        if( type[j].unit.includes(a) ) { curType = i; iput = type[j].con_factor; }
-        if( type[j].unit.includes(b) ) { curType2 = i; oput = type[j].con_factor; }
-        if(iput && oput){
-          if(curType == curType2){
-            result = (x * (iput / oput)) + ' ' + b;
-            break loop11;
-          }
-          else{ result = "Conversions do not work that way"; }
-        }
-      }
-      else{
-        if( type[j].unit.includes(a) ) { iput = type[j].con_trnsTo(x); }
-        if( type[j].unit.includes(b) ) { result = type[j].con_trnsFro(iput); }
-      }
-    });
-  }
-  
 
-  return talk_div_boct(result);
+function TheConverter(x , a , b) {
+  let from_unit = getUnit(a);
+  let to_unit = getUnit(b);
+
+  if(from_unit.Category == to_unit.Category){
+    if(from_unit.con_factor && to_unit.con_factor){
+      let result = x * (from_unit.con_factor / to_unit.con_factor);
+      return talk_div_boct(`${result} ${b}`);
+    }
+    else if(from_unit.con_trnsTo && to_unit.con_trnsFro){
+      let SIval = from_unit.con_trnsTo(x);
+      let result = to_unit.con_trnsFro(SIval);
+      return talk_div_boct(`${result} ${b}`);
+    }
+  }
+  else{
+    return talk_div_boct('Conversions do not work that way');
+  }
+}
+
+
+function getUnit(u) {
+  const Categories = [Lengths,Areas,Mass,Temperatures];
+  var unit_detail;
+  for (let i = 0; i < Categories.length; i++) {
+    const CategoryType = Categories[i];
+    let obj = Object.keys(CategoryType);
+    obj.forEach(j => {
+      if( CategoryType[j].unit.includes(u) ){
+        CategoriesNames = ['Lengths','Areas','Mass','Temperatures'];
+        let pre_unit_detail = {
+          UserUnit: u,
+          Category: CategoriesNames[i],
+        }
+        unit_detail = Object.assign(pre_unit_detail,CategoryType[j]);
+      }
+    })
+  }
+  return unit_detail;
 }
 
 
@@ -113,8 +124,8 @@ const Temperatures = {
   },
   fahrenheit: {
     unit: ['F','fahrenheit'],
-    con_trnsTo: (x)=>{ return ((x - 32) / 1.8);},
-    con_trnsFro: (x)=>{ return ((x * 1.8) + 32);}
+    con_trnsTo: (x)=>{ return (x - 32) / 1.8; },
+    con_trnsFro: (x)=>{ return ((x * 1.8) + 32); }
   },
   Kelvin: {
     unit: ['K','kelvin'],
@@ -171,12 +182,12 @@ const Prefixs = {
 
 
 /*
-  for(i = 0; i < Types.length; i++) {
-    let type = Types[i];
-    let obj = Object.keys(type);
+  for(i = 0; i < Categories.length; i++) {
+    let CategoryType = Categories[i];
+    let obj = Object.keys(CategoryType);
     iput = obj.find((j)=>{
-      if(type[j].con_factor){
-        if(type[j].unit.includes(a)){ return type[j].con_factor; }
+      if(CategoryType[j].con_factor){
+        if(CategoryType[j].unit.includes(a)){ return CategoryType[j].con_factor; }
       }
       else{
 
@@ -185,18 +196,18 @@ const Prefixs = {
   }
 
   var i = 0;
-  while((!(iput && oput)) && i < Types.length) {
-    let type = Types[i];
-    let obj = Object.keys(type);
+  while((!(iput && oput)) && i < Categories.length) {
+    let CategoryType = Categories[i];
+    let obj = Object.keys(CategoryType);
     iput = obj.find((j)=>{
-      if(type[j].con_factor){
-        if(type[j].unit.includes(a)){ return type[j].con_factor; }
-        if(type[j].unit.includes(b)){ oput = type[j].con_factor; }
+      if(CategoryType[j].con_factor){
+        if(CategoryType[j].unit.includes(a)){ return CategoryType[j].con_factor; }
+        if(CategoryType[j].unit.includes(b)){ oput = CategoryType[j].con_factor; }
         if(iput && oput){ result = (x * (iput / oput)) + ' ' + b; }
       }
       else{
-        if(type[j].unit.includes(a)){ return type[j].con_trnsTo(x) }
-        if(type[j].unit.includes(b)){ oput = type[j].con_factor; }
+        if(CategoryType[j].unit.includes(a)){ return CategoryType[j].con_trnsTo(x) }
+        if(CategoryType[j].unit.includes(b)){ oput = CategoryType[j].con_factor; }
 
       }
     })
@@ -204,3 +215,38 @@ const Prefixs = {
   }
 
   */
+/*
+function TheConverter(x , a , b) {
+  const Categories = [Lengths,Areas,Mass,Temperatures];
+  var iput, oput;
+  var result;
+  for(i = 0; i < Categories.length; i++) {
+    let CategoryType = Categories[i];
+    let obj = Object.keys(CategoryType);
+    let curType, curType2;
+    obj.forEach((j)=>{
+      loop11:
+      if(CategoryType[j].con_factor){
+        if( CategoryType[j].unit.includes(a) ) { curType = i; iput = CategoryType[j].con_factor; }
+        if( CategoryType[j].unit.includes(b) ) { curType2 = i; oput = CategoryType[j].con_factor; }
+        if(iput && oput){
+          if(curType == curType2){
+            result = (x * (iput / oput)) + ' ' + b;
+            FinResult = `${result} ${b}`
+            break loop11;
+          }
+          else{ result = "Conversions do not work that way"; }
+        }
+      }
+      else{
+        if( CategoryType[j].unit.includes(a) ) { iput = CategoryType[j].con_trnsTo(x);}
+        if( CategoryType[j].unit.includes(b) ) { oput = CategoryType[j].con_trnsFro(iput); }
+        if(iput && oput){ result = oput; }
+      }
+    });
+  }
+  
+
+  return talk_div_boct(result);
+}
+*/
