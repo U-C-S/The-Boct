@@ -34,7 +34,7 @@ function TheConverter(x , a , b) {
 
 
 function getUnit(u) {
-  const Categories = [Lengths,Areas,Mass,Temperatures];
+  const Categories = [Lengths,Areas,Mass,Temperatures,Volume];
   var unit_details;
 
   for (let i = 0; i < Categories.length; i++) {
@@ -42,7 +42,7 @@ function getUnit(u) {
     let obj = Object.keys(CategoryType);
     obj.forEach(j => {
       if( CategoryType[j].unit.includes(u) ) {
-        CategoriesNames = ['Lengths','Areas','Mass','Temperatures'];
+        CategoriesNames = ['L','A','M','Temp','V'];
         let pre_unit_detail = {
           UserUnit: u,
           Category: CategoriesNames[i],
@@ -56,7 +56,8 @@ function getUnit(u) {
   return unit_details;
 }
 
-
+// 1 x is equal to con_factor y (x is a unit; y is respective SI/base unit) 
+//Ex: 1 mm is equal to 1/1000 m
 const Lengths = {
   m: {
     unit: ['m','meter','meters','metre'],
@@ -160,7 +161,33 @@ const Mass = {
   }
 }
 
-const Volume = {}
+const Volume = {
+  cubicm: {
+    unit: ['m3','cubic.m','cubic-meter'],
+    con_factor: 1
+  },
+  liter: {
+    unit: ['l','liter','liters','litre','litres'],
+    con_factor: 0.001
+  },
+  milliliter: {
+    unit: ['ml','milliliter','milliliters','millilitre'],
+    con_factor: 0.000001
+  },
+  gallon: {
+    unit: ['gal','gallon','Gallon'],
+    con_factor: 0.00454609
+  },
+  pint: {
+    unit: ['pt','p','pint'],
+    con_factor: 0.0005682613
+  },
+  barrel: {
+    unit: ['bl','barrel'],
+    con_factor: 0.16365924
+  }
+
+}
 const Digital = {}
 
 const Prefixs = {
