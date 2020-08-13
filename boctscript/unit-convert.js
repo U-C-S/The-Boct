@@ -121,17 +121,17 @@ const Areas = {
 
 const Temperatures = {
   celsius: {
-    unit: ['C','celsius'],
+    unit: ['C','celsius','c'],
     con_trnsTo: (x)=>{ return Number(x); },
     con_trnsFro: (x)=>{ return Number(x); }
   },
   fahrenheit: {
-    unit: ['F','fahrenheit'],
+    unit: ['F','fahrenheit','f'],
     con_trnsTo: (x)=>{ return (x - 32) / 1.8; },
     con_trnsFro: (x)=>{ return ((x * 1.8) + 32); }
   },
   Kelvin: {
-    unit: ['K','kelvin'],
+    unit: ['K','kelvin','k'],
     con_trnsTo: (x)=>{ return x - 273.15;},
     con_trnsFro: (x)=>{ return x + 273.15;}
   },
@@ -159,25 +159,40 @@ const Mass = {
     con_factor: 1.6605390666e-27
   }
 }
+
 const Volume = {}
 const Digital = {}
+
 const Prefixs = {
   uni: {
     unit: [''],
     con_factor: 1
   },
   deca: {
-    unit: ['da'],
+    unit: ['da','deca','Deca'],
     con_factor: 10
   },
   hecto: {
-    unit: ['h'],
+    unit: ['h','hecto','Hecto'],
     con_factor: 100
   },
   kilo: {
-    unit: ['k'],
-    con_factor: 1000
+    unit: ['k','kilo','Kilo'],
+    con_factor: 1e+3
+  },
+  mega: {
+    unit: ['M','mega','Mega'],
+    con_factor: 1e+6
+  },
+  giga: {
+    unit: ['G','giga','Giga'],
+    con_factor: 1e+9
+  },
+  tera: {
+    unit: ['T','tera','Tera'],
+    con_factor: 1e+12
   }
+  
 }
 
 
