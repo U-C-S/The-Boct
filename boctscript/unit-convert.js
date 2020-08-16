@@ -42,10 +42,9 @@ function getUnit(u) {
     let obj = Object.keys(CategoryType);
     obj.forEach(j => {
       if( CategoryType[j].unit.includes(u) ) {
-        CategoriesNames = ['L','A','M','Temp','V'];
         let pre_unit_detail = {
           UserUnit: u,
-          Category: CategoriesNames[i],
+          Category: i,
         }
         unit_details = Object.assign(pre_unit_detail,CategoryType[j]);
       }

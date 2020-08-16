@@ -33,16 +33,11 @@ if (stg_load_cokie == 'no'){
   stopLoading();
 }
 else{
-  stg_chatbox.checked = false;
+  stg_load.checked = false;
 }
 
 stg_load.addEventListener('click',()=>{
-  if(stg_load.checked == true){
-    localStorage.setItem('loading', 'no');
-  }
-  else{
-    localStorage.setItem('loading','yes');
-  }
+  stg_load.checked == true ? localStorage.setItem('loading', 'no') : localStorage.setItem('loading','yes');
 });
 
 //0. Clear LocalStorage (Vue Powered)
