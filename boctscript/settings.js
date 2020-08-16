@@ -24,6 +24,27 @@ stg_chatbox.addEventListener('click',()=>{
   }
 });
 
+//2.Diable Loading Screen
+const stg_load = document.getElementById("stg_disable_load");
+const stg_load_cokie = localStorage.getItem('loading');
+
+if (stg_load_cokie == 'no'){
+  stg_load.checked = true;
+  stopLoading();
+}
+else{
+  stg_chatbox.checked = false;
+}
+
+stg_load.addEventListener('click',()=>{
+  if(stg_load.checked == true){
+    localStorage.setItem('loading', 'no');
+  }
+  else{
+    localStorage.setItem('loading','yes');
+  }
+});
+
 //0. Clear LocalStorage (Vue Powered)
 var cookieClearer = new Vue({
   el: '#cokieClear',
