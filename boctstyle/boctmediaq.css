@@ -13,7 +13,7 @@
 @media screen and (max-width: 950px) and (min-width: 620px) {
   .alll{
     grid-template-columns: 10px 250px 20px auto 10px;
-    grid-template-rows: 5% 20% minmax(auto,calc(70% - 300px)) 300px 5%;
+    grid-template-rows: 5% 20% minmax(auto,calc(70% - 290px)) 290px 5%;
   }
   .arrow_box:after {
     top: 90px;
