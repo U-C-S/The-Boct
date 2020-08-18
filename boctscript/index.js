@@ -28,19 +28,19 @@ window.addEventListener('beforeinstallprompt', (e) => {
 
 //------------------------------------------------------------------
 //Js for index.html
-function log(x){ console.log(x); }
+function log(x){ console.log(x) }
 
 
 const body = document.querySelector('body');
 const alll = document.querySelector('.alll');
 
 
-window.onload = setTimeout(stopLoading, 2173);
 document.getElementById('barr').addEventListener('animationend', ()=>{
   document.getElementById('textt').innerHTML = 'Load Complete';
   document.getElementById('barr').style.backgroundColor = '#FF1439';
 });
 
+window.onload = setTimeout(stopLoading, 2173);
 function stopLoading() {
   document.getElementById("loader").style.display="none";
   document.documentElement.scrollTop = 0;
@@ -68,11 +68,10 @@ function scroll_update() {
 //Boct reply js
 function talk_div_boct(talkContent) {
   const newDIV = document.createElement("div");
-  const attr = document.createAttribute("class");
   const talk_create = document.createElement("p");
   const talk_matter = document.createTextNode(talkContent);
-  attr.value = "boct_talk";
-  newDIV.setAttributeNode(attr);
+
+  newDIV.className = "boct_talk";
   document.getElementById("chatspace").appendChild(newDIV);
   talk_create.appendChild(talk_matter);
   newDIV.appendChild(talk_create);
@@ -80,30 +79,24 @@ function talk_div_boct(talkContent) {
 }
 
 //User reply js
-const SEND_MSG_TO_BOCT = document.getElementById("typespace-enter-id");
-SEND_MSG_TO_BOCT.addEventListener("click", talk_div_hooman);
+document.getElementById("typespace-enter-id").addEventListener("click", talk_div_hooman);
+
 function talk_div_hooman() {
   const chat_boxx = document.querySelector(".typespace");
   var chat_content = chat_boxx.value;
   if(chat_content == '') { chat_content = '*empty*'; }
   const newDIV = document.createElement("div");
-  const attr = document.createAttribute("class");
   const talk_create = document.createElement("p");
   const talk_matter = document.createTextNode(chat_content);
 
-  attr.value = "human_talk";
-  newDIV.setAttributeNode(attr);
+  newDIV.className = "human_talk"
   document.getElementById("chatspace").appendChild(newDIV);
   talk_create.appendChild(talk_matter);
   newDIV.appendChild(talk_create);
   scroll_update();
   chat_boxx.value = "";
-  const chat_contenta = chat_content.trim().toLowerCase();
-  const chat_for_unitconvert = chat_content.trim();
-  setTimeout(boct_study_chat, 600, chat_contenta);
-  if(chat_for_unitconvert.slice(0,7) == 'convert' || chat_for_unitconvert.slice(0,7) == 'Convert'){
-    setTimeout(unit_convert, 100, chat_for_unitconvert);
-  }
+
+  chat_process(chat_content);
 }
 
 //------------------------------------------------------------------
@@ -124,9 +117,9 @@ document.getElementById('experimental').addEventListener('click',()=>{ document.
 
 //Toggle Off-Canvas for Settings------------------------------------
 const offcanvas = {
-  show: ()=>{ body.classList.add('show-sidebar'); },
-  hide: ()=>{ body.classList.remove('show-sidebar'); },
-  check: ()=>{ return body.classList.contains('show-sidebar'); },
+  show: ()=>{ body.classList.add('show-settings'); },
+  hide: ()=>{ body.classList.remove('show-settings'); },
+  check: ()=>{ return body.classList.contains('show-settings'); },
   toggle: ()=>{ offcanvas.check() ? offcanvas.hide() : offcanvas.show(); }
 }
 

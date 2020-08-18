@@ -45,7 +45,7 @@ body{
   border: 6px solid var(--wit-in-dark);
 }
 
-.typespace,
+.typespace, .human_talk, .boct_talk,
 .about legend, .about p, .add-button,
 .info_content, .info_links a, #experimental, .info_close,
 .settingbar{
@@ -232,6 +232,11 @@ button{
 
 /*message CSS---------------------------------*/
 /* BOcT talk CSS */
+.human_talk, .boct_talk {
+  color: var(--blk-in-dark);
+  font-size: 14px;
+}
+
 .boct_talk{
   float: left;
   max-width: 75%;
@@ -252,14 +257,6 @@ button{
   background: var(--wit-in-dark);
   padding: 2px 8px;
 }
-
-.human_talk > p ,
-.boct_talk > p {
-  color: var(--blk-in-dark);
-  font-size: 14px;
-  font-family: "Quicksand", sans-serif;
-}
-
 /*Type----------------------------------------*/
 .type_box{
   margin: 15px auto 8px;
@@ -448,7 +445,7 @@ button{
   color: var(--blk-in-dark);
   text-align: center;
 }
-.show-sidebar .settingbar {
+.show-settings .settingbar {
   transform: translate3d(0, 0, 0);
 }
 

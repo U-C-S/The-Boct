@@ -1,3 +1,96 @@
+function chat_process(sentence){
+  const chat_TL = sentence.trim().toLowerCase();
+  const chat_T = sentence.trim();
+
+  setTimeout(boct_general_reply, 600, chat_TL);
+
+  if(chat_T.slice(0,7) == 'convert'){
+    unit_convert(chat_T);
+  }
+
+  if(chat_TL[0] == '.' || chat_TL[0] == '$'){
+    DOt_commands(chat_TL);
+  }
+
+}
+
+
+function boct_general_reply(studycontent) {
+  const readables = [intro, readage , readempty , readannoy, readNo, readok, readso, dice, coin];
+  const readables2 = [searchStuff];
+
+  for(let i = 0; i < readables.length; i++) {
+  loop1:
+    for (let j = 0; j < readables[i].words.length; j++) {
+      if(studycontent === readables[i].words[j]){
+        readables[i].reply(); 
+        break loop1;
+      }
+    }
+  }
+  for(let i = 0; i < readables2.length; i++) {
+  loop2:
+    for(let j = 0; j < readables2[i].words.length; j++) {
+      if(studycontent.includes(readables2[i].words[j])){
+        readables2[i].reply(studycontent); 
+        break loop2;
+      }
+    }
+  }
+}
+
+
+function DOt_commands(word){
+  let comm = word.slice(1,5);
+  switch (comm) {
+    case "":
+      talk_div_boct('Type a Dot-Command');
+      break;
+    case 'name':
+      talk_div_boct('BOcT');
+      break;
+    case 'age':
+      let birthdate = new Date(2020, 4, 5, 17, 43, 0, 0);
+      let Diff_In_Time = Date.now() - birthdate.getTime();
+      let Diff_In_Days = Diff_In_Time / (1000 * 3600 * 24);
+      let Days = Math.floor(Diff_In_Time / (1000 * 3600 * 24));
+      let Diff_In_Hour = Math.floor((Diff_In_Days - Days) * 24);
+      let Diff_In_Mins = Math.floor((((Diff_In_Days - Days) * 24) - Diff_In_Hour) * 60);
+      talk_div_boct(`${Days} days, ${Diff_In_Hour} hours and ${Diff_In_Mins} minutes`);
+      break;
+    case 'god':
+      talk_div_boct('U-C-S / Chanakya');
+      break;
+    case 'v':
+      const ver = document.getElementsByClassName('release')[0];
+      talk_div_boct(`${ver.innerHTML}`);
+      break;
+    case 'url':
+      talk_div_boct('https://the-boct.github.io/');
+      break;
+    case 'beta':
+      talk_div_boct('https://the-boct.github.io/Experimental/');
+      break;
+    case 'code':
+      talk_div_boct('https://github.com/The-BOcT/');
+      break;
+    case 'meow':
+      talk_div_boct('MeooW!.....MeeeeeeWww!');
+      break;
+    case 'dice':
+      talk_div_boct(rdmZ(1,6));
+      break;
+    case 'coin':
+      coin.reply();
+      break;
+    default:
+      talk_div_boct('INVALID DOt COMMAND');
+      break;
+  }
+}
+
+
+//-------------------------------------------
 class directReplies {
   constructor(inWrds,outsen) {
     this.words = inWrds;
@@ -79,7 +172,9 @@ const searchStuff = {
   }
 }
 
-function rdmZ(m,n) { return Math.floor(Math.random() * (n - m + 1) ) + m; }
+function rdmZ(m,n) {
+  return Math.floor(Math.random() * (n - m + 1) ) + m;
+}
 const dice = {
   words: ['roll a dice', 'roll dice'],
   reply: ()=>{
@@ -92,78 +187,5 @@ const coin = {
   reply: ()=>{
     let outcome = rdmZ(0,1);
     outcome == 1 ? talk_div_boct('Heads') : talk_div_boct('Tails')
-  }
-}
-
-const readables = [intro, readage , readempty , readannoy, readNo, readok, readso, dice, coin];
-const readables2 = [searchStuff];
-
-function boct_study_chat(studycontent) {
-  for(let i = 0; i < readables.length; i++) {
-  loop1:
-    for (let j = 0; j < readables[i].words.length; j++) {
-      if(studycontent === readables[i].words[j]){
-        readables[i].reply(); 
-        break loop1;
-      }
-    }
-  }
-  for(let i = 0; i < readables2.length; i++) {
-  loop2:
-    for(let j = 0; j < readables2[i].words.length; j++) {
-      if(studycontent.includes(readables2[i].words[j])){
-        readables2[i].reply(studycontent); 
-        break loop2;
-      }
-    }
-  }
-  //v1.2.1.83
-  if(studycontent[0] == '.' || studycontent[0] == '$'){
-    let comm = studycontent.slice(1,5);
-    switch (comm) {
-      case "":
-        talk_div_boct('Type a Dot-Command');
-        break;
-      case 'name':
-        talk_div_boct('BOcT');
-        break;
-      case 'age':
-        let birthdate = new Date(2020, 4, 5, 17, 43, 0, 0);
-        let Diff_In_Time = Date.now() - birthdate.getTime();
-        let Diff_In_Days = Diff_In_Time / (1000 * 3600 * 24);
-        let Days = Math.floor(Diff_In_Time / (1000 * 3600 * 24));
-        let Diff_In_Hour = Math.floor((Diff_In_Days - Days) * 24);
-        let Diff_In_Mins = Math.floor((((Diff_In_Days - Days) * 24) - Diff_In_Hour) * 60);
-        talk_div_boct(`${Days} days, ${Diff_In_Hour} hours and ${Diff_In_Mins} minutes`);
-        break;
-      case 'god':
-        talk_div_boct('U-C-S / Chanakya');
-        break;
-      case 'v':
-        const ver = document.getElementsByClassName('release')[0];
-        talk_div_boct(`${ver.innerHTML}`);
-        break;
-      case 'url':
-        talk_div_boct('https://the-boct.github.io/');
-        break;
-      case 'beta':
-        talk_div_boct('https://the-boct.github.io/Experimental/');
-        break;
-      case 'code':
-        talk_div_boct('https://github.com/The-BOcT/');
-        break;
-      case 'meow':
-        talk_div_boct('MeooW!.....MeeeeeeWww!');
-        break;
-      case 'dice':
-        talk_div_boct(rdmZ(1,6));
-        break;
-      case 'coin':
-        coin.reply();
-        break;
-      default:
-        talk_div_boct('INVALID DOt COMMAND');
-        break;
-    }
   }
 }
