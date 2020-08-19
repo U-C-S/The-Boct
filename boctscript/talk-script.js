@@ -4,7 +4,7 @@ function chat_process(sentence){
 
   setTimeout(boct_general_reply, 600, chat_TL);
 
-  if(chat_T.slice(0,7) == 'convert'){
+  if(chat_TL.slice(0,7) == 'convert'){
     unit_convert(chat_T);
   }
 

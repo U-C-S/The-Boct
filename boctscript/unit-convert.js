@@ -1,13 +1,17 @@
 function unit_convert(usertyped){
   const ucs_data = usertyped.split(' ');
 
-  if(ucs_data.length != 4){ TheConverter(ucs_data[1] , ucs_data[2] , ucs_data[4]); }
+  if(ucs_data.length == 5){ TheConverter(ucs_data[1] , ucs_data[2] , ucs_data[4]); }
 
   else if(ucs_data.length == 4){
     let uVal = parseFloat(ucs_data[1]);
     let uValLeng = String(uVal).replace('.', ' ').length
     let uUnit = ucs_data[1].slice(uValLeng);
     TheConverter(uVal , uUnit , ucs_data[3]);
+  }
+
+  else{
+    talk_div_boct('x_x')
   }
 }
 
@@ -16,40 +20,50 @@ function TheConverter(x , a , b) {
   let from_unit = getUnit(a);
   let to_unit = getUnit(b);
 
-  if(from_unit.Category == to_unit.Category){
-    if(from_unit.con_factor && to_unit.con_factor){
-      let result = x * (from_unit.con_factor / to_unit.con_factor);
-      return talk_div_boct(`${result} ${b}`);
+  if(from_unit.Available && to_unit.Available){
+    if(from_unit.Category == to_unit.Category){
+      if(from_unit.con_factor && to_unit.con_factor){
+        let result = x * (from_unit.con_factor / to_unit.con_factor);
+        return talk_div_boct(`${result} ${b}`);
+      }
+      else if(from_unit.con_trnsTo && to_unit.con_trnsFro){
+        let SIval = from_unit.con_trnsTo(x);
+        let result = to_unit.con_trnsFro(SIval);
+        return talk_div_boct(`${result} ${b}`);
+      }
     }
-    else if(from_unit.con_trnsTo && to_unit.con_trnsFro){
-      let SIval = from_unit.con_trnsTo(x);
-      let result = to_unit.con_trnsFro(SIval);
-      return talk_div_boct(`${result} ${b}`);
+    else{
+      return talk_div_boct('Conversions do not work that way');
     }
   }
-  else{
-    return talk_div_boct('Conversions do not work that way');
-  }
+
+  else{ return talk_div_boct('Something is very Wrong here.') }
 }
 
 
 function getUnit(u) {
   const Categories = [Lengths,Areas,Mass,Temperatures,Volume];
-  var unit_details;
+  var unit_details, i=0;
 
-  for (let i = 0; i < Categories.length; i++) {
+//  for (let i = 0; i < Categories.length; i++) {
+  while(i < Categories.length && (!unit_details)){
     const CategoryType = Categories[i];
     let obj = Object.keys(CategoryType);
     obj.forEach(j => {
       if( CategoryType[j].unit.includes(u) ) {
         let pre_unit_detail = {
+          Available: true,
           UserUnit: u,
           Category: i,
         }
         unit_details = Object.assign(pre_unit_detail,CategoryType[j]);
       }
     })
-    if(unit_details){break;}
+    i++
+  }
+
+  if(!unit_details){
+    unit_details={Available: false}
   }
 
   return unit_details;

@@ -40,6 +40,7 @@ stg_load.addEventListener('click',()=>{
   stg_load.checked == true ? localStorage.setItem('loading', 'no') : localStorage.setItem('loading','yes');
 });
 
+//------others----------------------------------
 //0. Clear LocalStorage (Vue Powered)
 var cookieClearer = new Vue({
   el: '#cokieClear',
@@ -55,4 +56,10 @@ var cookieClearer = new Vue({
       this.cookieInfo = "- Cleared. Reload the Page -";
     }
   }
+})
+
+//0a. Clear all the conversation
+document.getElementById('stg_clearchat').addEventListener('click',()=>{
+  document.getElementById("chatspace").innerHTML = '';
+  setTimeout(()=>{talk_div_boct('Hoi')},1000);
 })
