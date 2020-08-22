@@ -33,7 +33,7 @@ function TheConverter(x , a , b) {
       }
     }
     else{
-      return talk_div_boct('Conversions do not work that way');
+      return replyRandom(['-_-','Conversions do not work that way']);
     }
   }
 

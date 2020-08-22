@@ -89,7 +89,20 @@ function DOt_commands(word){
   }
 }
 
-
+function rdmZ(m,n) {
+  return Math.floor(Math.random() * (n - m + 1) ) + m;
+}
+//Try to write a function that takes as many parameters 
+//Maybe let the para be a array
+function replyRandom([x,y]){
+  let rdmVal = rdmZ(0,10);
+  if(rdmVal > 5){
+    return talk_div_boct(x);
+  }
+  else{
+    return talk_div_boct(y)
+  }
+}
 //-------------------------------------------
 class directReplies {
   constructor(inWrds,outsen) {
@@ -172,9 +185,6 @@ const searchStuff = {
   }
 }
 
-function rdmZ(m,n) {
-  return Math.floor(Math.random() * (n - m + 1) ) + m;
-}
 const dice = {
   words: ['roll a dice', 'roll dice'],
   reply: ()=>{
