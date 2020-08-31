@@ -8,3 +8,5 @@ Also, Available as Progressive Web App (PWA)
 Future Updates to BOcT can make it perform basic Maths, Maybe suggest you some Movies...
 
 98% Self-Made. Also, This is my Self-Learning JavaScript Project (learning from MDN)
+
+Note: This is Over-Polished;
