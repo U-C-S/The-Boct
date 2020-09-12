@@ -80,7 +80,7 @@ body{
   background-color: var(--wit-in-dark);
   animation: load 1.6s linear;
 }
-@keyframes load{0% {width: 0%;} 35% {width: 30%;} 65% {width: 70%;} 100% {width: 101%;}
+@keyframes load{0% {width: 0%;} 35% {width: 30%;} 65% {width: 70%;} 100% {width: 100%;}
 }
 
 .load_text{
@@ -490,16 +490,6 @@ button{
 .stg_btn:hover{
   color: var(--wit-in-dark);
   background-color: var(--blk-in-dark);
-}
-/* LocalStorage Reset */
-#cokieClear{
-  width: 100%;
-  height: 50px;
-  border-bottom: 1px solid var(--blk-in-dark);
-}
-#cokieClear p{
-  margin: 0;
-  font-size: 11px;
 }
 
 /*--------------------------------------------*/

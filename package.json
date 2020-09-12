@@ -1,0 +1,12 @@
+{
+  "name": "the-boct",
+  "version": "2.4.0",
+  "license": "MIT",
+  "scripts": {
+    "start": "index.html",
+    "tsc": "tsc"
+  },
+  "devDependencies": {
+    "typescript": "^4.0.2"
+  }
+}
