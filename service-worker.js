@@ -5,9 +5,11 @@ self.addEventListener('install', function(e) {
         '/index.html',
         '/boctstyle/boct.css',
         '/boctstyle/boctmediaq.css',
-        '/boctscript/index.js',
-        '/boctscript/talk-script.js',
-        '/boctscript/settings.js'
+        '/boct_Scripts/index.js',
+        '/boct_Scripts/talk-script.js',
+        '/boct_Scripts/settings.js',
+        '/boct_Scripts/unit-convert.js',
+        '/boct_Scripts/PWA.js'
       ]);
     })
   );

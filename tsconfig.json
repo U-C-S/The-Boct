@@ -1,0 +1,10 @@
+{
+  "include": ["private/*"],
+  "compilerOptions": {
+    "removeComments": true,
+    "strictNullChecks": false,
+    "lib": ["ES6","DOM"],
+    "outDir": "boct_Scripts",
+    "importHelpers": true
+  }
+}

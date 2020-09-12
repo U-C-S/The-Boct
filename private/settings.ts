@@ -1,6 +1,6 @@
 //Settings----------------------------------------------------------
 //1.open chatbox by default
-const stg_chatbox = document.getElementById("stg_chat_open_default");
+const stg_chatbox = <HTMLInputElement> document.getElementById("stg_chat_open_default");
 const stg_chatbox_cokie = localStorage.getItem('chatbox');
 
 if (stg_chatbox_cokie == 'open'){
@@ -25,7 +25,7 @@ stg_chatbox.addEventListener('click',()=>{
 });
 
 //2.Diable Loading Screen
-const stg_load = document.getElementById("stg_disable_load");
+const stg_load = <HTMLInputElement> document.getElementById("stg_disable_load");
 const stg_load_cokie = localStorage.getItem('loading');
 
 if (stg_load_cokie == 'no'){
@@ -40,22 +40,13 @@ stg_load.addEventListener('click',()=>{
   stg_load.checked == true ? localStorage.setItem('loading', 'no') : localStorage.setItem('loading','yes');
 });
 
-//------others----------------------------------
-//0. Clear LocalStorage (Vue Powered)
-var cookieClearer = new Vue({
-  el: '#cokieClear',
-  data: {
-    cookieInfo: 'This will clear your localStorage Data for this App',
-    cokieClearBtn: 'Clear your Settings'
-  },
-  methods: {
-    cokieReset: function() {
-      localStorage.removeItem("theme");
-      localStorage.removeItem("chatbox");
-      localStorage.clear();
-      this.cookieInfo = "- Cleared. Reload the Page -";
-    }
-  }
+
+//0. Clear LocalStorage
+const stg_cokieClear = <HTMLButtonElement> document.getElementsByClassName("stg_btn")[0];
+stg_cokieClear.addEventListener('click',()=>{
+  localStorage.removeItem("theme");
+  localStorage.removeItem("chatbox");
+  localStorage.clear();
 })
 
 //0a. Clear all the conversation
