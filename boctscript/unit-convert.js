@@ -1,7 +1,9 @@
 function unit_convert(usertyped){
   const ucs_data = usertyped.split(' ');
 
-  if(ucs_data.length == 5){ TheConverter(ucs_data[1] , ucs_data[2] , ucs_data[4]); }
+  if(ucs_data.length == 5){
+    TheConverter(ucs_data[1] , ucs_data[2] , ucs_data[4]);
+  }
 
   else if(ucs_data.length == 4){
     let uVal = parseFloat(ucs_data[1]);
