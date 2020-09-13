@@ -2,7 +2,7 @@ function chat_process(sentence) {
     var chat_TL = sentence.trim().toLowerCase();
     var chat_T = sentence.trim();
     setTimeout(boct_general_reply, 600, chat_TL);
-    if (chat_TL.slice(0, 7) == 'convert') {
+    if (chat_TL.slice(0, 4) == 'conv') {
         unit_convert(chat_T);
     }
     if (chat_TL[0] == '.' || chat_TL[0] == '$') {
@@ -80,15 +80,8 @@ function DOt_commands(word) {
 function rdmZ(m, n) {
     return Math.floor(Math.random() * (n - m + 1)) + m;
 }
-function replyRandom(_a) {
-    var x = _a[0], y = _a[1];
-    var rdmVal = rdmZ(0, 10);
-    if (rdmVal > 5) {
-        return talk_div_boct(x);
-    }
-    else {
-        return talk_div_boct(y);
-    }
+function replyRandom(x) {
+    return talk_div_boct(x[rdmZ(0, x.length - 1)]);
 }
 var directReplies = (function () {
     function directReplies(inWrds, outsen) {

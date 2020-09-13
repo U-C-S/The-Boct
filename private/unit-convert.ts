@@ -1,15 +1,12 @@
 function unit_convert(usertyped: string){
   const ucs_data = usertyped.split(' ');
 
-  if(ucs_data.length == 5){ TheConverter(Number(ucs_data[1]) , ucs_data[2] , ucs_data[4]); }
-
-  else if(ucs_data.length == 4){
+  if(ucs_data.length == 4){
     let uVal = parseFloat(ucs_data[1]);
     let uValLeng = String(uVal).replace('.', ' ').length
     let uUnit = ucs_data[1].slice(uValLeng);
     TheConverter(uVal , uUnit , ucs_data[3]);
   }
-
   else{
     talk_div_boct('x_x')
   }
@@ -36,10 +33,10 @@ function TheConverter(x: number , a: string , b: string) {
     }
   }
 
-  else{ return talk_div_boct('Something is very Wrong here.') }
+  else{ return replyRandom(['That doesn\'t make sense','Something is very Wrong here.']) }
 }
 
-function getUnit(u: any) {
+function getUnit(u: string) {
   const Categories = [Lengths,Areas,Mass,Temperatures,Volume];
   var unit_details,
       i: number = 0;

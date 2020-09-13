@@ -4,7 +4,7 @@ function chat_process(sentence: string){
 
   setTimeout(boct_general_reply, 600, chat_TL);
 
-  if(chat_TL.slice(0,7) == 'convert'){
+  if(chat_TL.slice(0,4) == 'conv'){
     unit_convert(chat_T);
   }
 
@@ -94,16 +94,9 @@ function DOt_commands(word: string){
 function rdmZ(m: number,n: number) {
   return Math.floor(Math.random() * (n - m + 1) ) + m;
 }
-//Try to write a function that takes as many parameters 
-//Maybe let the para be a array
-function replyRandom([x,y]){
-  let rdmVal = rdmZ(0,10);
-  if(rdmVal > 5){
-    return talk_div_boct(x);
-  }
-  else{
-    return talk_div_boct(y)
-  }
+
+function replyRandom(x: string[]){
+  return talk_div_boct(x[rdmZ(0 , x.length - 1)]);
 }
 //-------------------------------------------
 class directReplies {

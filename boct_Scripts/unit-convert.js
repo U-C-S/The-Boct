@@ -1,9 +1,6 @@
 function unit_convert(usertyped) {
     var ucs_data = usertyped.split(' ');
-    if (ucs_data.length == 5) {
-        TheConverter(Number(ucs_data[1]), ucs_data[2], ucs_data[4]);
-    }
-    else if (ucs_data.length == 4) {
+    if (ucs_data.length == 4) {
         var uVal = parseFloat(ucs_data[1]);
         var uValLeng = String(uVal).replace('.', ' ').length;
         var uUnit = ucs_data[1].slice(uValLeng);
@@ -33,7 +30,7 @@ function TheConverter(x, a, b) {
         }
     }
     else {
-        return talk_div_boct('Something is very Wrong here.');
+        return replyRandom(['That doesn\'t make sense', 'Something is very Wrong here.']);
     }
 }
 function getUnit(u) {
