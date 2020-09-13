@@ -83,10 +83,6 @@ function BOcT_annoy_clicks() {
 
 talk_div_boct("Hi, I can partially understand you. Maybe, say hi to me or ask my age. But, Don't call me an idiot");
 
-let dLocation: any = document.location;
-document.getElementById('experimental').addEventListener('click',()=>{ dLocation = "/Experimental/" });
-
-
 //Toggle Off-Canvas for Settings------------------------------------
 const offcanvas = {
   show: ()=>{ body.classList.add('show-settings'); },

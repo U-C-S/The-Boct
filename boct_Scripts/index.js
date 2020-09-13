@@ -62,8 +62,6 @@ function BOcT_annoy_clicks() {
     }
 }
 talk_div_boct("Hi, I can partially understand you. Maybe, say hi to me or ask my age. But, Don't call me an idiot");
-var dLocation = document.location;
-document.getElementById('experimental').addEventListener('click', function () { dLocation = "/Experimental/"; });
 var offcanvas = {
     show: function () { body.classList.add('show-settings'); },
     hide: function () { body.classList.remove('show-settings'); },
