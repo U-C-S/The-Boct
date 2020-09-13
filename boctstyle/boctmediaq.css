@@ -75,9 +75,8 @@
     border: none;
     background-color: transparent;
   }
-  .add-button{
+  .pwaBtn{
     margin-top: 20px;
-    padding: 5px 10px;
   }
   .about p, .about hr, .about legend{
     display: none;

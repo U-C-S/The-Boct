@@ -314,7 +314,6 @@ button{
   border: 2px solid var(--wit-in-dark);
   box-shadow: 0 0 15px inset black;
   padding: 5px;
-  text-align: center;
 }
 .about legend{
   color: var(--wit-in-dark);
@@ -342,14 +341,19 @@ button{
 .aboutbtns svg:hover{
   fill: #ff1439;
 }
-
+.pwaBtn{
+  text-align: center;
+}
 pwa-install::part(openButton) {
-  margin: 2px auto;
-  width: 60px;
+  font-size: 12px;
+  width: 65px;
   height: 30px;
   border: 2px solid var(--wit-in-dark);
   background-color: var(--blk-in-dark);
   color: #ff1439;
+}
+pwa-install::part(installModal){
+  text-align: left;
 }
 
 .about p{
