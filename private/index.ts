@@ -4,15 +4,15 @@ function log(x: any){ console.log(x) }
 const body = <HTMLBodyElement> document.querySelector('body');
 const alll = <HTMLElement>document.querySelector('.alll');
 
-const barr = <HTMLElement>document.getElementById('barr');
+const barr = <HTMLElement>document.getElementById('load_barr');
 barr.addEventListener('animationend', ()=>{
-  document.getElementById('textt').innerHTML = 'Load Complete';
+  document.getElementById('load_text').innerHTML = 'Load Complete';
   barr.style.backgroundColor = '#FF1439';
 });
 
 window.addEventListener('load', () => { setTimeout(stopLoading, 2173) });
 function stopLoading() {
-  document.getElementById("loader").style.display="none";
+  document.getElementById("loadScreen").style.display="none";
   body.scrollTop = 0;
   document.getElementById('title').style.animation = "focus-in-expand 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both";
 }

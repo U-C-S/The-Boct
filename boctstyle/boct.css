@@ -22,7 +22,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: local('Megrim'), url(https://fonts.gstatic.com/s/megrim/v10/46kulbz5WjvLqJZVam_h.woff2) format('woff2');
+  src: local('Megrim'), url(https://fonts.gstatic.com/s/megrim/v11/46kulbz5WjvLqJZVam_h.woff2) format('woff2');
 }
 
 *,
@@ -45,6 +45,13 @@ body{
   border: 6px solid var(--wit-in-dark);
 }
 
+button{
+  outline: none;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
 .typespace, .human_talk, .boct_talk,
 .about legend, .about p, .add-button,
 .info_content, .info_links a, .text1, .info_close,
@@ -53,9 +60,7 @@ body{
 }
 
 /*Loading Screen------------------------------*/
-.loader-wrapper {
-  margin: 0px;
-  padding: 0px;
+#loadScreen {
   border: 6px solid var(--wit-in-dark);
   width: 100%;
   min-width: 300px;
@@ -74,7 +79,7 @@ body{
   border: 1px solid var(--wit-in-dark);
   box-shadow: 0 0 50px var(--wit-in-dark);
 }
-.load_bar{
+#load_barr{
   height: 100%;
   background-color: var(--wit-in-dark);
   animation: load 1.6s linear;
@@ -82,7 +87,7 @@ body{
 @keyframes load{0% {width: 0%;} 35% {width: 30%;} 65% {width: 70%;} 100% {width: 101%;}
 }
 
-.load_text{
+#load_text{
   margin-top: 5px;
   color: var(--wit-in-dark);
   font-size: 13px;
@@ -93,13 +98,6 @@ body{
 
 
 /*-------------------------------------------------------------*/
-button{
-  outline: none;
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
-}
-
 .alll{
   display: grid;
   grid-template-columns: 50px 300px 60px auto 60px;
@@ -350,6 +348,7 @@ pwa-install::part(openButton) {
   border: 2px solid var(--wit-in-dark);
   background-color: var(--blk-in-dark);
   color: #ff1439;
+  transition: 0.2s all linear;
 }
 pwa-install::part(installModal){
   text-align: left;
@@ -362,7 +361,7 @@ pwa-install::part(installModal){
   margin: 10px 0;
 }
 
-.release{
+.releaseVer{
   font-family: 'Arial', monospace !important;
   font-size: 10px !important;
   margin: 15px 0px 10px !important;
@@ -421,6 +420,7 @@ pwa-install::part(installModal){
 .text1{
   color: var(--blk-in-dark);
   font-size: 12px;
+  margin: 5px 0 15px;
 }
 .info_close{
   color: var(--wit-in-dark);
@@ -478,7 +478,6 @@ pwa-install::part(installModal){
   top: 2px;
   left: 5px;
 }
-
 
 .stg_btn{
   font-family: 'Quicksand';

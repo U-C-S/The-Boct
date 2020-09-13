@@ -15,6 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com/" crossorigin>
   <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
   <link rel="preconnect" href="https://www.google-analytics.com/" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net/" crossorigin>
 
   <!--CSS-->
   <link rel="stylesheet" href="boctstyle/boct.css">
@@ -94,7 +95,7 @@
             <path d="M8 256c0 136.966 111.033 248 248 248s248-111.034 248-248S392.966 8 256 8 8 119.033 8 256zm248 184V72c101.705 0 184 82.311 184 184 0 101.705-82.311 184-184 184z"/>
             </svg></button>
         </div>
-        <p class="release">Version 3 Final Preview</p>
+        <p class="releaseVer">Version 3</p>
         <div class="pwaBtn"><pwa-install featuresheader="The Features:">Install</pwa-install>
         </div><hr>
         <p>BOcT is a Static Browser Chatbot</p>
@@ -105,11 +106,10 @@
   </div>
 
   <!-- Fake Loading screen --->
-  <div class="loader-wrapper" id="loader">
-    <div class="loader"><div class="load_bar" id="barr"></div>
-      <div class="load_text" id="textt">BOcT Loading...</div>
-    </div>
-  </div>
+  <div id="loadScreen"><div class="loader">
+    <div id="load_barr"></div>
+    <div id="load_text">BOcT Loading...</div>
+  </div></div>
 
   <!-- iPopUp --->
   <div id="info_popup">

@@ -61,7 +61,7 @@ function DOt_commands(word: string){
       talk_div_boct('U-C-S / Chanakya');
       break;
     case 'v':
-      const ver = document.getElementsByClassName('release')[0];
+      const ver = document.getElementsByClassName('releaseVer')[0];
       talk_div_boct(`${ver.innerHTML}`);
       break;
     case 'url':

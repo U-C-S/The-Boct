@@ -1,14 +1,14 @@
 function log(x) { console.log(x); }
 var body = document.querySelector('body');
 var alll = document.querySelector('.alll');
-var barr = document.getElementById('barr');
+var barr = document.getElementById('load_barr');
 barr.addEventListener('animationend', function () {
-    document.getElementById('textt').innerHTML = 'Load Complete';
+    document.getElementById('load_text').innerHTML = 'Load Complete';
     barr.style.backgroundColor = '#FF1439';
 });
 window.addEventListener('load', function () { setTimeout(stopLoading, 2173); });
 function stopLoading() {
-    document.getElementById("loader").style.display = "none";
+    document.getElementById("loadScreen").style.display = "none";
     body.scrollTop = 0;
     document.getElementById('title').style.animation = "focus-in-expand 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both";
 }
