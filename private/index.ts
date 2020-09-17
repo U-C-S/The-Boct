@@ -54,7 +54,7 @@ document.getElementById("typespace-enter-id").addEventListener("click", talk_div
 
 function talk_div_hooman() {
   const chat_boxx = <HTMLInputElement> document.querySelector(".typespace");
-  let chat_content = chat_boxx.value;
+  let chat_content: string = chat_boxx.value;
   if(chat_content == '') { chat_content = '*empty*'; }
   const newDIV = document.createElement("div");
   const talk_create = document.createElement("p");

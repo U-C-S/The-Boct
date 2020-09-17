@@ -420,7 +420,7 @@ pwa-install::part(installModal){
 .text1{
   color: var(--blk-in-dark);
   font-size: 12px;
-  margin: 5px 0 15px;
+  margin: 10px 0 15px;
 }
 .info_close{
   color: var(--wit-in-dark);

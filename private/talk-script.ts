@@ -1,6 +1,6 @@
 function chat_process(sentence: string){
-  const chat_TL = sentence.trim().toLowerCase();
-  const chat_T = sentence.trim();
+  const chat_TL: string = sentence.trim().toLowerCase();
+  const chat_T: string = sentence.trim();
 
   setTimeout(boct_general_reply, 600, chat_TL);
 
