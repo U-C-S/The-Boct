@@ -25,7 +25,6 @@ stg_chatbox.addEventListener('click',()=>{
 });
 
 //3.Remove Animations and Transitions
-/*
 const stg_anim = <HTMLInputElement> document.getElementById("stg_remove_anim");
 const stg_anim_cokie = localStorage.getItem('animations');
 const EveryElem = document.querySelectorAll("*");
@@ -47,7 +46,6 @@ stg_anim.addEventListener('click',()=>{
     localStorage.setItem('animations', 'no');
   }
 });
-*/
 
 //2.Diable Loading Screen
 const stg_load = <HTMLInputElement> document.getElementById("stg_disable_load");
@@ -78,5 +76,5 @@ stg_cokieClear.addEventListener('click',()=>{
 //0a. Clear all the conversation
 document.getElementById('stg_clearchat').addEventListener('click',()=>{
   document.getElementById("chatspace").innerHTML = '';
-  setTimeout(()=>{talk_div_boct('Hoi')},1000);
+  setTimeout(()=>{talk_div_boct('Hoi')},1372);
 })

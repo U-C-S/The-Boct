@@ -19,6 +19,25 @@ stg_chatbox.addEventListener('click', function () {
         localStorage.setItem('chatbox', 'close');
     }
 });
+var stg_anim = document.getElementById("stg_remove_anim");
+var stg_anim_cokie = localStorage.getItem('animations');
+var EveryElem = document.querySelectorAll("*");
+if (stg_anim_cokie == 'ok') {
+    stg_anim.checked = true;
+    CLICK_BOT.style.animation = "none";
+}
+else {
+    stg_anim.checked = false;
+}
+stg_anim.addEventListener('click', function () {
+    if (stg_anim.checked == true) {
+        CLICK_BOT.style.animation = "none";
+        localStorage.setItem('animations', 'ok');
+    }
+    else {
+        localStorage.setItem('animations', 'no');
+    }
+});
 var stg_load = document.getElementById("stg_disable_load");
 var stg_load_cokie = localStorage.getItem('loading');
 if (stg_load_cokie == 'no') {
@@ -39,5 +58,5 @@ stg_cokieClear.addEventListener('click', function () {
 });
 document.getElementById('stg_clearchat').addEventListener('click', function () {
     document.getElementById("chatspace").innerHTML = '';
-    setTimeout(function () { talk_div_boct('Hoi'); }, 1000);
+    setTimeout(function () { talk_div_boct('Hoi'); }, 1372);
 });
