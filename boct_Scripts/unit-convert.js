@@ -22,7 +22,7 @@ function TheConverter(x, a, b) {
             else if (from_unit.con_trnsTo && to_unit.con_trnsFro) {
                 var SIval = from_unit.con_trnsTo(x);
                 var result = to_unit.con_trnsFro(SIval);
-                return talk_div_boct(result + " " + b);
+                return talk_div_boct("" + result + b);
             }
         }
         else {
@@ -35,7 +35,8 @@ function TheConverter(x, a, b) {
 }
 function getUnit(u) {
     var Categories = [Lengths, Areas, Mass, Temperatures, Volume];
-    var unit_details, i = 0;
+    var unit_details;
+    var i = 0;
     var _loop_1 = function () {
         var CategoryType = Categories[i];
         var obj = Object.keys(CategoryType);

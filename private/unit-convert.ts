@@ -1,5 +1,5 @@
 function unit_convert(usertyped: string){
-  const ucs_data = usertyped.split(' ');
+  const ucs_data: string[] = usertyped.split(' ');
 
   if(ucs_data.length == 4){
     let uVal = parseFloat(ucs_data[1]);
@@ -25,7 +25,7 @@ function TheConverter(x: number , a: string , b: string) {
       else if(from_unit.con_trnsTo && to_unit.con_trnsFro){
         let SIval = from_unit.con_trnsTo(x);
         let result = to_unit.con_trnsFro(SIval);
-        return talk_div_boct(`${result} ${b}`);
+        return talk_div_boct(`${result}${b}`);
       }
     }
     else{
@@ -37,9 +37,16 @@ function TheConverter(x: number , a: string , b: string) {
 }
 
 function getUnit(u: string) {
-  const Categories = [Lengths,Areas,Mass,Temperatures,Volume];
-  var unit_details,
-      i: number = 0;
+  const Categories: object[] = [Lengths,Areas,Mass,Temperatures,Volume];
+  let unit_details: { 
+    Available: boolean;
+    UserUnit?: string;
+    Category?: number;
+    con_factor?: number;
+    con_trnsTo?: any;
+    con_trnsFro?: any;
+  }
+  let i: number = 0;
 
   while(i < Categories.length && (!unit_details)){
     const CategoryType = Categories[i];
@@ -58,7 +65,7 @@ function getUnit(u: string) {
   }
 
   if(!unit_details){
-    unit_details={Available: false}
+    unit_details = {Available: false}
   }
 
   return unit_details;

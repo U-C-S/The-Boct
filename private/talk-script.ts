@@ -91,7 +91,7 @@ function DOt_commands(word: string){
 
 
 
-function rdmZ(m: number,n: number) {
+function rdmZ(m: number,n: number): number {
   return Math.floor(Math.random() * (n - m + 1) ) + m;
 }
 
