@@ -10,7 +10,7 @@ barr.addEventListener('animationend', ()=>{
   barr.style.backgroundColor = '#FF1439';
 });
 
-window.addEventListener('load', () => { setTimeout(stopLoading, 992173) });
+window.addEventListener('load', () => { setTimeout(stopLoading, 2173) });
 function stopLoading() {
   document.getElementById("loadScreen").style.display="none";
   body.scrollTop = 0;
