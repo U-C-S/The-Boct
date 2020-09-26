@@ -30,7 +30,7 @@
   html{
     overflow: auto;
   }
-  .loader-wrapper{
+  #loadScreen{
     border: none;
   }
   .alll{

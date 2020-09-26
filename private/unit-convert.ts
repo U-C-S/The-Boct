@@ -3,29 +3,28 @@ function unit_convert(usertyped: string){
 
   if(ucs_data.length == 4){
     let uVal = parseFloat(ucs_data[1]);
-    let uValLeng = String(uVal).replace('.', ' ').length
+    let uValLeng = String(uVal).replace('.', ' ').length;
     let uUnit = ucs_data[1].slice(uValLeng);
     TheConverter(uVal , uUnit , ucs_data[3]);
   }
   else{
-    talk_div_boct('x_x')
+    talk_div_boct('x_x');
   }
 }
 
 function TheConverter(x: number , a: string , b: string) {
   let from_unit = getUnit(a);
   let to_unit = getUnit(b);
-  let result: number;
 
   if(from_unit.Available && to_unit.Available){
     if(from_unit.Category == to_unit.Category){
       if(from_unit.con_factor && to_unit.con_factor){
-        result = x * (from_unit.con_factor / to_unit.con_factor);
+        let result: number = x * (from_unit.con_factor / to_unit.con_factor);
         return talk_div_boct(`${result} ${b}`);
       }
       else if(from_unit.con_trnsTo && to_unit.con_trnsFro){
         let SIval = from_unit.con_trnsTo(x);
-        result = to_unit.con_trnsFro(SIval);
+        let result: number = to_unit.con_trnsFro(SIval);
         return talk_div_boct(`${result}${b}`);
       }
     }

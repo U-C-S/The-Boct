@@ -72,6 +72,7 @@ button{
   display: flex;
 }
 .loader{
+  padding: 0px;
   margin: auto;
   width: 120px;
   height: 18px;
@@ -80,6 +81,7 @@ button{
   box-shadow: 0 0 50px var(--wit-in-dark);
 }
 #load_barr{
+  margin: 0px;
   height: 100%;
   background-color: var(--wit-in-dark);
   animation: load 1.6s linear;

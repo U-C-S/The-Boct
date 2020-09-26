@@ -40,7 +40,7 @@ function boct_general_reply(studycontent: string) {
 
 
 function DOt_commands(word: string){
-  let comm = word.slice(1,5);
+  let comm: string = word.slice(1,5);
   switch (comm) {
     case "":
       talk_div_boct('Type a Dot-Command');
@@ -98,6 +98,8 @@ function rdmZ(m: number,n: number): number {
 function replyRandom(x: string[]){
   return talk_div_boct(x[rdmZ(0 , x.length - 1)]);
 }
+
+
 //-------------------------------------------
 class directReplies {
   words: string[];

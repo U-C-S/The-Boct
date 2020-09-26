@@ -6,7 +6,7 @@ barr.addEventListener('animationend', function () {
     document.getElementById('load_text').innerHTML = 'Load Complete';
     barr.style.backgroundColor = '#FF1439';
 });
-window.addEventListener('load', function () { setTimeout(stopLoading, 2173); });
+window.addEventListener('load', function () { setTimeout(stopLoading, 992173); });
 function stopLoading() {
     document.getElementById("loadScreen").style.display = "none";
     body.scrollTop = 0;

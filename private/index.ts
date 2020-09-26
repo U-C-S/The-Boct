@@ -10,7 +10,7 @@ barr.addEventListener('animationend', ()=>{
   barr.style.backgroundColor = '#FF1439';
 });
 
-window.addEventListener('load', () => { setTimeout(stopLoading, 2173) });
+window.addEventListener('load', () => { setTimeout(stopLoading, 992173) });
 function stopLoading() {
   document.getElementById("loadScreen").style.display="none";
   body.scrollTop = 0;
@@ -51,7 +51,6 @@ function talk_div_boct(talkContent: any) {
 
 //User reply js
 document.getElementById("typespace-enter-id").addEventListener("click", talk_div_hooman);
-
 function talk_div_hooman() {
   const chat_boxx = <HTMLInputElement> document.querySelector(".typespace");
   let chat_content: string = chat_boxx.value;
@@ -101,7 +100,7 @@ body.addEventListener('click', (e: any)=>{
 
 
 //info popup--------------------------------------
-const ipopup = document.getElementById("info_popup");
+const ipopup: HTMLElement = document.getElementById("info_popup");
 
 document.getElementById("i-btn").onclick = ()=> { ipopup.style.display = "block"; }
 document.getElementsByClassName("info_close")[0].addEventListener('click', () => {
