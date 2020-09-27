@@ -24,29 +24,6 @@ stg_chatbox.addEventListener('click',()=>{
   }
 });
 
-//3.Remove Animations and Transitions
-const stg_anim = <HTMLInputElement> document.getElementById("stg_remove_anim");
-const stg_anim_cokie = localStorage.getItem('animations');
-const EveryElem = document.querySelectorAll("*");
-
-if (stg_anim_cokie == 'ok'){
-  stg_anim.checked = true;
-  CLICK_BOT.style.animation = "none";
-}
-else{
-  stg_anim.checked = false;
-}
-
-stg_anim.addEventListener('click',()=>{
-  if(stg_anim.checked == true){
-    CLICK_BOT.style.animation = "none";
-    localStorage.setItem('animations', 'ok');
-  }
-  else{
-    localStorage.setItem('animations', 'no');
-  }
-});
-
 //2.Diable Loading Screen
 const stg_load = <HTMLInputElement> document.getElementById("stg_disable_load");
 const stg_load_cokie = localStorage.getItem('loading');
@@ -74,8 +51,8 @@ stg_cokieClear.addEventListener('click',()=>{
 })
 
 //0a. Clear all the conversation
-const stg_clearchat = document.getElementsByClassName("stg_btn")[1];
-stg_clearchat.addEventListener('click',()=>{
+const stg_clearChat = document.getElementsByClassName("stg_btn")[1];
+stg_clearChat.addEventListener('click',()=>{
   document.getElementById("chatspace").innerHTML = '';
   setTimeout(()=>{talk_div_boct('Hoi')},1372);
 })
