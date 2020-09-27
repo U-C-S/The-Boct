@@ -56,7 +56,8 @@ stg_cokieClear.addEventListener('click', function () {
     localStorage.removeItem("chatbox");
     localStorage.clear();
 });
-document.getElementById('stg_clearchat').addEventListener('click', function () {
+var stg_clearchat = document.getElementsByClassName("stg_btn")[1];
+stg_clearchat.addEventListener('click', function () {
     document.getElementById("chatspace").innerHTML = '';
     setTimeout(function () { talk_div_boct('Hoi'); }, 1372);
 });

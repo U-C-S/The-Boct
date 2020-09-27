@@ -74,7 +74,8 @@ stg_cokieClear.addEventListener('click',()=>{
 })
 
 //0a. Clear all the conversation
-document.getElementById('stg_clearchat').addEventListener('click',()=>{
+const stg_clearchat = document.getElementsByClassName("stg_btn")[1];
+stg_clearchat.addEventListener('click',()=>{
   document.getElementById("chatspace").innerHTML = '';
   setTimeout(()=>{talk_div_boct('Hoi')},1372);
 })
