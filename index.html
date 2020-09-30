@@ -64,21 +64,27 @@
     </div>
 
     <div class="arrow_box" id="chatter">
-      <div class="talk_box" id="chatspace">
-        <!-- CHAT HTML goes here --->
-
+      <div id="ChatUI">
+        <div class="talk_box" id="chatspace">
+          <!--Chat Text goes here-->
+        </div>
+        <div class="type_box">
+          <form class="type_box-inner" action="javascript:void(0);">
+            <input class="typespace" id="typespace-id" type="text" placeholder="Wanna talk with BOcT? Then type here..!" autocomplete="off" maxlength="120" spellcheck="true">
+            <button class="typespace-enter" id="typespace-enter-id" type="submit">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+              <path d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"/>
+              </svg>
+            </button>
+          </form>
+        </div>    
       </div>
-      <!-- Type bar --->
-      <div class="type_box">
-        <form class="type_box-inner" action="javascript:void(0);">
-          <input class="typespace" id="typespace-id" type="text" placeholder="Wanna talk with BOcT? Then type here..!" autocomplete="off" maxlength="120" spellcheck="true">
-          <button class="typespace-enter" id="typespace-enter-id" type="submit">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-            <path d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"/>
-            </svg>
-          </button>
-        </form>
+      <div id="TerminalUI">
+        <div id="terminalBox">
+          
+        </div>
       </div>
+      
     </div>
 
     <div class="about">
@@ -95,7 +101,7 @@
             <path d="M8 256c0 136.966 111.033 248 248 248s248-111.034 248-248S392.966 8 256 8 8 119.033 8 256zm248 184V72c101.705 0 184 82.311 184 184 0 101.705-82.311 184-184 184z"/>
             </svg></button>
         </div>
-        <p class="releaseVer">Version 3.0.4a | pre-Oct 2020 Release</p>
+        <p class="releaseVer">Version 3.1 Beta 1</p>
         <div class="pwaBtn"><pwa-install featuresheader="Some of the Features:">Install</pwa-install>
         </div><hr>
         <p>BOcT is a Static Browser Chatbot</p>
@@ -156,6 +162,9 @@
   <!--Off-Canvas menu for Settings--->
   <aside class="settingbar">
     <h2>BOcT Settings</h2>
+    <label class="stg_contain">Replace the Chat Interface with Terminal:
+      <input type="checkbox" id="stg_terminal"></label>
+
     <label class="stg_contain">Open Chatbox by Default:
       <input type="checkbox" id="stg_chat_open_default"></label>
 

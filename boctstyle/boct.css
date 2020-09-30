@@ -205,6 +205,22 @@ button{
 	margin-top: -27px;
 }
 
+#ChatUI{
+  width: 100%;
+  height: 100%;
+}
+#TerminalUI{
+  width: 100%;
+  height: 100%;
+  font-family: monospace;
+  padding: 12px;
+}
+#terminalBox{
+  background-color: black;
+  width: 100%;
+  height: 100%;
+}
+
 /*chatspace-----------------------------------*/
 .talk_box{
   width: 100%;

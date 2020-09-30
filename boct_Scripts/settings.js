@@ -1,3 +1,23 @@
+var stg_terminal = document.getElementById("stg_terminal");
+var stg_terminal_cokie = localStorage.getItem('TerminalUI');
+if (stg_terminal_cokie == 'yes') {
+    stg_terminal.checked = true;
+    document.getElementById("TerminalUI").style.display = "block";
+    document.getElementById("ChatUI").style.display = "none";
+}
+else {
+    stg_terminal.checked = false;
+    document.getElementById("ChatUI").style.display = "block";
+    document.getElementById("TerminalUI").style.display = "none";
+}
+stg_terminal.addEventListener('click', function () {
+    if (stg_terminal.checked == true) {
+        localStorage.setItem('TerminalUI', 'yes');
+    }
+    else {
+        localStorage.setItem('TerminalUI', 'no');
+    }
+});
 var stg_chatbox = document.getElementById("stg_chat_open_default");
 var stg_chatbox_cokie = localStorage.getItem('chatbox');
 if (stg_chatbox_cokie == 'open') {

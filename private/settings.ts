@@ -1,4 +1,28 @@
 //Settings----------------------------------------------------------
+//Terminal like UI
+const stg_terminal = <HTMLInputElement> document.getElementById("stg_terminal");
+const stg_terminal_cokie = localStorage.getItem('TerminalUI');
+
+if (stg_terminal_cokie == 'yes'){
+  stg_terminal.checked = true;
+  document.getElementById("TerminalUI").style.display="block";
+  document.getElementById("ChatUI").style.display="none";
+}
+else{
+  stg_terminal.checked = false;
+  document.getElementById("ChatUI").style.display="block";
+  document.getElementById("TerminalUI").style.display="none";
+}
+
+stg_terminal.addEventListener('click',()=>{
+  if(stg_terminal.checked == true){
+    localStorage.setItem('TerminalUI', 'yes');
+  }
+  else{
+    localStorage.setItem('TerminalUI','no');
+  }
+});
+
 //1.open chatbox by default
 const stg_chatbox = <HTMLInputElement> document.getElementById("stg_chat_open_default");
 const stg_chatbox_cokie = localStorage.getItem('chatbox');
