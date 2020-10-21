@@ -7,9 +7,7 @@ function unit_convert(usertyped: string){
     let uUnit = ucs_data[1].slice(uValLeng);
     TheConverter(uVal , uUnit , ucs_data[3]);
   }
-  else{
-    talk_div_boct('x_x')
-  }
+  else talk_div_boct('Type in this Format: conv 37cm to m');
 }
 
 function TheConverter(x: number , a: string , b: string) {
@@ -20,20 +18,19 @@ function TheConverter(x: number , a: string , b: string) {
     if(from_unit.Category == to_unit.Category){
       if(from_unit.con_factor && to_unit.con_factor){
         let result = x * (from_unit.con_factor / to_unit.con_factor);
-        return talk_div_boct(`${result} ${b}`);
+        talk_div_boct(`${result} ${b}`);
       }
       else if(from_unit.con_trnsTo && to_unit.con_trnsFro){
         let SIval = from_unit.con_trnsTo(x);
         let result = to_unit.con_trnsFro(SIval);
-        return talk_div_boct(`${result}${b}`);
+        talk_div_boct(`${result}${b}`);
       }
     }
     else{
-      return replyRandom(['-_-','Conversions do not work that way']);
+      replyRandom(['-_-','Conversions do not work that way']);
     }
   }
-
-  else{ return replyRandom(['That doesn\'t make sense','Something is very Wrong here.']) }
+  else replyRandom(['That doesn\'t make sense','Something is very Wrong here.'])
 }
 
 function getUnit(u: string) {
@@ -49,16 +46,14 @@ function getUnit(u: string) {
   let i: number = 0;
 
   while(i < Categories.length && (!unit_details)){
-    const CategoryType = Categories[i];
-    let obj = Object.keys(CategoryType);
-    obj.forEach((j) => {
-      if( CategoryType[j].unit.includes(u) ) {
+    Object.keys(Categories[i])
+          .forEach((j) => {
+      if( Categories[i][j].unit.includes(u) ) {
         let pre_unit_detail = {
           Available: true,
-          //UserUnit: u,
           Category: i,
         }
-        unit_details = Object.assign(pre_unit_detail,CategoryType[j]);
+        unit_details = Object.assign(pre_unit_detail,Categories[i][j]);
       }
     })
     i++

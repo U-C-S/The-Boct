@@ -49,13 +49,7 @@ function DOt_commands(word: string){
       talk_div_boct('BOcT');
       break;
     case 'age':
-      let birthdate = new Date(2020, 4, 5, 17, 43, 0, 0);
-      let Diff_In_Time = Date.now() - birthdate.getTime();
-      let Diff_In_Days = Diff_In_Time / (1000 * 3600 * 24);
-      let Days = Math.floor(Diff_In_Time / (1000 * 3600 * 24));
-      let Diff_In_Hour = Math.floor((Diff_In_Days - Days) * 24);
-      let Diff_In_Mins = Math.floor((((Diff_In_Days - Days) * 24) - Diff_In_Hour) * 60);
-      talk_div_boct(`${Days} days, ${Diff_In_Hour} hours and ${Diff_In_Mins} minutes`);
+      talk_div_boct(boctAge());
       break;
     case 'god':
       talk_div_boct('U-C-S / Chanakya');
@@ -86,14 +80,22 @@ function DOt_commands(word: string){
 }
 
 
-
-
 function rdmZ(m: number,n: number): number {
   return Math.floor(Math.random() * (n - m + 1) ) + m;
 }
 
 function replyRandom(x: string[]){
   return talk_div_boct(x[rdmZ(0 , x.length - 1)]);
+}
+
+function boctAge(): string{
+  let birthdate: Date = new Date(2020, 4, 5, 17, 43, 0, 0);
+  let Diff_In_Time = Date.now() - birthdate.getTime();
+  let Diff_In_Days = Diff_In_Time / (1000 * 3600 * 24);
+  let Days = Math.floor(Diff_In_Time / (1000 * 3600 * 24));
+  let Diff_In_Hour = Math.floor((Diff_In_Days - Days) * 24);
+  let Diff_In_Mins = Math.floor((((Diff_In_Days - Days) * 24) - Diff_In_Hour) * 60);
+  return `${Days} days, ${Diff_In_Hour} hours and ${Diff_In_Mins} minutes`;
 }
 //-------------------------------------------
 class directReplies {
@@ -117,18 +119,10 @@ const readNo = new directReplies(
   ['no','nothing','i dont know'],
   "You are basically NOTHING!!!");
 
-  const readage = {
-    words: ['what is your age','whats your age','your age'],
-    reply: function() {
-      let birthdate = new Date(2020, 4, 5, 17, 43, 0, 0);
-      let Diff_In_Time = Date.now() - birthdate.getTime();
-      let Diff_In_Days = Diff_In_Time / (1000 * 3600 * 24);
-      let Days = Math.floor(Diff_In_Time / (1000 * 3600 * 24));
-      let Diff_In_Hour = Math.floor((Diff_In_Days - Days) * 24);
-      let Diff_In_Mins = Math.floor((((Diff_In_Days - Days) * 24) - Diff_In_Hour) * 60);
-      talk_div_boct(`My Creation began approx ${Days} days, ${Diff_In_Hour} hours and ${Diff_In_Mins} minutes ago`);
-    }
-  }
+const readage = {
+  words: ['what is your age','whats your age','your age'],
+  reply: () => talk_div_boct(`My Creation began approx ${boctAge()} ago`)
+}
 
 const readannoy = {
   words: ['annoy me','idiot','dumb'],
@@ -137,7 +131,6 @@ const readannoy = {
       talk_div_boct("You're a IDIOT"); }
   }
 }
-
 
 const readok = {
   words: ['ok','ohk','ogk','wow','great','excellent','nice','awesome'],

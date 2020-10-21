@@ -52,7 +52,6 @@ function talk_div_boct(talkContent: any) {
 
 //User reply js
 document.getElementById("typespace-enter-id").addEventListener("click", talk_div_hooman);
-
 function talk_div_hooman() {
   const chat_boxx = <HTMLInputElement> document.querySelector(".typespace");
   let chat_content: string = chat_boxx.value;
@@ -72,6 +71,7 @@ function talk_div_hooman() {
 }
 
 /*------------------------------------------------------------------*/
+talk_div_boct("Hi, I can partially understand you. Maybe, say hi to me or ask my age. But, Don't call me an idiot");
 
 var click_count = 0;
 function BOcT_annoy_clicks() {
@@ -81,8 +81,6 @@ function BOcT_annoy_clicks() {
     talk_div_boct("Stop annoying me!");
   }
 }
-
-talk_div_boct("Hi, I can partially understand you. Maybe, say hi to me or ask my age. But, Don't call me an idiot");
 
 //Toggle Off-Canvas for Settings------------------------------------
 const offcanvas = {
@@ -105,7 +103,8 @@ body.addEventListener('click', (e: any)=>{
 const ipopup = document.getElementById("info_popup");
 
 document.getElementById("i-btn").onclick = ()=> { ipopup.style.display = "block"; }
-document.getElementsByClassName("info_close")[0].addEventListener('click', () => {
+document.getElementsByClassName("info_close")[0]
+        .addEventListener('click', () => {
   ipopup.style.display = "none";
 })
 window.addEventListener('click',(e: any)=>{

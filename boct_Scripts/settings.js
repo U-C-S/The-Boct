@@ -1,6 +1,5 @@
 var stg_chatbox = document.getElementById("stg_chat_open_default");
-var stg_chatbox_cokie = localStorage.getItem('chatbox');
-if (stg_chatbox_cokie == 'open') {
+if (localStorage.getItem('chatbox') == 'open') {
     stg_chatbox.checked = true;
     CLICK_BOT.style.animation = "none";
     document.getElementById("chatter").style.display = "block";
@@ -20,8 +19,7 @@ stg_chatbox.addEventListener('click', function () {
     }
 });
 var stg_load = document.getElementById("stg_disable_load");
-var stg_load_cokie = localStorage.getItem('loading');
-if (stg_load_cokie == 'no') {
+if (localStorage.getItem('loading') == 'no') {
     stg_load.checked = true;
     stopLoading();
 }

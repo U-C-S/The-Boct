@@ -50,6 +50,7 @@ function talk_div_hooman() {
     chat_process(chat_content);
     scroll_update();
 }
+talk_div_boct("Hi, I can partially understand you. Maybe, say hi to me or ask my age. But, Don't call me an idiot");
 var click_count = 0;
 function BOcT_annoy_clicks() {
     click_count += 1;
@@ -58,7 +59,6 @@ function BOcT_annoy_clicks() {
         talk_div_boct("Stop annoying me!");
     }
 }
-talk_div_boct("Hi, I can partially understand you. Maybe, say hi to me or ask my age. But, Don't call me an idiot");
 var offcanvas = {
     show: function () { body.classList.add('show-settings'); },
     hide: function () { body.classList.remove('show-settings'); },
@@ -74,7 +74,8 @@ body.addEventListener('click', function (e) {
 }, true);
 var ipopup = document.getElementById("info_popup");
 document.getElementById("i-btn").onclick = function () { ipopup.style.display = "block"; };
-document.getElementsByClassName("info_close")[0].addEventListener('click', function () {
+document.getElementsByClassName("info_close")[0]
+    .addEventListener('click', function () {
     ipopup.style.display = "none";
 });
 window.addEventListener('click', function (e) {
