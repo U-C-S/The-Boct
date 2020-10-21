@@ -1,4 +1,3 @@
-function log(x) { console.log(x); }
 var body = document.querySelector('body');
 var alll = document.querySelector('.alll');
 var barr = document.getElementById('load_barr');
@@ -28,10 +27,9 @@ function scroll_update() {
 function talk_div_boct(talkContent) {
     var newDIV = document.createElement("div");
     var talk_create = document.createElement("p");
-    var talk_matter = document.createTextNode(talkContent);
+    talk_create.textContent = talkContent;
     newDIV.className = "boct_talk";
     document.getElementById("chatspace").appendChild(newDIV);
-    talk_create.appendChild(talk_matter);
     newDIV.appendChild(talk_create);
     scroll_update();
 }
@@ -44,14 +42,13 @@ function talk_div_hooman() {
     }
     var newDIV = document.createElement("div");
     var talk_create = document.createElement("p");
-    var talk_matter = document.createTextNode(chat_content);
+    talk_create.textContent = chat_content;
     newDIV.className = "human_talk";
     document.getElementById("chatspace").appendChild(newDIV);
-    talk_create.appendChild(talk_matter);
     newDIV.appendChild(talk_create);
-    scroll_update();
     chat_boxx.value = "";
     chat_process(chat_content);
+    scroll_update();
 }
 var click_count = 0;
 function BOcT_annoy_clicks() {

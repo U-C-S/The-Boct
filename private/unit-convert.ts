@@ -40,7 +40,7 @@ function getUnit(u: string) {
   const Categories: object[] = [Lengths,Areas,Mass,Temperatures,Volume];
   let unit_details: { 
     Available: boolean;
-    UserUnit?: string;
+    //UserUnit?: string;
     Category?: number;
     con_factor?: number;
     con_trnsTo?: any;
@@ -55,7 +55,7 @@ function getUnit(u: string) {
       if( CategoryType[j].unit.includes(u) ) {
         let pre_unit_detail = {
           Available: true,
-          UserUnit: u,
+          //UserUnit: u,
           Category: i,
         }
         unit_details = Object.assign(pre_unit_detail,CategoryType[j]);
@@ -201,8 +201,9 @@ const Volume = {
     unit: ['bl','barrel'],
     con_factor: 0.16365924
   }
-
 }
+
+/*
 const Digital = {}
 
 const Prefixs = {
@@ -235,4 +236,4 @@ const Prefixs = {
     con_factor: 1e+12
   }
 }
-
+*/

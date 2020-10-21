@@ -57,9 +57,6 @@ function DOt_commands(word) {
         case 'url':
             talk_div_boct('https://the-boct.github.io/');
             break;
-        case 'beta':
-            talk_div_boct('https://the-boct.github.io/Experimental/');
-            break;
         case 'code':
             talk_div_boct('https://github.com/The-BOcT/');
             break;

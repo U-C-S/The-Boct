@@ -44,7 +44,6 @@ function getUnit(u) {
             if (CategoryType[j].unit.includes(u)) {
                 var pre_unit_detail = {
                     Available: true,
-                    UserUnit: u,
                     Category: i
                 };
                 unit_details = Object.assign(pre_unit_detail, CategoryType[j]);
@@ -183,36 +182,5 @@ var Volume = {
     barrel: {
         unit: ['bl', 'barrel'],
         con_factor: 0.16365924
-    }
-};
-var Digital = {};
-var Prefixs = {
-    uni: {
-        unit: [''],
-        con_factor: 1
-    },
-    deca: {
-        unit: ['da', 'deca', 'Deca'],
-        con_factor: 10
-    },
-    hecto: {
-        unit: ['h', 'hecto', 'Hecto'],
-        con_factor: 100
-    },
-    kilo: {
-        unit: ['k', 'kilo', 'Kilo'],
-        con_factor: 1e+3
-    },
-    mega: {
-        unit: ['M', 'mega', 'Mega'],
-        con_factor: 1e+6
-    },
-    giga: {
-        unit: ['G', 'giga', 'Giga'],
-        con_factor: 1e+9
-    },
-    tera: {
-        unit: ['T', 'tera', 'Tera'],
-        con_factor: 1e+12
     }
 };
