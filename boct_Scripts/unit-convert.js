@@ -6,9 +6,8 @@ function unit_convert(usertyped) {
         var uUnit = ucs_data[1].slice(uValLeng);
         TheConverter(uVal, uUnit, ucs_data[3]);
     }
-    else {
-        talk_div_boct('x_x');
-    }
+    else
+        talk_div_boct('Type in this Format: conv 37cm to m');
 }
 function TheConverter(x, a, b) {
     var from_unit = getUnit(a);
@@ -17,43 +16,37 @@ function TheConverter(x, a, b) {
         if (from_unit.Category == to_unit.Category) {
             if (from_unit.con_factor && to_unit.con_factor) {
                 var result = x * (from_unit.con_factor / to_unit.con_factor);
-                return talk_div_boct(result + " " + b);
+                talk_div_boct(result + " " + b);
             }
             else if (from_unit.con_trnsTo && to_unit.con_trnsFro) {
                 var SIval = from_unit.con_trnsTo(x);
                 var result = to_unit.con_trnsFro(SIval);
-                return talk_div_boct("" + result + b);
+                talk_div_boct("" + result + b);
             }
         }
         else {
-            return replyRandom(['-_-', 'Conversions do not work that way']);
+            replyRandom(['-_-', 'Conversions do not work that way']);
         }
     }
-    else {
-        return replyRandom(['That doesn\'t make sense', 'Something is very Wrong here.']);
-    }
+    else
+        replyRandom(['That doesn\'t make sense', 'Something is very Wrong here.']);
 }
 function getUnit(u) {
     var Categories = [Lengths, Areas, Mass, Temperatures, Volume];
     var unit_details;
     var i = 0;
-    var _loop_1 = function () {
-        var CategoryType = Categories[i];
-        var obj = Object.keys(CategoryType);
-        obj.forEach(function (j) {
-            if (CategoryType[j].unit.includes(u)) {
+    while (i < Categories.length && (!unit_details)) {
+        Object.keys(Categories[i])
+            .forEach(function (j) {
+            if (Categories[i][j].unit.includes(u)) {
                 var pre_unit_detail = {
                     Available: true,
-                    UserUnit: u,
                     Category: i
                 };
-                unit_details = Object.assign(pre_unit_detail, CategoryType[j]);
+                unit_details = Object.assign(pre_unit_detail, Categories[i][j]);
             }
         });
         i++;
-    };
-    while (i < Categories.length && (!unit_details)) {
-        _loop_1();
     }
     if (!unit_details) {
         unit_details = { Available: false };
@@ -183,36 +176,5 @@ var Volume = {
     barrel: {
         unit: ['bl', 'barrel'],
         con_factor: 0.16365924
-    }
-};
-var Digital = {};
-var Prefixs = {
-    uni: {
-        unit: [''],
-        con_factor: 1
-    },
-    deca: {
-        unit: ['da', 'deca', 'Deca'],
-        con_factor: 10
-    },
-    hecto: {
-        unit: ['h', 'hecto', 'Hecto'],
-        con_factor: 100
-    },
-    kilo: {
-        unit: ['k', 'kilo', 'Kilo'],
-        con_factor: 1e+3
-    },
-    mega: {
-        unit: ['M', 'mega', 'Mega'],
-        con_factor: 1e+6
-    },
-    giga: {
-        unit: ['G', 'giga', 'Giga'],
-        con_factor: 1e+9
-    },
-    tera: {
-        unit: ['T', 'tera', 'Tera'],
-        con_factor: 1e+12
     }
 };

@@ -1,6 +1,4 @@
-function log(x: any){ console.log(x) }
-
-
+//function log(x: any){ console.log(x) }
 const body = <HTMLBodyElement> document.querySelector('body');
 const alll = <HTMLElement>document.querySelector('.alll');
 
@@ -37,40 +35,43 @@ function scroll_update() {
 
 //------------------------------------------------------------------
 //Boct reply js
+//add a parameter to change b/w p,a ad li
+//ex: talk_div_boct(talkcontent, elemType: string)
+//      const talk_create = document.createElem(elemType);
+//So, You can create links and lists for boct replies
 function talk_div_boct(talkContent: any) {
   const newDIV = document.createElement("div");
   const talk_create = document.createElement("p");
-  const talk_matter = document.createTextNode(talkContent);
 
+  talk_create.textContent = talkContent;
   newDIV.className = "boct_talk";
   document.getElementById("chatspace").appendChild(newDIV);
-  talk_create.appendChild(talk_matter);
   newDIV.appendChild(talk_create);
   scroll_update();
 }
 
 //User reply js
 document.getElementById("typespace-enter-id").addEventListener("click", talk_div_hooman);
-
 function talk_div_hooman() {
   const chat_boxx = <HTMLInputElement> document.querySelector(".typespace");
   let chat_content: string = chat_boxx.value;
-  if(chat_content == '') { chat_content = '*empty*'; }
+  if(chat_content == '') 
+    { chat_content = '*empty*'; }
   const newDIV = document.createElement("div");
   const talk_create = document.createElement("p");
-  const talk_matter = document.createTextNode(chat_content);
 
+  talk_create.textContent = chat_content;
   newDIV.className = "human_talk"
   document.getElementById("chatspace").appendChild(newDIV);
-  talk_create.appendChild(talk_matter);
   newDIV.appendChild(talk_create);
-  scroll_update();
   chat_boxx.value = "";
 
   chat_process(chat_content);
+  scroll_update();
 }
 
 /*------------------------------------------------------------------*/
+talk_div_boct("Hi, I can partially understand you. Maybe, say hi to me or ask my age. But, Don't call me an idiot");
 
 var click_count = 0;
 function BOcT_annoy_clicks() {
@@ -80,8 +81,6 @@ function BOcT_annoy_clicks() {
     talk_div_boct("Stop annoying me!");
   }
 }
-
-talk_div_boct("Hi, I can partially understand you. Maybe, say hi to me or ask my age. But, Don't call me an idiot");
 
 //Toggle Off-Canvas for Settings------------------------------------
 const offcanvas = {
@@ -104,7 +103,8 @@ body.addEventListener('click', (e: any)=>{
 const ipopup = document.getElementById("info_popup");
 
 document.getElementById("i-btn").onclick = ()=> { ipopup.style.display = "block"; }
-document.getElementsByClassName("info_close")[0].addEventListener('click', () => {
+document.getElementsByClassName("info_close")[0]
+        .addEventListener('click', () => {
   ipopup.style.display = "none";
 })
 window.addEventListener('click',(e: any)=>{

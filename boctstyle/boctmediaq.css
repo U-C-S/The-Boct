@@ -22,6 +22,12 @@
 
 
 @media screen and (max-width: 620px) {
+  *,
+  *::after,
+  *::before{
+    transition: 0s;
+}
+
   body, html{
     width: auto;
     height: auto;

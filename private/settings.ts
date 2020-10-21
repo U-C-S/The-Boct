@@ -1,9 +1,7 @@
 //Settings----------------------------------------------------------
 //1.open chatbox by default
 const stg_chatbox = <HTMLInputElement> document.getElementById("stg_chat_open_default");
-const stg_chatbox_cokie = localStorage.getItem('chatbox');
-
-if (stg_chatbox_cokie == 'open'){
+if (localStorage.getItem('chatbox') == 'open'){
   stg_chatbox.checked = true;
   CLICK_BOT.style.animation = "none";
   document.getElementById("chatter").style.display="block";
@@ -24,36 +22,10 @@ stg_chatbox.addEventListener('click',()=>{
   }
 });
 
-//3.Remove Animations and Transitions
-/*
-const stg_anim = <HTMLInputElement> document.getElementById("stg_remove_anim");
-const stg_anim_cokie = localStorage.getItem('animations');
-const EveryElem = document.querySelectorAll("*");
-
-if (stg_anim_cokie == 'ok'){
-  stg_anim.checked = true;
-  CLICK_BOT.style.animation = "none";
-}
-else{
-  stg_anim.checked = false;
-}
-
-stg_anim.addEventListener('click',()=>{
-  if(stg_anim.checked == true){
-    CLICK_BOT.style.animation = "none";
-    localStorage.setItem('animations', 'ok');
-  }
-  else{
-    localStorage.setItem('animations', 'no');
-  }
-});
-*/
 
 //2.Diable Loading Screen
 const stg_load = <HTMLInputElement> document.getElementById("stg_disable_load");
-const stg_load_cokie = localStorage.getItem('loading');
-
-if (stg_load_cokie == 'no'){
+if (localStorage.getItem('loading') == 'no'){
   stg_load.checked = true;
   stopLoading();
 }
@@ -66,7 +38,6 @@ stg_load.addEventListener('click',()=>{
 });
 
 
-
 //0. Clear LocalStorage
 const stg_cokieClear = <HTMLButtonElement> document.getElementsByClassName("stg_btn")[0];
 stg_cokieClear.addEventListener('click',()=>{
@@ -74,6 +45,7 @@ stg_cokieClear.addEventListener('click',()=>{
   localStorage.removeItem("chatbox");
   localStorage.clear();
 })
+
 
 //0a. Clear all the conversation
 document.getElementById('stg_clearchat').addEventListener('click',()=>{
