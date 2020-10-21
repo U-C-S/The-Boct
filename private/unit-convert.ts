@@ -203,6 +203,7 @@ const Volume = {
   }
 
 }
+/*
 const Digital = {}
 
 const Prefixs = {
@@ -235,4 +236,4 @@ const Prefixs = {
     con_factor: 1e+12
   }
 }
-
+*/
