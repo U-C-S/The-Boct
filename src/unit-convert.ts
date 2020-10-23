@@ -46,9 +46,8 @@ function getUnit(u: string) {
   let i: number = 0;
 
   while(i < Categories.length && (!unit_details)){
-    Object.keys(Categories[i])
-          .forEach((j) => {
-      if( Categories[i][j].unit.includes(u) ) {
+    Object.keys(Categories[i]).forEach((j) => {
+      if(Categories[i][j].unit.includes(u)) {
         let pre_unit_detail = {
           Available: true,
           Category: i,

@@ -108,16 +108,19 @@ class directReplies {
 }
 
 const intro = new directReplies(
-  ['hi','hello','hey','heya'],
-  "Hi to you too");
+  ['hi','hello','hey','heya'], "Hi to you too");
 
 const readempty = new directReplies(
-  ['*empty*',''],
-  "Oh! Come on. Talk Something Sensible");
+  ['*empty*',''], "Oh! Come on. Talk Something Sensible");
 
 const readNo = new directReplies(
-  ['no','nothing','i dont know'],
-  "You are basically NOTHING!!!");
+  ['no','nothing','i dont know'], "You are basically NOTHING!!!");
+
+const readok = new directReplies(
+  ['ok','ohk','ogk','wow','great','excellent','nice','awesome'], "WoW");
+
+const readso = new directReplies(
+  ['so','what else'], "I am not so brilliant to say something!");
 
 const readage = {
   words: ['what is your age','whats your age','your age'],
@@ -126,23 +129,8 @@ const readage = {
 
 const readannoy = {
   words: ['annoy me','idiot','dumb'],
-  reply: function() {
-    for (let i = 0; i < 10; i++) {
-      talk_div_boct("You're a IDIOT"); }
-  }
-}
-
-const readok = {
-  words: ['ok','ohk','ogk','wow','great','excellent','nice','awesome'],
-  reply: ()=> {
-    talk_div_boct("WoW");
-  }
-}
-
-const readso = {
-  words: ['so','what else'],
-  reply: ()=> {
-    talk_div_boct("I am not so brilliant to say something!");
+  reply: () => {
+    for (let i = 0; i < 10; i++) talk_div_boct("You're a IDIOT");
   }
 }
 
@@ -174,15 +162,12 @@ const searchStuff = {
 
 const dice = {
   words: ['roll a dice', 'roll dice'],
-  reply: ()=>{
-    talk_div_boct(rdmZ(1,6));
-  }
+  reply: ()=> talk_div_boct(rdmZ(1,6))
 }
 
 const coin = {
   words: ['flip a coin','toss a coin'],
   reply: ()=>{
-    let outcome = rdmZ(0,1);
-    outcome == 1 ? talk_div_boct('Heads') : talk_div_boct('Tails')
+    rdmZ(0,1) == 1 ? talk_div_boct('Heads') : talk_div_boct('Tails')
   }
 }
