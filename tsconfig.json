@@ -1,10 +1,10 @@
 {
-  "include": ["private/*"],
+  "include": ["src/*"],
   "compilerOptions": {
     "removeComments": true,
     "strictNullChecks": false,
     "lib": ["ES7","DOM"],
-    "outDir": "boct_Scripts",
+    "outDir": "dist",
     "importHelpers": true
   }
 }

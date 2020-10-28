@@ -93,6 +93,8 @@ var directReplies = (function () {
 var intro = new directReplies(['hi', 'hello', 'hey', 'heya'], "Hi to you too");
 var readempty = new directReplies(['*empty*', ''], "Oh! Come on. Talk Something Sensible");
 var readNo = new directReplies(['no', 'nothing', 'i dont know'], "You are basically NOTHING!!!");
+var readok = new directReplies(['ok', 'ohk', 'ogk', 'wow', 'great', 'excellent', 'nice', 'awesome'], "WoW");
+var readso = new directReplies(['so', 'what else'], "I am not so brilliant to say something!");
 var readage = {
     words: ['what is your age', 'whats your age', 'your age'],
     reply: function () { return talk_div_boct("My Creation began approx " + boctAge() + " ago"); }
@@ -100,21 +102,8 @@ var readage = {
 var readannoy = {
     words: ['annoy me', 'idiot', 'dumb'],
     reply: function () {
-        for (var i = 0; i < 10; i++) {
+        for (var i = 0; i < 10; i++)
             talk_div_boct("You're a IDIOT");
-        }
-    }
-};
-var readok = {
-    words: ['ok', 'ohk', 'ogk', 'wow', 'great', 'excellent', 'nice', 'awesome'],
-    reply: function () {
-        talk_div_boct("WoW");
-    }
-};
-var readso = {
-    words: ['so', 'what else'],
-    reply: function () {
-        talk_div_boct("I am not so brilliant to say something!");
     }
 };
 var searchStuff = {
@@ -144,14 +133,11 @@ var searchStuff = {
 };
 var dice = {
     words: ['roll a dice', 'roll dice'],
-    reply: function () {
-        talk_div_boct(rdmZ(1, 6));
-    }
+    reply: function () { return talk_div_boct(rdmZ(1, 6)); }
 };
 var coin = {
     words: ['flip a coin', 'toss a coin'],
     reply: function () {
-        var outcome = rdmZ(0, 1);
-        outcome == 1 ? talk_div_boct('Heads') : talk_div_boct('Tails');
+        rdmZ(0, 1) == 1 ? talk_div_boct('Heads') : talk_div_boct('Tails');
     }
 };
