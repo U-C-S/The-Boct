@@ -37,16 +37,16 @@ function getUnit(u: string) {
   const Categories: object[] = [Lengths,Areas,Mass,Temperatures,Volume];
   let unit_details: { 
     Available: boolean;
-    //UserUnit?: string;
     Category?: number;
     con_factor?: number;
     con_trnsTo?: any;
     con_trnsFro?: any;
   }
-  let i: number = 0;
+  let i = 0;
 
   while(i < Categories.length && (!unit_details)){
-    Object.keys(Categories[i]).forEach((j) => {
+    Object.keys(Categories[i])
+          .forEach((j) => {
       if(Categories[i][j].unit.includes(u)) {
         let pre_unit_detail = {
           Available: true,
@@ -59,7 +59,7 @@ function getUnit(u: string) {
   }
 
   if(!unit_details){
-    unit_details = {Available: false}
+    unit_details.Available = false;
   }
 
   return unit_details;

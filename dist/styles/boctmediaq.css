@@ -1,6 +1,6 @@
 /*media queries------------------------------------------------------*/
 @media screen and (max-width: 950px) {
-  #title{
+  #heading{
     font-size: 28px;
   }
   .bot-head{
@@ -11,11 +11,11 @@
 
 
 @media screen and (max-width: 950px) and (min-width: 620px) {
-  .alll{
+  #Main{
     grid-template-columns: 10px 250px 20px auto 10px;
     grid-template-rows: 5% 20% minmax(auto,calc(70% - 280px)) 280px 5%;
   }
-  .arrow_box:after {
+  #Chatter:after {
     top: 90px;
   }
 }
@@ -23,10 +23,9 @@
 
 @media screen and (max-width: 620px) {
   *,
-  *::after,
-  *::before{
+  *::after, *::before{
     transition: 0s;
-}
+  }
 
   body, html{
     width: auto;
@@ -36,10 +35,10 @@
   html{
     overflow: auto;
   }
-  .loader-wrapper{
+  #loadScreen{
     border: none;
   }
-  .alll{
+  #Main{
     padding: 5px 5px 10px;
     grid-template-columns: 10% 80% 10%;
     grid-template-rows: 145px minmax(450px,78vh) minmax(50px, auto);
@@ -50,11 +49,11 @@
     height: auto;
   }
 
-  .arrow_box{
+  #Chatter{
     animation: none;
     box-shadow: none;
   }
-  .arrow_box:after{
+  #Chatter:after{
     top: auto;
     right: auto;
     bottom: 100%;
@@ -81,8 +80,8 @@
     border: none;
     background-color: transparent;
   }
-  .pwaBtn{
-    padding: 10px 0 0;
+  #pwaInstallBtn{
+    margin: 15px auto 0px;
   }
   .about p, .about hr, .about legend{
     display: none;

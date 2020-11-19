@@ -1,83 +1,30 @@
 //function log(x: any){ console.log(x) }
-const body = <HTMLBodyElement> document.querySelector('body');
-const alll = <HTMLElement>document.querySelector('.alll');
-
-const barr = <HTMLElement>document.getElementById('load_barr');
-barr.addEventListener('animationend', ()=>{
-  document.getElementById('load_text').innerHTML = 'Load Complete';
-  barr.style.backgroundColor = '#FF1439';
+ElemList.load_bar.addEventListener('animationend', ()=>{
+  ElemList.load_bar.style.backgroundColor = '#FF1439';
+  ElemList.load_text.innerHTML = 'Load Complete';
 });
 
 window.addEventListener('load', () => { setTimeout(stopLoading, 2173) });
 function stopLoading() {
-  document.getElementById("loadScreen").style.display="none";
+  ElemList.loadScreen.style.display="none";
   body.scrollTop = 0;
-  document.getElementById('title').style.animation = "focus-in-expand 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both";
+  ElemList.heading.style.animation = "focus-in-expand 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both";
 }
 
 
-const CLICK_BOT = <HTMLInputElement> document.getElementById('BOcT');
-CLICK_BOT.addEventListener("click", BOcT_open);
-const chatter = <HTMLElement> document.getElementById("chatter");
+ElemList.boct_head.addEventListener("click", BOcT_open);
 function BOcT_open() {
-  CLICK_BOT.style.animation = "none";
-  chatter.style.display="block";
-  CLICK_BOT.removeEventListener("click", BOcT_open);
-  CLICK_BOT.addEventListener("click", BOcT_annoy_clicks);
-}
-
-
-//scroll to bottom after a new message
-function scroll_update() {
-  const chat_scroll = <HTMLElement> document.getElementById("chatspace");
-  chat_scroll.scrollTop = chat_scroll.scrollHeight;
-}
-
-//------------------------------------------------------------------
-//Boct reply js
-//add a parameter to change b/w p,a ad li
-//ex: talk_div_boct(talkcontent, elemType: string)
-//      const talk_create = document.createElem(elemType);
-//So, You can create links and lists for boct replies
-function talk_div_boct(talkContent: any) {
-  const newDIV = document.createElement("div");
-  const talk_create = document.createElement("p");
-
-  talk_create.textContent = talkContent;
-  newDIV.className = "boct_talk";
-  document.getElementById("chatspace").appendChild(newDIV);
-  newDIV.appendChild(talk_create);
-  scroll_update();
-}
-
-//User reply js
-document.getElementById("typespace-enter-id").addEventListener("click", talk_div_hooman);
-function talk_div_hooman() {
-  const chat_boxx = <HTMLInputElement> document.querySelector(".typespace");
-  let chat_content: string = chat_boxx.value;
-  if(chat_content == '') 
-    { chat_content = '*empty*'; }
-  const newDIV = document.createElement("div");
-  const talk_create = document.createElement("p");
-
-  talk_create.textContent = chat_content;
-  newDIV.className = "human_talk"
-  document.getElementById("chatspace").appendChild(newDIV);
-  newDIV.appendChild(talk_create);
-  chat_boxx.value = "";
-
-  chat_process(chat_content);
-  scroll_update();
+  ElemList.boct_head.style.animation = "none";
+  ElemList.Chatter.style.display="block";
+  ElemList.boct_head.removeEventListener("click", BOcT_open);
+  ElemList.boct_head.addEventListener("click", BOcT_annoy_clicks);
 }
 
 /*------------------------------------------------------------------*/
-talk_div_boct("Hi, I can partially understand you. Maybe, say hi to me or ask my age. But, Don't call me an idiot");
-
-var click_count = 0;
+let click_count = 0;
 function BOcT_annoy_clicks() {
   click_count += 1;
   if (click_count === 3) {
-    click_count = 0;
     talk_div_boct("Stop annoying me!");
   }
 }
@@ -90,9 +37,9 @@ const offcanvas = {
   toggle: ()=>{ offcanvas.check() ? offcanvas.hide() : offcanvas.show(); }
 }
 
-document.querySelector('#settingg').addEventListener('click', offcanvas.toggle);
+ElemList.settingBtn.addEventListener('click', offcanvas.toggle);
 body.addEventListener('click', (e: any)=>{
-  if(offcanvas.check() && alll.contains(e.target)){
+  if(offcanvas.check() && ElemList.Main.contains(e.target)){
       e.preventDefault();
       offcanvas.hide();
   }
@@ -100,21 +47,19 @@ body.addEventListener('click', (e: any)=>{
 
 
 //info popup--------------------------------------
-const ipopup = document.getElementById("info_popup");
-
-document.getElementById("i-btn").onclick = ()=> { ipopup.style.display = "block"; }
-document.getElementsByClassName("info_close")[0]
-        .addEventListener('click', () => {
-  ipopup.style.display = "none";
+const InfoBox = ElemList.InfoBox;
+ElemList.infoBtn.onclick = ()=> { InfoBox.style.display = "block"; }
+ElemList.infoClose.addEventListener('click', () => {
+  InfoBox.style.display = "none";
 })
 window.addEventListener('click',(e: any)=>{
-  if (e.target == ipopup) { ipopup.style.display = "none"; }
+  if (e.target == InfoBox) { InfoBox.style.display = "none"; }
 })
 
 
 //Toggle Dark Mode------------------------------
-const toggler = <HTMLInputElement> document.querySelector('.toggleTheme');
 const currentThemeCokie = localStorage.getItem('theme');
+const toggler = ElemList.themeBtn;
 
 if (currentThemeCokie) {
   document.documentElement.setAttribute('data-theme', currentThemeCokie);
@@ -150,3 +95,30 @@ svgRenedertoID("svg2", "M487.4 315.7l-42.6-24.6c4.3-23.2 4.3-47 0-70.2l42.6-24.6
 svgRenedertoID("svg3", "M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z")
 svgRenedertoID("svg4","M8 256c0 136.966 111.033 248 248 248s248-111.034 248-248S392.966 8 256 8 8 119.033 8 256zm248 184V72c101.705 0 184 82.311 184 184 0 101.705-82.311 184-184 184z");
 
+//PWA----
+if('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('service-worker.js');
+}
+
+let deferredPrompt;
+const addBtn = document.getElementById("pwaInstallBtn");
+addBtn.style.display = 'none';
+
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+  addBtn.style.display = 'block';
+
+  addBtn.addEventListener('click', (e) => {
+    addBtn.style.display = 'none';
+    deferredPrompt.prompt();
+    deferredPrompt.userChoice.then((choiceResult) => {
+        if (choiceResult.outcome === 'accepted') {
+          console.log('User accepted the A2HS prompt');
+        } else {
+          console.log('User dismissed the A2HS prompt');
+        }
+        deferredPrompt = null;
+      });
+  });
+});

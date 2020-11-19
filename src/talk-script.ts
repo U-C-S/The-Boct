@@ -1,3 +1,33 @@
+function talk_div_boct(talkContent: any) {
+  let div = document.createElement("div");
+  div.className = "boct_talk";
+  div.innerHTML = `<p>${talkContent}</p>`;
+  ElemList.theChat.appendChild(div);
+  scroll_update();
+}
+
+//User reply
+ElemList.chat_replier.addEventListener("click", talk_div_hooman);
+function talk_div_hooman() {
+  const chat_boxx = <HTMLInputElement> ElemList.chat_boxx;
+
+  let chat_content = (chat_boxx.value) ? chat_boxx.value : "*empty*";
+  let div = document.createElement("div");
+  div.className = "human_talk";
+  div.innerHTML = `<p>${chat_content}</p>`;
+  ElemList.theChat.appendChild(div);
+  chat_boxx.value = "";
+
+  chat_process(chat_content);
+  scroll_update();
+}
+
+//scroll to bottom after a new message
+function scroll_update() {
+  ElemList.theChat.scrollTop = ElemList.theChat.scrollHeight;
+}
+
+//------------------------------------------------------------------
 function chat_process(sentence: string){
   const chat_TL: string = sentence.trim().toLowerCase();
   const chat_T: string = sentence.trim();
@@ -55,8 +85,7 @@ function DOt_commands(word: string){
       talk_div_boct('U-C-S / Chanakya');
       break;
     case 'v':
-      const ver = document.getElementsByClassName('releaseVer')[0];
-      talk_div_boct(`${ver.innerHTML}`);
+      talk_div_boct(`${ElemList.Version.innerHTML}`);
       break;
     case 'url':
       talk_div_boct('https://the-boct.github.io/');
@@ -98,6 +127,8 @@ function boctAge(): string{
   return `${Days} days, ${Diff_In_Hour} hours and ${Diff_In_Mins} minutes`;
 }
 //-------------------------------------------
+talk_div_boct("Hi, I can partially understand you. Maybe, say hi to me or ask my age. But, Don't call me an idiot");
+
 class directReplies {
   words: string[];
   reply: () => void;

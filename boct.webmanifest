@@ -25,11 +25,5 @@
       "purpose": "maskable"
     }
   ],
-  "display": "standalone",
-  "features": [
-    "Scripted Intelligence",
-    "Unit Converter",
-    "PWA",
-    "Open-Source"
-  ]
+  "display": "standalone"
 }
