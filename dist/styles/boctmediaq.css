@@ -1,6 +1,6 @@
 /*media queries------------------------------------------------------*/
 @media screen and (max-width: 950px) {
-  #title{
+  #heading{
     font-size: 28px;
   }
   .bot-head{
@@ -11,11 +11,11 @@
 
 
 @media screen and (max-width: 950px) and (min-width: 620px) {
-  .alll{
+  #main{
     grid-template-columns: 10px 250px 20px auto 10px;
     grid-template-rows: 5% 20% minmax(auto,calc(70% - 280px)) 280px 5%;
   }
-  .arrow_box:after {
+  #chatter:after {
     top: 90px;
   }
 }
@@ -39,7 +39,7 @@
   .loader-wrapper{
     border: none;
   }
-  .alll{
+  #main{
     padding: 5px 5px 10px;
     grid-template-columns: 10% 80% 10%;
     grid-template-rows: 145px minmax(450px,78vh) minmax(50px, auto);
@@ -50,11 +50,11 @@
     height: auto;
   }
 
-  .arrow_box{
+  #chatter{
     animation: none;
     box-shadow: none;
   }
-  .arrow_box:after{
+  #chatter:after{
     top: auto;
     right: auto;
     bottom: 100%;

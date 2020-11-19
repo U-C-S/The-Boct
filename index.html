@@ -34,6 +34,7 @@
   <script type="module" src="https://cdn.jsdelivr.net/npm/@pwabuilder/pwainstall@latest/dist/pwa-install.min.js"></script>
 
   <!--Scripts-->
+  <script defer src="dist/domElements.js"></script>
   <script defer src="dist/index.js"></script>
   <script defer src="dist/settings.js"></script>
   <script defer src="dist/talk-script.js"></script>
@@ -51,17 +52,17 @@
 </head>
 <body>
   <!-- main -->
-  <div class="alll" id="allo">
+  <div id="main">
     <div class="pagehead">
-      <div class="heading" id="header"><h1 id="title">The BOcT</h1></div>
+      <div id="heading_container"><h1 id="heading">The BOcT</h1></div>
       <div class="bot-head">
-        <button class="bot-btn" id="BOcT" href="javascript:void(0);" title="The BOcT">
+        <button id="BOcT" href="javascript:void(0);" title="The BOcT">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path id="svg0"/></svg>
         </button>
       </div>
     </div>
 
-    <div class="arrow_box" id="chatter">
+    <div id="chatter">
       <div class="talk_box" id="chatspace">
         <!-- CHAT HTML goes here --->
 
@@ -69,8 +70,8 @@
       <!-- Type bar --->
       <div class="type_box">
         <form class="type_box-inner" action="javascript:void(0);">
-          <input class="typespace" id="typespace-id" type="text" placeholder="Wanna talk with BOcT? Then type here..!" autocomplete="off" maxlength="120" spellcheck="true">
-          <button class="typespace-enter" id="typespace-enter-id" type="submit">
+          <input id="typespace" type="text" placeholder="Wanna talk with BOcT? Then type here..!" autocomplete="off" maxlength="120" spellcheck="true">
+          <button id="typespace-enter" type="submit">
             <svg viewBox="0 0 448 512"><path id="svg1"/></svg>
           </button>
         </form>
@@ -81,14 +82,14 @@
       <fieldset>
         <legend>About BOcT</legend>
         <div class="aboutbtns">
-          <button id="settingg" title="Settings">
+          <button id="settingBtn" title="Settings">
             <svg viewBox="0 0 512 512"><path id="svg2"/></svg></button>
-          <button id="i-btn" title="Info">
+          <button id="infoBtn" title="Info">
             <svg viewBox="0 0 512 512"><path id="svg3"/></svg></button>
-          <button class="toggleTheme" data-themenow="dark" title="Toggle Dark/Light Mode">
+          <button id="ThemeBtn" data-themenow="dark" title="Toggle Dark/Light Mode">
             <svg viewBox="0 0 512 512"><path id="svg4"/></svg></button>
         </div>
-        <p class="releaseVer">Version 3.1.3 | Oct 2020 Release</p>
+        <p class="releaseVer">Version 3.2 | Nov 2020 Release</p>
         <div class="pwaBtn"><pwa-install featuresheader="Some of the Features:">Install</pwa-install>
         </div><hr/>
         <p>BOcT is a Static Browser Chatbot</p>
@@ -139,7 +140,7 @@
         <a href="https://github.com/The-BOcT/The-BOcT.github.io/">View Source</a>
       </div>
       <p class="text1">Written with ❤ in TypeScript</p>
-      <button class="info_close">close</button>
+      <button id="info_close">close</button>
     </div>
   </div>
 

@@ -1,69 +1,50 @@
 //function log(x: any){ console.log(x) }
-const body = <HTMLBodyElement> document.querySelector('body');
-const alll = <HTMLElement>document.querySelector('.alll');
-
-const barr = <HTMLElement>document.getElementById('load_barr');
-barr.addEventListener('animationend', ()=>{
-  document.getElementById('load_text').innerHTML = 'Load Complete';
-  barr.style.backgroundColor = '#FF1439';
+HTMLElem.load_bar.addEventListener('animationend', ()=>{
+  HTMLElem.load_bar.style.backgroundColor = '#FF1439';
+  HTMLElem.load_text.innerHTML = 'Load Complete';
 });
 
 window.addEventListener('load', () => { setTimeout(stopLoading, 2173) });
 function stopLoading() {
-  document.getElementById("loadScreen").style.display="none";
+  HTMLElem.loadScreen.style.display="none";
   body.scrollTop = 0;
-  document.getElementById('title').style.animation = "focus-in-expand 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both";
+  HTMLElem.heading.style.animation = "focus-in-expand 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both";
 }
 
 
-const CLICK_BOT = <HTMLInputElement> document.getElementById('BOcT');
-CLICK_BOT.addEventListener("click", BOcT_open);
-const chatter = <HTMLElement> document.getElementById("chatter");
+HTMLElem.boct_head.addEventListener("click", BOcT_open);
 function BOcT_open() {
-  CLICK_BOT.style.animation = "none";
-  chatter.style.display="block";
-  CLICK_BOT.removeEventListener("click", BOcT_open);
-  CLICK_BOT.addEventListener("click", BOcT_annoy_clicks);
+  HTMLElem.boct_head.style.animation = "none";
+  HTMLElem.Chatter.style.display="block";
+  HTMLElem.boct_head.removeEventListener("click", BOcT_open);
+  HTMLElem.boct_head.addEventListener("click", BOcT_annoy_clicks);
 }
 
 
 //scroll to bottom after a new message
 function scroll_update() {
-  const chat_scroll = <HTMLElement> document.getElementById("chatspace");
-  chat_scroll.scrollTop = chat_scroll.scrollHeight;
+  HTMLElem.theChat.scrollTop = HTMLElem.theChat.scrollHeight;
 }
 
 //------------------------------------------------------------------
-//Boct reply js
-//add a parameter to change b/w p,a ad li
-//ex: talk_div_boct(talkcontent, elemType: string)
-//      const talk_create = document.createElem(elemType);
-//So, You can create links and lists for boct replies
 function talk_div_boct(talkContent: any) {
-  const newDIV = document.createElement("div");
-  const talk_create = document.createElement("p");
-
-  talk_create.textContent = talkContent;
-  newDIV.className = "boct_talk";
-  document.getElementById("chatspace").appendChild(newDIV);
-  newDIV.appendChild(talk_create);
+  let div = document.createElement("div");
+  div.className = "boct_talk";
+  div.innerHTML = `<p>${talkContent}</p>`;
+  HTMLElem.theChat.appendChild(div);
   scroll_update();
 }
 
 //User reply js
-document.getElementById("typespace-enter-id").addEventListener("click", talk_div_hooman);
+HTMLElem.chat_replier.addEventListener("click", talk_div_hooman);
 function talk_div_hooman() {
-  const chat_boxx = <HTMLInputElement> document.querySelector(".typespace");
-  let chat_content: string = chat_boxx.value;
-  if(chat_content == '') 
-    { chat_content = '*empty*'; }
-  const newDIV = document.createElement("div");
-  const talk_create = document.createElement("p");
+  const chat_boxx = <HTMLInputElement> HTMLElem.chat_boxx;
 
-  talk_create.textContent = chat_content;
-  newDIV.className = "human_talk"
-  document.getElementById("chatspace").appendChild(newDIV);
-  newDIV.appendChild(talk_create);
+  let chat_content = (chat_boxx.value) ? chat_boxx.value : "*empty*";
+  let div = document.createElement("div");
+  div.className = "human_talk";
+  div.innerHTML = `<p>${chat_content}</p>`;
+  HTMLElem.theChat.appendChild(div);
   chat_boxx.value = "";
 
   chat_process(chat_content);
@@ -73,11 +54,10 @@ function talk_div_hooman() {
 /*------------------------------------------------------------------*/
 talk_div_boct("Hi, I can partially understand you. Maybe, say hi to me or ask my age. But, Don't call me an idiot");
 
-var click_count = 0;
+let click_count = 0;
 function BOcT_annoy_clicks() {
   click_count += 1;
   if (click_count === 3) {
-    click_count = 0;
     talk_div_boct("Stop annoying me!");
   }
 }
@@ -90,9 +70,9 @@ const offcanvas = {
   toggle: ()=>{ offcanvas.check() ? offcanvas.hide() : offcanvas.show(); }
 }
 
-document.querySelector('#settingg').addEventListener('click', offcanvas.toggle);
+HTMLElem.settingBtn.addEventListener('click', offcanvas.toggle);
 body.addEventListener('click', (e: any)=>{
-  if(offcanvas.check() && alll.contains(e.target)){
+  if(offcanvas.check() && HTMLElem.Main.contains(e.target)){
       e.preventDefault();
       offcanvas.hide();
   }
@@ -100,21 +80,19 @@ body.addEventListener('click', (e: any)=>{
 
 
 //info popup--------------------------------------
-const ipopup = document.getElementById("info_popup");
-
-document.getElementById("i-btn").onclick = ()=> { ipopup.style.display = "block"; }
-document.getElementsByClassName("info_close")[0]
-        .addEventListener('click', () => {
-  ipopup.style.display = "none";
+const InfoBox = HTMLElem.InfoBox;
+HTMLElem.infoBtn.onclick = ()=> { InfoBox.style.display = "block"; }
+HTMLElem.infoClose.addEventListener('click', () => {
+  InfoBox.style.display = "none";
 })
 window.addEventListener('click',(e: any)=>{
-  if (e.target == ipopup) { ipopup.style.display = "none"; }
+  if (e.target == InfoBox) { InfoBox.style.display = "none"; }
 })
 
 
 //Toggle Dark Mode------------------------------
-const toggler = <HTMLInputElement> document.querySelector('.toggleTheme');
 const currentThemeCokie = localStorage.getItem('theme');
+const toggler = HTMLElem.themeBtn;
 
 if (currentThemeCokie) {
   document.documentElement.setAttribute('data-theme', currentThemeCokie);

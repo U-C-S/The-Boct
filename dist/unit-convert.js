@@ -36,7 +36,8 @@ function getUnit(u) {
     var unit_details;
     var i = 0;
     while (i < Categories.length && (!unit_details)) {
-        Object.keys(Categories[i]).forEach(function (j) {
+        Object.keys(Categories[i])
+            .forEach(function (j) {
             if (Categories[i][j].unit.includes(u)) {
                 var pre_unit_detail = {
                     Available: true,
@@ -48,7 +49,7 @@ function getUnit(u) {
         i++;
     }
     if (!unit_details) {
-        unit_details = { Available: false };
+        unit_details.Available = false;
     }
     return unit_details;
 }

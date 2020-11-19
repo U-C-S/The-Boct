@@ -1,51 +1,38 @@
-var body = document.querySelector('body');
-var alll = document.querySelector('.alll');
-var barr = document.getElementById('load_barr');
-barr.addEventListener('animationend', function () {
-    document.getElementById('load_text').innerHTML = 'Load Complete';
-    barr.style.backgroundColor = '#FF1439';
+HTMLElem.load_bar.addEventListener('animationend', function () {
+    HTMLElem.load_bar.style.backgroundColor = '#FF1439';
+    HTMLElem.load_text.innerHTML = 'Load Complete';
 });
 window.addEventListener('load', function () { setTimeout(stopLoading, 2173); });
 function stopLoading() {
-    document.getElementById("loadScreen").style.display = "none";
+    HTMLElem.loadScreen.style.display = "none";
     body.scrollTop = 0;
-    document.getElementById('title').style.animation = "focus-in-expand 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both";
+    HTMLElem.heading.style.animation = "focus-in-expand 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both";
 }
-var CLICK_BOT = document.getElementById('BOcT');
-CLICK_BOT.addEventListener("click", BOcT_open);
-var chatter = document.getElementById("chatter");
+HTMLElem.boct_head.addEventListener("click", BOcT_open);
 function BOcT_open() {
-    CLICK_BOT.style.animation = "none";
-    chatter.style.display = "block";
-    CLICK_BOT.removeEventListener("click", BOcT_open);
-    CLICK_BOT.addEventListener("click", BOcT_annoy_clicks);
+    HTMLElem.boct_head.style.animation = "none";
+    HTMLElem.Chatter.style.display = "block";
+    HTMLElem.boct_head.removeEventListener("click", BOcT_open);
+    HTMLElem.boct_head.addEventListener("click", BOcT_annoy_clicks);
 }
 function scroll_update() {
-    var chat_scroll = document.getElementById("chatspace");
-    chat_scroll.scrollTop = chat_scroll.scrollHeight;
+    HTMLElem.theChat.scrollTop = HTMLElem.theChat.scrollHeight;
 }
 function talk_div_boct(talkContent) {
-    var newDIV = document.createElement("div");
-    var talk_create = document.createElement("p");
-    talk_create.textContent = talkContent;
-    newDIV.className = "boct_talk";
-    document.getElementById("chatspace").appendChild(newDIV);
-    newDIV.appendChild(talk_create);
+    var div = document.createElement("div");
+    div.className = "boct_talk";
+    div.innerHTML = "<p>" + talkContent + "</p>";
+    HTMLElem.theChat.appendChild(div);
     scroll_update();
 }
-document.getElementById("typespace-enter-id").addEventListener("click", talk_div_hooman);
+HTMLElem.chat_replier.addEventListener("click", talk_div_hooman);
 function talk_div_hooman() {
-    var chat_boxx = document.querySelector(".typespace");
-    var chat_content = chat_boxx.value;
-    if (chat_content == '') {
-        chat_content = '*empty*';
-    }
-    var newDIV = document.createElement("div");
-    var talk_create = document.createElement("p");
-    talk_create.textContent = chat_content;
-    newDIV.className = "human_talk";
-    document.getElementById("chatspace").appendChild(newDIV);
-    newDIV.appendChild(talk_create);
+    var chat_boxx = HTMLElem.chat_boxx;
+    var chat_content = (chat_boxx.value) ? chat_boxx.value : "*empty*";
+    var div = document.createElement("div");
+    div.className = "human_talk";
+    div.innerHTML = "<p>" + chat_content + "</p>";
+    HTMLElem.theChat.appendChild(div);
     chat_boxx.value = "";
     chat_process(chat_content);
     scroll_update();
@@ -55,7 +42,6 @@ var click_count = 0;
 function BOcT_annoy_clicks() {
     click_count += 1;
     if (click_count === 3) {
-        click_count = 0;
         talk_div_boct("Stop annoying me!");
     }
 }
@@ -65,26 +51,25 @@ var offcanvas = {
     check: function () { return body.classList.contains('show-settings'); },
     toggle: function () { offcanvas.check() ? offcanvas.hide() : offcanvas.show(); }
 };
-document.querySelector('#settingg').addEventListener('click', offcanvas.toggle);
+HTMLElem.settingBtn.addEventListener('click', offcanvas.toggle);
 body.addEventListener('click', function (e) {
-    if (offcanvas.check() && alll.contains(e.target)) {
+    if (offcanvas.check() && HTMLElem.Main.contains(e.target)) {
         e.preventDefault();
         offcanvas.hide();
     }
 }, true);
-var ipopup = document.getElementById("info_popup");
-document.getElementById("i-btn").onclick = function () { ipopup.style.display = "block"; };
-document.getElementsByClassName("info_close")[0]
-    .addEventListener('click', function () {
-    ipopup.style.display = "none";
+var InfoBox = HTMLElem.InfoBox;
+HTMLElem.infoBtn.onclick = function () { InfoBox.style.display = "block"; };
+HTMLElem.infoClose.addEventListener('click', function () {
+    InfoBox.style.display = "none";
 });
 window.addEventListener('click', function (e) {
-    if (e.target == ipopup) {
-        ipopup.style.display = "none";
+    if (e.target == InfoBox) {
+        InfoBox.style.display = "none";
     }
 });
-var toggler = document.querySelector('.toggleTheme');
 var currentThemeCokie = localStorage.getItem('theme');
+var toggler = HTMLElem.themeBtn;
 if (currentThemeCokie) {
     document.documentElement.setAttribute('data-theme', currentThemeCokie);
     if (currentThemeCokie == 'light') {

@@ -3,18 +3,18 @@
 const stg_chatbox = <HTMLInputElement> document.getElementById("stg_chat_open_default");
 if (localStorage.getItem('chatbox') == 'open'){
   stg_chatbox.checked = true;
-  CLICK_BOT.style.animation = "none";
-  document.getElementById("chatter").style.display="block";
+  HTMLElem.boct_head.style.animation = "none";
+  HTMLElem.Chatter.style.display="block";
 }
 else{
   stg_chatbox.checked = false;
-  document.getElementById("chatter").style.display="none";
+  HTMLElem.Chatter.style.display="none";
 }
 
 stg_chatbox.addEventListener('click',()=>{
   if(stg_chatbox.checked == true){
-    CLICK_BOT.style.animation = "none";
-    document.getElementById("chatter").style.display="block";
+    HTMLElem.boct_head.style.animation = "none";
+    HTMLElem.Chatter.style.display="block";
     localStorage.setItem('chatbox', 'open');
   }
   else{
@@ -49,6 +49,6 @@ stg_cokieClear.addEventListener('click',()=>{
 
 //0a. Clear all the conversation
 document.getElementById('stg_clearchat').addEventListener('click',()=>{
-  document.getElementById("chatspace").innerHTML = '';
+  HTMLElem.theChat.innerHTML = '';
   setTimeout(()=>{talk_div_boct('Hoi')},1000);
 })
