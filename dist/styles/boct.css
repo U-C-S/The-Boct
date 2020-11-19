@@ -1,11 +1,11 @@
 :root {
   --blk-in-dark: black;
-  --wit-in-dark: white;
+  --wit-in-dark: #dedede;
   --lit-in-dark: #eee;
 }
 
 [data-theme="light"] {
-  --blk-in-dark: white;
+  --blk-in-dark: #d8d8d8;
   --wit-in-dark: black;
   --lit-in-dark: black;
 }
@@ -53,7 +53,7 @@ button{
 }
 
 #typespace, .human_talk, .boct_talk,
-.about legend, .about p, .add-button,
+.about legend, .about p, #pwaInstallBtn,
 .info_content, .info_links a, .text1, #info_close,
 .settingbar{
   font-family: "Quicksand", sans-serif;
@@ -71,7 +71,7 @@ button{
   background-color: var(--blk-in-dark);
   display: flex;
 }
-.loader{
+.load{
   margin: auto;
   width: 120px;
   height: 18px;
@@ -98,7 +98,7 @@ button{
 
 
 /*-------------------------------------------------------------*/
-#main{
+#Main{
   display: grid;
   grid-template-columns: 50px 300px 60px auto 60px;
   grid-template-rows: 5% 25% minmax(auto,calc(65% - 265px)) 265px 5%;
@@ -111,7 +111,7 @@ button{
   height: 100%;
 }
 /*header-------------------------------------------------------------*/
-.pagehead {
+.PageHead {
   grid-area: p;
 }
 
@@ -138,7 +138,7 @@ button{
   }
 }
 
-/*.bot-head (or) head of the bot -------------*/
+/*head of the bot ----------------------------*/
 .bot-head{
   margin: auto;
   padding: 10px;
@@ -168,8 +168,8 @@ button{
   transform: scale(0.9);
 }
 
-/*chatter -----------------------------------------------------------*/
-#chatter {
+/*Chatter -----------------------------------------------------------*/
+#Chatter {
   grid-area: c;
   display: none;
   border-radius: 36px 0 36px 36px;
@@ -188,7 +188,7 @@ button{
   }
 }
 
-#chatter:after {
+#Chatter:after {
 	top: 120px;
 	right: 100%;
 	border: solid transparent;
@@ -335,19 +335,17 @@ button{
 .aboutbtns svg:hover{
   fill: #ff1439;
 }
-.pwaBtn{
-  text-align: center;
-}
-pwa-install::part(openButton) {
-  font-size: 12px;
-  width: 65px;
-  height: 30px;
-  border: 2px solid var(--wit-in-dark);
-  background-color: var(--blk-in-dark);
+#pwaInstallBtn{
+  width: 60px;
+  height: 25px;
+  margin: 0 auto;
+  border: 1px solid var(--wit-in-dark);
+  border-radius: 15px;
+  font-weight: bold;
   color: #ff1439;
 }
-pwa-install::part(installModal){
-  text-align: left;
+#pwaInstallBtn:hover{
+  background-color: var(--wit-in-dark);
 }
 
 .about p{
@@ -357,7 +355,7 @@ pwa-install::part(installModal){
   margin: 10px 0;
 }
 
-.releaseVer{
+#releaseVer{
   font-family: 'Arial', monospace !important;
   font-size: 10px !important;
   margin: 15px 0px 10px !important;
