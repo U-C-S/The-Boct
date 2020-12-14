@@ -1,13 +1,13 @@
 function unit_convert(usertyped) {
-    var ucs_data = usertyped.split(' ');
+    var ucs_data = usertyped.split(" ");
     if (ucs_data.length == 4) {
         var uVal = parseFloat(ucs_data[1]);
-        var uValLeng = String(uVal).replace('.', ' ').length;
+        var uValLeng = String(uVal).replace(".", " ").length;
         var uUnit = ucs_data[1].slice(uValLeng);
         TheConverter(uVal, uUnit, ucs_data[3]);
     }
     else
-        talk_div_boct('Type in this Format: conv 37cm to m');
+        talk_div_boct("Type in this Format: conv 37cm to m");
 }
 function TheConverter(x, a, b) {
     var from_unit = getUnit(a);
@@ -25,19 +25,18 @@ function TheConverter(x, a, b) {
             }
         }
         else {
-            replyRandom(['-_-', 'Conversions do not work that way']);
+            replyRandom(["-_-", "Conversions do not work that way"]);
         }
     }
     else
-        replyRandom(['That doesn\'t make sense', 'Something is very Wrong here.']);
+        replyRandom(["That doesn't make sense", "Something is very Wrong here."]);
 }
 function getUnit(u) {
     var Categories = [Lengths, Areas, Mass, Temperatures, Volume];
     var unit_details;
     var i = 0;
-    while (i < Categories.length && (!unit_details)) {
-        Object.keys(Categories[i])
-            .forEach(function (j) {
+    while (i < Categories.length && !unit_details) {
+        Object.keys(Categories[i]).forEach(function (j) {
             if (Categories[i][j].unit.includes(u)) {
                 var pre_unit_detail = {
                     Available: true,
@@ -55,126 +54,138 @@ function getUnit(u) {
 }
 var Lengths = {
     m: {
-        unit: ['m', 'meter', 'meters', 'metre'],
+        unit: ["m", "meter", "meters", "metre"],
         con_factor: 1
     },
     mm: {
-        unit: ['mm', 'millimeter', 'millimeters', 'millimetre'],
+        unit: ["mm", "millimeter", "millimeters", "millimetre"],
         con_factor: 1 / 1000
     },
     cm: {
-        unit: ['cm', 'centimeter', 'centimeters', 'centimetre'],
+        unit: ["cm", "centimeter", "centimeters", "centimetre"],
         con_factor: 1 / 100
     },
     km: {
-        unit: ['km', 'kilometer', 'kilometers', 'kilometre', 'Km'],
+        unit: ["km", "kilometer", "kilometers", "kilometre", "Km"],
         con_factor: 1000
     },
     inch: {
-        unit: ['in', 'inch', 'inches'],
+        unit: ["in", "inch", "inches"],
         con_factor: 1 / 39.37008
     },
     ft: {
-        unit: ['ft', 'feet', 'foot'],
+        unit: ["ft", "feet", "foot"],
         con_factor: 1 / 3.280839895
     },
     miles: {
-        unit: ['miles', 'mile', 'mi'],
+        unit: ["miles", "mile", "mi"],
         con_factor: 1 / 0.000621369
     },
     yards: {
-        unit: ['yard', 'yd'],
+        unit: ["yard", "yd"],
         con_factor: 1 / 1.093613298
     },
     lightyear: {
-        unit: ['lightyears', 'ly'],
+        unit: ["lightyears", "ly"],
         con_factor: 9460730472580800
     }
 };
 var Areas = {
     sqm: {
-        unit: ['sqm', 'm2', 'sq.meter'],
+        unit: ["sqm", "m2", "sq.meter"],
         con_factor: 1
     },
     sqkm: {
-        unit: ['sqkm', 'km2'],
+        unit: ["sqkm", "km2"],
         con_factor: Math.pow(10, 6)
     },
     sqft: {
-        unit: ['sqft', 'ft2'],
+        unit: ["sqft", "ft2"],
         con_factor: 0.09290304
     },
     acre: {
-        unit: ['ac', 'acre', 'acres'],
+        unit: ["ac", "acre", "acres"],
         con_factor: 4046.8564224
     },
     hectare: {
-        unit: ['ha', 'hectare', 'hectares'],
+        unit: ["ha", "hectare", "hectares"],
         con_factor: Math.pow(10, 4)
     }
 };
 var Temperatures = {
     celsius: {
-        unit: ['C', 'celsius', 'c'],
-        con_trnsTo: function (x) { return Number(x); },
-        con_trnsFro: function (x) { return Number(x); }
+        unit: ["C", "celsius", "c"],
+        con_trnsTo: function (x) {
+            return Number(x);
+        },
+        con_trnsFro: function (x) {
+            return Number(x);
+        }
     },
     fahrenheit: {
-        unit: ['F', 'fahrenheit', 'f'],
-        con_trnsTo: function (x) { return (x - 32) / 1.8; },
-        con_trnsFro: function (x) { return ((x * 1.8) + 32); }
+        unit: ["F", "fahrenheit", "f"],
+        con_trnsTo: function (x) {
+            return (x - 32) / 1.8;
+        },
+        con_trnsFro: function (x) {
+            return x * 1.8 + 32;
+        }
     },
     Kelvin: {
-        unit: ['K', 'kelvin', 'k'],
-        con_trnsTo: function (x) { return x - 273.15; },
-        con_trnsFro: function (x) { return x + 273.15; }
+        unit: ["K", "kelvin", "k"],
+        con_trnsTo: function (x) {
+            return x - 273.15;
+        },
+        con_trnsFro: function (x) {
+            return x + 273.15;
+        }
     }
 };
 var Mass = {
     kg: {
-        unit: ['kg', 'kilogram', 'Kg', 'kilograms'],
+        unit: ["kg", "kilogram", "Kg", "kilograms"],
         con_factor: 1
     },
     g: {
-        unit: ['g', 'gram', 'grams'],
+        unit: ["g", "gram", "grams"],
         con_factor: 1 / 1000
     },
     lb: {
-        unit: ['lb', 'lbs', 'pounds', 'pound'],
+        unit: ["lb", "lbs", "pounds", "pound"],
         con_factor: 0.45359237
     },
     quintal: {
-        unit: ['quintal'],
+        unit: ["quintal"],
         con_factor: 100
     },
     amu: {
-        unit: ['amu', 'u', 'Da'],
+        unit: ["amu", "u", "Da"],
         con_factor: 1.6605390666e-27
     }
 };
 var Volume = {
     cubicm: {
-        unit: ['m3', 'cubic.m', 'cubic-meter'],
+        unit: ["m3", "cubic.m", "cubic-meter"],
         con_factor: 1
     },
     liter: {
-        unit: ['l', 'liter', 'liters', 'litre', 'litres'],
+        unit: ["l", "liter", "liters", "litre", "litres"],
         con_factor: 0.001
     },
     milliliter: {
-        unit: ['ml', 'milliliter', 'milliliters', 'millilitre'],
+        unit: ["ml", "milliliter", "milliliters", "millilitre"],
         con_factor: 0.000001
     },
     gallon: {
-        unit: ['gal', 'gallon', 'Gallon'],
+        unit: ["gal", "gallon", "Gallon"],
         con_factor: 0.00454609
     },
     pint: {
-        unit: ['pt', 'p', 'pint'],
+        unit: ["pt", "p", "pint"],
         con_factor: 0.0005682613
     },
     barrel: {
-        unit: ['bl', 'barrel'],
+        unit: ["bl", "barrel"],
         con_factor: 0.16365924
     }
 };
