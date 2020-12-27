@@ -3,7 +3,7 @@
   "compilerOptions": {
     "removeComments": true,
     "strictNullChecks": false,
-    "lib": ["ES7","DOM"],
+    "lib": ["ES7", "DOM"],
     "outDir": "dist",
     "importHelpers": true
   }

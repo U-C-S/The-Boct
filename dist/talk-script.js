@@ -118,10 +118,11 @@ talk_div_boct("Hi, I can partially understand you. Maybe, say hi to me or ask my
 var directReplies = (function () {
     function directReplies(inWrds, outsen) {
         this.words = inWrds;
-        this.reply = function () {
-            talk_div_boct(outsen);
-        };
+        this.replyString = outsen;
     }
+    directReplies.prototype.reply = function () {
+        talk_div_boct(this.replyString);
+    };
     return directReplies;
 }());
 var intro = new directReplies(["hi", "hello", "hey", "heya"], "Hi to you too");

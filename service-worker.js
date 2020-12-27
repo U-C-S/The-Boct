@@ -1,4 +1,4 @@
-var cacheName = "boct-3.2.1";
+var cacheName = "boct-3.2.1b";
 var files = [
   "/",
   "/index.html",
@@ -23,7 +23,7 @@ self.addEventListener("install", (e) => {
 });
 
 //Network falling back to the cache
-//https://developers.google.com/web/ilt/pwa/caching-files-with-service-worker#network_falling_back_to_the_cache
+//Src-- https://developers.google.com/web/ilt/pwa/caching-files-with-service-worker#network_falling_back_to_the_cache
 self.addEventListener("fetch", (e) => {
   e.respondWith(
     fetch(e.request).catch(() => {

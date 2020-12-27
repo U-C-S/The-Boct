@@ -130,7 +130,7 @@ if ("serviceWorker" in navigator) {
 }
 
 let deferredPrompt;
-const addBtn = document.getElementById("pwaInstallBtn");
+const addBtn = <HTMLButtonElement>document.getElementById("pwaInstallBtn");
 addBtn.style.display = "none";
 
 window.addEventListener("beforeinstallprompt", (e) => {

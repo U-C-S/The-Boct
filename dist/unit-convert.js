@@ -25,7 +25,11 @@ function TheConverter(x, a, b) {
             }
         }
         else {
-            replyRandom(["-_-", "Conversions do not work that way"]);
+            replyRandom([
+                "-_-",
+                "Conversions do not work that way",
+                "Maybe, My Scripts are incomplete. Couldn't Convert",
+            ]);
         }
     }
     else

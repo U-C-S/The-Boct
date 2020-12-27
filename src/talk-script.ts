@@ -140,12 +140,15 @@ talk_div_boct(
 
 class directReplies {
   words: string[];
-  reply: () => void;
+  replyString: string;
+
   constructor(inWrds: string[], outsen: string) {
     this.words = inWrds;
-    this.reply = () => {
-      talk_div_boct(outsen);
-    };
+    this.replyString = outsen;
+  }
+
+  reply() {
+    talk_div_boct(this.replyString);
   }
 }
 
