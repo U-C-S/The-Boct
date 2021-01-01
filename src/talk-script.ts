@@ -153,7 +153,7 @@ class directReplies {
 }
 
 const intro = new directReplies(
-  ["hi", "hello", "hey", "heya"],
+  ["hi", "hello", "hey"],
   "Hi to you too"
 );
 
@@ -163,7 +163,7 @@ const readempty = new directReplies(
 );
 
 const readNo = new directReplies(
-  ["no", "nothing", "i dont know"],
+  ["no", "nothing"],
   "You are basically NOTHING!!!"
 );
 

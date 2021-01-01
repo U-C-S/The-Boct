@@ -1,12 +1,13 @@
 {
   "name": "the-boct",
-  "version": "3.2.1",
+  "version": "3.3.0",
   "license": "MIT",
   "scripts": {
-    "start": "index.html",
+    "start": "snowpack dev",
+    "build": "snowpack build",
     "tsc": "tsc"
   },
   "devDependencies": {
-    "typescript": "^4.0.3"
+    "snowpack": "^2.18.5"
   }
 }
