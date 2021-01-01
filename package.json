@@ -4,8 +4,7 @@
   "license": "MIT",
   "scripts": {
     "start": "snowpack dev",
-    "build": "snowpack build",
-    "tsc": "tsc"
+    "build": "snowpack build"
   },
   "devDependencies": {
     "snowpack": "^2.18.5"
