@@ -1,0 +1,100 @@
+/*media queries------------------------------------------------------*/
+@media screen and (max-width: 950px) {
+  #heading {
+    font-size: 28px;
+  }
+  .bot-head {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+@media screen and (max-width: 950px) and (min-width: 620px) {
+  #Main {
+    grid-template-columns: 10px 250px 20px auto 10px;
+    grid-template-rows: 5% 20% minmax(auto, calc(70% - 280px)) 280px 5%;
+  }
+  #Chatter:after {
+    top: 90px;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  *,
+  *::after,
+  *::before {
+    transition: 0s;
+  }
+
+  body,
+  html {
+    width: auto;
+    height: auto;
+    border: none;
+  }
+  html {
+    overflow: auto;
+  }
+  #loadScreen {
+    border: none;
+  }
+  #Main {
+    padding: 5px 5px 10px;
+    grid-template-columns: 10% 80% 10%;
+    grid-template-rows: 145px minmax(450px, 78vh) minmax(50px, auto);
+    grid-template-areas:
+      ". p ."
+      "c c c"
+      ". a .";
+    height: auto;
+  }
+
+  #Chatter {
+    animation: none;
+    box-shadow: none;
+  }
+  #Chatter:after {
+    top: auto;
+    right: auto;
+    bottom: 100%;
+    left: 50%;
+    margin-top: 0px;
+    margin-left: -27px;
+    border-bottom-color: var(--wit-in-dark);
+    border-right-color: transparent;
+  }
+  .talk_box {
+    box-shadow: none;
+  }
+  .type_box {
+    width: 92%;
+  }
+
+  .about fieldset {
+    box-shadow: none;
+    padding: 15px 5px;
+    border-top: none;
+    border-radius: 0 0 15px 15px;
+  }
+  .about legend {
+    border: none;
+    background-color: transparent;
+  }
+  #pwaInstallBtn {
+    margin: 15px auto 0px;
+  }
+  .about p,
+  .about hr,
+  .about legend {
+    display: none;
+  }
+  .info_window {
+    width: 95%;
+    padding: 7px;
+  }
+
+  .settingbar {
+    width: 245px;
+    transform: translate3d(-250px, 0, 0);
+  }
+}
