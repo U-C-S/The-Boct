@@ -1,15 +1,15 @@
-var cacheName = "boct-3.2.1b";
+var cacheName = "boct-3.3.0";
 var files = [
   "/",
   "/index.html",
-  "/dist/styles/boct.css",
-  "/dist/styles/boctmediaq.css",
-  "/dist/domElements.js",
-  "/dist/index.js",
-  "/dist/settings.js",
-  "/dist/talk-script.js",
-  "/dist/unit-convert.js",
+  "/styles/boct.css",
+  "/styles/boctmediaq.css",
   "/assets/robot.ico",
+  "/scripts/domElements.js",
+  "/scripts/index.js",
+  "/scripts/settings.js",
+  "/scripts/talk-script.js",
+  "/scripts/unit-convert.js",
   "https://fonts.gstatic.com/s/quicksand/v21/6xK-dSZaM9iE8KbpRA_LJ3z8mH9BOJvgkP8o58a-wg.woff2",
   "https://fonts.gstatic.com/s/megrim/v11/46kulbz5WjvLqJZVam_h.woff2",
 ];

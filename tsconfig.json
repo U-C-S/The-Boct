@@ -1,10 +1,9 @@
 {
-  "include": ["src/*"],
+  "include": ["src/*", "public/service-worker.js"],
   "compilerOptions": {
     "removeComments": true,
     "strictNullChecks": false,
     "lib": ["ES7", "DOM"],
-    "outDir": "dist",
     "importHelpers": true
   }
 }
