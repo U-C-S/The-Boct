@@ -1,0 +1,32 @@
+{
+  "inputs": {
+    "styles/boct.css": {
+      "bytes": 10426,
+      "imports": []
+    },
+    "styles/boctmediaq.css": {
+      "bytes": 1831,
+      "imports": []
+    }
+  },
+  "outputs": {
+    "../~~bundle~~/styles/boct.css": {
+      "imports": [],
+      "inputs": {
+        "styles/boct.css": {
+          "bytesInOutput": 7359
+        }
+      },
+      "bytes": 7360
+    },
+    "../~~bundle~~/styles/boctmediaq.css": {
+      "imports": [],
+      "inputs": {
+        "styles/boctmediaq.css": {
+          "bytesInOutput": 1208
+        }
+      },
+      "bytes": 1209
+    }
+  }
+}
