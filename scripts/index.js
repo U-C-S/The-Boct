@@ -100,12 +100,7 @@ window.addEventListener("beforeinstallprompt", (e) => {
   addBtn.addEventListener("click", (e2) => {
     addBtn.style.display = "none";
     deferredPrompt.prompt();
-    deferredPrompt.userChoice.then((choiceResult) => {
-      if (choiceResult.outcome === "accepted") {
-        console.log("User accepted the A2HS prompt");
-      } else {
-        console.log("User dismissed the A2HS prompt");
-      }
+    deferredPrompt.userChoice.then(() => {
       deferredPrompt = null;
     });
   });
