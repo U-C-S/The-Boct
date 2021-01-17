@@ -22,11 +22,7 @@ function TheConverter(x, a, b) {
         talk_div_boct(`${result}${b}`);
       }
     } else {
-      replyRandom([
-        "-_-",
-        "Conversions do not work that way",
-        "Maybe, My Scripts are incomplete. Couldn't Convert"
-      ]);
+      replyRandom(["-_-", "Conversions do not work that way", "Maybe, My Scripts are incomplete. Couldn't Convert"]);
     }
   } else
     replyRandom(["That doesn't make sense", "Something is very Wrong here."]);

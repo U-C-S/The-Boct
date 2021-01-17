@@ -32,17 +32,7 @@ function chat_process(sentence) {
   }
 }
 function boct_general_reply(studycontent) {
-  const readables = [
-    intro,
-    readage,
-    readempty,
-    readannoy,
-    readNo,
-    readok,
-    readso,
-    dice,
-    coin
-  ];
+  const readables = [intro, readage, readempty, readannoy, readNo, readok, readso, dice, coin];
   const readables2 = [searchStuff];
   for (let i = 0; i < readables.length; i++) {
     loop1:
