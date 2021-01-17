@@ -1,8 +1,6 @@
 //Settings----------------------------------------------------------
 //1.open chatbox by default
-const stg_chatbox = <HTMLInputElement>(
-  document.getElementById("stg_chat_open_default")
-);
+const stg_chatbox = <HTMLInputElement>document.getElementById("stg_chat_open_default");
 if (localStorage.getItem("chatbox") == "open") {
   stg_chatbox.checked = true;
   ElemList.boct_head.style.animation = "none";
@@ -32,15 +30,11 @@ if (localStorage.getItem("loading") == "no") {
 }
 
 stg_load.addEventListener("click", () => {
-  stg_load.checked == true
-    ? localStorage.setItem("loading", "no")
-    : localStorage.setItem("loading", "yes");
+  stg_load.checked == true ? localStorage.setItem("loading", "no") : localStorage.setItem("loading", "yes");
 });
 
 //0. Clear LocalStorage
-const stg_cokieClear = <HTMLButtonElement>(
-  document.getElementsByClassName("stg_btn")[0]
-);
+const stg_cokieClear = <HTMLButtonElement>document.getElementsByClassName("stg_btn")[0];
 stg_cokieClear.addEventListener("click", () => {
   localStorage.removeItem("theme");
   localStorage.removeItem("chatbox");

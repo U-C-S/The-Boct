@@ -24,14 +24,9 @@ function TheConverter(x: number, a: string, b: string) {
         talk_div_boct(`${result}${b}`);
       }
     } else {
-      replyRandom([
-        "-_-",
-        "Conversions do not work that way",
-        "Maybe, My Scripts are incomplete. Couldn't Convert",
-      ]);
+      replyRandom(["-_-", "Conversions do not work that way", "Maybe, My Scripts are incomplete. Couldn't Convert"]);
     }
-  } else
-    replyRandom(["That doesn't make sense", "Something is very Wrong here."]);
+  } else replyRandom(["That doesn't make sense", "Something is very Wrong here."]);
 }
 
 function getUnit(u: string) {

@@ -1,6 +1,6 @@
 {
   "name": "the-boct",
-  "version": "3.4.0",
+  "version": "3.4.1",
   "license": "MIT",
   "homepage": "https://the-boct.github.io/",
   "scripts": {
@@ -13,6 +13,6 @@
     "snowpack": "^3.0.10"
   },
   "prettier": {
-    "printWidth": 200
+    "printWidth": 220
   }
 }

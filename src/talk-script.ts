@@ -44,17 +44,7 @@ function chat_process(sentence: string) {
 }
 
 function boct_general_reply(studycontent: string) {
-  const readables = [
-    intro,
-    readage,
-    readempty,
-    readannoy,
-    readNo,
-    readok,
-    readso,
-    dice,
-    coin,
-  ];
+  const readables = [intro, readage, readempty, readannoy, readNo, readok, readso, dice, coin];
   const readables2 = [searchStuff];
 
   for (let i = 0; i < readables.length; i++) {
@@ -128,15 +118,11 @@ function boctAge(): string {
   let Diff_In_Days = Diff_In_Time / (1000 * 3600 * 24);
   let Days = Math.floor(Diff_In_Time / (1000 * 3600 * 24));
   let Diff_In_Hour = Math.floor((Diff_In_Days - Days) * 24);
-  let Diff_In_Mins = Math.floor(
-    ((Diff_In_Days - Days) * 24 - Diff_In_Hour) * 60
-  );
+  let Diff_In_Mins = Math.floor(((Diff_In_Days - Days) * 24 - Diff_In_Hour) * 60);
   return `${Days} days, ${Diff_In_Hour} hours and ${Diff_In_Mins} minutes`;
 }
 //-------------------------------------------
-talk_div_boct(
-  "Hi, I can partially understand you. Maybe, say hi to me or ask my age. But, Don't call me an idiot"
-);
+talk_div_boct("Hi, I can partially understand you. Maybe, say hi to me or ask my age. But, Don't call me an idiot");
 
 class directReplies {
   words: string[];
@@ -152,30 +138,15 @@ class directReplies {
   }
 }
 
-const intro = new directReplies(
-  ["hi", "hello", "hey"],
-  "Hi to you too"
-);
+const intro = new directReplies(["hi", "hello", "hey"], "Hi to you too");
 
-const readempty = new directReplies(
-  ["*empty*", ""],
-  "Oh! Come on. Talk Something Sensible"
-);
+const readempty = new directReplies(["*empty*", ""], "Oh! Come on. Talk Something Sensible");
 
-const readNo = new directReplies(
-  ["no", "nothing"],
-  "You are basically NOTHING!!!"
-);
+const readNo = new directReplies(["no", "nothing"], "You are basically NOTHING!!!");
 
-const readok = new directReplies(
-  ["ok", "ohk", "ogk", "wow", "great", "excellent", "nice", "awesome"],
-  "WoW"
-);
+const readok = new directReplies(["ok", "ohk", "ogk", "wow", "great", "excellent", "nice", "awesome"], "WoW");
 
-const readso = new directReplies(
-  ["so", "what else"],
-  "I am not so brilliant to say something!"
-);
+const readso = new directReplies(["so", "what else"], "I am not so brilliant to say something!");
 
 const readage = {
   words: ["what is your age", "whats your age", "your age"],

@@ -3,7 +3,9 @@
   "compilerOptions": {
     "removeComments": true,
     "strictNullChecks": false,
-    "lib": ["ES2018", "DOM"],
-    "importHelpers": true
+    "lib": ["ES2017", "DOM"],
+    "importHelpers": true,
+    "target": "ES2018",
+    
   }
 }
