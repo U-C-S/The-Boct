@@ -1,18 +1,25 @@
-# The <a href="https://the-boct.github.io/"><img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/master/svgs/solid/robot.svg" width="30px"></a> BOcT
-Check it out - https://the-boct.github.io/
+# New Project
 
-## About
-BOcT is a Static Browser Chatbot, made with TypeScript. It's currently in Lazy development and Available as a Progressive Web App (PWA)
+> ✨ Bootstrapped with Create Snowpack App (CSA).
 
-BOcT can now convert units and future Updates to BOcT can make it perform basic Maths, Maybe suggest you some Movies...
+## Available Scripts
 
-98% Self-Made. Also, This is my Self-Learning JavaScript and TypeScript Project (learning from MDN)
+### npm start
 
-## Dev
-Requires: NodeJS
+Runs the app in the development mode.
+Open http://localhost:8080 to view it in the browser.
 
-NodeJS Packages Used: Snowpack, gh-pages
+The page will reload if you make edits.
+You will also see any lint errors in the console.
 
-- Clone this Repo
-- run 'npm install' in the directory
-- run 'snowpack dev'
+### npm run build
+
+Builds a static copy of your site to the `build/` folder.
+Your app is ready to be deployed!
+
+**For the best production performance:** Add a build bundler plugin like "@snowpack/plugin-webpack" to your `snowpack.config.js` config file.
+
+### npm test
+
+Launches the application test runner.
+Run with the `--watch` flag (`npm test -- --watch`) to run in interactive watch mode.
