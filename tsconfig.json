@@ -1,8 +1,9 @@
 {
   "include": ["src", "types"],
   "compilerOptions": {
+    "lib": ["DOM","esnext"],
     "module": "esnext",
-    "target": "esnext",
+    "target": "es2018",
     "moduleResolution": "node",
     "jsx": "preserve",
     "baseUrl": "./",

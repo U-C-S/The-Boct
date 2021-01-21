@@ -1,0 +1,70 @@
+:root {
+  --blk-in-dark: black;
+  --wit-in-dark: #dedede;
+  --lit-in-dark: #eee;
+}
+
+[data-theme="light"] {
+  --blk-in-dark: #d8d8d8;
+  --wit-in-dark: black;
+  --lit-in-dark: black;
+}
+
+@font-face {
+  font-family: "Quicksand";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Quicksand"), url(https://fonts.gstatic.com/s/quicksand/v21/6xK-dSZaM9iE8KbpRA_LJ3z8mH9BOJvgkP8o58a-wg.woff2) format("woff2");
+}
+@font-face {
+  font-family: "Megrim";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Megrim"), url(https://fonts.gstatic.com/s/megrim/v11/46kulbz5WjvLqJZVam_h.woff2) format("woff2");
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  transition: all 0.1s linear;
+}
+
+body,
+html {
+  background-color: var(--blk-in-dark);
+  line-height: 1.15;
+  margin: 0px;
+  padding: 0px;
+  height: 100%;
+  min-height: 600px;
+  min-width: 300px;
+}
+body {
+  border: 6px solid var(--wit-in-dark);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+#typespace,
+.human_talk,
+.boct_talk,
+.about legend,
+.about p,
+#pwaInstallBtn,
+.info_content,
+.info_links a,
+.text1,
+#info_close,
+.settingbar {
+  font-family: "Quicksand", sans-serif;
+}
