@@ -1,0 +1,42 @@
+.bot-head {
+  margin: auto;
+  padding: 10px;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  outline: none;
+}
+
+#BOcT,
+#BOcT svg {
+  width: 100%;
+  height: 100%;
+}
+#BOcT {
+  padding: 0px;
+  animation: beepbeep 2.5s ease-in-out 5s infinite;
+}
+@keyframes beepbeep {
+  0%,
+  20%,
+  30%,
+  35%,
+  45%,
+  55%,
+  100% {
+    transform: scale(1);
+  }
+  25%,
+  50% {
+    transform: scale(1.2);
+  }
+  40% {
+    transform: scale(1.1);
+  }
+}
+#BOcT svg {
+  fill: #ff1439;
+}
+#BOcT svg:active {
+  transform: scale(0.9);
+}

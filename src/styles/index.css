@@ -68,3 +68,16 @@ button {
 .settingbar {
   font-family: "Quicksand", sans-serif;
 }
+
+#Main {
+  display: grid;
+  grid-template-columns: 50px 300px 60px auto 60px;
+  grid-template-rows: 5% 25% minmax(auto, calc(65% - 265px)) 265px 5%;
+  grid-template-areas:
+    ". . . . ."
+    ". p . c ."
+    ". . . c ."
+    ". a . c ."
+    ". . . . .";
+  height: 100%;
+}
