@@ -6,11 +6,11 @@ import ChatBoct from "../components/chatboct";
 class TheBoct extends React.Component {
   render() {
     return (
-      <div id="Main">
+      <>
         <BoctHead />
         <ChatBoct />
         <AboutPanel />
-      </div>
+      </>
     );
   }
 }

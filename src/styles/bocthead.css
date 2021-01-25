@@ -1,3 +1,34 @@
+/*header-------------------------------------------------------------*/
+.PageHead {
+  grid-area: p;
+}
+
+#heading_container {
+  border-bottom: 2px solid var(--wit-in-dark);
+  padding: 5px 0px 10px;
+}
+#heading {
+  margin: 0;
+  color: var(--wit-in-dark);
+  font-family: "Megrim", monospace;
+  text-align: center;
+  font-size: 40px;
+  user-select: none;
+  will-change: opacity, letter-spacing, filter;
+}
+@keyframes focus-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+
+/*head of the bot ----------------------------*/
 .bot-head {
   margin: auto;
   padding: 10px;

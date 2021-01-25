@@ -1,4 +1,5 @@
 import React from "react";
+import { svg2, svg3, svg4 } from "../lib/svg-render";
 import "../styles/aboutpanel.css";
 
 class AboutPanel extends React.Component {
@@ -10,17 +11,17 @@ class AboutPanel extends React.Component {
           <div className="aboutbtns">
             <button id="settingBtn" title="Settings">
               <svg viewBox="0 0 512 512">
-                <path id="svg2" />
+                <path id="svg2" d={svg2} />
               </svg>
             </button>
             <button id="infoBtn" title="Info">
               <svg viewBox="0 0 512 512">
-                <path id="svg3" />
+                <path id="svg3" d={svg3} />
               </svg>
             </button>
             <button id="ThemeBtn" data-themenow="dark" title="Toggle Dark/Light Mode">
               <svg viewBox="0 0 512 512">
-                <path id="svg4" />
+                <path id="svg4" d={svg4} />
               </svg>
             </button>
           </div>
