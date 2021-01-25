@@ -1,7 +1,6 @@
 /*Chatter -----------------------------------------------------------*/
 #Chatter {
   grid-area: c;
-  display: none;
   border-radius: 36px 0 36px 36px;
   padding: 7px;
   background-color: var(--wit-in-dark);

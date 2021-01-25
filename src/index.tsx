@@ -1,13 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import TheBoct from "./app/theboct";
+import What from "./app/loading";
 
 import "./styles/index.css";
 
 ReactDOM.render(
   <React.StrictMode>
-    <TheBoct />
+    <What />
   </React.StrictMode>,
   document.getElementById("root")
 );

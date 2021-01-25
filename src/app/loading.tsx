@@ -1,4 +1,15 @@
+import React, { Suspense } from "react";
 import Loading from "../components/loadingScreen";
-import TheBoct from "./theboct";
+const TheBoct = React.lazy(() => import("./theboct"));
 
-export default null;
+class What extends React.Component {
+  render() {
+    return (
+      <Suspense fallback={<Loading />}>
+        <TheBoct />
+      </Suspense>
+    );
+  }
+}
+
+export default What;

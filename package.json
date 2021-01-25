@@ -1,6 +1,6 @@
 {
   "name": "the-boct",
-  "version": "4.0.0-alpha-2",
+  "version": "4.0.0-alpha-3",
   "license": "MIT",
   "homepage": "https://the-boct.github.io/",
   "private": true,
@@ -21,9 +21,7 @@
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
-    "extends": [
-      "react-app"
-    ]
+    "extends": ["react-app"]
   },
   "browserslist": {
     "production": [
