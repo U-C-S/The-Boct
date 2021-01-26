@@ -1,5 +1,4 @@
 import { replyRandom } from "./small-functions";
-
 //AH BUGS!!
 
 function unit_convert(usertyped: string): string {
@@ -10,7 +9,8 @@ function unit_convert(usertyped: string): string {
     let uValLeng = String(uVal).replace(".", " ").length;
     let uUnit = ucs_data[1].slice(uValLeng);
     return TheConverter(uVal, uUnit, ucs_data[3]);
-  } else {
+  }
+  else {
     return "Type in this Format: conv 37cm to m";
   }
 }
@@ -24,12 +24,14 @@ function TheConverter(x: number, a: string, b: string): string {
       if (from_unit.con_factor && to_unit.con_factor) {
         let result = x * (from_unit.con_factor / to_unit.con_factor);
         return `${result} ${b}`;
-      } else if (from_unit.con_trnsTo && to_unit.con_trnsFro) {
+      }
+      else if (from_unit.con_trnsTo && to_unit.con_trnsFro) {
         let SIval = from_unit.con_trnsTo(x);
         let result = to_unit.con_trnsFro(SIval);
         return `${result}${b}`;
       }
-    } else {
+    }
+    else {
       return replyRandom(["-_-", "Conversions do not work that way", "Maybe, My Scripts are incomplete. Couldn't Convert"]);
     }
   }

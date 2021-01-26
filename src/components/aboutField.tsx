@@ -1,6 +1,6 @@
 import React from "react";
 import { svg2, svg3, svg4 } from "../lib/svg-render";
-import "../styles/aboutpanel.css";
+import "../styles/aboutField.css";
 
 class ThemeButton extends React.Component {
   ChangeTheme() {

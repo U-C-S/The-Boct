@@ -1,6 +1,6 @@
 import React from "react";
 import { svg1 } from "../lib/svg-render";
-import "../styles/chatboct.css";
+import "../styles/chatBox.css";
 import chat_process from "../lib/chat-evalutor";
 
 class ChatBoct extends React.Component<{}, { chatstore: JSX.Element[] }> {
@@ -29,19 +29,17 @@ class ChatBoct extends React.Component<{}, { chatstore: JSX.Element[] }> {
         <p>{x}</p>
       </div>
     );
-
+    chatstore.push(newchat);
     this.recentTalk = "h";
     this.theChats.set(length.toString(), x);
-    chatstore.push(newchat);
     this.setState({ chatstore: chatstore });
   }
 
   componentDidUpdate() {
     let { chatstore } = this.state;
     let { theChats } = this;
-    let length = chatstore.length;
-
     if (this.recentTalk === "h") {
+      let length = chatstore.length;
       let input = theChats.get(`${length - 1}`) as string;
       let x = chat_process(input);
       let newchat = (
@@ -49,10 +47,9 @@ class ChatBoct extends React.Component<{}, { chatstore: JSX.Element[] }> {
           <p>{x}</p>
         </div>
       );
-
+      chatstore.push(newchat);
       this.recentTalk = "b";
       theChats.set(length.toString(), x);
-      chatstore.push(newchat);
       this.setState({ chatstore: chatstore });
     }
   }
