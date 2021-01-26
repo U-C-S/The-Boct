@@ -6,6 +6,7 @@
   border: 2px solid var(--wit-in-dark);
   box-shadow: 0 0 15px inset black;
   padding: 5px;
+  text-align: center;
 }
 .about legend {
   color: var(--wit-in-dark);
@@ -35,7 +36,6 @@
 #pwaInstallBtn {
   width: 60px;
   height: 25px;
-  margin: 0 auto;
   border: 1px solid var(--wit-in-dark);
   border-radius: 15px;
   font-weight: bold;

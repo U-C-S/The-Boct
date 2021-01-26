@@ -4,14 +4,15 @@ import BoctHead from "../components/bocthead";
 import ChatBoct from "../components/chatboct";
 
 class TheBoct extends React.Component {
-  render() {
-    return (
+  render(): JSX.Element {
+    let x: JSX.Element = (
       <>
         <BoctHead />
         <ChatBoct />
         <AboutPanel />
       </>
     );
+    return x;
   }
 }
 

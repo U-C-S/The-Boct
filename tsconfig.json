@@ -15,7 +15,8 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "allowJs": true,
-    "isolatedModules": true
+    "isolatedModules": true,
+    "removeComments": true
   },
   "include": ["src"]
 }
