@@ -1,9 +1,12 @@
 import React from "react";
 import { svg1 } from "../lib/svg-render";
 import "../styles/chatboct.css";
+import chat_process from "../lib/chat-evalutor";
 
 class ChatBoct extends React.Component<{}, { chatstore: JSX.Element[] }> {
   chatInputElem: React.RefObject<HTMLInputElement>;
+  theChats: Map<string, string>;
+  recentTalk: string;
 
   constructor(props) {
     super(props);
@@ -11,21 +14,47 @@ class ChatBoct extends React.Component<{}, { chatstore: JSX.Element[] }> {
       chatstore: [],
     };
     this.chatInputElem = React.createRef();
-    this.OnChatSubmit = this.OnChatSubmit.bind(this);
+    this.theChats = new Map();
+    this.recentTalk = "";
+    this.onChatSubmit = this.onChatSubmit.bind(this);
   }
 
-  OnChatSubmit(e: any) {
+  onChatSubmit(e: any) {
     e.preventDefault();
-    let temp_chatstore = this.state.chatstore;
-    let x = this.chatInputElem.current?.value;
+    let { chatstore } = this.state;
+    let length = chatstore.length;
+    let x = this.chatInputElem.current?.value as string;
     let newchat = (
-      <div key={temp_chatstore.length} className="human_talk">
+      <div key={length} className="human_talk">
         <p>{x}</p>
       </div>
     );
 
-    temp_chatstore.push(newchat);
-    this.setState({ chatstore: temp_chatstore });
+    this.recentTalk = "h";
+    this.theChats.set(length.toString(), x);
+    chatstore.push(newchat);
+    this.setState({ chatstore: chatstore });
+  }
+
+  componentDidUpdate() {
+    let { chatstore } = this.state;
+    let { theChats } = this;
+    let length = chatstore.length;
+
+    if (this.recentTalk === "h") {
+      let input = theChats.get(`${length - 1}`) as string;
+      let x = chat_process(input);
+      let newchat = (
+        <div key={length} className="boct_talk">
+          <p>{x}</p>
+        </div>
+      );
+
+      this.recentTalk = "b";
+      theChats.set(length.toString(), x);
+      chatstore.push(newchat);
+      this.setState({ chatstore: chatstore });
+    }
   }
 
   render() {
@@ -35,7 +64,7 @@ class ChatBoct extends React.Component<{}, { chatstore: JSX.Element[] }> {
           {this.state.chatstore}
         </div>
         <div className="type_box">
-          <form className="type_box-inner" onSubmit={this.OnChatSubmit}>
+          <form className="type_box-inner" onSubmit={this.onChatSubmit}>
             <input ref={this.chatInputElem} id="typespace" type="text" placeholder="Wanna talk with BOcT? Then type here..!" autoComplete="off" maxLength={120} spellCheck={true} />
             <button id="typespace-enter" type="submit">
               <svg viewBox="0 0 448 512">
