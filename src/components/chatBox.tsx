@@ -3,10 +3,22 @@ import { svg1 } from "../lib/svg-render";
 import "../styles/chatBox.css";
 import chat_process from "../lib/chat-evalutor";
 
+let isRecentReplyBoct: boolean;
+class TemplateChat extends React.Component<{ attr: [number, string, string] }, {}> {
+  render() {
+    let [k, c, t] = this.props.attr;
+    isRecentReplyBoct = c == "boct_talk";
+    return (
+      <div key={k} className={c}>
+        <p>{t}</p>
+      </div>
+    );
+  }
+}
+
 class ChatBoct extends React.Component<{}, { chatstore: JSX.Element[] }> {
   chatInputElem: React.RefObject<HTMLInputElement>;
   theChats: Map<string, string>;
-  recentTalk: string;
 
   constructor(props) {
     super(props);
@@ -15,41 +27,31 @@ class ChatBoct extends React.Component<{}, { chatstore: JSX.Element[] }> {
     };
     this.chatInputElem = React.createRef();
     this.theChats = new Map();
-    this.recentTalk = "";
     this.onChatSubmit = this.onChatSubmit.bind(this);
   }
 
   onChatSubmit(e: any) {
     e.preventDefault();
     let { chatstore } = this.state;
-    let length = chatstore.length;
-    let x = this.chatInputElem.current?.value as string;
-    let newchat = (
-      <div key={length} className="human_talk">
-        <p>{x}</p>
-      </div>
-    );
-    chatstore.push(newchat);
-    this.recentTalk = "h";
-    this.theChats.set(length.toString(), x);
+    let clength = chatstore.length;
+    let ctext = this.chatInputElem.current?.value as string;
+
+    chatstore.push(<TemplateChat attr={[clength, "human_talk", ctext]} />);
+    this.theChats.set(clength.toString(), ctext);
     this.setState({ chatstore: chatstore });
   }
 
   componentDidUpdate() {
-    let { chatstore } = this.state;
-    let { theChats } = this;
-    if (this.recentTalk === "h") {
-      let length = chatstore.length;
-      let input = theChats.get(`${length - 1}`) as string;
-      let x = chat_process(input);
-      let newchat = (
-        <div key={length} className="boct_talk">
-          <p>{x}</p>
-        </div>
-      );
-      chatstore.push(newchat);
-      this.recentTalk = "b";
-      theChats.set(length.toString(), x);
+    let { chatstore } = this.state,
+      { theChats } = this;
+
+    if (!isRecentReplyBoct) {
+      let clength = chatstore.length;
+      let input = theChats.get(`${clength - 1}`) as string;
+      let ctext = chat_process(input);
+
+      chatstore.push(<TemplateChat attr={[clength, "boct_talk", ctext]} />);
+      theChats.set(clength.toString(), ctext);
       this.setState({ chatstore: chatstore });
     }
   }
