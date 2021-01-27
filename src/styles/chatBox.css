@@ -134,3 +134,33 @@
   fill: #ff1439;
   transform: scale(0.85);
 }
+
+@media screen and (max-width: 950px) and (min-width: 620px) {
+  #Chatter:after {
+    top: 90px;
+  }
+}
+
+
+@media screen and (max-width: 620px) {
+  #Chatter {
+    animation: none;
+    box-shadow: none;
+  }
+  #Chatter:after {
+    top: auto;
+    right: auto;
+    bottom: 100%;
+    left: 50%;
+    margin-top: 0px;
+    margin-left: -27px;
+    border-bottom-color: var(--wit-in-dark);
+    border-right-color: transparent;
+  }
+  .talk_box {
+    box-shadow: none;
+  }
+  .type_box {
+    width: 92%;
+  }
+}

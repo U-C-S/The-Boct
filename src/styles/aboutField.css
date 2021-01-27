@@ -58,3 +58,24 @@
   margin: 15px 0px 10px !important;
   letter-spacing: 2px;
 }
+
+@media screen and (max-width: 620px) {
+  .about fieldset {
+    box-shadow: none;
+    padding: 15px 5px;
+    border-top: none;
+    border-radius: 0 0 15px 15px;
+  }
+  .about legend {
+    border: none;
+    background-color: transparent;
+  }
+  #pwaInstallBtn {
+    margin: 15px auto 0px;
+  }
+  .about p,
+  .about hr,
+  .about legend {
+    display: none;
+  }
+}

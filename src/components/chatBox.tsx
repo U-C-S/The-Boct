@@ -4,19 +4,19 @@ import "../styles/chatBox.css";
 import chat_process from "../lib/chat-evalutor";
 
 let isRecentReplyBoct: boolean;
-class TemplateChat extends React.Component<{ attr: [number, string, string] }, {}> {
+class TemplateChat extends React.Component<{ attr: [string, string] }, {}> {
   render() {
-    let [k, c, t] = this.props.attr;
+    let [c, t] = this.props.attr;
     isRecentReplyBoct = c == "boct_talk";
     return (
-      <div key={k} className={c}>
+      <div className={c}>
         <p>{t}</p>
       </div>
     );
   }
 }
 
-class ChatBoct extends React.Component<{}, { chatstore: JSX.Element[] }> {
+class ChatBoct extends React.Component<{ openThis: object }, { chatstore: JSX.Element[] }> {
   chatInputElem: React.RefObject<HTMLInputElement>;
   theChats: Map<string, string>;
 
@@ -36,7 +36,7 @@ class ChatBoct extends React.Component<{}, { chatstore: JSX.Element[] }> {
     let clength = chatstore.length;
     let ctext = this.chatInputElem.current?.value as string;
 
-    chatstore.push(<TemplateChat attr={[clength, "human_talk", ctext]} />);
+    chatstore.push(<TemplateChat key={clength} attr={["human_talk", ctext]} />);
     this.theChats.set(clength.toString(), ctext);
     this.setState({ chatstore: chatstore });
   }
@@ -50,7 +50,7 @@ class ChatBoct extends React.Component<{}, { chatstore: JSX.Element[] }> {
       let input = theChats.get(`${clength - 1}`) as string;
       let ctext = chat_process(input);
 
-      chatstore.push(<TemplateChat attr={[clength, "boct_talk", ctext]} />);
+      chatstore.push(<TemplateChat key={clength} attr={["boct_talk", ctext]} />);
       theChats.set(clength.toString(), ctext);
       this.setState({ chatstore: chatstore });
     }
@@ -58,7 +58,7 @@ class ChatBoct extends React.Component<{}, { chatstore: JSX.Element[] }> {
 
   render() {
     return (
-      <div id="Chatter">
+      <div id="Chatter" style={this.props.openThis}>
         <div className="talk_box" id="chatspace">
           {this.state.chatstore}
         </div>

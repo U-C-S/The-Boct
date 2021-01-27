@@ -46,3 +46,9 @@
   font-weight: 600;
   text-align: center;
 }
+
+@media screen and (max-width: 620px) {
+  #loadScreen {
+    border: none;
+  }
+}

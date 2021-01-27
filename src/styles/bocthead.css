@@ -71,3 +71,13 @@
 #BOcT svg:active {
   transform: scale(0.9);
 }
+
+@media screen and (max-width: 950px) {
+  #heading {
+    font-size: 28px;
+  }
+  .bot-head {
+    width: 70px;
+    height: 70px;
+  }
+}
