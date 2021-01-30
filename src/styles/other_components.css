@@ -1,5 +1,6 @@
 /*Info popup----------------------------------------*/
-#modal-root {
+#modal_root {
+  z-index: -1;
   margin: auto;
   position: fixed;
   top: 0;
@@ -10,8 +11,10 @@
   padding: 30px 10px;
   background-color: rgba(0, 0, 0, 0.4);
 }
+
 .info_window {
-  width: 70%;
+  width: 85%;
+  max-width: 800px;
   height: 500px;
   margin: auto;
   padding: 10px 10px 0;

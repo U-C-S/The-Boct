@@ -42,8 +42,8 @@ class ChatBoct extends React.Component<{ openThis: object }, { chatstore: JSX.El
   }
 
   componentDidUpdate() {
-    let { chatstore } = this.state,
-      { theChats } = this;
+    let { chatstore } = this.state;
+    let { theChats } = this;
 
     if (!isRecentReplyBoct) {
       let clength = chatstore.length;

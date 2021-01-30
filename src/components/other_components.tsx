@@ -1,37 +1,10 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import "../styles/infoModal.css"
+import "../styles/other_components.css";
 
-const modalRoot = document.getElementById("modal-root") as HTMLDivElement;
-class Modal extends React.Component {
-  el: HTMLDivElement;
-
-  constructor(props) {
-    super(props);
-    this.el = document.createElement("div");
-    this.el.className = "info_window";
-  }
-
-  componentDidMount() {
-    modalRoot.appendChild(this.el);
-  }
-
-  componentWillUnmount() {
-    modalRoot.removeChild(this.el);
-  }
-
+class InfoBoctReply extends React.Component {
   render() {
-    return ReactDOM.createPortal(this.props.children, this.el);
-  }
-}
-
-class InfoModal extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-  render() {
-    return (
-      <Modal>
+    let ModalContent = (
+      <div className="info_window">
         <div className="info_content">
           <p>Some commands for interesting replies:</p>
           <ul>
@@ -64,14 +37,13 @@ class InfoModal extends React.Component {
           </a>
           <br />
           <a href="https://github.com/The-BOcT/the-boct.github.io/">View Source</a>
+          <p className="text1">Written with ❤ in TypeScript</p>
         </div>
-        <p className="text1">Written with ❤ in TypeScript</p>
-        <button onClick={this.componentWillUnmount} id="info_close">
-          close
-        </button>
-      </Modal>
+      </div>
     );
+
+    return ModalContent;
   }
 }
 
-export default InfoModal;
+export default InfoBoctReply;

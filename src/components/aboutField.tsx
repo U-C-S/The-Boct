@@ -1,5 +1,4 @@
 import React from "react";
-import InfoModal from "./infoModal";
 import { svg2, svg3, svg4 } from "../lib/svg-render";
 import "../styles/aboutField.css";
 
@@ -27,26 +26,21 @@ class ThemeButton extends React.Component {
   }
 }
 
-class InfoButton extends React.Component<{}, { modal: JSX.Element }> {
+class InfoButton extends React.Component<{}, {}> {
   constructor(props) {
     super(props);
-    this.state = {
-      modal: <p />,
-    };
-    this.OpenModal = this.OpenModal.bind(this);
   }
 
-  OpenModal() {
-    this.setState({ modal: <InfoModal /> });
+  DisplayModal() {
+    let x = document.getElementById("modal_root");
   }
 
   render() {
     return (
-      <button onClick={this.OpenModal} id="infoBtn" title="Info">
+      <button onClick={this.DisplayModal} id="infoBtn" title="Info">
         <svg viewBox="0 0 512 512">
           <path id="svg3" d={svg3} />
         </svg>
-        {this.state.modal}
       </button>
     );
   }

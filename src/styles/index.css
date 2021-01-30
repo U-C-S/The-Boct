@@ -83,7 +83,6 @@ button {
 }
 
 /*media queries------------------------------------------------------*/
-
 @media screen and (max-width: 950px) and (min-width: 620px) {
   #Main {
     grid-template-columns: 10px 250px 20px auto 10px;
