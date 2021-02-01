@@ -1,0 +1,54 @@
+/*Loading Screen------------------------------*/
+#loadScreen {
+  border: 6px solid var(--wit-in-dark);
+  width: 100%;
+  min-width: 300px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: var(--blk-in-dark);
+  display: flex;
+}
+.load {
+  margin: auto;
+  width: 120px;
+  height: 18px;
+  background-color: var(--blk-in-dark);
+  border: 1px solid var(--wit-in-dark);
+  box-shadow: 0 0 50px var(--wit-in-dark);
+}
+#load_barr {
+  height: 100%;
+  background-color: var(--wit-in-dark);
+  animation: load 1.6s linear;
+}
+@keyframes load {
+  0% {
+    width: 0%;
+  }
+  35% {
+    width: 30%;
+  }
+  65% {
+    width: 70%;
+  }
+  100% {
+    width: 101%;
+  }
+}
+
+#load_text {
+  margin-top: 5px;
+  color: var(--wit-in-dark);
+  font-size: 13px;
+  font-family: "Megrim";
+  font-weight: 600;
+  text-align: center;
+}
+
+@media screen and (max-width: 620px) {
+  #loadScreen {
+    border: none;
+  }
+}

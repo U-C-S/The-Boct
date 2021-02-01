@@ -1,0 +1,60 @@
+.settingbar {
+  position: fixed;
+  z-index: 5;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 360px;
+  transform: translate3d(-365px, 0, 0);
+  transition: transform 0.4s ease-in-out;
+  will-change: transform;
+  box-shadow: 0 0 30px black;
+  background-color: var(--lit-in-dark);
+  color: var(--blk-in-dark);
+  text-align: center;
+}
+.show-settings .settingbar {
+  transform: translate3d(0, 0, 0);
+}
+
+.settingbar h2 {
+  padding: 10px 0;
+  margin: 0;
+  border-bottom: 1px solid var(--blk-in-dark);
+  font-family: "Megrim";
+}
+
+/* settings-----------------------------------*/
+.settingbar label {
+  display: block;
+  user-select: none;
+  width: 100%;
+  margin: 0;
+  padding: 10px 5px;
+  border-bottom: 1px solid var(--blk-in-dark);
+}
+.settingbar label:hover {
+  color: white;
+  background-color: #ff1439;
+}
+
+.stg_contain input {
+  display: inline-block;
+  margin: 0;
+  height: 16px;
+  width: 16px;
+  position: relative;
+  top: 2px;
+  left: 5px;
+}
+
+.stg_btn {
+  font-family: "Quicksand";
+  color: var(--blk-in-dark);
+  border: 1px solid var(--blk-in-dark);
+  margin: 8px 5px 4px;
+}
+.stg_btn:hover {
+  color: var(--wit-in-dark);
+  background-color: var(--blk-in-dark);
+}

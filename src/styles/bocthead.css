@@ -1,0 +1,83 @@
+/*header-------------------------------------------------------------*/
+.PageHead {
+  grid-area: p;
+}
+
+#heading_container {
+  border-bottom: 2px solid var(--wit-in-dark);
+  padding: 5px 0px 10px;
+}
+#heading {
+  margin: 0;
+  color: var(--wit-in-dark);
+  font-family: "Megrim", monospace;
+  text-align: center;
+  font-size: 40px;
+  user-select: none;
+  will-change: opacity, letter-spacing, filter;
+}
+@keyframes focus-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+
+/*head of the bot ----------------------------*/
+.bot-head {
+  margin: auto;
+  padding: 10px;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  outline: none;
+}
+
+#BOcT,
+#BOcT svg {
+  width: 100%;
+  height: 100%;
+}
+#BOcT {
+  padding: 0px;
+  animation: beepbeep 2.5s ease-in-out 5s infinite;
+}
+@keyframes beepbeep {
+  0%,
+  20%,
+  30%,
+  35%,
+  45%,
+  55%,
+  100% {
+    transform: scale(1);
+  }
+  25%,
+  50% {
+    transform: scale(1.2);
+  }
+  40% {
+    transform: scale(1.1);
+  }
+}
+#BOcT svg {
+  fill: #ff1439;
+}
+#BOcT svg:active {
+  transform: scale(0.9);
+}
+
+@media screen and (max-width: 950px) {
+  #heading {
+    font-size: 28px;
+  }
+  .bot-head {
+    width: 70px;
+    height: 70px;
+  }
+}
