@@ -10,7 +10,7 @@ class InfoBoctReply extends React.Component {
           <ul>
             <li>What is your age / your age</li>
             <li>Annoy me / idiot</li>
-            <li>google/youtube/bing/duckduckgo *word*</li>
+            <li>google / youtube / bing / duckduckgo *word*</li>
             <li>roll a dice / roll dice</li>
             <li>flip a coin / toss a coin</li>
           </ul>
@@ -30,6 +30,8 @@ class InfoBoctReply extends React.Component {
             <li>.dice</li>
             <li>.coin</li>
           </ul>
+          <hr/>
+          <p className="text1">Written with ❤ in TypeScript</p>
         </div>
         <div className="info_links">
           <a href="https://github.com/The-BOcT/the-boct.github.io/blob/master/LICENSE.md" title="Under MIT LICENSE">
@@ -37,7 +39,6 @@ class InfoBoctReply extends React.Component {
           </a>
           <br />
           <a href="https://github.com/The-BOcT/the-boct.github.io/">View Source</a>
-          <p className="text1">Written with ❤ in TypeScript</p>
         </div>
       </div>
     );

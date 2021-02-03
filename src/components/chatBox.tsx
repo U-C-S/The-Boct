@@ -1,7 +1,9 @@
 import React from "react";
+import InfoBoctReply from "./other_components";
 import { svg1 } from "../lib/svg-render";
-import "../styles/chatBox.css";
 import chat_process from "../lib/chat-evalutor";
+
+import "../styles/chatBox.css";
 
 let isRecentReplyBoct: boolean;
 class TemplateChat extends React.Component<{ attr: [string, string] }, {}> {
@@ -23,7 +25,7 @@ class ChatBoct extends React.Component<{ openThis: object }, { chatstore: JSX.El
   constructor(props) {
     super(props);
     this.state = {
-      chatstore: [],
+      chatstore: [<InfoBoctReply />],
     };
     this.chatInputElem = React.createRef();
     this.theChats = new Map();
@@ -64,7 +66,7 @@ class ChatBoct extends React.Component<{ openThis: object }, { chatstore: JSX.El
         </div>
         <div className="type_box">
           <form className="type_box-inner" onSubmit={this.onChatSubmit}>
-            <input ref={this.chatInputElem} id="typespace" type="text" placeholder="Wanna talk with BOcT? Then type here..!" autoComplete="off" maxLength={120} spellCheck={true} />
+            <input ref={this.chatInputElem} id="typespace" type="text" placeholder="Wanna talk with BOcT? Then type here..!" autoComplete="off" maxLength={120} />
             <button id="typespace-enter" type="submit">
               <svg viewBox="0 0 448 512">
                 <path id="svg1" d={svg1} />
