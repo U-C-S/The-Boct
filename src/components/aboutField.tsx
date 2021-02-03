@@ -31,13 +31,13 @@ class InfoButton extends React.Component<{}, {}> {
     super(props);
   }
 
-  DisplayModal() {
-    let x = document.getElementById("modal_root");
+  reply_boctInfo() {
+    return null;
   }
 
   render() {
     return (
-      <button onClick={this.DisplayModal} id="infoBtn" title="Info">
+      <button onClick={this.reply_boctInfo} id="infoBtn" title="Info">
         <svg viewBox="0 0 512 512">
           <path id="svg3" d={svg3} />
         </svg>
@@ -69,7 +69,7 @@ class AboutPanel extends React.Component {
             <InfoButton />
             <ThemeButton />
           </div>
-          <p id="releaseVer">Version 4.0 | Jan 2021</p>
+          <p id="releaseVer">Version 4.0 | Feb 2021</p>
           <button id="pwaInstallBtn">install</button>
           <hr />
           <p>BOcT is a Static Browser Chatbot</p>

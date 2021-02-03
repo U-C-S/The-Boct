@@ -59,25 +59,23 @@ class ChatBoct extends React.Component<{ openThis: object }, { chatstore: JSX.El
   }
 
   render() {
-    if (!false) {
-      return (
-        <div id="Chatter" style={this.props.openThis}>
-          <div className="talk_box" id="chatspace">
-            {this.state.chatstore}
-          </div>
-          <div className="type_box">
-            <form className="type_box-inner" onSubmit={this.onChatSubmit}>
-              <input ref={this.chatInputElem} id="typespace" type="text" placeholder="Wanna talk with BOcT? Then type here..!" autoComplete="off" maxLength={120} />
-              <button id="typespace-enter" type="submit">
-                <svg viewBox="0 0 448 512">
-                  <path id="svg1" d={svg1} />
-                </svg>
-              </button>
-            </form>
-          </div>
+    return (
+      <div id="Chatter" style={this.props.openThis}>
+        <div className="talk_box" id="chatspace">
+          {this.state.chatstore}
         </div>
-      );
-    }
+        <div className="type_box">
+          <form className="type_box-inner" onSubmit={this.onChatSubmit}>
+            <input ref={this.chatInputElem} id="typespace" type="text" placeholder="Wanna talk with BOcT? Then type here..!" autoComplete="off" maxLength={120} />
+            <button id="typespace-enter" type="submit">
+              <svg viewBox="0 0 448 512">
+                <path id="svg1" d={svg1} />
+              </svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    );
   }
 }
 
