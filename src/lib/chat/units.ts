@@ -142,7 +142,7 @@ const Volume = {
   },
 };
 
-const Categories =  [Lengths, Areas, Temperatures, Volume, Mass];
+const Categories: any =  [Lengths, Areas, Temperatures, Volume, Mass];
 export default Categories;
 
 /*

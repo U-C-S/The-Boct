@@ -27,7 +27,7 @@ class ThemeButton extends React.Component {
 }
 
 class InfoButton extends React.Component<{}, {}> {
-  constructor(props) {
+  constructor(props: any) {
     super(props);
   }
 

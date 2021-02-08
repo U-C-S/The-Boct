@@ -2,7 +2,7 @@ import React from "react";
 import { AboutPanel, ChatBoct, BoctHead } from "../components/";
 
 class TheBoct extends React.Component<{}, { boctClicked: object }> {
-  constructor(props) {
+  constructor(props: any) {
     super(props);
     this.state = {
       boctClicked: { display: "none" },

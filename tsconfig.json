@@ -1,8 +1,7 @@
 {
   "compilerOptions": {
-    "target": "es2020",
+    "target": "es2019",
     "lib": ["dom", "dom.iterable", "esnext"],
-    "noImplicitAny": false,
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,

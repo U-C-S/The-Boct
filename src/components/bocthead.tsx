@@ -2,7 +2,7 @@ import React from "react";
 import { svg0 } from "../lib/svg-render";
 import "../styles/bocthead.css";
 
-class BoctHead extends React.Component<{ clickCapture }, {}> {
+class BoctHead extends React.Component<{ clickCapture: any }, {}> {
   boctClicked = () => {
     this.props.clickCapture(true);
   };

@@ -22,7 +22,7 @@ class ChatBoct extends React.Component<{ openThis: object }, { chatstore: JSX.El
   chatInputElem: React.RefObject<HTMLInputElement>;
   theChats: Map<string, string>;
 
-  constructor(props) {
+  constructor(props: any) {
     super(props);
     this.state = {
       chatstore: [<InfoBoctReply />],
