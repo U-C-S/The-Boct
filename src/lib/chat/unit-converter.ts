@@ -50,7 +50,8 @@ function getUnit(u: string) {
 
   let i = 0;
   while (i < 5 && !unit_details.Available) {
-    Object.keys(Categories[i]).forEach((j) => {
+    let ACategory = Object.keys(Categories[i]);
+    ACategory.forEach((j) => {
       if (Categories[i][j].unit.includes(u)) {
         let pre_unit_detail = {
           Available: true,

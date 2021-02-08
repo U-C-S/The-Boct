@@ -1,6 +1,13 @@
 // 1 x is equal to con_factor y (x is a unit; y is respective SI/base unit)
 //Ex: 1 mm is equal to 1/1000 m
-const Lengths = {
+interface TypesOfUnits {
+  unit: string[];
+  con_factor?: number;
+  con_trnsTo?: { (x: any): number };
+  con_trnsFro?: { (x: any): number };
+}
+
+const Lengths: Record<string, TypesOfUnits> = {
   m: {
     unit: ["m", "meter", "meters", "metre"],
     con_factor: 1,
@@ -39,7 +46,7 @@ const Lengths = {
   },
 };
 
-const Areas = {
+const Areas: Record<string, TypesOfUnits> = {
   sqm: {
     unit: ["sqm", "m2", "sq.meter"],
     con_factor: 1,
@@ -62,10 +69,10 @@ const Areas = {
   },
 };
 
-const Temperatures = {
+const Temperatures: Record<string, TypesOfUnits> = {
   celsius: {
     unit: ["C", "celsius", "c"],
-    con_trnsTo: (x: any) => {
+    con_trnsTo: function (x: any) {
       return Number(x);
     },
     con_trnsFro: (x: any) => {
@@ -92,7 +99,7 @@ const Temperatures = {
   },
 };
 
-const Mass = {
+const Mass: Record<string, TypesOfUnits> = {
   kg: {
     unit: ["kg", "kilogram", "Kg", "kilograms"],
     con_factor: 1,
@@ -115,7 +122,7 @@ const Mass = {
   },
 };
 
-const Volume = {
+const Volume: Record<string, TypesOfUnits> = {
   cubicm: {
     unit: ["m3", "cubic.m", "cubic-meter"],
     con_factor: 1,
@@ -142,7 +149,7 @@ const Volume = {
   },
 };
 
-const Categories: any =  [Lengths, Areas, Temperatures, Volume, Mass];
+const Categories: Record<string, TypesOfUnits>[] = [Lengths, Areas, Temperatures, Volume, Mass];
 export default Categories;
 
 /*
