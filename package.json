@@ -1,18 +1,33 @@
 {
   "name": "the-boct",
-  "version": "4.0.0-alpha-8.2",
+  "version": "4.0.0-alpha-8.4",
   "license": "MIT",
   "homepage": "https://the-boct.github.io/",
   "private": true,
   "dependencies": {
-    "@types/node": "^12.19.14",
-    "@types/react": "^16.14.2",
+    "@testing-library/react": "^11.2.5",
+    "@types/node": "^12.19.16",
+    "@types/react": "^16.14.3",
     "@types/react-dom": "^16.9.10",
-    "gh-pages": "^3.1.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-scripts": "4.0.1",
-    "typescript": "^4.1.3"
+    "react-scripts": "4.0.2",
+    "typescript": "^4.1.3",
+    "workbox-background-sync": "^5.1.4",
+    "workbox-broadcast-update": "^5.1.4",
+    "workbox-cacheable-response": "^5.1.4",
+    "workbox-core": "^5.1.4",
+    "workbox-expiration": "^5.1.4",
+    "workbox-google-analytics": "^5.1.4",
+    "workbox-navigation-preload": "^5.1.4",
+    "workbox-precaching": "^5.1.4",
+    "workbox-range-requests": "^5.1.4",
+    "workbox-routing": "^5.1.4",
+    "workbox-strategies": "^5.1.4",
+    "workbox-streams": "^5.1.4"
+  },
+  "devDependencies": {
+    "gh-pages": "^3.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
