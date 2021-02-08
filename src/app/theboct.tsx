@@ -1,7 +1,5 @@
 import React from "react";
-import AboutPanel from "../components/aboutField";
-import BoctHead from "../components/bocthead";
-import ChatBoct from "../components/chatBox";
+import { AboutPanel, ChatBoct, BoctHead } from "../components/";
 
 class TheBoct extends React.Component<{}, { boctClicked: object }> {
   constructor(props) {

@@ -1,5 +1,5 @@
 import React, { Suspense } from "react";
-import Loading from "../components/loadingScreen";
+import { Loading } from "../components/";
 const TheBoct = React.lazy(() => import("./theboct"));
 
 class What extends React.Component {
