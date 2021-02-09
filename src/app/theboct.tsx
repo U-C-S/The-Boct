@@ -1,26 +1,30 @@
 import React from "react";
-import { AboutPanel, ChatBoct, BoctHead } from "../components/";
+import { AboutPanel, BoctHead } from "../components/";
+const ChatBoct = React.lazy(() => import("../components/chatBox"));
 
-class TheBoct extends React.Component<{}, { boctClicked: object }> {
+class TheBoct extends React.Component<{}, { chatbox: JSX.Element | null }> {
   constructor(props: any) {
     super(props);
     this.state = {
-      boctClicked: { display: "none" },
+      chatbox: null,
     };
     this.boctOnClick = this.boctOnClick.bind(this);
   }
 
-  boctOnClick(x: boolean) {
-    if (x) {
-      this.setState({ boctClicked: { display: "block" } });
-    }
+  boctOnClick() {
+    let loadbox = (
+      <React.Suspense fallback={<p>Loading...</p>}>
+        <ChatBoct />
+      </React.Suspense>
+    );
+    this.setState({ chatbox: loadbox });
   }
 
   render() {
     let x: JSX.Element = (
       <>
         <BoctHead clickCapture={this.boctOnClick} />
-        <ChatBoct openThis={this.state.boctClicked} />
+        {this.state.chatbox}
         <AboutPanel />
       </>
     );

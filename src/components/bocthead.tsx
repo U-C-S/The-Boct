@@ -3,9 +3,13 @@ import { svg0 } from "../lib/svg-render";
 import "../styles/bocthead.css";
 
 class BoctHead extends React.Component<{ clickCapture: any }, {}> {
-  boctClicked = () => {
-    this.props.clickCapture(true);
-  };
+  constructor(props: any) {
+    super(props);
+    this.boctClicked = this.boctClicked.bind(this);
+  }
+  boctClicked() {
+    this.props.clickCapture();
+  }
 
   render() {
     return (

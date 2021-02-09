@@ -18,7 +18,7 @@ class TemplateChat extends React.Component<{ attr: [string, string] }, {}> {
   }
 }
 
-class ChatBoct extends React.Component<{ openThis: object }, { chatstore: JSX.Element[] }> {
+class ChatBoct extends React.Component<{}, { chatstore: JSX.Element[] }> {
   chatInputElem: React.RefObject<HTMLInputElement>;
   theChats: Map<string, string>;
 
@@ -60,7 +60,7 @@ class ChatBoct extends React.Component<{ openThis: object }, { chatstore: JSX.El
 
   render() {
     return (
-      <div id="Chatter" style={this.props.openThis}>
+      <div id="Chatter">
         <div className="talk_box" id="chatspace">
           {this.state.chatstore}
         </div>
