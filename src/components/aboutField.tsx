@@ -1,4 +1,5 @@
 import React from "react";
+import { contextInfobtnClick } from "../lib/contexts"; //context import
 import { svg2, svg3, svg4 } from "../lib/svg-render";
 import "../styles/aboutField.css";
 
@@ -27,12 +28,13 @@ class ThemeButton extends React.Component {
 }
 
 class InfoButton extends React.Component<{}, {}> {
+  static contextType = contextInfobtnClick;
   constructor(props: any) {
     super(props);
   }
 
   reply_boctInfo() {
-    return null;
+    this.context = <p>dad</p>;
   }
 
   render() {
