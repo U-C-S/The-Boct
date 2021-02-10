@@ -2,9 +2,9 @@ import React from "react";
 //import InfoBoctReply from "./other_components";
 import { svg1 } from "../lib/svg-render";
 import chat_process from "../lib/chat-evalutor";
-
 import "../styles/chatBox.css";
 
+//for default chat-reply templates. for custom boct replies see other_components.tsx
 class TemplateChat extends React.Component<{ attr: [string, string] }, {}> {
   render() {
     let [c, t] = this.props.attr;
@@ -52,11 +52,26 @@ class storageClass {
   get onlyElems() {
     return this.data.map((x) => x.element);
   }
+
+  get onlyHumanReplies() {
+    let human = this.data.map((x) => {
+      if (x.replyBy == "h") {
+        return x;
+      }
+    });
+    return human;
+  }
+
+  get isRecentReplyHuman() {
+    let x = this.data[this.numOfReplies - 1].replyBy === "h";
+    return x;
+  }
 }
 
 let chatStorage = new storageClass();
 class ChatBoct extends React.Component<{}, { chatstore: JSX.Element[] }> {
-  chatInputElem: React.RefObject<HTMLInputElement>
+  chatInputElem: React.RefObject<HTMLInputElement>;
+
   constructor(props: any) {
     super(props);
     this.state = {
@@ -75,7 +90,19 @@ class ChatBoct extends React.Component<{}, { chatstore: JSX.Element[] }> {
     this.setState({ chatstore: chatStorage.onlyElems });
   }
 
-  componentDidUpdate() {}
+  componentDidUpdate() {
+    console.log(chatStorage.isRecentReplyHuman);
+    if (chatStorage.isRecentReplyHuman) {
+      let humanReplies = chatStorage.onlyHumanReplies;
+      let cLength = humanReplies.length;
+      let input = humanReplies[cLength - 1]?.replyString as string;
+      let cText = chat_process(input);
+      let cElem = <TemplateChat key={cLength} attr={["boct_talk", cText]} />;
+
+      chatStorage.pushit(cElem, "b", cText);
+      this.setState({ chatstore: chatStorage.onlyElems });
+    }
+  }
 
   render() {
     return (
