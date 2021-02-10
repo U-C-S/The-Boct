@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/settingsBar.css"
+import "../styles/settingsBar.css";
 
 class SettingsSideBar extends React.Component {
   render() {

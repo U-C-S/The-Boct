@@ -3,6 +3,7 @@ import { contextInfobtnClick } from "../lib/contexts"; //context import
 import { svg2, svg3, svg4 } from "../lib/svg-render";
 import "../styles/aboutField.css";
 
+//Button for toggling the theme. default dark.
 class ThemeButton extends React.Component {
   ChangeTheme() {
     let htmlElem = document.documentElement;
@@ -27,6 +28,7 @@ class ThemeButton extends React.Component {
   }
 }
 
+//On click, A boct will reply the information about this webApp
 class InfoButton extends React.Component<{}, {}> {
   static contextType = contextInfobtnClick;
   constructor(props: any) {

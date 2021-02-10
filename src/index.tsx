@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import What from "./app/loading";
+import App from "./app/";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 import "./styles/index.css";
 
@@ -9,7 +9,7 @@ if (currentThemeCokie) document.documentElement.setAttribute("data-theme", curre
 
 ReactDOM.render(
   <React.StrictMode>
-    <What />
+    <App />
   </React.StrictMode>,
   document.getElementById("Main")
 );

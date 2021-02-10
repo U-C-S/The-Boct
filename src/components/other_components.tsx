@@ -30,7 +30,7 @@ class InfoBoctReply extends React.Component {
             <li>.dice</li>
             <li>.coin</li>
           </ul>
-          <hr/>
+          <hr />
           <p className="text1">Written with ❤ in TypeScript</p>
         </div>
         <div className="info_links">

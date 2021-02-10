@@ -1,8 +1,8 @@
 import React, { Suspense } from "react";
-import { Loading } from "../components/";
+import { Loading } from "../components";
 const TheBoct = React.lazy(() => import("./theboct"));
 
-class What extends React.Component {
+class App extends React.Component {
   render() {
     return (
       <Suspense fallback={<Loading />}>
@@ -12,4 +12,4 @@ class What extends React.Component {
   }
 }
 
-export default What;
+export default App;
