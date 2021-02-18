@@ -1,6 +1,6 @@
 import React from "react";
-//import InfoBoctReply from "./other_components";
 import { svg1 } from "../lib/svg-render";
+import { storageClass } from "../lib/";
 import chat_process from "../lib/chat-evalutor";
 import "../styles/chatBox.css";
 
@@ -16,58 +16,6 @@ class TemplateChat extends React.Component<{ attr: [string, string] }, {}> {
   }
 }
 
-type typesOfReplies = "h" | "b" | "cb";
-interface IChatMeta {
-  element: JSX.Element;
-  replyBy: typesOfReplies;
-  replyString: string | null;
-}
-
-class storageClass {
-  private data: IChatMeta[];
-  constructor() {
-    this.data = [];
-  }
-
-  pushit(element: JSX.Element, replyBy: typesOfReplies, replyString: string | null = null) {
-    this.data.push({
-      element,
-      replyBy,
-      replyString,
-    });
-  }
-
-  get read() {
-    return this.data;
-  }
-
-  get recent() {
-    return this.data[this.numOfReplies - 1];
-  }
-
-  get numOfReplies() {
-    return this.data.length;
-  }
-
-  get onlyElems() {
-    return this.data.map((x) => x.element);
-  }
-
-  get onlyHumanReplies() {
-    let human = this.data.map((x) => {
-      if (x.replyBy == "h") {
-        return x;
-      }
-    });
-    return human;
-  }
-
-  get isRecentReplyHuman() {
-    let x = this.data[this.numOfReplies - 1].replyBy === "h";
-    return x;
-  }
-}
-
 let chatStorage = new storageClass();
 class ChatBoct extends React.Component<{}, { chatstore: JSX.Element[] }> {
   chatInputElem: React.RefObject<HTMLInputElement>;
@@ -79,6 +27,7 @@ class ChatBoct extends React.Component<{}, { chatstore: JSX.Element[] }> {
     };
     this.chatInputElem = React.createRef();
     this.onChatSubmit = this.onChatSubmit.bind(this);
+    this.OnHumanReply = this.OnHumanReply.bind(this);
   }
 
   onChatSubmit(e: any) {
@@ -88,10 +37,11 @@ class ChatBoct extends React.Component<{}, { chatstore: JSX.Element[] }> {
 
     chatStorage.pushit(cElem, "h", cText);
     this.setState({ chatstore: chatStorage.onlyElems });
+
+    setTimeout(this.OnHumanReply, 600);
   }
 
-  componentDidUpdate() {
-    console.log(chatStorage.isRecentReplyHuman);
+  OnHumanReply() {
     if (chatStorage.isRecentReplyHuman) {
       let humanReplies = chatStorage.onlyHumanReplies;
       let cLength = humanReplies.length;
@@ -102,6 +52,10 @@ class ChatBoct extends React.Component<{}, { chatstore: JSX.Element[] }> {
       chatStorage.pushit(cElem, "b", cText);
       this.setState({ chatstore: chatStorage.onlyElems });
     }
+  }
+
+  customReply(reply: JSX.Element) {
+    console.log("dada");
   }
 
   render() {
@@ -126,66 +80,3 @@ class ChatBoct extends React.Component<{}, { chatstore: JSX.Element[] }> {
 }
 
 export default ChatBoct;
-
-/*
-class ChatBoct extends React.Component<{}, { chatstore: JSX.Element[] }> {
-  chatInputElem: React.RefObject<HTMLInputElement>;
-  theChats: Map<string, string>;
-
-  constructor(props: any) {
-    super(props);
-    this.state = {
-      chatstore: [<InfoBoctReply />],
-    };
-    this.chatInputElem = React.createRef();
-    this.theChats = new Map();
-    this.onChatSubmit = this.onChatSubmit.bind(this);
-  }
-
-  onChatSubmit(e: any) {
-    e.preventDefault();
-    let { chatstore } = this.state;
-    let clength = chatstore.length;
-    let ctext = this.chatInputElem.current?.value as string;
-
-    chatstore.push(<TemplateChat key={clength} attr={["human_talk", ctext]} />);
-    this.theChats.set(clength.toString(), ctext);
-    this.setState({ chatstore: chatstore });
-  }
-
-  componentDidUpdate() {
-    let { chatstore } = this.state;
-    let { theChats } = this;
-
-    if (!isRecentReplyBoct) {
-      let clength = chatstore.length;
-      let input = theChats.get(`${clength - 1}`) as string;
-      let ctext = chat_process(input);
-
-      chatstore.push(<TemplateChat key={clength} attr={["boct_talk", ctext]} />);
-      theChats.set(clength.toString(), ctext);
-      this.setState({ chatstore: chatstore });
-    }
-  }
-
-  render() {
-    return (
-      <div id="Chatter">
-        <div className="talk_box" id="chatspace">
-          {this.state.chatstore}
-        </div>
-        <div className="type_box">
-          <form className="type_box-inner" onSubmit={this.onChatSubmit}>
-            <input ref={this.chatInputElem} id="typespace" type="text" placeholder="Wanna talk with BOcT? Then type here..!" autoComplete="off" maxLength={120} />
-            <button id="typespace-enter" type="submit">
-              <svg viewBox="0 0 448 512">
-                <path id="svg1" d={svg1} />
-              </svg>
-            </button>
-          </form>
-        </div>
-      </div>
-    );
-  }
-}
-*/

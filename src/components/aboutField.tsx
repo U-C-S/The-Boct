@@ -30,13 +30,12 @@ class ThemeButton extends React.Component {
 
 //On click, A boct will reply the information about this webApp
 class InfoButton extends React.Component<{}, {}> {
-  static contextType = contextInfobtnClick;
   constructor(props: any) {
     super(props);
   }
 
   reply_boctInfo() {
-    this.context = <p>dad</p>;
+    
   }
 
   render() {

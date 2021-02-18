@@ -2,11 +2,11 @@ import React from "react";
 import { AboutPanel, BoctHead } from "../components/";
 const ChatBoct = React.lazy(() => import("../components/chatBox"));
 
-class TheBoct extends React.Component<{}, { chatbox: JSX.Element | null }> {
+class TheBoct extends React.Component<{}, { chatbox: JSX.Element }> {
   constructor(props: any) {
     super(props);
     this.state = {
-      chatbox: null,
+      chatbox: <></>,
     };
     this.boctOnClick = this.boctOnClick.bind(this);
   }
@@ -24,7 +24,7 @@ class TheBoct extends React.Component<{}, { chatbox: JSX.Element | null }> {
     let x: JSX.Element = (
       <>
         <BoctHead clickCapture={this.boctOnClick} />
-        {this.state.chatbox}
+        {React.cloneElement(this.state.chatbox)}
         <AboutPanel />
       </>
     );
