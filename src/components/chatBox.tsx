@@ -3,6 +3,7 @@ import { svg1 } from "../lib/svg-render";
 import { storageClass } from "../lib/";
 import chat_process from "../lib/chat-evalutor";
 import "../styles/chatBox.css";
+import { Interface } from "readline";
 
 //for default chat-reply templates. for custom boct replies see other_components.tsx
 class TemplateChat extends React.Component<{ attr: [string, string] }, {}> {
@@ -16,8 +17,15 @@ class TemplateChat extends React.Component<{ attr: [string, string] }, {}> {
   }
 }
 
+
+interface IExternalReply {
+  cElem: JSX.Element;
+  replyBy: "cb" | "b" | "e";
+  cText: string | null;
+}
+
 let chatStorage = new storageClass();
-class ChatBoct extends React.Component<{}, { chatstore: JSX.Element[] }> {
+class ChatBoct extends React.Component<{ externalReplies: IExternalReply }, { chatstore: JSX.Element[] }> {
   chatInputElem: React.RefObject<HTMLInputElement>;
 
   constructor(props: any) {
@@ -59,6 +67,9 @@ class ChatBoct extends React.Component<{}, { chatstore: JSX.Element[] }> {
   }
 
   render() {
+    if(this.props.externalReplies.replyBy != "e"){
+
+    }
     return (
       <div id="Chatter">
         <div className="talk_box" id="chatspace">

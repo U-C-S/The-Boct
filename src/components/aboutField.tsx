@@ -1,6 +1,6 @@
 import React from "react";
-import { contextInfobtnClick } from "../lib/contexts"; //context import
 import { svg2, svg3, svg4 } from "../lib/svg-render";
+import InfoBoctReply from "./other_components";
 import "../styles/aboutField.css";
 
 //Button for toggling the theme. default dark.
@@ -29,13 +29,14 @@ class ThemeButton extends React.Component {
 }
 
 //On click, A boct will reply the information about this webApp
-class InfoButton extends React.Component<{}, {}> {
+class InfoButton extends React.Component<{ clickInfo?: any }, {}> {
   constructor(props: any) {
     super(props);
+    this.reply_boctInfo = this.reply_boctInfo.bind(this);
   }
 
   reply_boctInfo() {
-    
+    this.props.clickInfo("cb", <InfoBoctReply />);
   }
 
   render() {
@@ -61,7 +62,9 @@ class SettingsButton extends React.Component {
   }
 }
 
-class AboutPanel extends React.Component {
+class AboutPanel extends React.Component<{ clickInfo?: any }, {}> {
+  static defaultProps: { clickInfo: any };
+
   render() {
     return (
       <div className="about">
@@ -69,7 +72,7 @@ class AboutPanel extends React.Component {
           <legend>About BOcT</legend>
           <div className="aboutbtns">
             <SettingsButton />
-            <InfoButton />
+            <InfoButton clickInfo={this.props.clickInfo} />
             <ThemeButton />
           </div>
           <p id="releaseVer">Version 4.0 | Feb 2021</p>
@@ -83,5 +86,10 @@ class AboutPanel extends React.Component {
     );
   }
 }
+AboutPanel.defaultProps = {
+  clickInfo: function lol(x: any, y: any) {
+    return "ok";
+  },
+};
 
 export default AboutPanel;
