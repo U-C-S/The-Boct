@@ -1,18 +1,18 @@
 {
   "name": "the-boct",
-  "version": "4.0.0-alpha-9.3",
+  "version": "4.0.0-alpha-9.5",
   "license": "MIT",
   "homepage": "https://the-boct.github.io/",
   "private": true,
   "dependencies": {
     "@testing-library/react": "^11.2.5",
     "@types/node": "^12.19.16",
-    "@types/react": "^16.14.3",
-    "@types/react-dom": "^16.9.10",
+    "@types/react": "^17.0.2",
+    "@types/react-dom": "^17.0.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.2",
-    "typescript": "^4.1.3",
+    "typescript": "^4.1.5",
     "workbox-background-sync": "^5.1.4",
     "workbox-broadcast-update": "^5.1.4",
     "workbox-cacheable-response": "^5.1.4",
@@ -36,7 +36,9 @@
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
-    "extends": ["react-app"]
+    "extends": [
+      "react-app"
+    ]
   },
   "browserslist": {
     "production": [

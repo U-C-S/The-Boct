@@ -17,7 +17,6 @@ class TemplateChat extends React.Component<{ attr: [string, string] }, {}> {
   }
 }
 
-
 let chatStorage = new storageClass();
 
 class ChatBoct extends React.Component<{}, { chatstore: JSX.Element[] }> {
@@ -33,20 +32,19 @@ class ChatBoct extends React.Component<{}, { chatstore: JSX.Element[] }> {
 
     this.lifeCycle = "a";
     this.chatInputElem = React.createRef();
-    this.onChatSubmit = this.onChatSubmit.bind(this);
+    //this.onChatSubmit = this.onChatSubmit.bind(this);
     this.OnHumanReply = this.OnHumanReply.bind(this);
   }
 
-  onChatSubmit(e: any) {
+  onChatSubmit = (e: any) => {
+    let replyTech = this.context;
     e.preventDefault();
     let cText = this.chatInputElem.current?.value as string;
-    let cElem = <TemplateChat key={chatStorage.numOfReplies} attr={["human_talk", cText]} />;
+    let cElem = <TemplateChat attr={["human_talk", cText]} key={replyTech?.storage.numOfReplies} />;
+    replyTech?.addReply(cElem, "h");
 
-    chatStorage.pushit(cElem, "h", cText);
-    this.setState({ chatstore: chatStorage.onlyElems });
-
-    setTimeout(this.OnHumanReply, 600);
-  }
+    //setTimeout(this.OnHumanReply, 600);
+  };
 
   OnHumanReply() {
     if (chatStorage.isRecentReplyHuman) {
@@ -63,28 +61,71 @@ class ChatBoct extends React.Component<{}, { chatstore: JSX.Element[] }> {
 
   render() {
     return (
-      <div id="Chatter">
-        <div className="talk_box" id="chatspace">
-          <ReplyContext.Consumer>
-            {(replyTech) => {
-              return replyTech?.allReplies;
-            }}
-          </ReplyContext.Consumer>
-        </div>
-        <div className="type_box">
-          <form className="type_box-inner" onSubmit={this.onChatSubmit}>
-            <input ref={this.chatInputElem} id="typespace" type="text" placeholder="Wanna talk with BOcT? Then type here..!" autoComplete="off" maxLength={120} />
-            <button id="typespace-enter" type="submit">
-              <svg viewBox="0 0 448 512">
-                <path id="svg1" d={svg1} />
-              </svg>
-            </button>
-          </form>
-        </div>
-      </div>
+      <ReplyContext.Consumer>
+        {(replyTech) => {
+          return (
+            <div id="Chatter">
+              <div className="talk_box" id="chatspace">
+                <TalkBox />
+              </div>
+              <div className="type_box">
+                <form className="type_box-inner" onSubmit={this.onChatSubmit}>
+                  <input ref={this.chatInputElem} id="typespace" type="text" placeholder="Wanna talk with BOcT? Then type here..!" autoComplete="off" maxLength={120} />
+                  <button id="typespace-enter" type="submit">
+                    <svg viewBox="0 0 448 512">
+                      <path id="svg1" d={svg1} />
+                    </svg>
+                  </button>
+                </form>
+              </div>
+            </div>
+          );
+        }}
+      </ReplyContext.Consumer>
+    );
+  }
+}
+
+class TalkBox extends React.Component {
+  render() {
+    return (
+      <ReplyContext.Consumer>
+        {(replyTech) => {
+          return replyTech?.allReplies;
+        }}
+      </ReplyContext.Consumer>
     );
   }
 }
 
 export default ChatBoct;
 //this.state.chatstore
+
+/*
+  onChatSubmit(e: any) {
+    e.preventDefault();
+    let cText = this.chatInputElem.current?.value as string;
+    let cElem = <TemplateChat key={chatStorage.numOfReplies} attr={["human_talk", cText]} />;
+
+    chatStorage.pushit(cElem, "h", cText);
+    this.setState({ chatstore: chatStorage.onlyElems });
+
+    setTimeout(this.OnHumanReply, 600);
+  }
+
+
+
+  let onChatSubmit = (e: any) => {
+            e.preventDefault();
+            let cText = this.chatInputElem.current?.value as string;
+            let cElem = <TemplateChat attr={["human_talk", cText]} key={replyTech?.storage.numOfReplies} />;
+            replyTech?.addReply(cElem, "h");
+
+            //setTimeout(this.OnHumanReply, 600);
+          };
+
+
+    "@types/node": "^12.19.16",
+    "@types/react": "^16.14.3",
+    "@types/react-dom": "^16.9.10",
+*/

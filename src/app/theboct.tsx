@@ -5,6 +5,7 @@ import ReplyContext from "../lib/contexts";
 import { storageClass } from "../lib/chat-storage";
 
 let chatStorage = new storageClass();
+
 class TheBoct extends React.Component<{}, { boctClicked: number; allReplies: JSX.Element[] }> {
   constructor(props: any) {
     super(props);
@@ -23,7 +24,7 @@ class TheBoct extends React.Component<{}, { boctClicked: number; allReplies: JSX
     });
   }
 
-  setReply(reply: JSX.Element, type: "b" | "cb") {
+  setReply(reply: JSX.Element, type: "h" | "b" | "cb") {
     chatStorage.pushit(reply, type, null);
     this.setState({ allReplies: chatStorage.onlyElems });
   }

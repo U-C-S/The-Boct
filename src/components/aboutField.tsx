@@ -78,7 +78,7 @@ class AboutPanel extends React.Component<{ clickInfo?: any }, {}> {
             <InfoButton />
             <ThemeButton />
           </div>
-          <p id="releaseVer">Version 4.0 | Feb 2021</p>
+          <p id="releaseVer">Version 4 | Feb 2021</p>
           <button id="pwaInstallBtn">install</button>
           <hr />
           <p>BOcT is a Static Browser Chatbot</p>
