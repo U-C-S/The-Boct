@@ -1,6 +1,6 @@
 {
   "name": "the-boct",
-  "version": "4.0.0-alpha-9.6",
+  "version": "4.0.0-beta",
   "license": "MIT",
   "homepage": "https://the-boct.github.io/",
   "private": true,
@@ -52,6 +52,6 @@
     ]
   },
   "prettier": {
-    "printWidth": 240
+    "printWidth": 118
   }
 }

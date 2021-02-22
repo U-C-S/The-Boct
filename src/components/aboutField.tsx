@@ -76,7 +76,6 @@ function AboutPanel() {
           <ThemeButton />
         </div>
         <p id="releaseVer">Version 4 | Feb 2021</p>
-        <button id="pwaInstallBtn">install</button>
         <hr />
         <p>BOcT is a Static Browser Chatbot</p>
         <p>It's currently in Lazy Development</p>
@@ -87,3 +86,5 @@ function AboutPanel() {
 }
 
 export default AboutPanel;
+
+//        <button id="pwaInstallBtn">install</button>

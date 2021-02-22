@@ -7,8 +7,13 @@ class BoctHead extends React.Component<{ clickCapture: any }, {}> {
     super(props);
     this.boctClicked = this.boctClicked.bind(this);
   }
-  boctClicked() {
+
+  //BAD-PRACTICE HERE
+  boctClicked(e: any) {
+    e.preventDefault();
     this.props.clickCapture();
+    let bi = document.getElementById("BOcT")?.style as CSSStyleDeclaration;
+    bi.animation = "none";
   }
 
   render() {

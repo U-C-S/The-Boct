@@ -19,7 +19,7 @@ class TemplateChat extends React.Component<{ attr: [string, string] }, {}> {
 class ChatBoct extends React.Component {
   static contextType = ReplyContext;
   chatInputElem: React.RefObject<HTMLInputElement>;
-  context!: React.ContextType<typeof ReplyContext>;
+  //context!: React.ContextType<typeof ReplyContext>;
   //lifeCycle: "a" | "b" | "c";
 
   constructor(props: any) {
@@ -54,12 +54,17 @@ class ChatBoct extends React.Component {
 
           return (
             <div id="Chatter">
-              <div className="talk_box" id="chatspace">
-                <TalkBox />
-              </div>
+              <TalkBox />
               <div className="type_box">
                 <form className="type_box-inner" onSubmit={onChatSubmit}>
-                  <input ref={this.chatInputElem} id="typespace" type="text" placeholder="Wanna talk with BOcT? Then type here..!" autoComplete="off" maxLength={120} />
+                  <input
+                    ref={this.chatInputElem}
+                    id="typespace"
+                    type="text"
+                    placeholder="Wanna talk with BOcT? Then type here..!"
+                    autoComplete="off"
+                    maxLength={120}
+                  />
                   <button id="typespace-enter" type="submit">
                     <svg viewBox="0 0 448 512">
                       <path id="svg1" d={svg1} />
@@ -76,12 +81,26 @@ class ChatBoct extends React.Component {
 }
 
 class TalkBox extends React.Component {
+  talkBox: React.RefObject<HTMLDivElement>;
+
+  constructor(props: any) {
+    super(props);
+    this.talkBox = React.createRef();
+  }
+
+  componentDidUpdate() {
+    let { talkBox } = this; //@ts-ignore
+    talkBox.current.scrollTop = talkBox.current.scrollHeight;
+  }
+
   render() {
     return (
       <ReplyContext.Consumer>
-        {(replyTech) => {
-          return replyTech?.allReplies;
-        }}
+        {(replyTech) => (
+          <div ref={this.talkBox} className="talk_box" id="chatspace">
+            {replyTech?.allReplies}
+          </div>
+        )}
       </ReplyContext.Consumer>
     );
   }

@@ -39,15 +39,15 @@ class TheBoct extends React.Component<{}, { boctClicked: number; allReplies: JSX
         </>
       );
     }
+
+    let replyContextValue = {
+      allReplies: this.state.allReplies,
+      addReply: this.setReply,
+      storage: chatStorage,
+    };
     return (
       <>
-        <ReplyContext.Provider
-          value={{
-            allReplies: this.state.allReplies,
-            addReply: this.setReply,
-            storage: chatStorage,
-          }}
-        >
+        <ReplyContext.Provider value={replyContextValue}>
           <BoctHead clickCapture={this.boctOnClick} />
           <ChatBoct />
           <AboutPanel />

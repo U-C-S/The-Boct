@@ -30,7 +30,11 @@ function TheConverter(x: number, a: string, b: string): string {
         return `${result}${b}`;
       }
     } else {
-      return replyRandom(["-_-", "Conversions do not work that way", "Maybe, My Scripts are incomplete. Couldn't Convert"]);
+      return replyRandom([
+        "-_-",
+        "Conversions do not work that way",
+        "Maybe, My Scripts are incomplete. Couldn't Convert",
+      ]);
     }
   }
 
@@ -66,4 +70,4 @@ function getUnit(u: string) {
   return unit_details;
 }
 
-export default unit_convert;
+export { unit_convert };
