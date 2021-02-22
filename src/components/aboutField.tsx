@@ -1,6 +1,8 @@
 import React from "react";
+import CustomReplies from "./other_components";
+
+import ReplyContext from "../lib/contexts";
 import { svg2, svg3, svg4 } from "../lib/svg-render";
-import InfoBoctReply from "./other_components";
 import "../styles/aboutField.css";
 
 //Button for toggling the theme. default dark.
@@ -29,23 +31,24 @@ class ThemeButton extends React.Component {
 }
 
 //On click, A boct will reply the information about this webApp
-class InfoButton extends React.Component<{ clickInfo?: any }, {}> {
-  constructor(props: any) {
-    super(props);
-    this.reply_boctInfo = this.reply_boctInfo.bind(this);
-  }
-
-  reply_boctInfo() {
-    this.props.clickInfo("cb", <InfoBoctReply />);
-  }
-
+class InfoButton extends React.Component {
   render() {
     return (
-      <button onClick={this.reply_boctInfo} id="infoBtn" title="Info">
-        <svg viewBox="0 0 512 512">
-          <path id="svg3" d={svg3} />
-        </svg>
-      </button>
+      <ReplyContext.Consumer>
+        {(replyTech) => (
+          <button
+            onClick={() => {
+              replyTech?.addReply(<CustomReplies.InfoBoctReply />, "cb");
+            }}
+            id="infoBtn"
+            title="Info"
+          >
+            <svg viewBox="0 0 512 512">
+              <path id="svg3" d={svg3} />
+            </svg>
+          </button>
+        )}
+      </ReplyContext.Consumer>
     );
   }
 }
@@ -72,7 +75,7 @@ class AboutPanel extends React.Component<{ clickInfo?: any }, {}> {
           <legend>About BOcT</legend>
           <div className="aboutbtns">
             <SettingsButton />
-            <InfoButton clickInfo={this.props.clickInfo} />
+            <InfoButton />
             <ThemeButton />
           </div>
           <p id="releaseVer">Version 4.0 | Feb 2021</p>
@@ -86,10 +89,5 @@ class AboutPanel extends React.Component<{ clickInfo?: any }, {}> {
     );
   }
 }
-AboutPanel.defaultProps = {
-  clickInfo: function lol(x: any, y: any) {
-    return "ok";
-  },
-};
 
 export default AboutPanel;

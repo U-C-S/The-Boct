@@ -3,7 +3,7 @@ import { svg1 } from "../lib/svg-render";
 import { storageClass } from "../lib/";
 import chat_process from "../lib/chat-evalutor";
 import "../styles/chatBox.css";
-import { Interface } from "readline";
+import ReplyContext from "../lib/contexts";
 
 //for default chat-reply templates. for custom boct replies see other_components.tsx
 class TemplateChat extends React.Component<{ attr: [string, string] }, {}> {
@@ -18,21 +18,20 @@ class TemplateChat extends React.Component<{ attr: [string, string] }, {}> {
 }
 
 
-interface IExternalReply {
-  cElem: JSX.Element;
-  replyBy: "cb" | "b" | "e";
-  cText: string | null;
-}
-
 let chatStorage = new storageClass();
-class ChatBoct extends React.Component<{ externalReplies: IExternalReply }, { chatstore: JSX.Element[] }> {
+
+class ChatBoct extends React.Component<{}, { chatstore: JSX.Element[] }> {
+  static contextType = ReplyContext;
   chatInputElem: React.RefObject<HTMLInputElement>;
+  lifeCycle: "a" | "b" | "c";
 
   constructor(props: any) {
     super(props);
     this.state = {
       chatstore: chatStorage.onlyElems,
     };
+
+    this.lifeCycle = "a";
     this.chatInputElem = React.createRef();
     this.onChatSubmit = this.onChatSubmit.bind(this);
     this.OnHumanReply = this.OnHumanReply.bind(this);
@@ -62,18 +61,15 @@ class ChatBoct extends React.Component<{ externalReplies: IExternalReply }, { ch
     }
   }
 
-  customReply(reply: JSX.Element) {
-    console.log("dada");
-  }
-
   render() {
-    if(this.props.externalReplies.replyBy != "e"){
-
-    }
     return (
       <div id="Chatter">
         <div className="talk_box" id="chatspace">
-          {this.state.chatstore}
+          <ReplyContext.Consumer>
+            {(replyTech) => {
+              return replyTech?.allReplies;
+            }}
+          </ReplyContext.Consumer>
         </div>
         <div className="type_box">
           <form className="type_box-inner" onSubmit={this.onChatSubmit}>
@@ -91,3 +87,4 @@ class ChatBoct extends React.Component<{ externalReplies: IExternalReply }, { ch
 }
 
 export default ChatBoct;
+//this.state.chatstore

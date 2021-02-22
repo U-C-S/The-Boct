@@ -1,9 +1,8 @@
-import React from "react";
 import "../styles/other_components.css";
 
-class InfoBoctReply extends React.Component {
-  render() {
-    let ModalContent = (
+let CustomReplies = {
+  InfoBoctReply: () => {
+    return (
       <div className="info_window">
         <div className="info_content">
           <p>Some commands for interesting replies:</p>
@@ -42,9 +41,15 @@ class InfoBoctReply extends React.Component {
         </div>
       </div>
     );
+  },
 
-    return ModalContent;
-  }
-}
+  boctReply: (props: any) => {
+    return (
+      <div className="boct_talk">
+        <p>{props.text}</p>
+      </div>
+    );
+  },
+};
 
-export default InfoBoctReply;
+export default CustomReplies;

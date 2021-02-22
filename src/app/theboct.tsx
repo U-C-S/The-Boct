@@ -1,28 +1,20 @@
 import React from "react";
 import { AboutPanel, BoctHead, ChatBoct } from "../components/";
+import CustomReplies from "../components/other_components";
+import ReplyContext from "../lib/contexts";
+import { storageClass } from "../lib/chat-storage";
 
-class TheBoct extends React.Component<{}, { boctClicked: number; justStateUpdate: number }> {
-  ExternalReply: {
-    cElem: JSX.Element;
-    replyBy: "cb" | "b" | "e";
-    cText: string | null;
-  };
-
+let chatStorage = new storageClass();
+class TheBoct extends React.Component<{}, { boctClicked: number; allReplies: JSX.Element[] }> {
   constructor(props: any) {
     super(props);
     this.state = {
       boctClicked: 0,
-      justStateUpdate: 0,
-    };
-
-    this.ExternalReply = {
-      cElem: <></>,
-      replyBy: "e",
-      cText: null,
+      allReplies: chatStorage.onlyElems,
     };
 
     this.boctOnClick = this.boctOnClick.bind(this);
-    this.boctReply = this.boctReply.bind(this);
+    this.setReply = this.setReply.bind(this);
   }
 
   boctOnClick() {
@@ -31,19 +23,53 @@ class TheBoct extends React.Component<{}, { boctClicked: number; justStateUpdate
     });
   }
 
+  setReply(reply: JSX.Element, type: "b" | "cb") {
+    chatStorage.pushit(reply, type, null);
+    this.setState({ allReplies: chatStorage.onlyElems });
+  }
+
+  render() {
+    if (this.state.boctClicked == 0) {
+      return (
+        <>
+          <BoctHead clickCapture={this.boctOnClick} />
+          <AboutPanel />
+        </>
+      );
+    }
+    return (
+      <>
+        <ReplyContext.Provider
+          value={{
+            allReplies: this.state.allReplies,
+            addReply: this.setReply,
+            storage: chatStorage,
+          }}
+        >
+          <BoctHead clickCapture={this.boctOnClick} />
+          <ChatBoct />
+          <AboutPanel />
+        </ReplyContext.Provider>
+      </>
+    );
+  }
+}
+
+export default TheBoct;
+
+/*
+
+
+
   boctReply(replyType: "b" | "cb", reply: JSX.Element | string) {
     if (replyType == "cb") {
       this.OnGetReply(reply as JSX.Element, replyType, null);
-    }
-    else if (replyType == "b") {
-      let replyX = (
-        <div className="boct_talk">
-          <p>{reply}</p>
-        </div>
-      );
+    } else if (replyType == "b") {
+      let replyX = <CustomReplies.boctReply text={reply} />;
       this.OnGetReply(replyX, replyType, reply as string);
     }
   }
+
 
   OnGetReply(x: JSX.Element, y: "cb" | "b", z: string | null) {
     this.ExternalReply = {
@@ -58,24 +84,16 @@ class TheBoct extends React.Component<{}, { boctClicked: number; justStateUpdate
     console.log(this.ExternalReply.replyBy);
   }
 
-  render() {
-    let { boctClicked } = this.state;
-    if (boctClicked == 0) {
-      return (
-        <>
-          <BoctHead clickCapture={this.boctOnClick} />
-          <AboutPanel />
-        </>
-      );
-    }
-    return (
-      <>
-        <BoctHead clickCapture={this.boctOnClick} />
-        <ChatBoct externalReplies={this.ExternalReply} />
-        <AboutPanel clickInfo={this.boctReply} />
-      </>
-    );
-  }
-}
+  ExternalReply: {
+    cElem: JSX.Element;
+    replyBy: "cb" | "b" | "e";
+    cText: string | null;
+  };
 
-export default TheBoct;
+      this.ExternalReply = {
+      cElem: <></>,
+      replyBy: "e",
+      cText: null,
+      //nValue: this.state.justStateUpdate,
+    };
+*/
