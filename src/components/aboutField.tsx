@@ -65,29 +65,25 @@ class SettingsButton extends React.Component {
   }
 }
 
-class AboutPanel extends React.Component<{ clickInfo?: any }, {}> {
-  static defaultProps: { clickInfo: any };
-
-  render() {
-    return (
-      <div className="about">
-        <fieldset>
-          <legend>About BOcT</legend>
-          <div className="aboutbtns">
-            <SettingsButton />
-            <InfoButton />
-            <ThemeButton />
-          </div>
-          <p id="releaseVer">Version 4 | Feb 2021</p>
-          <button id="pwaInstallBtn">install</button>
-          <hr />
-          <p>BOcT is a Static Browser Chatbot</p>
-          <p>It's currently in Lazy Development</p>
-          <p>Future Updates to BOcT can make it perform basic Maths, Maybe suggest you some Movies...</p>
-        </fieldset>
-      </div>
-    );
-  }
+function AboutPanel() {
+  return (
+    <div className="about">
+      <fieldset>
+        <legend>About BOcT</legend>
+        <div className="aboutbtns">
+          <SettingsButton />
+          <InfoButton />
+          <ThemeButton />
+        </div>
+        <p id="releaseVer">Version 4 | Feb 2021</p>
+        <button id="pwaInstallBtn">install</button>
+        <hr />
+        <p>BOcT is a Static Browser Chatbot</p>
+        <p>It's currently in Lazy Development</p>
+        <p>Future Updates to BOcT can make it perform basic Maths, Maybe suggest you some Movies...</p>
+      </fieldset>
+    </div>
+  );
 }
 
 export default AboutPanel;

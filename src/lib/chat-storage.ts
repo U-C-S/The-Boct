@@ -47,7 +47,7 @@ class storageClass {
         return x;
       }
     });
-    return human;
+    return human as IChatMeta[];
   }
 
   get isRecentReplyHuman() {

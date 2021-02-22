@@ -24,8 +24,9 @@ class TheBoct extends React.Component<{}, { boctClicked: number; allReplies: JSX
     });
   }
 
-  setReply(reply: JSX.Element, type: "h" | "b" | "cb") {
-    chatStorage.pushit(reply, type, null);
+  setReply(reply: JSX.Element, type: "h" | "b" | "cb", replyString?: string) {
+    replyString = replyString ? replyString : "e01";
+    chatStorage.pushit(reply, type, replyString);
     this.setState({ allReplies: chatStorage.onlyElems });
   }
 
