@@ -5,9 +5,9 @@ import { Loading } from "./components/";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 import "./index.css";
 
-const App = React.lazy(async () => {
+const Boct = React.lazy(async () => {
   const [boctModuleImport] = await Promise.all([
-    import("./app"),
+    import("./boct"),
     new Promise((resolve) => setTimeout(resolve, 2000)),
   ]);
   return boctModuleImport;
@@ -19,7 +19,7 @@ if (currentThemeCokie) document.documentElement.setAttribute("data-theme", curre
 ReactDOM.render(
   <React.StrictMode>
     <Suspense fallback={<Loading />}>
-      <App />
+      <Boct />
     </Suspense>
   </React.StrictMode>,
   document.getElementById("Main")

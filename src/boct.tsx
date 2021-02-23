@@ -1,6 +1,6 @@
 import React from "react";
-import { AboutPanel, BoctHead, ChatBoct } from "./components";
-import { storageClass, ReplyContext } from "./lib";
+import { AboutPanel, BoctHead, ChatBoct } from "./components/";
+import { storageClass, ReplyContext } from "./lib/";
 
 let chatStorage = new storageClass();
 
@@ -9,7 +9,7 @@ type AppState = {
   allReplies: JSX.Element[];
 };
 
-class App extends React.Component<{}, AppState> {
+class Boct extends React.Component<{}, AppState> {
   constructor(props: any) {
     super(props);
     this.state = {
@@ -60,4 +60,4 @@ class App extends React.Component<{}, AppState> {
   }
 }
 
-export default App;
+export default Boct;
