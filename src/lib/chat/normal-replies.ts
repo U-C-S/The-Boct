@@ -6,19 +6,17 @@ export function boct_general_reply(studycontent: string) {
   let reply: string = "hmm...Maybe";
 
   for (let i = 0; i < readables.length; i++) {
-    loop1: for (let j = 0; j < readables[i].words.length; j++) {
+    for (let j = 0; j < readables[i].words.length; j++) {
       if (studycontent === readables[i].words[j]) {
         //@ts-ignore
         reply = readables[i].reply();
-        break loop1;
       }
     }
   }
   for (let i = 0; i < readables2.length; i++) {
-    loop2: for (let j = 0; j < readables2[i].words.length; j++) {
+    for (let j = 0; j < readables2[i].words.length; j++) {
       if (studycontent.includes(readables2[i].words[j])) {
         reply = readables2[i].reply(studycontent) as string;
-        break loop2;
       }
     }
   }
@@ -68,22 +66,22 @@ const readannoy = {
 const searchStuff = {
   words: ["google", "bing", "youtube", "duckduckgo"],
   reply: (sc: string) => {
-    if (sc.slice(0, 6) == "google") {
+    if (sc.slice(0, 6) === "google") {
       let ss = sc.slice(7);
       window.open("https://www.google.com/search?q=" + ss);
       return "Ok, Searching Google for " + ss;
     }
-    if (sc.slice(0, 4) == "bing") {
+    if (sc.slice(0, 4) === "bing") {
       let ss = sc.slice(5);
       window.open("https://www.bing.com/search?q=" + ss);
       return "Ok, Searching Bing for " + ss;
     }
-    if (sc.slice(0, 7) == "youtube") {
+    if (sc.slice(0, 7) === "youtube") {
       let ss = sc.slice(8);
       window.open("https://www.youtube.com/results?search_query=" + ss);
       return "Ok, Searching YouTube for " + ss;
     }
-    if (sc.slice(0, 10) == "duckduckgo") {
+    if (sc.slice(0, 10) === "duckduckgo") {
       let ss = sc.slice(11);
       window.open("https://duckduckgo.com/?q=" + ss);
       return "Ok, Searching DuckDuckGo for " + ss;

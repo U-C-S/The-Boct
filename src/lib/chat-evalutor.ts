@@ -7,7 +7,7 @@ function chat_process(sentence: string): string {
 
     if (chat_TL.slice(0, 4) === "conv") {
       return unit_convert(chat_T);
-    } else if (chat_TL[0] == "." || chat_TL[0] == "$") {
+    } else if (chat_TL[0] === "." || chat_TL[0] === "$") {
       return DOt_commands(chat_TL);
     } else {
       return boct_general_reply(chat_TL);

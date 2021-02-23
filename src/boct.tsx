@@ -34,7 +34,7 @@ class Boct extends React.Component<{}, AppState> {
   }
 
   render() {
-    if (this.state.boctClicked == 0) {
+    if (this.state.boctClicked === 0) {
       return (
         <>
           <BoctHead clickCapture={this.boctOnClick} />

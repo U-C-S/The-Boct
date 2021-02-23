@@ -18,7 +18,7 @@ export const dice = {
 export const coin = {
   words: ["flip a coin", "toss a coin"],
   reply: () => {
-    let x = RandomOf(0, 1) == 1 ? "Heads" : "Tails";
+    let x = RandomOf(0, 1) === 1 ? "Heads" : "Tails";
     return x;
   },
 };

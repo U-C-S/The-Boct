@@ -19,7 +19,7 @@ function TheConverter(x: number, a: string, b: string): string {
   let from_unit = getUnit(a);
   let to_unit = getUnit(b);
 
-  if (from_unit.Available && to_unit.Available) {
+  if (from_unit.Available && to_unit.Available) { // eslint-disable-next-line
     if (from_unit.Category == to_unit.Category) {
       if (from_unit.con_factor && to_unit.con_factor) {
         let result = x * (from_unit.con_factor / to_unit.con_factor);
@@ -54,7 +54,7 @@ function getUnit(u: string) {
 
   let i = 0;
   while (i < 5 && !unit_details.Available) {
-    let ACategory = Object.keys(Categories[i]);
+    let ACategory = Object.keys(Categories[i]); // eslint-disable-next-line
     ACategory.forEach((j) => {
       if (Categories[i][j].unit.includes(u)) {
         let pre_unit_detail = {
