@@ -1,8 +1,7 @@
-export { default as Loading } from "./loadingScreen";
+export { Loading } from "./loadingScreen/";
 
-export { default as BoctHead } from "./bocthead";
-export { default as ChatBoct } from "./chatBox";
-export { default as AboutPanel } from "./aboutField";
+export { BoctHead } from "./boctHead/";
+export { ChatBoct } from "./chatBox/";
+export { AboutPanel } from "./about/";
 
-export { default as SettingsSideBar } from "./settingsBar";
-export { default as InfoBoctReply } from "./other_components";
+export { default as SettingsSideBar } from "./settings/settingsBar";

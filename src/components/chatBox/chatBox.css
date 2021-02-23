@@ -60,32 +60,28 @@
 }
 
 /*message CSS---------------------------------*/
-/* BOcT talk CSS */
 .human_talk,
 .boct_talk {
   color: var(--blk-in-dark);
   font-size: 14px;
+  max-width: 75%;
+  padding: 2px 8px;
 }
 
 .boct_talk {
   float: left;
-  max-width: 75%;
   min-width: 45%;
   margin: 6px 20% 6px 4px;
   border: 2px solid var(--wit-in-dark);
-  padding: 2px 8px 2px 8px;
   background: #e64c63;
 }
 
-/*human talk CSS */
 .human_talk {
   float: right;
-  max-width: 75%;
   min-width: 30%;
   min-height: 44px;
   margin: 6px 4px 6px 21%;
   background: var(--wit-in-dark);
-  padding: 2px 8px;
 }
 /*Type----------------------------------------*/
 .type_box {
@@ -140,7 +136,6 @@
     top: 90px;
   }
 }
-
 
 @media screen and (max-width: 620px) {
   #Chatter {

@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/loadingScreen.css";
+import "./loadingScreen.css";
 
 class Loading extends React.Component {
   render() {
@@ -14,4 +14,4 @@ class Loading extends React.Component {
   }
 }
 
-export default Loading;
+export { Loading };

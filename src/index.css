@@ -3,9 +3,8 @@
   --wit-in-dark: #dedede;
   --lit-in-dark: #eee;
 }
-
 [data-theme="light"] {
-  --blk-in-dark: #d8d8d8;
+  --blk-in-dark: #e2e2e2;
   --wit-in-dark: black;
   --lit-in-dark: black;
 }
@@ -116,11 +115,6 @@ button {
       ". a .";
     height: auto;
   }
-  .info_window {
-    width: 95%;
-    padding: 7px;
-  }
-
   .settingbar {
     width: 245px;
     transform: translate3d(-250px, 0, 0);
