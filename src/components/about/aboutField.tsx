@@ -55,12 +55,21 @@ class InfoButton extends React.Component {
 
 class SettingsButton extends React.Component {
   render() {
+    let message = (
+      <div className="boct_talk">
+        <p>Will be Available in next update</p>
+      </div>
+    );
     return (
-      <button id="settingBtn" title="Settings">
-        <svg viewBox="0 0 512 512">
-          <path id="svg2" d={svg2} />
-        </svg>
-      </button>
+      <ReplyContext.Consumer>
+        {(replyTech) => (
+          <button onClick={() => replyTech.addReply(message, "b")} id="settingBtn" title="Settings">
+            <svg viewBox="0 0 512 512">
+              <path id="svg2" d={svg2} />
+            </svg>
+          </button>
+        )}
+      </ReplyContext.Consumer>
     );
   }
 }

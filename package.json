@@ -1,8 +1,17 @@
 {
   "name": "the-boct",
-  "version": "4.0.0-beta",
-  "license": "MIT",
+  "version": "4.0.0",
   "homepage": "https://the-boct.github.io/",
+  "author": {
+    "name": "U-C-S",
+    "email": "uchanakyasrinivas@gmail.com"
+  },
+  "repository": {
+    "url": "https://github.com/The-BOcT/the-boct.github.io",
+    "type": "git"
+  },
+  "readme": "https://github.com/The-BOcT/the-boct.github.io/blob/master/README.md",
+  "license": "MIT",
   "private": true,
   "dependencies": {
     "@testing-library/react": "^11.2.5",
