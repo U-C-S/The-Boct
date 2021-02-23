@@ -1,8 +1,9 @@
 import React from "react";
-import { svg1 } from "../lib/svg-render";
-import chat_process from "../lib/chat-evalutor";
-import "../styles/chatBox.css";
-import ReplyContext from "../lib/contexts";
+import { svg1 } from "../../lib/svg-render";
+import chat_process from "../../lib/chat-evalutor";
+import ReplyContext from "../../lib/contexts";
+
+import "./chatBox.css";
 
 //for default chat-reply templates. for custom boct replies see other_components.tsx
 class TemplateChat extends React.Component<{ attr: [string, string] }, {}> {
@@ -106,7 +107,7 @@ class TalkBox extends React.Component {
   }
 }
 
-export default ChatBoct;
+export { ChatBoct };
 //this.state.chatstore
 
 /*

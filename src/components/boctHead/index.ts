@@ -1,0 +1,1 @@
+export { BoctHead } from "./bocthead";

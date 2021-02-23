@@ -1,4 +1,4 @@
-import "../styles/other_components.css";
+import "./other_components.css";
 
 const CustomReplies = {
   InfoBoctReply: () => (
@@ -48,4 +48,4 @@ const CustomReplies = {
   ),
 };
 
-export default CustomReplies;
+export { CustomReplies };

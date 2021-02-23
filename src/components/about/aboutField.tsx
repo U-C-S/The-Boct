@@ -1,9 +1,9 @@
 import React from "react";
-import CustomReplies from "./other_components";
+import { CustomReplies } from "../other/";
 
-import ReplyContext from "../lib/contexts";
-import { svg2, svg3, svg4 } from "../lib/svg-render";
-import "../styles/aboutField.css";
+import ReplyContext from "../../lib/contexts";
+import { svg2, svg3, svg4 } from "../../lib/svg-render";
+import "./aboutField.css";
 
 //Button for toggling the theme. default dark.
 class ThemeButton extends React.Component {
@@ -85,6 +85,6 @@ function AboutPanel() {
   );
 }
 
-export default AboutPanel;
+export { AboutPanel };
 
 //        <button id="pwaInstallBtn">install</button>

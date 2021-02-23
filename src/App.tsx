@@ -1,12 +1,11 @@
 import React from "react";
-import { AboutPanel, BoctHead, ChatBoct } from "../components/";
-import CustomReplies from "../components/other_components";
-import ReplyContext from "../lib/contexts";
-import { storageClass } from "../lib/chat-storage";
+import { AboutPanel, BoctHead, ChatBoct } from "./components";
+import ReplyContext from "./lib/contexts";
+import { storageClass } from "./lib/chat-storage";
 
 let chatStorage = new storageClass();
 
-class TheBoct extends React.Component<{}, { boctClicked: number; allReplies: JSX.Element[] }> {
+class App extends React.Component<{}, { boctClicked: number; allReplies: JSX.Element[] }> {
   constructor(props: any) {
     super(props);
     this.state = {
@@ -57,7 +56,7 @@ class TheBoct extends React.Component<{}, { boctClicked: number; allReplies: JSX
   }
 }
 
-export default TheBoct;
+export default App;
 
 /*
 

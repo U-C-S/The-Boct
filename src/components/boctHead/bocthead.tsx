@@ -1,6 +1,6 @@
 import React from "react";
-import { svg0 } from "../lib/svg-render";
-import "../styles/bocthead.css";
+import { svg0 } from "../../lib/svg-render";
+import "./bocthead.css";
 
 class BoctHead extends React.Component<{ clickCapture: any }, {}> {
   constructor(props: any) {
@@ -34,4 +34,4 @@ class BoctHead extends React.Component<{ clickCapture: any }, {}> {
   }
 }
 
-export default BoctHead;
+export { BoctHead };
