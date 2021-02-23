@@ -1,7 +1,6 @@
 import React from "react";
 import { svg1 } from "../../lib/svg-render";
-import chat_process from "../../lib/chat-evalutor";
-import ReplyContext from "../../lib/contexts";
+import { chat_process, ReplyContext } from "../../lib/";
 
 import "./chatBox.css";
 

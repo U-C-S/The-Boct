@@ -1,7 +1,7 @@
 import React from "react";
 import { CustomReplies } from "../other/";
 
-import ReplyContext from "../../lib/contexts";
+import { ReplyContext } from "../../lib/";
 import { svg2, svg3, svg4 } from "../../lib/svg-render";
 import "./aboutField.css";
 

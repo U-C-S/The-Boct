@@ -1,11 +1,15 @@
 import React from "react";
 import { AboutPanel, BoctHead, ChatBoct } from "./components";
-import ReplyContext from "./lib/contexts";
-import { storageClass } from "./lib/chat-storage";
+import { storageClass, ReplyContext } from "./lib";
 
 let chatStorage = new storageClass();
 
-class App extends React.Component<{}, { boctClicked: number; allReplies: JSX.Element[] }> {
+type AppState = {
+  boctClicked: number;
+  allReplies: JSX.Element[];
+};
+
+class App extends React.Component<{}, AppState> {
   constructor(props: any) {
     super(props);
     this.state = {
@@ -57,44 +61,3 @@ class App extends React.Component<{}, { boctClicked: number; allReplies: JSX.Ele
 }
 
 export default App;
-
-/*
-
-
-
-  boctReply(replyType: "b" | "cb", reply: JSX.Element | string) {
-    if (replyType == "cb") {
-      this.OnGetReply(reply as JSX.Element, replyType, null);
-    } else if (replyType == "b") {
-      let replyX = <CustomReplies.boctReply text={reply} />;
-      this.OnGetReply(replyX, replyType, reply as string);
-    }
-  }
-
-
-  OnGetReply(x: JSX.Element, y: "cb" | "b", z: string | null) {
-    this.ExternalReply = {
-      cElem: x,
-      replyBy: y,
-      cText: z,
-    };
-    this.setState((state) => {
-      return { justStateUpdate: state.justStateUpdate + 1 };
-    });
-    this.ExternalReply.replyBy = "e";
-    console.log(this.ExternalReply.replyBy);
-  }
-
-  ExternalReply: {
-    cElem: JSX.Element;
-    replyBy: "cb" | "b" | "e";
-    cText: string | null;
-  };
-
-      this.ExternalReply = {
-      cElem: <></>,
-      replyBy: "e",
-      cText: null,
-      //nValue: this.state.justStateUpdate,
-    };
-*/

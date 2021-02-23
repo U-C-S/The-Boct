@@ -7,7 +7,7 @@ import "./index.css";
 
 const App = React.lazy(async () => {
   const [boctModuleImport] = await Promise.all([
-    import("./App"),
+    import("./app"),
     new Promise((resolve) => setTimeout(resolve, 2000)),
   ]);
   return boctModuleImport;

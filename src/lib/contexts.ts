@@ -14,4 +14,4 @@ let replyDefaultContext: IExternalReply = {
 
 const ReplyContext = React.createContext<IExternalReply>(replyDefaultContext);
 
-export default ReplyContext;
+export { ReplyContext };

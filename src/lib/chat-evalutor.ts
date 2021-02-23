@@ -17,4 +17,4 @@ function chat_process(sentence: string): string {
   return "Hmm... Maybe";
 }
 
-export default chat_process;
+export { chat_process };
