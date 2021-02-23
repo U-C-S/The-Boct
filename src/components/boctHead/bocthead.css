@@ -45,7 +45,6 @@
 }
 #BOcT {
   padding: 0px;
-  animation: beepbeep 2.5s ease-in-out 5s infinite;
 }
 @keyframes beepbeep {
   0%,

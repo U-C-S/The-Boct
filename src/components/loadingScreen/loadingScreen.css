@@ -21,7 +21,7 @@
 #load_barr {
   height: 100%;
   background-color: var(--wit-in-dark);
-  animation: load 1.6s linear;
+  animation: load 1.5s linear;
 }
 @keyframes load {
   0% {
