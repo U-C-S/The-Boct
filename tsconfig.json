@@ -15,7 +15,8 @@
     "jsx": "react-jsx",
     "allowJs": true,
     "isolatedModules": true,
-    "removeComments": true
+    "removeComments": true,
+    "sourceMap": false
   },
   "include": ["src"]
 }

@@ -1,9 +1,13 @@
 import React, { Suspense } from "react";
 import ReactDOM from "react-dom";
 import { Loading } from "./components/";
-
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 import "./index.css";
+
+const currentThemeCokie = localStorage.getItem("theme");
+if (currentThemeCokie) {
+  document.documentElement.setAttribute("data-theme", currentThemeCokie);
+}
 
 const Boct = React.lazy(async () => {
   const [boctModuleImport] = await Promise.all([
@@ -12,9 +16,6 @@ const Boct = React.lazy(async () => {
   ]);
   return boctModuleImport;
 });
-
-const currentThemeCokie = localStorage.getItem("theme");
-if (currentThemeCokie) document.documentElement.setAttribute("data-theme", currentThemeCokie);
 
 ReactDOM.render(
   <React.StrictMode>
@@ -30,5 +31,4 @@ ReactDOM.render(
 // Learn more about service workers: https://cra.link/PWA
 serviceWorkerRegistration.register();
 
-//const TheBoct = React.lazy(() => import("./theboct"));
 //https://stackoverflow.com/questions/54158994/react-suspense-lazy-delay

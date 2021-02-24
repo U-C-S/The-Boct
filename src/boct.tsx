@@ -1,13 +1,13 @@
 import React from "react";
 import { AboutPanel, BoctHead, ChatBoct } from "./components/";
-import { storageClass, ReplyContext } from "./lib/";
-
-let chatStorage = new storageClass();
+import { storageClass, Reply_Context } from "./lib/";
 
 type AppState = {
   boctClicked: number;
   allReplies: JSX.Element[];
 };
+
+let chatStorage = new storageClass();
 
 class Boct extends React.Component<{}, AppState> {
   constructor(props: any) {
@@ -37,7 +37,7 @@ class Boct extends React.Component<{}, AppState> {
     if (this.state.boctClicked === 0) {
       return (
         <>
-          <BoctHead clickCapture={this.boctOnClick} />
+          <BoctHead clickCapture={this.boctOnClick} headAnim="beepbeep 2.5s ease-in-out 4s infinite" />
           <AboutPanel />
         </>
       );
@@ -50,11 +50,11 @@ class Boct extends React.Component<{}, AppState> {
     };
     return (
       <>
-        <ReplyContext.Provider value={replyContextValue}>
-          <BoctHead clickCapture={this.boctOnClick} />
+        <Reply_Context.Provider value={replyContextValue}>
+          <BoctHead clickCapture={this.boctOnClick} headAnim="none" />
           <ChatBoct />
           <AboutPanel />
-        </ReplyContext.Provider>
+        </Reply_Context.Provider>
       </>
     );
   }

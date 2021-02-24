@@ -1,7 +1,7 @@
-type typesOfReplies = "h" | "b" | "cb";
+type ITypesOfReplies = "h" | "b" | "cb";
 interface IChatMeta {
   element: JSX.Element;
-  replyBy: typesOfReplies;
+  replyBy: ITypesOfReplies;
   replyString: string | null;
 }
 
@@ -14,7 +14,7 @@ class storageClass {
   /**
    * used for pushing the elems and it's metadata into the storage.
    */
-  pushit(element: JSX.Element, replyBy: typesOfReplies, replyString: string | null = null) {
+  pushit(element: JSX.Element, replyBy: ITypesOfReplies, replyString: string | null = null) {
     this.data.push({
       element,
       replyBy,
@@ -58,4 +58,4 @@ class storageClass {
 }
 
 export { storageClass };
-export type { IChatMeta, typesOfReplies };
+export type { IChatMeta, ITypesOfReplies };

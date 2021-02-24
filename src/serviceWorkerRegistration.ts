@@ -23,6 +23,12 @@ type Config = {
   onUpdate?: (registration: ServiceWorkerRegistration) => void;
 };
 
+export function registerX() {
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register(`${process.env.PUBLIC_URL}/service-worker.js`);
+  }
+}
+
 export function register(config?: Config) {
   if (process.env.NODE_ENV === "production" && "serviceWorker" in navigator) {
     // The URL constructor is available in all browsers that support SW.

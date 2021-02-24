@@ -1,6 +1,6 @@
 import { boct_general_reply, DOt_commands, unit_convert } from "./chat/";
 
-function chat_process(sentence: string): string {
+function chatProcessor(sentence: string): string {
   if (sentence) {
     const chat_TL: string = sentence.trim().toLowerCase();
     const chat_T: string = sentence.trim();
@@ -17,4 +17,4 @@ function chat_process(sentence: string): string {
   return "Hmm... Maybe";
 }
 
-export { chat_process };
+export { chatProcessor };

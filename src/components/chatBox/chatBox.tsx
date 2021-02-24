@@ -1,6 +1,6 @@
 import React from "react";
 import { svg1 } from "../../lib/svg-render";
-import { chat_process, ReplyContext } from "../../lib/";
+import { chatProcessor, Reply_Context } from "../../lib/";
 
 import "./chatBox.css";
 
@@ -17,10 +17,8 @@ class TemplateChat extends React.Component<{ attr: [string, string] }, {}> {
 }
 
 class ChatBoct extends React.Component {
-  static contextType = ReplyContext;
   chatInputElem: React.RefObject<HTMLInputElement>;
   //context!: React.ContextType<typeof ReplyContext>;
-  //lifeCycle: "a" | "b" | "c";
 
   constructor(props: any) {
     super(props);
@@ -29,7 +27,7 @@ class ChatBoct extends React.Component {
 
   render() {
     return (
-      <ReplyContext.Consumer>
+      <Reply_Context.Consumer>
         {(replyTech) => {
           let onChatSubmit = (e: any) => {
             e.preventDefault();
@@ -45,7 +43,7 @@ class ChatBoct extends React.Component {
               let humanReplies = replyTech.storage.onlyHumanReplies;
               let cLength = humanReplies.length;
               let input = humanReplies[cLength - 1]?.replyString as string;
-              let cText = chat_process(input);
+              let cText = chatProcessor(input);
               let cElem = <TemplateChat key={cLength} attr={["boct_talk", cText]} />;
 
               replyTech.addReply(cElem, "b");
@@ -75,7 +73,7 @@ class ChatBoct extends React.Component {
             </div>
           );
         }}
-      </ReplyContext.Consumer>
+      </Reply_Context.Consumer>
     );
   }
 }
@@ -95,13 +93,13 @@ class TalkBox extends React.Component {
 
   render() {
     return (
-      <ReplyContext.Consumer>
+      <Reply_Context.Consumer>
         {(replyTech) => (
           <div ref={this.talkBox} className="talk_box" id="chatspace">
             {replyTech?.allReplies}
           </div>
         )}
-      </ReplyContext.Consumer>
+      </Reply_Context.Consumer>
     );
   }
 }

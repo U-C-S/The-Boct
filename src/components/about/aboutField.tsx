@@ -1,7 +1,7 @@
 import React from "react";
 import { CustomReplies } from "../other/";
 
-import { ReplyContext } from "../../lib/";
+import { Reply_Context } from "../../lib/";
 import { svg2, svg3, svg4 } from "../../lib/svg-render";
 import "./aboutField.css";
 
@@ -34,7 +34,7 @@ class ThemeButton extends React.Component {
 class InfoButton extends React.Component {
   render() {
     return (
-      <ReplyContext.Consumer>
+      <Reply_Context.Consumer>
         {(replyTech) => (
           <button
             onClick={() => {
@@ -48,7 +48,7 @@ class InfoButton extends React.Component {
             </svg>
           </button>
         )}
-      </ReplyContext.Consumer>
+      </Reply_Context.Consumer>
     );
   }
 }
@@ -61,7 +61,7 @@ class SettingsButton extends React.Component {
       </div>
     );
     return (
-      <ReplyContext.Consumer>
+      <Reply_Context.Consumer>
         {(replyTech) => (
           <button onClick={() => replyTech.addReply(message, "b")} id="settingBtn" title="Settings">
             <svg viewBox="0 0 512 512">
@@ -69,7 +69,43 @@ class SettingsButton extends React.Component {
             </svg>
           </button>
         )}
-      </ReplyContext.Consumer>
+      </Reply_Context.Consumer>
+    );
+  }
+}
+
+class PWAbutton extends React.Component {
+  addToHomeScreen = () => {
+    let deferredPrompt: any;
+    const addBtn = document.getElementById("pwaInstallBtn") as HTMLButtonElement;
+
+    addBtn.hidden = true;
+    window.addEventListener("beforeinstallprompt", (e: any) => {
+      e.preventDefault();
+      deferredPrompt = e;
+      addBtn.hidden = false;
+    });
+
+    addBtn.addEventListener("click", async () => {
+      addBtn.hidden = true;
+      deferredPrompt.prompt();
+      const { outcome } = await deferredPrompt.userChoice;
+      console.log(`User response to the install prompt: ${outcome}`);
+      deferredPrompt = null;
+    });
+
+    window.addEventListener("appinstalled", () => {
+      addBtn.hidden = true;
+      deferredPrompt = null;
+      console.log("PWA was installed");
+    });
+    //addBtn.style.display = "block";
+  };
+  render() {
+    return (
+      <button id="pwaInstallBtn" onClick={this.addToHomeScreen}>
+        install
+      </button>
     );
   }
 }
@@ -85,6 +121,7 @@ function AboutPanel() {
           <ThemeButton />
         </div>
         <p id="releaseVer">Version 4 | Feb 2021</p>
+        <PWAbutton />
         <hr />
         <p>BOcT is a Static Browser Chatbot</p>
         <p>It's currently in Lazy Development</p>
@@ -95,5 +132,3 @@ function AboutPanel() {
 }
 
 export { AboutPanel };
-
-//        <button id="pwaInstallBtn">install</button>

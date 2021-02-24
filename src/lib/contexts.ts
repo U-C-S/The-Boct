@@ -12,6 +12,6 @@ let replyDefaultContext: IExternalReply = {
   storage: new storageClass(),
 };
 
-const ReplyContext = React.createContext<IExternalReply>(replyDefaultContext);
+const Reply_Context = React.createContext<IExternalReply>(replyDefaultContext);
 
-export { ReplyContext };
+export { Reply_Context };

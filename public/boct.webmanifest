@@ -3,8 +3,11 @@
   "name": "The-BOcT",
   "short_name": "BOcT",
   "description": "Meet the BOcT",
+
   "start_url": "/",
+  "display": "fullscreen",
   "orientation": "any",
+
   "background_color": "#20B2AA",
   "theme_color": "#E64C63",
   "icons": [
@@ -24,6 +27,5 @@
       "type": "image/png",
       "purpose": "maskable"
     }
-  ],
-  "display": "standalone"
+  ]
 }
