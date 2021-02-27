@@ -74,6 +74,29 @@ class SettingsButton extends React.Component {
   }
 }
 
+function AboutPanel() {
+  return (
+    <div className="about">
+      <fieldset>
+        <legend>About BOcT</legend>
+        <div className="aboutbtns">
+          <SettingsButton />
+          <InfoButton />
+          <ThemeButton />
+        </div>
+        <p id="releaseVer">Version 4 | Feb 2021</p>
+        <hr />
+        <p>BOcT is a Static Browser Chatbot</p>
+        <p>It's currently in Lazy Development</p>
+        <p>Future Updates to BOcT can make it perform basic Maths, Maybe suggest you some Movies...</p>
+      </fieldset>
+    </div>
+  );
+}
+
+export { AboutPanel };
+
+/*
 class PWAbutton extends React.Component {
   addToHomeScreen = () => {
     let deferredPrompt: any;
@@ -109,26 +132,4 @@ class PWAbutton extends React.Component {
     );
   }
 }
-
-function AboutPanel() {
-  return (
-    <div className="about">
-      <fieldset>
-        <legend>About BOcT</legend>
-        <div className="aboutbtns">
-          <SettingsButton />
-          <InfoButton />
-          <ThemeButton />
-        </div>
-        <p id="releaseVer">Version 4 | Feb 2021</p>
-        <PWAbutton />
-        <hr />
-        <p>BOcT is a Static Browser Chatbot</p>
-        <p>It's currently in Lazy Development</p>
-        <p>Future Updates to BOcT can make it perform basic Maths, Maybe suggest you some Movies...</p>
-      </fieldset>
-    </div>
-  );
-}
-
-export { AboutPanel };
+*/

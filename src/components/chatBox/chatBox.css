@@ -45,17 +45,17 @@
   scroll-behavior: smooth;
 }
 
-#chatspace::-webkit-scrollbar-track {
+.talk_box::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.8);
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.8);
   background-color: #f5f5f5;
 }
-#chatspace::-webkit-scrollbar {
+.talk_box::-webkit-scrollbar {
   width: 10px;
   background-color: #f5f5f5;
   cursor: pointer;
 }
-#chatspace::-webkit-scrollbar-thumb {
+.talk_box::-webkit-scrollbar-thumb {
   background-color: #5c5c5c;
 }
 
@@ -84,12 +84,12 @@
   background: var(--wit-in-dark);
 }
 /*Type----------------------------------------*/
-.type_box {
+.typeBox_container {
   margin: 15px auto 8px;
   width: 85%;
   height: 36px;
 }
-.type_box-inner {
+.typeBox {
   width: 100%;
   display: flex;
 }
@@ -110,7 +110,7 @@
   color: black;
 }
 
-#typespace-enter {
+#typespace_submitBtn {
   width: 40px;
   height: 36px;
   padding: 7px 8px 8px;
@@ -120,13 +120,13 @@
   border-radius: 0 5px 5px 0;
   border: none;
 }
-#typespace-enter svg {
+#typespace_submitBtn svg {
   fill: var(--wit-in-dark);
   width: 100%;
   height: 100%;
   text-align: center;
 }
-#typespace-enter svg:active {
+#typespace_submitBtn svg:active {
   fill: #ff1439;
   transform: scale(0.85);
 }
@@ -155,7 +155,7 @@
   .talk_box {
     box-shadow: none;
   }
-  .type_box {
+  .typeBox_container {
     width: 92%;
   }
 }
