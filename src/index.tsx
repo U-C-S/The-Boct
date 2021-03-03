@@ -1,7 +1,6 @@
 import React, { Suspense } from "react";
 import ReactDOM from "react-dom";
 import { Loading } from "./components/";
-import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 import "./index.css";
 
 const currentThemeCokie = localStorage.getItem("theme");
@@ -26,9 +25,7 @@ ReactDOM.render(
   document.getElementById("Main")
 );
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://cra.link/PWA
-serviceWorkerRegistration.register();
+//import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
+//serviceWorkerRegistration.registerX();
 
 //https://stackoverflow.com/questions/54158994/react-suspense-lazy-delay

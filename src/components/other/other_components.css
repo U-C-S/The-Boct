@@ -1,7 +1,6 @@
 .info_window {
   float: left;
   width: 90%;
-  max-width: 800px;
   border: 2px solid var(--wit-in-dark);
   margin: 6px 4px 6px;
   padding: 5px 5px 0;

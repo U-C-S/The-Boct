@@ -4,7 +4,9 @@ import { chatProcessor, Reply_Context } from "../../lib/";
 
 import "./chatBox.css";
 
-//for default chat-reply templates. for custom boct replies see other_components.tsx
+/**
+ * for default chat-reply templates. for custom boct replies see other_components.tsx
+ */
 class TemplateChat extends React.Component<{ attr: [string, string] }, {}> {
   render() {
     let [c, t] = this.props.attr;
@@ -16,6 +18,38 @@ class TemplateChat extends React.Component<{ attr: [string, string] }, {}> {
   }
 }
 
+/**
+ * The box where all the chat shows up
+ */
+class TalkBox extends React.Component {
+  talkBox: React.RefObject<HTMLDivElement>;
+
+  constructor(props: any) {
+    super(props);
+    this.talkBox = React.createRef();
+  }
+
+  componentDidUpdate() {
+    let { talkBox } = this; //@ts-ignore
+    talkBox.current.scrollTop = talkBox.current.scrollHeight;
+  }
+
+  render() {
+    return (
+      <Reply_Context.Consumer>
+        {(replyTech) => (
+          <div ref={this.talkBox} className="talk_box">
+            {replyTech?.allReplies}
+          </div>
+        )}
+      </Reply_Context.Consumer>
+    );
+  }
+}
+
+/**
+ * The Component for the Chat-Box
+ */
 class ChatBoct extends React.Component {
   chatInputElem: React.RefObject<HTMLInputElement>;
   //context!: React.ContextType<typeof ReplyContext>;
@@ -53,8 +87,8 @@ class ChatBoct extends React.Component {
           return (
             <div id="Chatter">
               <TalkBox />
-              <div className="type_box">
-                <form className="type_box-inner" onSubmit={onChatSubmit}>
+              <div className="typeBox_container">
+                <form className="typeBox" onSubmit={onChatSubmit}>
                   <input
                     ref={this.chatInputElem}
                     id="typespace"
@@ -63,7 +97,7 @@ class ChatBoct extends React.Component {
                     autoComplete="off"
                     maxLength={120}
                   />
-                  <button id="typespace-enter" type="submit">
+                  <button id="typespace_submitBtn" type="submit">
                     <svg viewBox="0 0 448 512">
                       <path id="svg1" d={svg1} />
                     </svg>
@@ -78,78 +112,4 @@ class ChatBoct extends React.Component {
   }
 }
 
-class TalkBox extends React.Component {
-  talkBox: React.RefObject<HTMLDivElement>;
-
-  constructor(props: any) {
-    super(props);
-    this.talkBox = React.createRef();
-  }
-
-  componentDidUpdate() {
-    let { talkBox } = this; //@ts-ignore
-    talkBox.current.scrollTop = talkBox.current.scrollHeight;
-  }
-
-  render() {
-    return (
-      <Reply_Context.Consumer>
-        {(replyTech) => (
-          <div ref={this.talkBox} className="talk_box" id="chatspace">
-            {replyTech?.allReplies}
-          </div>
-        )}
-      </Reply_Context.Consumer>
-    );
-  }
-}
-
 export { ChatBoct };
-//this.state.chatstore
-
-/*
-  onChatSubmit(e: any) {
-    e.preventDefault();
-    let cText = this.chatInputElem.current?.value as string;
-    let cElem = <TemplateChat key={chatStorage.numOfReplies} attr={["human_talk", cText]} />;
-
-    chatStorage.pushit(cElem, "h", cText);
-    this.setState({ chatstore: chatStorage.onlyElems });
-
-    setTimeout(this.OnHumanReply, 600);
-  }
-
-
-
-  let onChatSubmit = (e: any) => {
-            e.preventDefault();
-            let cText = this.chatInputElem.current?.value as string;
-            let cElem = <TemplateChat attr={["human_talk", cText]} key={replyTech?.storage.numOfReplies} />;
-            replyTech?.addReply(cElem, "h");
-
-            //setTimeout(this.OnHumanReply, 600);
-          };
-
-
-    "@types/node": "^12.19.16",
-    "@types/react": "^16.14.3",
-    "@types/react-dom": "^16.9.10",
-
-
-
-      OnHumanReply() {
-    let replyTech = this.context;
-    let chatStorage = replyTech.storage;
-
-    if (chatStorage.isRecentReplyHuman) {
-      let humanReplies = chatStorage.onlyHumanReplies;
-      let cLength = humanReplies.length;
-      let input = humanReplies[cLength - 1]?.replyString as string;
-      let cText = chat_process(input);
-      let cElem = <TemplateChat key={cLength} attr={["boct_talk", cText]} />;
-
-      chatStorage.pushit(cElem, "b", cText);
-      this.setState({ chatstore: chatStorage.onlyElems });
-    }
-  }
-*/

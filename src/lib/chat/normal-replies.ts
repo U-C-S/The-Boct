@@ -24,8 +24,6 @@ export function boct_general_reply(studycontent: string) {
   return reply;
 }
 
-//-------------------------------------------
-//return "Hi, I can partially understand you. Maybe, say hi to me or ask my age. But, Don't call me an idiot");
 
 class directReplies {
   words: string[];
