@@ -2,7 +2,7 @@
 
 ## About
 
-BOcT is a Static Browser Chatbot, made with TypeScript. It's currently in Lazy development and Available as a Progressive Web App (PWA)
+BOcT is a Static Browser Chatbot, made with TypeScript and React. It's currently in Lazy development.
 
 BOcT can now convert units and future Updates to BOcT can make it perform basic Maths, Maybe suggest you some Movies...
 
