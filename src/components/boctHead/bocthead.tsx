@@ -1,5 +1,5 @@
 import React from "react";
-import { svg0 } from "../../lib/svg-render";
+import { svg0 } from "../../util/svg-draw";
 import "./bocthead.css";
 
 class BoctHead extends React.Component<{ clickCapture: any; headAnim: string }, {}> {

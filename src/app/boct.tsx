@@ -1,6 +1,6 @@
 import React from "react";
-import { AboutPanel, BoctHead, ChatBoct } from "./components/";
-import { storageClass, Reply_Context } from "./lib/";
+import { AboutPanel, BoctHead, ChatBoct } from "../components";
+import { storageClass, Reply_Context } from "../util";
 
 type AppState = {
   boctClicked: number;

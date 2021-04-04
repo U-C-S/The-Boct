@@ -10,7 +10,7 @@ if (currentThemeCokie) {
 
 const Boct = React.lazy(async () => {
   const [boctModuleImport] = await Promise.all([
-    import("./boct"),
+    import("./app/boct"),
     new Promise((resolve) => setTimeout(resolve, 2000)),
   ]);
   return boctModuleImport;

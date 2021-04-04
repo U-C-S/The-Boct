@@ -42,7 +42,6 @@ class storageClass {
   }
 
   get onlyHumanReplies() {
-    // eslint-disable-next-line
     let human = this.data.map((x) => {
       if (x.replyBy === "h") {
         return x;

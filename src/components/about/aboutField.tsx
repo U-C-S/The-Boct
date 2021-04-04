@@ -1,8 +1,8 @@
 import React from "react";
 import { CustomReplies } from "../other/";
 
-import { Reply_Context } from "../../lib/";
-import { svg2, svg3, svg4 } from "../../lib/svg-render";
+import { Reply_Context } from "../../util/";
+import { svg2, svg3, svg4 } from "../../util/svg-draw";
 import "./aboutField.css";
 
 //Button for toggling the theme. default dark.
