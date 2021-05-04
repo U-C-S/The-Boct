@@ -3,7 +3,7 @@ import { svg1 } from "../../util/svg-draw";
 import { chatProcessor } from "../../lib/";
 import { Reply_Context } from "../../util";
 
-import "./chatBox.css";
+import "./chatBox.scss";
 
 /**
  * for default chat-reply templates. for custom boct replies see other_components.tsx

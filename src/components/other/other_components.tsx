@@ -1,4 +1,4 @@
-import "./other_components.css";
+import "./other_components.scss";
 
 const CustomReplies = {
   InfoBoctReply: () => (

@@ -1,6 +1,6 @@
 import React from "react";
 import { svg0 } from "../../util/svg-draw";
-import "./bocthead.css";
+import "./bocthead.scss";
 
 class BoctHead extends React.Component<{ clickCapture: any; headAnim: string }, {}> {
   constructor(props: any) {

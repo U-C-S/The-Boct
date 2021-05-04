@@ -3,7 +3,7 @@ import { CustomReplies } from "../other/";
 
 import { Reply_Context } from "../../util/";
 import { svg2, svg3, svg4 } from "../../util/svg-draw";
-import "./aboutField.css";
+import "./aboutField.scss";
 
 //Button for toggling the theme. default dark.
 class ThemeButton extends React.Component {

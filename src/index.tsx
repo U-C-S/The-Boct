@@ -1,7 +1,7 @@
 import React, { Suspense } from "react";
 import ReactDOM from "react-dom";
 import { Loading } from "./components/";
-import "./index.css";
+import "./index.scss";
 
 const currentThemeCokie = localStorage.getItem("theme");
 if (currentThemeCokie) {
