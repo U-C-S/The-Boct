@@ -1,4 +1,3 @@
-/*about---------------------------------------------------------------*/
 .about {
   grid-area: a;
 
@@ -47,7 +46,7 @@
   }
 }
 
-.aboutbtns svg #pwaInstallBtn {
+#pwaInstallBtn {
   width: 60px;
   height: 25px;
   border: 1px solid var(--wit-in-dark);
