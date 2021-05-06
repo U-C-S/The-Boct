@@ -10,7 +10,7 @@
     "url": "https://github.com/The-BOcT/the-boct.github.io",
     "type": "git"
   },
-  "readme": "https://github.com/The-BOcT/the-boct.github.io/blob/master/README.md",
+  "readme": "https://github.com/The-BOcT/the-boct.github.io/blob/stable/README.md",
   "license": "MIT",
   "private": true,
   "dependencies": {

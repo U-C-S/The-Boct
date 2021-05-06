@@ -32,7 +32,7 @@ const CustomReplies = {
         <p className="text1">Written with ❤ in TypeScript</p>
       </div>
       <div className="info_links">
-        <a href="https://github.com/The-BOcT/the-boct.github.io/blob/master/LICENSE.md" title="Under MIT LICENSE">
+        <a href="https://github.com/The-Boct/the-boct.github.io/blob/stable/LICENSE" title="Under MIT LICENSE">
           © 2020 U-C-S
         </a>
         <br />
