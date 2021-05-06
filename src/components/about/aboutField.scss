@@ -1,0 +1,88 @@
+.about {
+  grid-area: a;
+
+  fieldset {
+    border: 2px solid var(--wit-in-dark);
+    box-shadow: 0 0 15px inset black;
+    padding: 5px;
+    text-align: center;
+
+    legend {
+      color: var(--wit-in-dark);
+      font-size: 14px;
+      padding: 1px 6px;
+      margin: 5px auto;
+      border: 2px solid black;
+      background-color: var(--blk-in-dark);
+    }
+  }
+
+  .aboutbtns {
+    display: flex;
+    justify-content: space-around;
+
+    button {
+      width: 25px;
+      height: 25px;
+      padding: 0px;
+
+      svg {
+        width: 100%;
+        height: 100%;
+        fill: var(--wit-in-dark);
+
+        &:hover {
+          fill: #ff1439;
+        }
+      }
+    }
+  }
+
+  p {
+    text-align: center;
+    color: var(--wit-in-dark);
+    font-size: 14px;
+    margin: 10px 0;
+  }
+}
+
+#pwaInstallBtn {
+  width: 60px;
+  height: 25px;
+  border: 1px solid var(--wit-in-dark);
+  border-radius: 15px;
+  font-weight: bold;
+  color: #ff1439;
+
+  &:hover {
+    background-color: var(--wit-in-dark);
+  }
+}
+
+#releaseVer {
+  font-family: "Arial", monospace !important;
+  font-size: 10px !important;
+  margin: 15px 0px 10px !important;
+  letter-spacing: 2px;
+}
+
+@media screen and (max-width: 620px) {
+  .about fieldset {
+    box-shadow: none;
+    padding: 15px 5px;
+    border-top: none;
+    border-radius: 0 0 15px 15px;
+  }
+  .about legend {
+    border: none;
+    background-color: transparent;
+  }
+  #pwaInstallBtn {
+    margin: 15px auto 0px;
+  }
+  .about p,
+  .about hr,
+  .about legend {
+    display: none;
+  }
+}

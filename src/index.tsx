@@ -1,7 +1,7 @@
 import React, { Suspense } from "react";
 import ReactDOM from "react-dom";
 import { Loading } from "./components/";
-import "./index.css";
+import "./index.scss";
 
 const currentThemeCokie = localStorage.getItem("theme");
 if (currentThemeCokie) {
@@ -10,7 +10,7 @@ if (currentThemeCokie) {
 
 const Boct = React.lazy(async () => {
   const [boctModuleImport] = await Promise.all([
-    import("./boct"),
+    import("./app/boct"),
     new Promise((resolve) => setTimeout(resolve, 2000)),
   ]);
   return boctModuleImport;

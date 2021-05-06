@@ -1,9 +1,9 @@
 import React from "react";
 import { CustomReplies } from "../other/";
 
-import { Reply_Context } from "../../lib/";
-import { svg2, svg3, svg4 } from "../../lib/svg-render";
-import "./aboutField.css";
+import { ReplyContext } from "../../util/";
+import { svg2, svg3, svg4 } from "../../util/svg-draw";
+import "./aboutField.scss";
 
 //Button for toggling the theme. default dark.
 class ThemeButton extends React.Component {
@@ -34,7 +34,7 @@ class ThemeButton extends React.Component {
 class InfoButton extends React.Component {
   render() {
     return (
-      <Reply_Context.Consumer>
+      <ReplyContext.Consumer>
         {(replyTech) => (
           <button
             onClick={() => {
@@ -48,7 +48,7 @@ class InfoButton extends React.Component {
             </svg>
           </button>
         )}
-      </Reply_Context.Consumer>
+      </ReplyContext.Consumer>
     );
   }
 }
@@ -61,7 +61,7 @@ class SettingsButton extends React.Component {
       </div>
     );
     return (
-      <Reply_Context.Consumer>
+      <ReplyContext.Consumer>
         {(replyTech) => (
           <button onClick={() => replyTech.addReply(message, "b")} id="settingBtn" title="Settings">
             <svg viewBox="0 0 512 512">
@@ -69,7 +69,7 @@ class SettingsButton extends React.Component {
             </svg>
           </button>
         )}
-      </Reply_Context.Consumer>
+      </ReplyContext.Consumer>
     );
   }
 }
