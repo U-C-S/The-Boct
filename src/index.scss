@@ -28,7 +28,6 @@
 *::after,
 *::before {
   box-sizing: border-box;
-  transition: all 0.1s linear;
 }
 
 body,
@@ -36,7 +35,6 @@ html {
   background-color: var(--blk-in-dark);
   line-height: 1.15;
   margin: 0px;
-  padding: 0px;
   height: 100%;
   min-height: 600px;
   min-width: 300px;

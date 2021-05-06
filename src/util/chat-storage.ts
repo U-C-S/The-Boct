@@ -1,12 +1,16 @@
 type ITypesOfReplies = "h" | "b" | "cb";
 interface IChatMeta {
-  element: JSX.Element;
+  replyJSX: JSX.Element;
   replyBy: ITypesOfReplies;
-  replyString: string | null;
+  replyString?: string;
 }
 
+/**
+ * The data structure to store all the information regarding the replies
+ */
 class storageClass {
   private data: IChatMeta[];
+
   constructor() {
     this.data = [];
   }
@@ -14,20 +18,12 @@ class storageClass {
   /**
    * used for pushing the elems and it's metadata into the storage.
    */
-  pushit(element: JSX.Element, replyBy: ITypesOfReplies, replyString: string | null = null) {
-    this.data.push({
-      element,
-      replyBy,
-      replyString,
-    });
+  set pushit(x: IChatMeta) {
+    this.data.push(x);
   }
 
   get read() {
     return this.data;
-  }
-
-  get recent() {
-    return this.data[this.numOfReplies - 1];
   }
 
   get numOfReplies() {
@@ -38,9 +34,11 @@ class storageClass {
    * outputs the array of all the elems pushed into the storage.
    */
   get onlyElems() {
-    return this.data.map((x) => x.element);
+    return this.data.map((x) => x.replyJSX);
   }
 
+  /*
+  * Unused------------
   get onlyHumanReplies() {
     let human = this.data.map((x) => {
       if (x.replyBy === "h") {
@@ -54,6 +52,11 @@ class storageClass {
     let x = this.data[this.numOfReplies - 1].replyBy === "h";
     return x;
   }
+
+  get recent() {
+    return this.data[this.numOfReplies - 1];
+  }
+  */
 }
 
 export { storageClass };

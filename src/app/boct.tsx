@@ -1,6 +1,6 @@
 import React from "react";
 import { AboutPanel, BoctHead, ChatBoct } from "../components";
-import { storageClass, Reply_Context } from "../util";
+import { storageClass, ReplyContext, ITypesOfReplies } from "../util";
 
 type AppState = {
   boctClicked: number;
@@ -12,13 +12,13 @@ let chatStorage = new storageClass();
 class Boct extends React.Component<{}, AppState> {
   constructor(props: any) {
     super(props);
+    this.boctOnClick = this.boctOnClick.bind(this);
+    this.setReply = this.setReply.bind(this);
+
     this.state = {
       boctClicked: 0,
       allReplies: chatStorage.onlyElems,
     };
-
-    this.boctOnClick = this.boctOnClick.bind(this);
-    this.setReply = this.setReply.bind(this);
   }
 
   boctOnClick() {
@@ -27,9 +27,9 @@ class Boct extends React.Component<{}, AppState> {
     });
   }
 
-  setReply(reply: JSX.Element, type: "h" | "b" | "cb", replyString?: string) {
+  setReply(replyJSX: JSX.Element, replyBy: ITypesOfReplies, replyString?: string) {
     replyString = replyString ? replyString : "e01";
-    chatStorage.pushit(reply, type, replyString);
+    chatStorage.pushit = { replyJSX, replyBy, replyString };
     this.setState({ allReplies: chatStorage.onlyElems });
   }
 
@@ -50,11 +50,11 @@ class Boct extends React.Component<{}, AppState> {
     };
     return (
       <>
-        <Reply_Context.Provider value={replyContextValue}>
+        <ReplyContext.Provider value={replyContextValue}>
           <BoctHead clickCapture={this.boctOnClick} headAnim="none" />
           <ChatBoct />
           <AboutPanel />
-        </Reply_Context.Provider>
+        </ReplyContext.Provider>
       </>
     );
   }

@@ -1,6 +1,6 @@
 {
   "name": "the-boct",
-  "version": "4.1.0-alpha-1",
+  "version": "4.1.0-alpha",
   "homepage": "https://the-boct.github.io/",
   "author": {
     "name": "U-C-S",
@@ -49,6 +49,6 @@
     ]
   },
   "prettier": {
-    "printWidth": 118
+    "printWidth": 140
   }
 }

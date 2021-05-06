@@ -1,7 +1,7 @@
 import React from "react";
 import { svg1 } from "../../util/svg-draw";
 import { chatProcessor } from "../../lib/";
-import { Reply_Context } from "../../util";
+import { ReplyContext } from "../../util";
 
 import "./chatBox.scss";
 
@@ -31,19 +31,20 @@ class TalkBox extends React.Component {
   }
 
   componentDidUpdate() {
+    //Automatically scroll to recent reply on new reply
     let { talkBox } = this; //@ts-ignore
     talkBox.current.scrollTop = talkBox.current.scrollHeight;
   }
 
   render() {
     return (
-      <Reply_Context.Consumer>
+      <ReplyContext.Consumer>
         {(replyTech) => (
           <div ref={this.talkBox} className="talk_box">
             {replyTech?.allReplies}
           </div>
         )}
-      </Reply_Context.Consumer>
+      </ReplyContext.Consumer>
     );
   }
 }
@@ -51,9 +52,10 @@ class TalkBox extends React.Component {
 /**
  * The Component for the Chat-Box
  */
-class ChatBoct extends React.Component {
+class ChatBox extends React.Component {
   chatInputElem: React.RefObject<HTMLInputElement>;
-  //context!: React.ContextType<typeof ReplyContext>;
+  context!: React.ContextType<typeof ReplyContext>;
+  static contextType = ReplyContext;
 
   constructor(props: any) {
     super(props);
@@ -62,53 +64,58 @@ class ChatBoct extends React.Component {
 
   render() {
     return (
-      <Reply_Context.Consumer>
+      <ReplyContext.Consumer>
         {(replyTech) => {
+          //On user submitting a text,
+          //The following method will store it's JSX, type of reply, the string user submitted
           let onChatSubmit = (e: any) => {
             e.preventDefault();
             let cText = this.chatInputElem.current?.value as string;
             let cElem = <TemplateChat attr={["human_talk", cText]} key={replyTech.storage.numOfReplies} />;
 
             replyTech.addReply(cElem, "h", cText);
-            setTimeout(replyBasedOnHumanReply, 600);
+            setTimeout(replyBasedOnHumanReply, 600, cText);
           };
 
-          let replyBasedOnHumanReply = () => {
-            if (replyTech.storage.isRecentReplyHuman) {
-              let humanReplies = replyTech.storage.onlyHumanReplies;
-              let cLength = humanReplies.length;
-              let input = humanReplies[cLength - 1]?.replyString as string;
-              let cText = chatProcessor(input);
-              let cElem = <TemplateChat key={cLength} attr={["boct_talk", cText]} />;
-
-              replyTech.addReply(cElem, "b");
-            }
-          };
+          //After a certain time, this method will process the string and outputs a chat text
+          function replyBasedOnHumanReply(UserText: string) {
+            let cText = chatProcessor(UserText);
+            let cElem = <TemplateChat attr={["boct_talk", cText]} key={replyTech.storage.numOfReplies} />;
+            replyTech.addReply(cElem, "b");
+          }
 
           return (
-            <div id="Chatter">
-              <TalkBox />
-              <div className="typeBox_container">
-                <form className="typeBox" onSubmit={onChatSubmit}>
-                  <input
-                    ref={this.chatInputElem}
-                    id="typespace"
-                    type="text"
-                    placeholder="Wanna talk with BOcT? Then type here..!"
-                    autoComplete="off"
-                    maxLength={120}
-                  />
-                  <button id="typespace_submitBtn" type="submit">
-                    <svg viewBox="0 0 448 512">
-                      <path id="svg1" d={svg1} />
-                    </svg>
-                  </button>
-                </form>
-              </div>
+            <div className="typeBox_container">
+              <form className="typeBox" onSubmit={onChatSubmit}>
+                <input
+                  ref={this.chatInputElem}
+                  id="typespace"
+                  type="text"
+                  placeholder="Wanna talk with BOcT? Then type here..!"
+                  autoComplete="off"
+                  maxLength={120}
+                />
+                <button id="typespace_submitBtn" type="submit">
+                  <svg viewBox="0 0 448 512">
+                    <path id="svg1" d={svg1} />
+                  </svg>
+                </button>
+              </form>
             </div>
           );
         }}
-      </Reply_Context.Consumer>
+      </ReplyContext.Consumer>
+    );
+  }
+}
+
+class ChatBoct extends React.Component {
+  render() {
+    return (
+      <div id="Chatter">
+        <TalkBox />
+        <ChatBox />
+      </div>
     );
   }
 }

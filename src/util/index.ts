@@ -1,2 +1,3 @@
 export { storageClass } from "./chat-storage";
-export { Reply_Context } from "./contexts";
+export type { ITypesOfReplies } from "./chat-storage";
+export { ReplyContext } from "./contexts";
