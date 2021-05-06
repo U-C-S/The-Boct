@@ -57,7 +57,7 @@ class SettingsButton extends React.Component {
   render() {
     let message = (
       <div className="boct_talk">
-        <p>Will be Available in next update</p>
+        <p>Currently this feature is Unavailable. Will be Available in next major update</p>
       </div>
     );
     return (
@@ -84,7 +84,7 @@ function AboutPanel() {
           <InfoButton />
           <ThemeButton />
         </div>
-        <p id="releaseVer">Version 4 | Feb 2021</p>
+        <p id="releaseVer">Version 4.0.3 | April 2021</p>
         <hr />
         <p>BOcT is a Static Browser Chatbot</p>
         <p>It's currently in Lazy Development</p>
