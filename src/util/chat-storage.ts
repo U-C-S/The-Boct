@@ -36,8 +36,12 @@ class storageClass {
   get onlyElems() {
     return this.data.map((x) => x.replyJSX);
   }
+}
 
-  /*
+export { storageClass };
+export type { IChatMeta, ITypesOfReplies };
+
+/*
   * Unused------------
   get onlyHumanReplies() {
     let human = this.data.map((x) => {
@@ -57,7 +61,3 @@ class storageClass {
     return this.data[this.numOfReplies - 1];
   }
   */
-}
-
-export { storageClass };
-export type { IChatMeta, ITypesOfReplies };
