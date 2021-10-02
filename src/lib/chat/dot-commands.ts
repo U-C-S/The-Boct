@@ -14,7 +14,7 @@ export function DOt_commands(word: string): string {
       return "U-C-S / Chanakya";
     case "v":
       //return `${ElemList.Version.innerHTML}`;
-      return "v4.0";
+      return "v4.0.4";
     case "url":
       return "https://the-boct.github.io/";
     case "code":

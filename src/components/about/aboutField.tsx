@@ -84,7 +84,7 @@ function AboutPanel() {
           <InfoButton />
           <ThemeButton />
         </div>
-        <p id="releaseVer">Version 4 | Feb 2021</p>
+        <p id="releaseVer">Version 4.0.4 | Feb 2021</p>
         <hr />
         <p>BOcT is a Static Browser Chatbot</p>
         <p>It's currently in Lazy Development</p>

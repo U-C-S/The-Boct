@@ -1,16 +1,11 @@
 {
   "name": "the-boct",
-  "version": "4.1.0-alpha",
-  "homepage": "https://the-boct.github.io/",
+  "version": "4.0.4",
+  "homepage": "https://the-boct.netlify.app/",
   "author": {
     "name": "U-C-S",
     "email": "uchanakyasrinivas@gmail.com"
   },
-  "repository": {
-    "url": "https://github.com/The-BOcT/the-boct.github.io",
-    "type": "git"
-  },
-  "readme": "https://github.com/The-BOcT/the-boct.github.io/blob/master/README.md",
   "license": "MIT",
   "private": true,
   "dependencies": {
@@ -19,12 +14,12 @@
     "react-scripts": "4.0.3"
   },
   "devDependencies": {
-    "@types/node": "^15.3.1",
-    "@types/react": "^17.0.6",
-    "@types/react-dom": "^17.0.5",
-    "gh-pages": "^3.1.0",
-    "sass": "^1.33.0",
-    "typescript": "^4.2.4"
+    "@types/node": "^16.10.2",
+    "@types/react": "^17.0.26",
+    "@types/react-dom": "^17.0.9",
+    "gh-pages": "^3.2.3",
+    "sass": "^1.42.1",
+    "typescript": "^4.4.3"
   },
   "scripts": {
     "start": "react-scripts start",

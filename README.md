@@ -1,8 +1,8 @@
-<h1 align=center>The <a href="https://the-boct.github.io/"><img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/master/svgs/solid/robot.svg" width="35px"></a> Boct</h1>
+<h1 align=center>The <a href="https://the-boct.netlify.app/"><img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/master/svgs/solid/robot.svg" width="35px"></a> Boct</h1>
 
 Boct is a Static Browser psuedo-Chatbot, made with TypeScript and React. It's my learning project for frontend web development. It currently doesn't have many features, but can convert units. Many of features are supposed to be added in Future versions of v4, But Currently the development is halted.
 
-Check it out - https://the-boct.github.io/
+Check it out - https://the-boct.netlify.app
 
 ### Version History
 
